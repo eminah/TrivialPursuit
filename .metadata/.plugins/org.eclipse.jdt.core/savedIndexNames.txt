@@ -1,0 +1,22 @@
+INDEX VERSION 1.127+/Users/helenejarl/Documents/Eclipse/workspaces/TDA367/TrivialPursuit/.metadata/.plugins/org.eclipse.jdt.core
+473106283.index
+2936287081.index
+501142777.index
+1880139076.index
+3068211809.index
+477636451.index
+3616253550.index
+883634178.index
+1271342938.index
+3669867886.index
+1247459299.index
+2852750987.index
+3412278985.index
+3746283354.index
+4124263567.index
+505420999.index
+891561327.index
+3687156960.index
+2927358736.index
+2654920010.index
+3740299137.index
