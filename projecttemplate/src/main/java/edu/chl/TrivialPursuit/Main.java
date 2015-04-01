@@ -1,8 +1,8 @@
 package edu.chl.TrivialPursuit;
 
-import edu.chl.TrivialPursuit.view.ProjectView;
-import edu.chl.TrivialPursuit.controller.ProjectController;
-import edu.chl.TrivialPursuit.model.Project;
+import edu.chl.trivialPursuit.controller.ProjectController;
+import edu.chl.trivialPursuit.model.Project;
+import edu.chl.trivialPursuit.view.ProjectView;
 
 import javax.swing.SwingUtilities;
 

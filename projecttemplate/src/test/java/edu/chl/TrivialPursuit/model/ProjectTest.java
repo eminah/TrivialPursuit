@@ -1,6 +1,6 @@
 package edu.chl.TrivialPursuit.model;
 
-import edu.chl.TrivialPursuit.model.Project;
+import edu.chl.trivialPursuit.model.Project;
 
 import org.junit.Assert;
 import org.junit.Test;

@@ -1,7 +1,7 @@
 package edu.chl.TrivialPursuit.controller;
 
-import edu.chl.TrivialPursuit.view.ProjectView;
-import edu.chl.TrivialPursuit.model.Project;
+import edu.chl.trivialPursuit.model.Project;
+import edu.chl.trivialPursuit.view.ProjectView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

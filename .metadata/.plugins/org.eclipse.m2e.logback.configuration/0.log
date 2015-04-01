@@ -337,3 +337,7 @@
 2015-03-30 15:43:23,553 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2015-03-30 15:43:23,555 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2015-03-30 15:43:23,555 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/helenejarl/Documents/Eclipse/workspaces/TDA367/TrivialPursuit/projecttemplate/src/test/resources
+2015-04-01 12:53:19,605 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-04-01 12:53:19,613 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2015-04-01 12:53:19,622 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2015-04-01 12:53:19,623 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/helenejarl/Documents/Eclipse/workspaces/TDA367/TrivialPursuit/projecttemplate/src/test/resources
