@@ -1,0 +1,30 @@
+TO DO 
+* Create Players 
+* Start Game 
+* New Game 
+	- Start a new game during a game 
+* End Game 
+* Receive Question 
+* Answer Question 
+* Throw Dices
+* Move Player 
+
+
+IF TIME 
+* Rules Intro 
+	- A button to check the rules
+* High Score 
+        - Points dependent on time or levels 
+* Receive "Cake Slice"
+        - Receive an actual piece for answering right 
+* Receive Question From Right Category
+* Add Sounds
+* Continue After Right Answer
+* Timer 
+        - Maximum time to answer 
+
+
+EXTRA 
+* Move Player With Mouse 
+* Chance (Monopoly)
+* Add Levels
