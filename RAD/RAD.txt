@@ -1,0 +1,117 @@
+﻿Requirements and Analysis Document for TP
+
+
+
+
+        
+Version: 1.1
+
+
+
+
+Date: 2015-04-02
+
+
+
+
+Author: Emina Hromic, Ina Tran, Heléne Jarl and Rasti Tengman
+
+
+
+
+This version override all previous versions.
+
+1. Introduction 
+   1. Purpose of application        
+The project aims to create a game that is first and foremost tended for entertainment. It is a computer based version of the board game Trivial Pursuit. Though with it’s own look. The game is suitable for people from an age where they can answer questions up to an age where they don’t get entertained of this anymore.
+
+(The game i suitable for young adults, since the questions are adapted to them)                                
+   1. General characteristics of application 
+The application will be a multiplayer application for desktop. The GUI will be adaptable for both Mac and Windows platforms.
+
+The application is a parlour game, hence a turn based game. The player must end his or hers turn in order for the next player to play. Which players turn it is, is automatically ordered after the players are created and before the game starts. In order to win the game you must answer correctly to a question from each category and each of them must be from different continents. If you end the game before someone has actually won, the player with most correct answers will win.        
+
+
+   1. Scope of application 
+The application does not comprise single-player mode since it does not include computer-player ability. Games cannot be saved, and statistics cannot be collected (such as high scores). Neither players can be saved. 
+
+
+The game will also be non-networked, which means that it only will be a desktop, standalone game.
+   1. Objectives and success criteria of the project 
+        It should be possible to play the game with up to four player, until someone wins.  
+   1. Definitions, acronyms and abbreviations
+* GUI, graphical user interface
+* Java, independent programming language
+* JRE, java runtime environment  
+* Players, the users controlling the game
+
+
+1. Requirements
+
+
+   1. Functional requirements
+The player should be able to:
+1. Start the game
+2. Create players
+
+3. Do a turn. During this, the player can:
+a) Throw dices 
+b) Receive question
+c) Answer question
+d) Move player, if the question has been answered correctly.
+e) End turn
+
+
+   1. End Game
+
+
+   1. Non-functional requirements 
+Possible NA (not applicable).        
+   1. Usability
+
+
+   1. Reliability
+
+
+   1. Performance
+
+
+   1. Supportability
+
+
+   1. Implementation
+
+
+   1. Packaging and installation
+
+
+   1. Legal
+
+
+   1. Application models
+
+
+   1. Use case model
+UML and a list of UC names (text for all in appendix)
+   1. Use cases priority
+   1. Create Players 
+   2. Start Game 
+   3. Throw Dices
+   4. Receive Question 
+   5. Answer Question
+   6. Move Player (automatically)
+   7. End Game 
+   8. New Game. Start a new game during a game 
+   1. Domain model
+UML, possible some text.
+   1. User interface
+Text to motivate a picture.
+   1. References
+APPENDIX
+
+GUI
+
+Domain model
+
+
+Use case text
