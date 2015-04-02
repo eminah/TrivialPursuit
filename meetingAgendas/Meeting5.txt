@@ -1,0 +1,62 @@
+﻿Meeting Agenda
+
+ Date: 2/4-15
+
+ Facilitator: Emina Hromic
+
+ Participants: Emina Hromic, Ina Tran, Heléne Jarl & Rasti Tengman
+
+1. Objectives (5 min). Resolve any issues preventing the team to continue.
+
+We have not encountered any great issues so far, but the following things need to be resolved in order for us to get started with the project: 
+
+
+1. What needs to be done the following two weeks.
+   1. Must get Eclipse/IntelliJ and git commands to work as it should.
+   2. Must clone the repository to everybodies computers
+
+
+
+
+
+2. Reports (15 min) from previous meeting
+
+        - Learn Git-commands
+- Decide which classes we need (Domain model).
+- Start writing on the RAD
+
+
+
+
+3. Discussion items (35 min) 
+
+
+* We discussed about the rad and what should be written in it.
+
+
+* We talked about some of the git commands and git overall. This because some of the commands are still somewhat unclear.
+
+* We also discussed how the get the project on everybodies computers. This because we have had some troubles with pulling. So we tried to make it work by deleting everything, cloning the project again and then pushing. And gladly, this worked.
+
+   * We also talked about what we have to do the following two weeks. First and foremost we need to start working on the Domain Model, because by getting this done we will know which classes we will need. Therefore a lot of focus will be put on this. 
+
+During this, we will of course add more to the RAD along the way. We would also like to get started with some implementation very soon, such as implementing some of the use cases.
+
+
+
+
+4. Outcomes and assignments (5 min) 
+
+      * Write a domain model in order to get started with the classes and implementation.
+      * Continuing writing on the RAD
+      * Start programming some of the classes. Implementing some of the use cases.
+
+
+*All of the above points has to be done by each member as soon as possible.
+
+
+5. Wrap up
+Write down unresolved issues for next meeting.
+
+        - Still some troubles with eclipse and git. 
+- The command git gui does not work on Mac. Try to use brew in order to download the command.
