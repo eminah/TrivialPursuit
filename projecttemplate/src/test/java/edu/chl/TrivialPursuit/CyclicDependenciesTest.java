@@ -1,4 +1,4 @@
-package edu.chl.TrivialPursuit;
+package edu.chl.trivialPursuit;
 
 import java.io.IOException;
 import jdepend.framework.JDepend;

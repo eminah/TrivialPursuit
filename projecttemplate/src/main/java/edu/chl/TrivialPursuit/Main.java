@@ -1,4 +1,4 @@
-package edu.chl.TrivialPursuit;
+package edu.chl.trivialPursuit;
 
 import edu.chl.trivialPursuit.controller.ProjectController;
 import edu.chl.trivialPursuit.model.Project;

@@ -1,4 +1,4 @@
-package edu.chl.TrivialPursuit.model;
+package edu.chl.trivialPursuit.model;
 
 import edu.chl.trivialPursuit.model.Project;
 
