@@ -1,0 +1,58 @@
+﻿Meeting Agenda
+
+ Date: 1/4-15
+
+ Facilitator: Ina Tran & Heléne Jarl
+
+ Participants: Ina Tran & Heléne Jarl  (Emina Hromic and Rasti Tengman - sick)
+
+1. Objectives (5 min). Resolve any issues preventing the team to continue.
+
+We have not encountered any great issues so far, but the following things need to be resolved in order for us to get started with the project: 
+
+
+1. What needs to be done this week.
+   1. Must get Eclipse/IntelliJ and maven to work as it should
+   2. Write more of the RAD
+   3. Start coding some of the classes
+
+
+
+2. Reports (15 min) from previous meeting
+
+        - Learn Git-commands
+- Decide which classes we need (UML).
+- Start writing on the RAD
+
+
+
+
+3. Discussion items (35 min) 
+
+
+* We discussed how to work with maven, and that we think that it looks a bit strange (hence, we have done something wrong).
+* What we have to do until next meeting (tomorrow). 
+
+
+
+
+4. Outcomes and assignments (5 min) 
+
+* Read more about how java FX works and possibly try to create an easy application 
+just to get the feeling of it.
+* Continue writing on the RAD
+* Look more at Maven
+* Read even more about Java FX
+* Start programming some of the classes
+
+
+*All of the above points has to be done by each member as soon as possible.
+
+
+5. Wrap up
+
+ - Write down unresolved issues for next meeting.
+-Still troubles with eclipse and maven. 
+-Emina don’t get anything when she clones the project. 
+
+ *Next meeting: Thursday 2 April
