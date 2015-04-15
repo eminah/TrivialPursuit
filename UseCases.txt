@@ -16,7 +16,7 @@ IF TIME
 * High Score 
         - Points dependent on time or levels 
 * Receive "Cake Slice"
-        - Receive an actual piece for answering right 
+        - Receive an actual piece for giving a correct answer
 * Receive Question From Right Category
 * Add Sounds
 * Continue After Right Answer
