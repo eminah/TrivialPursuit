@@ -1,0 +1,62 @@
+﻿Meeting Agenda
+
+ Date: 20/4-15
+
+ Facilitator: Ina Tran
+
+ Participants: Emina Hromic, Ina Tran, Heléne Jarl & Rasti Tengman
+
+1. Objectives (5 min). Resolve any issues preventing the team to continue.
+
+The following things need to be resolved before Thursday: 
+
+
+1. Start with our first use case (Start Game): 
+   1. Create a game board with three buttons. 
+      1. New Game
+      2. Rules
+      3. Settings
+   1. Click New Game.
+   2. Pop-up to create players. 
+   3. Decide how many players. 
+   4. Create players. 
+   5. Start game. 
+   6. The game starts...
+
+
+
+2. Reports (15 min) from previous meeting
+
+* Created a domain model 
+* Made a preliminary GUI 
+
+
+
+
+3. Discussion items (35 min) 
+
+
+* How the game board should look like. 
+* Which rules the game should have. 
+* How to win the game. 
+* New name for the game. 
+* How to start with our first use case (Start Game)
+* How to divide the work assignments
+
+
+
+
+4. Outcomes and assignments (5 min) 
+
+* Emina & Ina: Create a game board with three buttons. 
+* Heléne & Rasti: Pop-up to create players. 
+* Continue writing on the RAD. 
+
+
+
+
+5. Wrap up
+Write down unresolved issues for next meeting.
+
+
+* Figure out how to use .gitignore and rebase.
