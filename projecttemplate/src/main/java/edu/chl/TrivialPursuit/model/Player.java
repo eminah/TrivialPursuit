@@ -9,16 +9,16 @@ package edu.chl.TrivialPursuit.model;
 public class Player {
 
     private int position;
-    private String name;
+    private String nam;
 
-    public Player(String name, int position){
+    public Player(String nam, int position){
 
         this.position = position;
-        this.name = name;
+        this.nam = nam;
     }
 
-    public Player(String name){
-        this.name = name;
+    public Player(String nam){
+        this.nam = nam;
         this.position = 0;
 
     }
