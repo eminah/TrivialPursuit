@@ -17,4 +17,8 @@ public class TrivialPursuit extends Application {
     public void start(Stage primaryStage) throws Exception {
 
     }
+
+    public void createPlayer(Stage primaryStage) throws Exception {
+
+    }
 }

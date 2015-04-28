@@ -17,6 +17,45 @@ import javafx.stage.Stage;
  */
 public class StartView extends Application implements EventHandler<ActionEvent> {
 
+    Stage startWindow;
+
+    public static void main(String[] args) {
+
+        launch(args);
+    }
+
+
+    public void start(Stage primaryStage) throws Exception {
+
+        startWindow = primaryStage;
+        startWindow.setTitle("Trivial Pursuit");
+
+        Button startGame = new Button();
+        startGame.setText("Start new game");
+        startGame.setOnAction(this);
+
+        Button settings = new Button();
+        settings.setText("Settings");
+        settings.setOnAction(this);
+
+        Button rules = new Button();
+        rules.setText("Rules");
+        rules.setOnAction(this);
+
+
+        GridPane grid = new GridPane();
+        grid.setPadding(new Insets(10, 10, 10, 10));
+
+        Scene scene = new Scene(grid, 600, 300);
+
+
+        window.setScene(scene);
+        window.sizeToScene();
+        window.show();
+
+
+    }
+
     Stage window;
     Label playerLabel;
     ComboBox<Integer> howMany;
@@ -36,8 +75,7 @@ public class StartView extends Application implements EventHandler<ActionEvent> 
     int numberOfPlayers = 2;
 
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void createPlayer(Stage primaryStage) throws Exception {
         window = primaryStage;
         window.setTitle("Number of Players");
 
