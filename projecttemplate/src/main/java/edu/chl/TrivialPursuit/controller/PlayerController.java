@@ -1,4 +1,4 @@
-package edu.chl.trivialPursuit.controller;
+package edu.chl.trivialpursuit.controller;
 
 /**
  * Created by inatran on 15-04-28.

@@ -1,4 +1,4 @@
-package edu.chl.TrivialPursuit.model;
+package edu.chl.trivialpursuit.model;
 
 public class Project {
 	public static final String PROJECT_WINDOW_TEXT = "ProjectTemplate";

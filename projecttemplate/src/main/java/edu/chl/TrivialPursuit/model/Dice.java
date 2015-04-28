@@ -1,4 +1,4 @@
-package edu.chl.TrivialPursuit.model;
+package edu.chl.trivialpursuit.model;
 
 import java.util.Random;
 

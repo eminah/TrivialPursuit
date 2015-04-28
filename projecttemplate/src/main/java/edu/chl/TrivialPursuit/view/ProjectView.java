@@ -1,5 +1,4 @@
-package edu.chl.TrivialPursuit.view;
-
+package edu.chl.trivialpursuit;
 import edu.chl.TrivialPursuit.model.Project;
 
 import java.awt.GridLayout;
