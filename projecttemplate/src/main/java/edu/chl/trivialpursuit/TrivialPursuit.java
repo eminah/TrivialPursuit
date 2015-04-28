@@ -1,4 +1,4 @@
-package edu.chl.trivialpursuit.view;
+package edu.chl.trivialpursuit;
 
 
 
