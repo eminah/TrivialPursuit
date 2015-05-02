@@ -35,7 +35,7 @@ public class StartView extends Application implements EventHandler<ActionEvent> 
     Button doneButton;
     int numberOfPlayers = 2;
 
-
+    public static void main(String[] args){launch(args);}
     @Override
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
