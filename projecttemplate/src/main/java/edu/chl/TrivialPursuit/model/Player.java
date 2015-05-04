@@ -1,26 +1,20 @@
 package edu.chl.trivialpursuit.model;
 
+
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * Created by Rasti on 2015-04-23.
  */
-public class Player {
+ public  class Player {
 
-    private int position;
-    private String nam;
+    @Getter @Setter private String name;
+    @Getter @Setter private Spot spot;
 
-    public Player(String nam, int position){
+    // Någon metod som håller koll på vilka världsdelar spelaren har
 
-        this.position = position;
-        this.nam = nam;
-    }
+    // Någon metod som sätter vilka världsdelar spelaren har
 
-    public Player(String nam){
-        this.nam = nam;
-        this.position = 0;
 
-    }
-
-    public int getPlayerPosition(){
-        return position;
-    }
 }
