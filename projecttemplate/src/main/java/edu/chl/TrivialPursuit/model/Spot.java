@@ -1,12 +1,5 @@
 package edu.chl.trivialpursuit.model;
 
-
-
-
-
-
-
-
 import lombok.Getter;
 
 /**
@@ -25,7 +18,7 @@ public class Spot {
      * @param continent The continent of the spot
      * @param category The Category of the spot
      */
-    public Spot(int index, Continent continent,Category category){
+    public Spot(int index, Continent continent, Category category){
         this.index = index;
         this.continent = continent;
         this.category = category;
