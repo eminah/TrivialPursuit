@@ -1,20 +1,18 @@
 package edu.chl.trivialpursuit.model;
 
-<<<<<<< HEAD
 
 
-/**
- * Created by Rasti on 2015-04-28.
- */
-public class Spot {
 
 
-=======
+
+
+
 import lombok.Getter;
 
 /**
  * Created by Rasti on 2015-05-02.
  */
+
 public class Spot {
 
     @Getter private int index;
@@ -32,5 +30,5 @@ public class Spot {
         this.continent = continent;
         this.category = category;
     }
->>>>>>> startGui
+
 }
