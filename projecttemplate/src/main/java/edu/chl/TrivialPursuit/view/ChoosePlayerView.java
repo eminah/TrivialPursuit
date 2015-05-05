@@ -15,7 +15,7 @@ import javafx.scene.control.*;
 /*
   Application entry class (if using standard java and Swing)
 */
-public class PlayerView {
+public class ChoosePlayerView {
 
 
 }
