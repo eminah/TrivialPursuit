@@ -6,10 +6,10 @@ import javafx.scene.layout.FlowPane;
 /**
  * Created by Rasti on 2015-05-04.
  */
-public class MainView extends FlowPane {
+public class GameBoardView extends FlowPane {
 
     Label lable = new Label("TJJJOOOO!");
-    public MainView(){
+    public GameBoardView(){
         this.getChildren().addAll(lable);
     }
 }

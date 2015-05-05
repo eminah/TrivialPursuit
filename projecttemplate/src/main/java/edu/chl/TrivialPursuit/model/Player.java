@@ -1,8 +1,7 @@
 package edu.chl.trivialpursuit.model;
 
 
-import lombok.Getter;
-import lombok.Setter;
+
 
 /**
  * Created by Rasti on 2015-04-23.
