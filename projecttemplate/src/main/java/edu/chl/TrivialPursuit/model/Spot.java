@@ -8,13 +8,13 @@ import lombok.Getter;
 
 public class Spot {
 
-    @Getter private int index;
-    @Getter private Continent continent;
-    @Getter private Category category;
+    private int index;
+    private Continent continent;
+    private Category category;
 
     /**
      *
-     * @param index Helps sorting the spots in a list
+     * @param index The spot number
      * @param continent The continent of the spot
      * @param category The Category of the spot
      */

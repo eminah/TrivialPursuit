@@ -2,11 +2,11 @@ package edu.chl.trivialpursuit.view;
 import edu.chl.trivialpursuit.controller.StartController;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
+
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+
 import javafx.scene.layout.*;
-import lombok.Getter;
+
 public class StartView extends BorderPane {
     Label titleLable;
     public Button start;
