@@ -48,7 +48,8 @@
 }
 
 .title-lable{
-    -fx-font-size: 30pt;
-    -fx-text-fill: gold;
+    -fx-font-size: 35pt;
+    -fx-text-fill: black;
     -fx-font-style: italic;
+    -fx-font: bold;
 }

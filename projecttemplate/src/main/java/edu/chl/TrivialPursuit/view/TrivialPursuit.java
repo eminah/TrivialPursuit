@@ -1,11 +1,9 @@
 package edu.chl.trivialpursuit.view;
 
-import edu.chl.trivialpursuit.model.Start;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 
@@ -26,8 +24,9 @@ public class TrivialPursuit extends Application implements EventHandler<ActionEv
     @Override
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
-        Scene startScene = new Scene(new StartView(),500,500);
-        mainScene = new Scene(new MainView(),500,500);
+        Scene startScene = new Scene(new StartView(),1000,500);
+
+        mainScene = new Scene(new GameBoardView(),500,500);
         //Min layout
         startScene.getStylesheets().add("test.css");
         window.setScene(startScene);
