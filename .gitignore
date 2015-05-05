@@ -16,3 +16,5 @@ hs_err_pid*
 **/.idea
 **/.metadata
 **/.DS_Store
+*.idea/misc.xml
+*out/
