@@ -11,8 +11,8 @@ import lombok.Setter;
 
     public  class Player {
 
-    @Getter @Setter private String name;
-    @Getter @Setter private Spot spot;
+    private String name;
+    private Spot spot;
 
     // Någon metod som håller koll på vilka världsdelar spelaren har
 
