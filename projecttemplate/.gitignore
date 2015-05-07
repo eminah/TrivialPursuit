@@ -1,5 +1,8 @@
 /target/
 
+#OSX
+.DS_Store
+
 
 **/.metadata
 **/.idea
