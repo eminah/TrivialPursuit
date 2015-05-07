@@ -2,9 +2,11 @@
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 
 #OSX
+
 *.DS_Store
 **.DS_Store
 .DS_Store
+
 
 *.iml
 
