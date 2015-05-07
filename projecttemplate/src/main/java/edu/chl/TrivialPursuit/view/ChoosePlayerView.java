@@ -49,11 +49,18 @@ public class ChoosePlayerView extends BorderPane {
 
         //Create players
         Text player1 = new Text("Player 1");
+        TextField name1 = new TextField();
         Text player2 = new Text("Player 2");
+        TextField name2 = new TextField();
         Text player3 = new Text("Player 3");
+        TextField name3 = new TextField();
         Text player4 = new Text("Player 4");
+        TextField name4 = new TextField();
         Text player5 = new Text("Player 5");
+        TextField name5 = new TextField();
         Text player6 = new Text("Player 6");
+        TextField name6 = new TextField();
+
 
     }
 
