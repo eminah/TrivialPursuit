@@ -1,1 +1,9 @@
 /target/
+
+
+**/.metadata
+**/.idea
+**/.DS_Store
+*.metadata
+*.idea
+
