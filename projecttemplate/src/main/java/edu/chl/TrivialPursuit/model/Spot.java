@@ -8,37 +8,47 @@ package edu.chl.trivialpursuit.model;
 
 public class Spot {
 
-    private int index;
+
     private Continent continent;
     private Category category;
+    private Spot right;
+    private Spot left;
 
     /**
      *
-     * @param index The spot number
+
      * @param continent The continent of the spot
      * @param category The Category of the spot
      */
-    public Spot(int index, Continent continent, Category category){
-        this.index = index;
+    public Spot(Continent continent, Category category){
+
         this.continent = continent;
         this.category = category;
-    }
 
-    public int getIndex() {
-        return index;
-    }
-
-    public void setIndex(int index) {
-        this.index = index;
     }
 
     public Continent getContinent() {
         return continent;
     }
 
-
     public Category getCategory() {
         return category;
+    }
+
+    public Spot getRight() {
+        return right;
+    }
+
+    public void setRight(Spot right) {
+        this.right = right;
+    }
+
+    public Spot getLeft() {
+        return left;
+    }
+
+    public void setLeft(Spot left) {
+        this.left = left;
     }
 
 

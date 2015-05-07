@@ -26,17 +26,19 @@ public class TrivialPursuit extends Application implements EventHandler<ActionEv
         window = primaryStage;
         Scene startScene = new Scene(new StartView(),1000,500);
 
-        mainScene = new Scene(new GameBoardView(),500,500);
+
         //Min layout
         startScene.getStylesheets().add("test.css");
         window.setScene(startScene);
+
         window.setTitle("Trivial Pursuit - The World");
         window.show();
     }
 
     @Override
     public void handle(ActionEvent event) {
-
+        mainScene = new Scene(new GameBoardView(),500,500);
+        window.setScene(mainScene);
 
     }
 }

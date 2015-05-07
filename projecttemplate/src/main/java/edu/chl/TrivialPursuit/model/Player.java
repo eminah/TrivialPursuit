@@ -34,6 +34,20 @@ package edu.chl.trivialpursuit.model;
         this.spot = spot;
     }
 
+    public void goLeft(int steps){
+        for(int i = 0; i<steps; i++){
+            spot = spot.getLeft();
+        }
+
+
+    }
+
+    public void goRight(int steps){
+        for(int i = 0; i<steps; i++){
+            spot = spot.getRight();
+        }
+    }
+
     // Någon metod som håller koll på vilka världsdelar spelaren har
 
     // Någon metod som sätter vilka världsdelar spelaren har
