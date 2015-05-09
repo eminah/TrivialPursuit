@@ -77,7 +77,7 @@ package edu.chl.trivialpursuit.model;
         för att kolla vilka världsdelar som varje spelare har samlat. Se även till skapa en
         medod som heter något i stil med containsAll där du kollar om spelaren lyckats att
         samla alla kontinenter. Har spelare det så sätter du hasTicket till true.
-        
+
      */
 
 }

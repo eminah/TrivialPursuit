@@ -52,4 +52,11 @@ public class StartView extends BorderPane {
 
     }
 
+    public Button getStart() {
+        return start;
+    }
+
+    public Button getClose() {
+        return close;
+    }
 }

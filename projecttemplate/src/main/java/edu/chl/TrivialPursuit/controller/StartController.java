@@ -4,7 +4,6 @@ package edu.chl.trivialpursuit.controller;
 import edu.chl.trivialpursuit.model.Start;
 import edu.chl.trivialpursuit.view.GameBoardView;
 import edu.chl.trivialpursuit.view.StartView;
-import edu.chl.trivialpursuit.view.TrivialPursuit;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -31,12 +30,18 @@ public class StartController {
 
         @Override
         public void handle(ActionEvent event) {
-            test = new Scene(new GameBoardView(),1000,500);
-            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            //Ina här skall du lägga ditt ChoosePlayer GUI byt ut test mot ditt.
-            stage.setScene(test);
-            stage.show();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
+            if(event.getSource() == theView.getStart()) {
+                //Ina här skall du lägga ditt ChoosePlayer GUI byt ut test mot ditt.
+                test = new Scene(new GameBoardView(), 1000, 500);
+                stage.setScene(test);
+                stage.show();
+            }
+
+            if (event.getSource() == theView.getClose()){
+                stage.close();
+            }
         }
     }
 }
