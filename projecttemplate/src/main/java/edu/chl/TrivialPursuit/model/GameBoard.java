@@ -72,7 +72,7 @@ public class GameBoard {
             }
         }
 
-        //Set the left spot to the current spot
+        //Set the left spgitot to the current spot
 
         for(int j = 0; j < spots.size(); j++){
             if (j==0){
