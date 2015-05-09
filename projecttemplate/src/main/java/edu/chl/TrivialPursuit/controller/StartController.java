@@ -33,7 +33,8 @@ public class StartController {
         public void handle(ActionEvent event) {
             test = new Scene(new GameBoardView(),1000,500);
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(main);
+            //Ina här skall du lägga ditt ChoosePlayer GUI byt ut test mot ditt.
+            stage.setScene(test);
             stage.show();
 
         }
