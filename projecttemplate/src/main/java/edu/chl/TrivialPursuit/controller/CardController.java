@@ -6,4 +6,5 @@ package edu.chl.trivialpursuit.controller;
 public class CardController {
 
 
+
 }
