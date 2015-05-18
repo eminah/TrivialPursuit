@@ -3,10 +3,6 @@ package edu.chl.trivialpursuit.view;
 import edu.chl.trivialpursuit.controller.StartController;
 import edu.chl.trivialpursuit.model.Start;
 import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -20,9 +16,6 @@ public class TrivialPursuit extends Application {
 
     public static void main(String[] args) {
         launch();
-
-
-
     }
 
     @Override
@@ -39,7 +32,4 @@ public class TrivialPursuit extends Application {
         window.setTitle("Trivial Pursuit - Around The World");
         window.show();
     }
-
-
-
 }

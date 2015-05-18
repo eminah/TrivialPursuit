@@ -2,7 +2,7 @@ package edu.chl.trivialpursuit.controller;
 
 
 import edu.chl.trivialpursuit.model.Start;
-import edu.chl.trivialpursuit.view.GameBoardView;
+import edu.chl.trivialpursuit.view.ChoosePlayerView;
 import edu.chl.trivialpursuit.view.StartView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,9 +15,9 @@ import javafx.stage.Stage;
  */
 public class StartController {
 
-        private Start theModel;
-        private StartView theView;
-        private Scene test;
+    private Start theModel;
+    private StartView theView;
+    private Scene cpv;
 
     public StartController(Start theModel, StartView theView){
         this.theModel = theModel;
@@ -33,9 +33,8 @@ public class StartController {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
             if(event.getSource() == theView.getStart()) {
-                //Ina här skall du lägga ditt ChoosePlayer GUI byt ut test mot ditt.
-                test = new Scene(new GameBoardView(), 1000, 500);
-                stage.setScene(test);
+                cpv = new Scene(new ChoosePlayerView(), 400, 500);
+                stage.setScene(cpv);
                 stage.show();
             }
 

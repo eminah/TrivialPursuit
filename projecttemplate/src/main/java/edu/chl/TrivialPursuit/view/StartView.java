@@ -1,13 +1,12 @@
 package edu.chl.trivialpursuit.view;
 
-import edu.chl.trivialpursuit.controller.StartController;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.*;
-
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 
 
 public class StartView extends BorderPane {
@@ -18,6 +17,9 @@ public class StartView extends BorderPane {
 
 
     public StartView() {
+
+        //Create Stage and Scene
+
 
         //Create Stackpane components
         StackPane titlePane = new StackPane();
@@ -35,7 +37,6 @@ public class StartView extends BorderPane {
         close = new Button("Exit");
 
 
-
         //Add to VBox
         buttonPanel.getChildren().addAll(start, close);
 
@@ -43,7 +44,6 @@ public class StartView extends BorderPane {
         this.setTop(titlePane);
         this.setCenter(buttonPanel);
     }
-
 
 
     public void addButtonListener(EventHandler handler){

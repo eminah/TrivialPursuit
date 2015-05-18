@@ -9,6 +9,7 @@ import javafx.scene.layout.FlowPane;
 public class GameBoardView extends FlowPane {
 
     Label lable = new Label("TJJJOOOO!");
+
     public GameBoardView(){
         this.getChildren().addAll(lable);
     }
