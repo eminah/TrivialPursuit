@@ -1,0 +1,71 @@
+Meeting Agenda
+
+ Date: 11/5-15
+
+ Facilitator: Heléne Jarl
+
+ Participants: Ina Tran, Heléne Jarl, Rasti Tengman. (Emina is att the hospital doing an MRI)
+
+
+1. Objectives (5 min). Resolve any issues preventing the team to continue.
+
+The following things need to be resolved before next thursday:
+* We need to start writing on the SDD.
+* The RAD should be continued on.
+* Start implementing the use cases.
+* Get everything to work with the project.
+
+
+
+
+2. Reports (15 min) from previous meeting
+
+
+* Heléne have problems with how to start
+* Ina have also problem with how to start
+* Rasti had problem with changing the content in primaryStage and implementing MVC but this is now solved! 
+
+
+3. Discussion items (35 min) 
+
+
+* We need to start writing on the SDD. Possibly divide it so that each individual can write on a specific task. Also, the RAD should be continued on.
+
+* The implementation of the use-cases that were divided at previous meeting should be started on asap.
+* Who should do what? 
+Rules - Emina
+Settings - Emina
+diceView - Rasti 
+RitaSpelBrädet
+europa
+PlayerView - Ina
+chooseTravel - Heléne
+
+ 
+
+
+4. Outcomes and assignments (5 min) 
+
+The following assignments should be done, or at least started, by each individual until next thursday. 
+
+
+Emina:
+
+
+Ina: Is working with the scene
+
+
+Heléne: Start with SDD and the continents
+
+
+Rasti: Create the game board
+
+Plus the assignments given above. 
+
+
+5. Wrap up
+
+
+   * We still have to look a bit on git-commands!
+   * The structure of the project and classes needs to be overviewed. Also how some classes should be implemented.
+   * Everyone need to start programming now!

@@ -1,5 +1,9 @@
 package edu.chl.trivialpursuit.model;
 
+import java.util.EnumSet;
+import java.util.HashSet;
+import java.util.Iterator;
+
 /**
  * Created by Rasti on 2015-04-23.
  */
@@ -10,9 +14,12 @@ package edu.chl.trivialpursuit.model;
     private String name;
     private Spot spot;
     private boolean hasTicket = false; //Will be set to true when player has collected all Contintents
+    private HashSet<Continent> collectedContinents;
 
 
     /**
+     *
+     * The constructor creats a new HashSet, where the collected continents will be added.
      *
      * @param name the name of the player
      * @param spot the spot that the player chooses to start
@@ -20,6 +27,8 @@ package edu.chl.trivialpursuit.model;
     public Player(String name, Spot spot) {
         this.name = name;
         this.spot = spot;
+
+        collectedContinents = new HashSet<>();
     }
 
     public String getName() {
@@ -38,6 +47,11 @@ package edu.chl.trivialpursuit.model;
         this.spot = spot;
     }
 
+    public HashSet<Continent> getCollectedContinents() {
+        return collectedContinents;
+    }
+
+
     /**
      *
      * @param steps the amount of steps the player goes to the left Direction
@@ -47,8 +61,6 @@ package edu.chl.trivialpursuit.model;
         for(int i = 0; i<steps; i++){
             spot = spot.getLeft();
         }
-
-
     }
 
     /**
@@ -70,16 +82,9 @@ package edu.chl.trivialpursuit.model;
         this.hasTicket = hasTicket;
     }
 
-    /*
-        Helene varje spelare skall ha en EnumSet där vi ska lägga in kontinenter.
-        Varje gång en spelare gissar rätt på en fråga skall vi lägga till den
-        kontinenten där spelaren befinner sig in i seten. Sen får vi använda metoden contains
-        för att kolla vilka världsdelar som varje spelare har samlat. Se även till skapa en
-        medod som heter något i stil med containsAll där du kollar om spelaren lyckats att
-        samla alla kontinenter. Har spelare det så sätter du hasTicket till true.
-
-     */
-
+    public boolean checkIfAllContinents(){
+       return collectedContinents.size() == 5;
+    }
 }
 
 
