@@ -1,7 +1,7 @@
-package edu.chl.TrivialPursuit.model;
+package edu.chl.trivialpursuit.model;
 
 /**
- * Created by helenejarl on 2015-05-11.
+ * Created by helenejarl on 2015-05-19.
  */
 public class ChooseTravel {
 }
