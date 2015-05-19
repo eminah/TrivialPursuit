@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="600.0" prefWidth="600.0" stylesheets="@test.css" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="edu.chl.trivialpursuit.controller.ChooseTravelController">
+   <top>
+      <StackPane prefHeight="112.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Where do you want to start your travel?" textFill="#1306d0">
+               <font>
+                  <Font name="Apple Chancery" size="28.0" />
+               </font>
+               <effect>
+                  <InnerShadow color="#111010" radius="4.875" width="0.5" />
+               </effect>
+            </Label>
+         </children>
+      </StackPane>
+   </top>
+   <center>
+      <VBox prefHeight="412.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Player 1">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+               <font>
+                  <Font name="Apple Chancery" size="14.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="32.0" prefWidth="600.0" spacing="14.0">
+               <children>
+                  <RadioButton mnemonicParsing="false" text="Asia">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Oceania">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Africa">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="South America">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="North America">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="14.0" right="5.0" top="4.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <Label layoutX="10.0" layoutY="10.0" text="Player 2">
+               <font>
+                  <Font name="Apple Chancery" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <HBox layoutX="10.0" layoutY="37.0" prefHeight="32.0" prefWidth="600.0" spacing="14.0">
+               <children>
+                  <RadioButton mnemonicParsing="false" text="Asia">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Oceania">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Africa">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="South America">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="North America">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="14.0" right="5.0" top="4.0" />
+               </padding>
+            </HBox>
+            <Label layoutX="10.0" layoutY="74.0" text="Player 3">
+               <font>
+                  <Font name="Apple Chancery" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <HBox layoutX="10.0" layoutY="101.0" prefHeight="32.0" prefWidth="600.0" spacing="14.0">
+               <children>
+                  <RadioButton mnemonicParsing="false" text="Asia">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Oceania">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Africa">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="South America">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="North America">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="14.0" right="5.0" top="4.0" />
+               </padding>
+            </HBox>
+            <Label layoutX="10.0" layoutY="138.0" text="Player 4">
+               <font>
+                  <Font name="Apple Chancery" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <HBox layoutX="10.0" layoutY="165.0" prefHeight="32.0" prefWidth="600.0" spacing="14.0">
+               <children>
+                  <RadioButton mnemonicParsing="false" text="Asia">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Oceania">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Africa">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="South America">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="North America">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="14.0" right="5.0" top="4.0" />
+               </padding>
+            </HBox>
+            <Label layoutX="10.0" layoutY="202.0" text="Player 5">
+               <font>
+                  <Font name="Apple Chancery" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <HBox layoutX="10.0" layoutY="229.0" prefHeight="32.0" prefWidth="600.0" spacing="14.0">
+               <children>
+                  <RadioButton mnemonicParsing="false" text="Asia">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Oceania">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Africa">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="South America">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="North America">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="14.0" right="5.0" top="4.0" />
+               </padding>
+            </HBox>
+            <Label layoutX="10.0" layoutY="266.0" text="Player 6">
+               <font>
+                  <Font name="Apple Chancery" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </Label>
+            <HBox layoutX="10.0" layoutY="293.0" prefHeight="32.0" prefWidth="600.0" spacing="14.0">
+               <children>
+                  <RadioButton mnemonicParsing="false" text="Asia">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Oceania">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Africa">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="South America">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="North America">
+                     <font>
+                        <Font name="Apple Chancery" size="15.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="14.0" right="5.0" top="4.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox prefHeight="92.0" prefWidth="600.0" spacing="180.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" text="Back" onAction="#onBackPressed"/>
+
+            <Button mnemonicParsing="false" text="Done" />
+         </children>
+         <padding>
+            <Insets left="70.0" right="70.0" top="21.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>
