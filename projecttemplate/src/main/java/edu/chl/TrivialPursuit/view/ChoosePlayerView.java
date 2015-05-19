@@ -104,7 +104,7 @@ public class ChoosePlayerView extends BorderPane {
         done.setOnAction(event -> {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            gbv = new Scene(new GameBoardView(), 1000, 500);
+            
             stage.setScene(gbv);
             stage.show();
         });

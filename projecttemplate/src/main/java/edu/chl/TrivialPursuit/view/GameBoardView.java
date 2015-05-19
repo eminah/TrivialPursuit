@@ -1,16 +1,13 @@
 package edu.chl.trivialpursuit.view;
 
-import javafx.scene.control.Label;
-import javafx.scene.layout.FlowPane;
+        import javafx.fxml.FXMLLoader;
+        import javafx.scene.Parent;
+        import javafx.scene.Scene;
 
 /**
  * Created by Rasti on 2015-05-04.
  */
-public class GameBoardView extends FlowPane {
+public class GameBoardView{
 
-    Label lable = new Label("TJJJOOOO!");
 
-    public GameBoardView(){
-        this.getChildren().addAll(lable);
-    }
 }

@@ -47,9 +47,3 @@
     -fx-pref-width: 100pt;
 }
 
-.title-lable{
-    -fx-font-size: 35pt;
-    -fx-text-fill: black;
-    -fx-font-style: italic;
-    -fx-font: bold;
-}

@@ -1,46 +1,40 @@
 package edu.chl.trivialpursuit.controller;
 
 
-import edu.chl.trivialpursuit.model.Start;
-import edu.chl.trivialpursuit.view.ChoosePlayerView;
-import edu.chl.trivialpursuit.view.StartView;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Node;
-import javafx.scene.Scene;
+import javafx.fxml.FXML;
 import javafx.stage.Stage;
 
-/**
- * Created by inatran on 15-04-28.
- */
+import javax.inject.Inject;
+import java.io.IOException;
+
 public class StartController {
 
-    private Start theModel;
-    private StartView theView;
-    private Scene cpv;
+private @Inject Stage stage;
 
-    public StartController(Start theModel, StartView theView){
-        this.theModel = theModel;
-        this.theView = theView;
+    @FXML
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
 
-        theView.addButtonListener(new ButtonListener());
+    private void onStartPressed(ActionEvent e) throws IOException {
+
+        //Här skall choose player view skapas.
+
+
+        e.consume();
+
+
+
     }
 
-    class ButtonListener implements EventHandler<ActionEvent>{
+    @FXML
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
 
-        @Override
-        public void handle(ActionEvent event) {
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    private void onEndPressed(ActionEvent e){
 
-            if(event.getSource() == theView.getStart()) {
-                cpv = new Scene(new ChoosePlayerView(), 400, 500);
-                stage.setScene(cpv);
-                stage.show();
-            }
 
-            if (event.getSource() == theView.getClose()){
-                stage.close();
-            }
-        }
+
     }
+
 }

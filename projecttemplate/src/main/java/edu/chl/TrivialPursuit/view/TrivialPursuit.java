@@ -1,5 +1,6 @@
 package edu.chl.trivialpursuit.view;
 
+import com.airhacks.afterburner.injection.Injector;
 import edu.chl.trivialpursuit.controller.StartController;
 import edu.chl.trivialpursuit.model.Start;
 import javafx.application.Application;
@@ -12,7 +13,7 @@ import javafx.stage.Stage;
 */
 public class TrivialPursuit extends Application {
 
-    Stage window;
+
 
     public static void main(String[] args) {
         launch();
@@ -20,16 +21,10 @@ public class TrivialPursuit extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Start startModel = new Start();
-        StartView startView = new StartView();
-        StartController startController = new StartController(startModel,startView);
 
-        window = primaryStage;
-        Scene startScene = new Scene(startView,1000,500);
-        //Min layout
-        startScene.getStylesheets().add("test.css");
-        window.setScene(startScene);
-        window.setTitle("Trivial Pursuit - Around The World");
-        window.show();
+        Injector.registerExistingAndInject(primaryStage);
+
+        final StartView startView = StartView.create();
+        startView.show();
     }
 }
