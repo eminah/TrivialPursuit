@@ -20,7 +20,7 @@ private @Inject Stage stage;
     @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
 
     private void onStartPressed(ActionEvent e) throws IOException {
-
+        //Hejsan
         final ChoosePlayerView chooseView = ChoosePlayerView.create();
         chooseView.show();
 
