@@ -9,9 +9,10 @@ public class Dice {
     private int firstDiceValue;
     private int secondDiceValue;
     private Random random;
+
     public Dice(){
-        firstDiceValue = -1;
-        secondDiceValue = -1;
+        firstDiceValue = 0;
+        secondDiceValue = 0;
         random = new Random();
     }
 

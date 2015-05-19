@@ -299,7 +299,7 @@
          <children>
             <Button mnemonicParsing="false" text="Back" onAction="#onBackPressed"/>
 
-            <Button mnemonicParsing="false" text="Done" />
+            <Button mnemonicParsing="false" text="Done" onAction="#onDonePressed"/>
          </children>
          <padding>
             <Insets left="70.0" right="70.0" top="21.0" />

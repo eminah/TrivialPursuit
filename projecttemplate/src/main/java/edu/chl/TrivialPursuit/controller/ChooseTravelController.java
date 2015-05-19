@@ -1,6 +1,8 @@
 package edu.chl.trivialpursuit.controller;
 
+import edu.chl.trivialpursuit.model.Dice;
 import edu.chl.trivialpursuit.view.ChoosePlayerView;
+import edu.chl.trivialpursuit.view.DiceView;
 import edu.chl.trivialpursuit.view.GameBoardView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,14 +25,15 @@ public class ChooseTravelController {
         e.consume();
 
     }
-    /*
+
     @FXML
     private void onDonePressed(ActionEvent e) throws IOException{
 
-        final GameBoardView gameView = GameBoardView.create();
+        final DiceView diceView = DiceView.create();
+        diceView.show();
 
         e.consume();
 
     }
-    */
+
 }
