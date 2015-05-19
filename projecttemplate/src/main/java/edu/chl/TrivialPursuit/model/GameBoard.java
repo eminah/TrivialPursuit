@@ -10,9 +10,10 @@ import java.util.ArrayList;
  */
 public class GameBoard {
 
-    private ArrayList<Spot> spots = new ArrayList<>();
+    private ArrayList<Spot> spotsOuter = new ArrayList<>();
+    private ArrayList<Spot> spotsInner = new ArrayList<>();
 
-    private final ImmutablePair[] SPOT_DEFINITIONS = {
+    private final ImmutablePair[] SPOT_DEFINITIONS_OUTER = {
            new ImmutablePair<Continent, Category>(Continent.ASIA, Category.AIRPLANE),
            new ImmutablePair<Continent, Category>(Continent.ASIA, Category.GEOGRAPHY),
            new ImmutablePair<Continent, Category>(Continent.ASIA, Category.CULTURE),
@@ -52,38 +53,79 @@ public class GameBoard {
 
 
     };
+
+    private final ImmutablePair[] SPOT_DEFINITIONS_INNER = {
+            new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.AIRPLANE),
+            new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.GEOGRAPHY),
+            new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.CULTURE),
+            new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.HISTORY),
+            new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.SPORT),
+            new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.TECHNIC),
+            new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.ENTERTAINMENT),
+    };
     
     public GameBoard(){
-        addSpotsToList();
-        setBoardingSpots();
+        addSpotsToListOuter();
+        setBoardingSpotsOuter();
+        addSpotsToListInner();
     }
 
-    public void addSpotsToList(){
-        for(int i = 0; i < SPOT_DEFINITIONS.length; i++){
+    public void addSpotsToListOuter(){
+        for(int i = 0; i < SPOT_DEFINITIONS_OUTER.length; i++){
 
-            spots.add(new Spot((Continent)SPOT_DEFINITIONS[i].getLeft(),(Category)SPOT_DEFINITIONS[i].getRight()));
+            spotsOuter.add(new Spot((Continent)SPOT_DEFINITIONS_OUTER[i].getLeft(),
+                    (Category)SPOT_DEFINITIONS_OUTER[i].getRight()));
+
+        }
+    }
+    public void addSpotsToListInner(){
+        for(int i = 0; i < SPOT_DEFINITIONS_INNER.length; i++){
+
+            spotsInner.add(new Spot((Continent)SPOT_DEFINITIONS_INNER[i].getLeft(),
+                    (Category)SPOT_DEFINITIONS_INNER[i].getRight()));
 
         }
     }
     //Sets the left and right spot to every spot
-    public void setBoardingSpots(){
+    public void setBoardingSpotsOuter(){
 
        //Set the right spot to the current spot
-        for(int i = 0; i < spots.size(); i++){
-            if(i != spots.size()) {
-                spots.get(i).setRight(spots.get(i + 1));
+        for(int i = 0; i <= spotsOuter.size(); i++){
+            if(i != spotsOuter.size()) {
+                spotsOuter.get(i).setRight(spotsOuter.get(i + 1));
             }else{
-                spots.get(i).setRight(spots.get(0));
+                spotsOuter.get(i).setRight(spotsOuter.get(0));
             }
         }
 
         //Set the left spot to the current spot
 
-        for(int j = 0; j < spots.size(); j++){
+        for(int j = 0; j <= spotsOuter.size(); j++){
             if (j==0){
-                spots.get(j).setLeft(spots.get(spots.size()));
+                spotsOuter.get(j).setLeft(spotsOuter.get(spotsOuter.size()-1));
             }else{
-                spots.get(j).setLeft(spots.get(j-1));
+                spotsOuter.get(j).setLeft(spotsOuter.get(j-1));
+            }
+        }
+    }
+
+    public void setBoardingSpotsInner(){
+        //Set the right spot to the current spot
+        for(int i = 0; i <= spotsInner.size(); i++){
+            if(i != spotsInner.size()) {
+                spotsInner.get(i).setRight(spotsInner.get(i + 1));
+            }else{
+                spotsInner.get(i).setRight(spotsInner.get(0));
+            }
+        }
+
+        //Set the left spot to the current spot
+
+        for(int j = 0; j <= spotsInner.size(); j++){
+            if (j==0){
+                spotsInner.get(j).setLeft(spotsInner.get(spotsInner.size()-1));
+            }else{
+                spotsInner.get(j).setLeft(spotsInner.get(j-1));
             }
         }
     }
