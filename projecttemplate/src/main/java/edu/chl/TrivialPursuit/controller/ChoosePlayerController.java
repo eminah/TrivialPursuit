@@ -13,6 +13,6 @@ public class ChoosePlayerController {
 
     @FXML
     private void onButtonPressed() {
-        System.out.println("Hej");
+        System.out.println(numPlayers.getValue());
     }
 }

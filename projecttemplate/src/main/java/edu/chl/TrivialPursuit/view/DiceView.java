@@ -1,10 +1,26 @@
 package edu.chl.trivialpursuit.view;
 
-import edu.chl.trivialpursuit.model.Player;
+
 
 /**
- * Created by inatran on 15-04-28.
+ * Created by Rasti on 2015-05-18.
  */
-public class DiceView {
+import com.airhacks.afterburner.injection.Injector;
 
+import java.io.IOException;
+
+
+public final class DiceView extends BaseView {
+
+
+
+    private DiceView() {
+        super();
+    }
+
+    public static DiceView create() throws IOException {
+        final DiceView diceView = new DiceView();
+        Injector.injectMembers(StartView.class,diceView);
+        return diceView;
+    }
 }
