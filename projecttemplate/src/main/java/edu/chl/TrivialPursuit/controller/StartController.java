@@ -1,6 +1,8 @@
 package edu.chl.trivialpursuit.controller;
 
 
+import edu.chl.trivialpursuit.model.ChoosePlayer;
+import edu.chl.trivialpursuit.view.ChoosePlayerView;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 import javafx.event.ActionEvent;
@@ -19,7 +21,8 @@ private @Inject Stage stage;
 
     private void onStartPressed(ActionEvent e) throws IOException {
 
-        //Här skall choose player view skapas.
+        final ChoosePlayerView chooseView = ChoosePlayerView.create();
+        chooseView.show();
 
 
         e.consume();
@@ -33,7 +36,7 @@ private @Inject Stage stage;
 
     private void onEndPressed(ActionEvent e){
 
-
+        stage.close();
 
     }
 
