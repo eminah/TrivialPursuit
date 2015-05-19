@@ -48,7 +48,7 @@ public class DiceController {
 
         }
 
-        // Change image on dice one depending on value
+        // Change image on dice one depending on value....
 
         switch(dice.getSecondDiceValue()){
 
