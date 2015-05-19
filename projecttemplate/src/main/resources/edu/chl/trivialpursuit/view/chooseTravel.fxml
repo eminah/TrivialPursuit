@@ -39,27 +39,31 @@
             </Label>
             <HBox prefHeight="32.0" prefWidth="600.0" spacing="14.0">
                <children>
-                  <RadioButton mnemonicParsing="false" text="Asia">
+                  <RadioButton mnemonicParsing="false" text="Asia" fx:id="p1As">
+                      <toggleGroup>
+                          <ToggleGroup fx:id="radioGroupP1"/>
+                      </toggleGroup>
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Oceania">
+                  <RadioButton mnemonicParsing="false" text="Oceania" fx:id="p1Oc" toggleGroup="$radioGroupP1">
+
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Africa">
+                  <RadioButton mnemonicParsing="false" text="Africa" fx:id="p1Af" toggleGroup="$radioGroupP1">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="South America">
+                  <RadioButton mnemonicParsing="false" text="South America" fx:id="p1So" toggleGroup="$radioGroupP1">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="North America">
+                  <RadioButton mnemonicParsing="false" text="North America" fx:id="p1No" toggleGroup="$radioGroupP1">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
@@ -82,27 +86,30 @@
             </Label>
             <HBox layoutX="10.0" layoutY="37.0" prefHeight="32.0" prefWidth="600.0" spacing="14.0">
                <children>
-                  <RadioButton mnemonicParsing="false" text="Asia">
+                  <RadioButton mnemonicParsing="false" text="Asia" fx:id="p2As" >
+                      <toggleGroup>
+                          <ToggleGroup fx:id="radioGroupP2"/>
+                      </toggleGroup>
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Oceania">
+                  <RadioButton mnemonicParsing="false" text="Oceania" fx:id="p2Oc" toggleGroup="$radioGroupP2">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Africa">
+                  <RadioButton mnemonicParsing="false" text="Africa" fx:id="p2Af" toggleGroup="$radioGroupP2">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="South America">
+                  <RadioButton mnemonicParsing="false" text="South America" fx:id="p2So" toggleGroup="$radioGroupP2">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="North America">
+                  <RadioButton mnemonicParsing="false" text="North America" fx:id="p2No" toggleGroup="$radioGroupP2">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
@@ -122,27 +129,30 @@
             </Label>
             <HBox layoutX="10.0" layoutY="101.0" prefHeight="32.0" prefWidth="600.0" spacing="14.0">
                <children>
-                  <RadioButton mnemonicParsing="false" text="Asia">
+                  <RadioButton mnemonicParsing="false" text="Asia" fx:id="p3As">
+                      <toggleGroup>
+                          <ToggleGroup fx:id="radioGroupP3"/>
+                      </toggleGroup>
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Oceania">
+                  <RadioButton mnemonicParsing="false" text="Oceania" fx:id="p3Oc" toggleGroup="$radioGroupP3" >
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Africa">
+                  <RadioButton mnemonicParsing="false" text="Africa" fx:id="p3Af" toggleGroup="$radioGroupP3">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="South America">
+                  <RadioButton mnemonicParsing="false" text="South America" fx:id="p3So" toggleGroup="$radioGroupP3">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="North America">
+                  <RadioButton mnemonicParsing="false" text="North America" fx:id="p3No" toggleGroup="$radioGroupP3">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
@@ -162,27 +172,30 @@
             </Label>
             <HBox layoutX="10.0" layoutY="165.0" prefHeight="32.0" prefWidth="600.0" spacing="14.0">
                <children>
-                  <RadioButton mnemonicParsing="false" text="Asia">
+                  <RadioButton mnemonicParsing="false" text="Asia" fx:id="p4As">
+                      <toggleGroup>
+                          <ToggleGroup fx:id="radioGroupP4"/>
+                      </toggleGroup>
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Oceania">
+                  <RadioButton mnemonicParsing="false" text="Oceania" fx:id="p4Oc" toggleGroup="$radioGroupP4">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Africa">
+                  <RadioButton mnemonicParsing="false" text="Africa" fx:id="p4Af" toggleGroup="$radioGroupP4">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="South America">
+                  <RadioButton mnemonicParsing="false" text="South America" fx:id="p4So" toggleGroup="$radioGroupP4">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="North America">
+                  <RadioButton mnemonicParsing="false" text="North America" fx:id="p4No" toggleGroup="$radioGroupP4">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
@@ -202,27 +215,30 @@
             </Label>
             <HBox layoutX="10.0" layoutY="229.0" prefHeight="32.0" prefWidth="600.0" spacing="14.0">
                <children>
-                  <RadioButton mnemonicParsing="false" text="Asia">
+                  <RadioButton mnemonicParsing="false" text="Asia" fx:id="p5As">
+                      <toggleGroup>
+                          <ToggleGroup fx:id="radioGroupP5"/>
+                      </toggleGroup>
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Oceania">
+                  <RadioButton mnemonicParsing="false" text="Oceania" fx:id="p5Oc" toggleGroup="$radioGroupP5">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Africa">
+                  <RadioButton mnemonicParsing="false" text="Africa" fx:id="p5Af" toggleGroup="$radioGroupP5">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="South America">
+                  <RadioButton mnemonicParsing="false" text="South America" fx:id="p5So" toggleGroup="$radioGroupP5">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="North America">
+                  <RadioButton mnemonicParsing="false" text="North America" fx:id="p5No" toggleGroup="$radioGroupP5">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
@@ -242,27 +258,30 @@
             </Label>
             <HBox layoutX="10.0" layoutY="293.0" prefHeight="32.0" prefWidth="600.0" spacing="14.0">
                <children>
-                  <RadioButton mnemonicParsing="false" text="Asia">
+                  <RadioButton mnemonicParsing="false" text="Asia" fx:id="p6As">
+                      <toggleGroup>
+                          <ToggleGroup fx:id="radioGroupP6"/>
+                      </toggleGroup>
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Oceania">
+                  <RadioButton mnemonicParsing="false" text="Oceania" fx:id="p6Oc" toggleGroup="$radioGroupP6">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Africa">
+                  <RadioButton mnemonicParsing="false" text="Africa" fx:id="p6Af" toggleGroup="$radioGroupP6">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="South America">
+                  <RadioButton mnemonicParsing="false" text="South America" fx:id="p6So" toggleGroup="$radioGroupP6">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="North America">
+                  <RadioButton mnemonicParsing="false" text="North America" fx:id="p6No" toggleGroup="$radioGroupP6">
                      <font>
                         <Font name="Apple Chancery" size="15.0" />
                      </font>
