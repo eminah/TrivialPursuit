@@ -1,0 +1,52 @@
+﻿Meeting Agenda
+
+ Date: 20/5-15
+
+ Facilitator: Ina Tran
+
+ Participants: Ina Tran, Heléne Jarl, Rasti Tengman.         
+
+
+1. Objectives (5 min). Resolve any issues preventing the team to continue.
+
+The following things need to be resolved before Thursday:
+* Finish the game board. 
+* Create right number of players.
+* Make the question cards. 
+* Connect every spot to a cordinate. 
+* The RAD should be continued on.
+* The SDD should be continued on.
+
+
+
+
+2. Reports (15 min) from previous meeting
+
+
+* Started to work with SceneBuilder. 
+* Started with the game board. 
+* Finished a couple of views (Start, ChoosePlayer, ChooseTravel, Dice). 
+
+
+
+
+3. Discussion items (35 min) 
+
+
+* We need to continue writing on both the SDD and RAD. Possibly divide it so that each individual can write on a specific task. 
+* If someone doesn't have anything to do, look what still has do be done, ask if someone is doing that already, if not. DO IT.
+ 
+
+
+4. Outcomes and assignments (5 min) 
+
+The following assignments should be done, or at least started, by each individual until next Thursday. 
+* Get something done, so we will finish on time.
+
+
+
+5. Wrap up
+
+
+   * Have to continue on the RAD and SDD
+   * Everyone need to start programming now!

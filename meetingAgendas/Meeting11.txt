@@ -1,0 +1,53 @@
+﻿Meeting Agenda
+
+ Date: 19/5-15
+
+ Facilitator: Heléne Jarl
+
+ Participants: Ina Tran, Heléne Jarl (Skype), Rasti Tengman.         
+
+
+1. Objectives (5 min). Resolve any issues preventing the team to continue.
+
+The following things need to be resolved before next thursday:
+* We need to start writing on the SDD.
+* The RAD should be continued on.
+* Start implementing the use cases.
+* Get everything to work with the project.
+* Everybode should learn javaFx and scenebuilder.
+
+
+
+
+2. Reports (15 min) from previous meeting
+
+
+* Rasti hade poblems with javaFX and scenebuilder, have solved this by healp from Adam. 
+* Heléne and Emina have to deside how the cardView shpuld look
+* Ina is working on ChoosePlayerView etc. 
+3. Discussion items (35 min) 
+
+
+* We need to start writing on the SDD. Possibly divide it so that each individual can write on a specific task. Also, the RAD should be continued on.
+
+
+* If someone don’t have anything to do, look what still has do be done, ask if someonge is doing that already, if not. DO IT.
+ 
+
+
+4. Outcomes and assignments (5 min) 
+
+The following assignments should be done, or at least started, by each individual until next thursday. 
+
+
+Get something done, so we will finish on time.
+
+Plus the assignments given above. 
+
+
+5. Wrap up
+
+
+* We still have to look a bit on git-commands!
+* Have to start on the SDD
+* Everyone need to start programming now!
