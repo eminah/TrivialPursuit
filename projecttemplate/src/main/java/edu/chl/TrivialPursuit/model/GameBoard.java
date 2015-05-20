@@ -91,8 +91,8 @@ public class GameBoard {
     public void setBoardingSpotsOuter(){
 
        //Set the right spot to the current spot
-        for(int i = 0; i < spotsOuter.size(); i++){
-            if(i != spotsOuter.size()) {
+        for(int i = 0; i <= spotsOuter.size()-1; i++){
+            if(i != spotsOuter.size()-1) {
                 spotsOuter.get(i).setRight(spotsOuter.get(i + 1));
             }else{
                 spotsOuter.get(i).setRight(spotsOuter.get(0));
@@ -101,7 +101,7 @@ public class GameBoard {
 
         //Set the left spot to the current spot
 
-        for(int j = 0; j < spotsOuter.size(); j++){
+        for(int j = 0; j <= spotsOuter.size()-1; j++){
             if (j==0){
                 spotsOuter.get(j).setLeft(spotsOuter.get(spotsOuter.size()-1));
             }else{
@@ -112,8 +112,8 @@ public class GameBoard {
 
     public void setBoardingSpotsInner(){
         //Set the right spot to the current spot
-        for(int i = 0; i < spotsInner.size(); i++){
-            if(i != spotsInner.size()) {
+        for(int i = 0; i <= spotsInner.size()-1; i++){
+            if(i != spotsInner.size()-1) {
                 spotsInner.get(i).setRight(spotsInner.get(i + 1));
             }else{
                 spotsInner.get(i).setRight(spotsInner.get(0));
@@ -122,7 +122,7 @@ public class GameBoard {
 
         //Set the left spot to the current spot
 
-        for(int j = 0; j < spotsInner.size(); j++){
+        for(int j = 0; j <= spotsInner.size()-1; j++){
             if (j==0){
                 spotsInner.get(j).setLeft(spotsInner.get(spotsInner.size()-1));
             }else{

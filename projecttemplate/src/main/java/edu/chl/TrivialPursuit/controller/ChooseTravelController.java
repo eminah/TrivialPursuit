@@ -22,7 +22,8 @@ public class ChooseTravelController {
 
     @Inject
     ChoosePlayer choose;
-
+    @Inject
+    GameBoard game;
 
 
 
@@ -71,7 +72,7 @@ public class ChooseTravelController {
      * Creates players based on what the player has choosen for name and Continent and adds it to a Arraylist
      */
 
-    /*private void createPlayers() {
+    private void createPlayers() {
         for (int i = 0; i < choose.getNumberOfPlayers(); i++) {
             //String choosen = (String) theBox.get(i).getValue();
 
@@ -92,6 +93,6 @@ public class ChooseTravelController {
                     break;
             }
         }
-    }*/
+    }
 
 }
