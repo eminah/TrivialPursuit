@@ -24,7 +24,7 @@ public class TrivialPursuit extends Application {
 
         Injector.registerExistingAndInject(primaryStage);
 
-
+        // HELLO
         final StartView startView = StartView.create();
         startView.show();
 
