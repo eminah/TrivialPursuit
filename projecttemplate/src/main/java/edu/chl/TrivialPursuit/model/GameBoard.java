@@ -63,7 +63,15 @@ public class GameBoard {
             new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.TECHNIC),
             new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.ENTERTAINMENT),
     };
-    
+
+    public ArrayList<Spot> getSpotsOuter() {
+        return spotsOuter;
+    }
+
+    public ArrayList<Spot> getSpotsInner() {
+        return spotsInner;
+    }
+
     public GameBoard(){
         addSpotsToListOuter();
         setBoardingSpotsOuter();

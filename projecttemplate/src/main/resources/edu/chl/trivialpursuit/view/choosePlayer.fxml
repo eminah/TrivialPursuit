@@ -7,10 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.collections.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" stylesheets="@test.css"
-            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="edu.chl.trivialpursuit.controller.ChoosePlayerController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.trivialpursuit.controller.ChoosePlayerController">
    <top>
       <HBox prefHeight="70.0" prefWidth="600.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
@@ -19,7 +16,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <ComboBox id="numPlayers" fx:id="numPlayers" prefWidth="150.0" promptText="2">
+            <ComboBox id="numPlayers" fx:id="numPlayers" prefWidth="150.0" promptText="Choose here" onAction="#comboAction">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:value="2" />
@@ -43,17 +40,17 @@
       <VBox prefHeight="390.0" prefWidth="600.0" spacing="5.0" BorderPane.alignment="CENTER">
          <children>
             <Label text="Player 1 " />
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="1 - 10 Characters (name)" />
+            <TextField fx:id="tOne" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="1 - 10 Characters (name)" />
             <Label text="Player 2" />
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="1 - 10 Characters (name)" />
+            <TextField fx:id="tTwo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="1 - 10 Characters (name)" />
             <Label text="Player 3" />
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="1 - 10 Characters (name)" />
+            <TextField fx:id="tThree" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="1 - 10 Characters (name)" />
             <Label text="Player 4" />
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="1 - 10 Characters (name)" />
+            <TextField fx:id="tFour" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="1 - 10 Characters (name)" />
             <Label text="Player 5" />
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="1 - 10 Characters (name)" />
+            <TextField fx:id="tFive" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="1 - 10 Characters (name)" />
             <Label text="Player 6" />
-            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="1 - 10 Characters (name)" />
+            <TextField fx:id="tSix" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="1 - 10 Characters (name)" />
             <HBox prefHeight="153.0" prefWidth="600.0">
                <children>
                   <Region prefHeight="48.0" prefWidth="395.0" />
