@@ -19,7 +19,7 @@
             <ComboBox id="numPlayers" fx:id="numPlayers" prefWidth="150.0" promptText="2" onAction="#comboAction">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
-                        <String fx:value="2" />c
+                        <String fx:value="2" />
                         <String fx:value="3" />
                         <String fx:value="4" />
                         <String fx:value="5" />
