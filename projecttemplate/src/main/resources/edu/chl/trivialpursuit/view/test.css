@@ -47,3 +47,14 @@
     -fx-pref-width: 100pt;
 }
 
+.combo-box{
+    -fx-background-color: linear-gradient(gold,green);
+    -fx-font-size: 15px;
+    -fx-border-color:black;
+    -fx-border-radius: 2px;
+}
+
+
+
+
+

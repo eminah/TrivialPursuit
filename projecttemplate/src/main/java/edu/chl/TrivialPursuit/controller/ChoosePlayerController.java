@@ -71,5 +71,14 @@ public class ChoosePlayerController {
         for(int j = 5; j >= numberChoosed; j--){
             playerTexts.get(j).setDisable(true);
         }
+
+        addNamesToList();
+    }
+
+    private void addNamesToList(){
+        for(int i = 0; i < numberChoosed; i++) {
+            choose.getPlayerNames().add(playerTexts.get(i).getText());
+
+        }
     }
 }

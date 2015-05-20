@@ -6,77 +6,64 @@
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="600.0" prefWidth="600.0" stylesheets="@test.css" xmlns="http://javafx.com/javafx/8"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="edu.chl.trivialpursuit.controller.ChooseTravelController">
+<BorderPane stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.trivialpursuit.controller.ChooseTravelController">
    <top>
-      <StackPane prefHeight="112.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <StackPane BorderPane.alignment="CENTER">
          <children>
-            <Label text="Where do you want to start your travel?" textFill="#1306d0">
+            <Label prefHeight="56.0" prefWidth="491.0" text="Where do you want the travel to begin?" textFill="#1306d0">
                <font>
                   <Font name="Apple Chancery" size="28.0" />
                </font>
                <effect>
-                  <InnerShadow color="#111010" radius="4.875" width="0.5" />
+                  <InnerShadow color="#0eae02" height="10.75" radius="2.3125" width="0.5" />
                </effect>
             </Label>
          </children>
       </StackPane>
    </top>
    <center>
-      <VBox prefHeight="412.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <VBox spacing="7.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Player 1">
+            <Label stylesheets="@label.css" text="Player 1">
                <padding>
                   <Insets left="5.0" />
                </padding>
                <font>
-                  <Font name="Apple Chancery" size="14.0" />
+                  <Font size="14.0" />
                </font>
             </Label>
-            <HBox prefHeight="32.0" prefWidth="600.0" spacing="14.0">
-               <children>
-                  <RadioButton mnemonicParsing="false" text="Asia" fx:id="p1As">
-                      <toggleGroup>
-                          <ToggleGroup fx:id="radioGroupP1"/>
-                      </toggleGroup>
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Oceania" fx:id="p1Oc" toggleGroup="$radioGroupP1">
+             <ComboBox promptText="Choose Continent" fx:id="c1">
+                 <items>
+                     <FXCollections fx:factory="observableArrayList">
+                         <String fx:value="Asia" />
+                         <String fx:value="Africa" />
+                         <String fx:value="South America" />
+                         <String fx:value="North America" />
+                     </FXCollections>
+                 </items>
+             </ComboBox>
 
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Africa" fx:id="p1Af" toggleGroup="$radioGroupP1">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="South America" fx:id="p1So" toggleGroup="$radioGroupP1">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="North America" fx:id="p1No" toggleGroup="$radioGroupP1">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-               </children>
+             <Label layoutX="10.0" layoutY="10.0" stylesheets="@label.css" text="Player 2">
+               <font>
+                  <Font size="14.0" />
+               </font>
                <padding>
-                  <Insets bottom="5.0" left="14.0" right="5.0" top="4.0" />
+                  <Insets left="5.0" />
                </padding>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
-            <Label layoutX="10.0" layoutY="10.0" text="Player 2">
+            </Label>
+            <ComboBox promptText="Choose Continent" fx:id="c2">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Asia" />
+                        <String fx:value="Africa" />
+                        <String fx:value="South America" />
+                        <String fx:value="North America" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Label layoutX="10.0" layoutY="74.0" stylesheets="@label.css" text="Player 3">
                <font>
                   <Font name="Apple Chancery" size="14.0" />
                </font>
@@ -84,42 +71,17 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <HBox layoutX="10.0" layoutY="37.0" prefHeight="32.0" prefWidth="600.0" spacing="14.0">
-               <children>
-                  <RadioButton mnemonicParsing="false" text="Asia" fx:id="p2As" >
-                      <toggleGroup>
-                          <ToggleGroup fx:id="radioGroupP2"/>
-                      </toggleGroup>
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Oceania" fx:id="p2Oc" toggleGroup="$radioGroupP2">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Africa" fx:id="p2Af" toggleGroup="$radioGroupP2">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="South America" fx:id="p2So" toggleGroup="$radioGroupP2">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="North America" fx:id="p2No" toggleGroup="$radioGroupP2">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-               </children>
-               <padding>
-                  <Insets bottom="5.0" left="14.0" right="5.0" top="4.0" />
-               </padding>
-            </HBox>
-            <Label layoutX="10.0" layoutY="74.0" text="Player 3">
+             <ComboBox promptText="Choose Continent" fx:id="c3">
+                 <items>
+                     <FXCollections fx:factory="observableArrayList">
+                         <String fx:value="Asia" />
+                         <String fx:value="Africa" />
+                         <String fx:value="South America" />
+                         <String fx:value="North America" />
+                     </FXCollections>
+                 </items>
+             </ComboBox>
+            <Label layoutX="10.0" layoutY="138.0" stylesheets="@label.css" text="Player 4">
                <font>
                   <Font name="Apple Chancery" size="14.0" />
                </font>
@@ -127,42 +89,17 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <HBox layoutX="10.0" layoutY="101.0" prefHeight="32.0" prefWidth="600.0" spacing="14.0">
-               <children>
-                  <RadioButton mnemonicParsing="false" text="Asia" fx:id="p3As">
-                      <toggleGroup>
-                          <ToggleGroup fx:id="radioGroupP3"/>
-                      </toggleGroup>
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Oceania" fx:id="p3Oc" toggleGroup="$radioGroupP3" >
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Africa" fx:id="p3Af" toggleGroup="$radioGroupP3">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="South America" fx:id="p3So" toggleGroup="$radioGroupP3">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="North America" fx:id="p3No" toggleGroup="$radioGroupP3">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-               </children>
-               <padding>
-                  <Insets bottom="5.0" left="14.0" right="5.0" top="4.0" />
-               </padding>
-            </HBox>
-            <Label layoutX="10.0" layoutY="138.0" text="Player 4">
+             <ComboBox promptText="Choose Continent" fx:id="c4">
+                 <items>
+                     <FXCollections fx:factory="observableArrayList">
+                         <String fx:value="Asia" />
+                         <String fx:value="Africa" />
+                         <String fx:value="South America" />
+                         <String fx:value="North America" />
+                     </FXCollections>
+                 </items>
+             </ComboBox>
+            <Label layoutX="10.0" layoutY="202.0" stylesheets="@label.css" text="Player 5">
                <font>
                   <Font name="Apple Chancery" size="14.0" />
                </font>
@@ -170,42 +107,17 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <HBox layoutX="10.0" layoutY="165.0" prefHeight="32.0" prefWidth="600.0" spacing="14.0">
-               <children>
-                  <RadioButton mnemonicParsing="false" text="Asia" fx:id="p4As">
-                      <toggleGroup>
-                          <ToggleGroup fx:id="radioGroupP4"/>
-                      </toggleGroup>
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Oceania" fx:id="p4Oc" toggleGroup="$radioGroupP4">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Africa" fx:id="p4Af" toggleGroup="$radioGroupP4">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="South America" fx:id="p4So" toggleGroup="$radioGroupP4">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="North America" fx:id="p4No" toggleGroup="$radioGroupP4">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-               </children>
-               <padding>
-                  <Insets bottom="5.0" left="14.0" right="5.0" top="4.0" />
-               </padding>
-            </HBox>
-            <Label layoutX="10.0" layoutY="202.0" text="Player 5">
+             <ComboBox promptText="Choose Continent" fx:id="c5">
+                 <items>
+                     <FXCollections fx:factory="observableArrayList">
+                         <String fx:value="Asia" />
+                         <String fx:value="Africa" />
+                         <String fx:value="South America" />
+                         <String fx:value="North America" />
+                     </FXCollections>
+                 </items>
+             </ComboBox>
+            <Label layoutX="10.0" layoutY="266.0" stylesheets="@label.css" text="Player 6">
                <font>
                   <Font name="Apple Chancery" size="14.0" />
                </font>
@@ -213,97 +125,35 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <HBox layoutX="10.0" layoutY="229.0" prefHeight="32.0" prefWidth="600.0" spacing="14.0">
-               <children>
-                  <RadioButton mnemonicParsing="false" text="Asia" fx:id="p5As">
-                      <toggleGroup>
-                          <ToggleGroup fx:id="radioGroupP5"/>
-                      </toggleGroup>
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Oceania" fx:id="p5Oc" toggleGroup="$radioGroupP5">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Africa" fx:id="p5Af" toggleGroup="$radioGroupP5">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="South America" fx:id="p5So" toggleGroup="$radioGroupP5">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="North America" fx:id="p5No" toggleGroup="$radioGroupP5">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-               </children>
-               <padding>
-                  <Insets bottom="5.0" left="14.0" right="5.0" top="4.0" />
-               </padding>
-            </HBox>
-            <Label layoutX="10.0" layoutY="266.0" text="Player 6">
-               <font>
-                  <Font name="Apple Chancery" size="14.0" />
-               </font>
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </Label>
-            <HBox layoutX="10.0" layoutY="293.0" prefHeight="32.0" prefWidth="600.0" spacing="14.0">
-               <children>
-                  <RadioButton mnemonicParsing="false" text="Asia" fx:id="p6As">
-                      <toggleGroup>
-                          <ToggleGroup fx:id="radioGroupP6"/>
-                      </toggleGroup>
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Oceania" fx:id="p6Oc" toggleGroup="$radioGroupP6">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Africa" fx:id="p6Af" toggleGroup="$radioGroupP6">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="South America" fx:id="p6So" toggleGroup="$radioGroupP6">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="North America" fx:id="p6No" toggleGroup="$radioGroupP6">
-                     <font>
-                        <Font name="Apple Chancery" size="15.0" />
-                     </font>
-                  </RadioButton>
-               </children>
-               <padding>
-                  <Insets bottom="5.0" left="14.0" right="5.0" top="4.0" />
-               </padding>
-            </HBox>
+             <ComboBox promptText="Choose Continent" fx:id="c6">
+                 <items>
+                     <FXCollections fx:factory="observableArrayList">
+                         <String fx:value="Asia" />
+                         <String fx:value="Africa" />
+                         <String fx:value="South America" />
+                         <String fx:value="North America" />
+                     </FXCollections>
+                 </items>
+             </ComboBox>
          </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
       </VBox>
    </center>
    <bottom>
-      <HBox prefHeight="92.0" prefWidth="600.0" spacing="180.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="80.0" prefWidth="605.0" spacing="180.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Back" onAction="#onBackPressed"/>
+            <Button mnemonicParsing="false" onAction="#onBackPressed" text="Back" />
 
-            <Button mnemonicParsing="false" text="Done" onAction="#onDonePressed"/>
+            <Button mnemonicParsing="false" onAction="#onDonePressed" text="Done" />
          </children>
          <padding>
             <Insets left="70.0" right="70.0" top="21.0" />
          </padding>
+         <opaqueInsets>
+            <Insets top="10.0" />
+         </opaqueInsets>
       </HBox>
    </bottom>
 </BorderPane>
