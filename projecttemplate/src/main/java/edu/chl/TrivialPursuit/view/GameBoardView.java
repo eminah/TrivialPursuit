@@ -1,5 +1,6 @@
 package edu.chl.trivialpursuit.view;
 import com.airhacks.afterburner.injection.Injector;
+
 import java.io.IOException;
 
 /**
@@ -7,11 +8,13 @@ import java.io.IOException;
  */
 public class GameBoardView extends BaseView{
 
-    private GameBoardView() {super();}
+    private GameBoardView() {
+        super();
+    }
 
     public static GameBoardView create() throws  IOException{
         final GameBoardView gameBoardView = new GameBoardView();
-        Injector.injectMembers(StartView.class, gameBoardView);
+        Injector.injectMembers(StartView.class,gameBoardView);
         return gameBoardView;
     }
 

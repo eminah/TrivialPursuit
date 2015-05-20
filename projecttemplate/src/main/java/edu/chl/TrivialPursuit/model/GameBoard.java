@@ -1,7 +1,6 @@
 package edu.chl.trivialpursuit.model;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
-import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.ArrayList;
 
@@ -20,28 +19,28 @@ public class GameBoard {
            new ImmutablePair<Continent, Category>(Continent.ASIA, Category.HISTORY),
            new ImmutablePair<Continent, Category>(Continent.ASIA, Category.SPORT),
            new ImmutablePair<Continent, Category>(Continent.ASIA, Category.TECHNIC),
-           new ImmutablePair<Continent, Category>(Continent.ASIA, Category.ENTERTAINMENT),
+           new ImmutablePair<Continent, Category>(Continent.ASIA, Category.MEDIA),
             new ImmutablePair<Continent, Category>(Continent.AFRICA, Category.AIRPLANE),
             new ImmutablePair<Continent, Category>(Continent.AFRICA, Category.GEOGRAPHY),
            new ImmutablePair<Continent, Category>(Continent.AFRICA, Category.CULTURE),
            new ImmutablePair<Continent, Category>(Continent.AFRICA, Category.HISTORY),
            new ImmutablePair<Continent, Category>(Continent.AFRICA, Category.SPORT),
            new ImmutablePair<Continent, Category>(Continent.AFRICA, Category.TECHNIC),
-           new ImmutablePair<Continent, Category>(Continent.AFRICA, Category.ENTERTAINMENT),
+           new ImmutablePair<Continent, Category>(Continent.AFRICA, Category.MEDIA),
            new ImmutablePair<Continent, Category>(Continent.SOUTH_AMERICA, Category.AIRPLANE),
            new ImmutablePair<Continent, Category>(Continent.SOUTH_AMERICA, Category.CULTURE),
             new ImmutablePair<Continent, Category>(Continent.SOUTH_AMERICA, Category.GEOGRAPHY),
            new ImmutablePair<Continent, Category>(Continent.SOUTH_AMERICA, Category.HISTORY),
            new ImmutablePair<Continent, Category>(Continent.SOUTH_AMERICA, Category.SPORT),
            new ImmutablePair<Continent, Category>(Continent.SOUTH_AMERICA, Category.TECHNIC),
-           new ImmutablePair<Continent, Category>(Continent.SOUTH_AMERICA, Category.ENTERTAINMENT),
+           new ImmutablePair<Continent, Category>(Continent.SOUTH_AMERICA, Category.MEDIA),
            new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.AIRPLANE),
             new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.GEOGRAPHY),
            new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.CULTURE),
            new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.HISTORY),
            new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.SPORT),
            new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.TECHNIC),
-           new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.ENTERTAINMENT),
+           new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.MEDIA),
 
 
 
@@ -54,7 +53,7 @@ public class GameBoard {
             new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.HISTORY),
             new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.SPORT),
             new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.TECHNIC),
-            new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.ENTERTAINMENT),
+            new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.MEDIA),
     };
 
     public ArrayList<Spot> getSpotsOuter() {

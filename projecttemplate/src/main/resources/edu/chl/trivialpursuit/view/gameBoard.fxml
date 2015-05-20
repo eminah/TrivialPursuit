@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.canvas.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="675.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="675.0" stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.trivialpursuit.controller.GameBoardController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
@@ -44,7 +45,7 @@
                         <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                      </padding>
                      <VBox.margin>
-                        <Insets bottom="10.0" />
+                        <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
                   <Label layoutX="20.0" layoutY="15.0" text="Player 2">
@@ -120,7 +121,7 @@
                         <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                      </padding>
                      <VBox.margin>
-                        <Insets bottom="10.0" />
+                        <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
                   <Label layoutX="10.0" layoutY="153.0" text="Player 4">
@@ -158,7 +159,7 @@
                         <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                      </padding>
                      <VBox.margin>
-                        <Insets bottom="10.0" />
+                        <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
                   <Label layoutX="10.0" layoutY="222.0" text="Player 5">
@@ -190,10 +191,10 @@
                         </ImageView>
                      </children>
                      <padding>
-                        <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                      <VBox.margin>
-                        <Insets bottom="10.0" />
+                        <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
                   <Label layoutX="10.0" layoutY="291.0" text="Player 6">
@@ -228,16 +229,17 @@
                         <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                      </padding>
                   </HBox>
+                  <Button mnemonicParsing="false" onAction="#drawBoard" prefHeight="38.0" prefWidth="198.0" stylesheets="@test.css" text="GameBoard">
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                  </Button>
                </children>
             </VBox>
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="446.0" prefWidth="456.0">
          <children>
-            <ImageView fitHeight="472.0" fitWidth="468.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@board.png" />
-               </image>
-            </ImageView>
+            <Canvas fx:id="boardCanvas" height="487.0" width="468.0" />
          </children></AnchorPane>
   </items>
 </SplitPane>
