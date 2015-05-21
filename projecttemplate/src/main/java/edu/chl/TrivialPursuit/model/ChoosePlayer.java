@@ -24,7 +24,7 @@ public class ChoosePlayer {
     public int getNumberOfPlayers() {
         return numberOfPlayers;
     }
-
+        // hej
     public void setNumberOfPlayers(int numberOfPlayers) {
         this.numberOfPlayers = numberOfPlayers;
     }

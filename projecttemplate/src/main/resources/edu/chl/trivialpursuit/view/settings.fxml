@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="43.0" layoutY="36.0" text="Personal settings:" />
+            <Label layoutX="140.0" layoutY="80.0" text="Change username:" />
+            <TextField layoutX="267.0" layoutY="75.0" />
+         </children>
+      </Pane>
+   </center>
+   <top>
+      <Label text="SETTINGS" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </top>
+   <bottom>
+      <Pane prefHeight="104.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="26.0" layoutY="6.0" text="Technical settings:" />
+            <Slider layoutX="268.0" layoutY="74.0" />
+            <Label layoutX="168.0" layoutY="74.0" text="Rate of music" />
+            <CheckBox layoutX="268.0" layoutY="34.0" mnemonicParsing="false" />
+            <Label layoutX="168.0" layoutY="35.0" text="Music on" />
+         </children>
+      </Pane>
+   </bottom>
+</BorderPane>
