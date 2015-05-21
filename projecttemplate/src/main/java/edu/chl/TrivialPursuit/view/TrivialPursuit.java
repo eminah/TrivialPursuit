@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 public class TrivialPursuit extends Application {
 
 
-
+ //Detta är våran main
     public static void main(String[] args) {
         launch();
     }
