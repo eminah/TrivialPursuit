@@ -56,6 +56,57 @@ public class GameBoard {
             new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.MEDIA),
     };
 
+    private final ImmutablePair[] SPOT_DEFINITIONS_COORDINATES_OUTER = {
+
+            //Coordinates for Asia
+            new ImmutablePair<>(225,15),
+            new ImmutablePair<>(280,26),
+            new ImmutablePair<>(320,45),
+            new ImmutablePair<>(355,60),
+            new ImmutablePair<>(385,90),
+            new ImmutablePair<>(415,130),
+            new ImmutablePair<>(429, 183),
+
+            //Coordinates for Africa
+            new ImmutablePair<>(438,240),
+            new ImmutablePair<>(432,290),
+            new ImmutablePair<>(418,325),
+            new ImmutablePair<>(397,360),
+            new ImmutablePair<>(370,395),
+            new ImmutablePair<>(330,425),
+            new ImmutablePair<>(285,448),
+
+            //Coordinates for South America
+            new ImmutablePair<>(235,255),
+            new ImmutablePair<>(170,448),
+            new ImmutablePair<>(130,425),
+            new ImmutablePair<>(90,395),
+            new ImmutablePair<>(60,365),
+            new ImmutablePair<>(35,330),
+            new ImmutablePair<>(25,290),
+
+            //Coordinates for North America
+            new ImmutablePair<>(20,230),
+            new ImmutablePair<>(25,175),
+            new ImmutablePair<>(50,130),
+            new ImmutablePair<>(70,95),
+            new ImmutablePair<>(100,65),
+            new ImmutablePair<>(135,45),
+            new ImmutablePair<>(170,25),
+    };
+
+    private final ImmutablePair[] SPOT_DEFINITIONS_COORDINATES_INNER = {
+
+            //Coordinates for EUROPE
+            new ImmutablePair<>(260,125),
+            new ImmutablePair<>(235,200),
+            new ImmutablePair<>(320,310),
+            new ImmutablePair<>(225,350),
+            new ImmutablePair<>(135,305),
+            new ImmutablePair<>(120,215),
+            new ImmutablePair<>(170,140),
+    };
+
     public ArrayList<Spot> getSpotsOuter() {
         return spotsOuter;
     }
@@ -73,8 +124,10 @@ public class GameBoard {
     public void addSpotsToListOuter(){
         for(int i = 0; i < SPOT_DEFINITIONS_OUTER.length; i++){
 
-            spotsOuter.add(new Spot((Continent)SPOT_DEFINITIONS_OUTER[i].getLeft(),
-                    (Category)SPOT_DEFINITIONS_OUTER[i].getRight()));
+            spotsOuter.add(new Spot((Continent) SPOT_DEFINITIONS_OUTER[i].getLeft(),
+                    (Category) SPOT_DEFINITIONS_OUTER[i].getRight(),
+                    (Integer) SPOT_DEFINITIONS_COORDINATES_OUTER[i].getLeft(),
+                    (Integer) SPOT_DEFINITIONS_COORDINATES_OUTER[i].getRight()));
 
         }
     }
@@ -82,7 +135,9 @@ public class GameBoard {
         for(int i = 0; i < SPOT_DEFINITIONS_INNER.length; i++){
 
             spotsInner.add(new Spot((Continent)SPOT_DEFINITIONS_INNER[i].getLeft(),
-                    (Category)SPOT_DEFINITIONS_INNER[i].getRight()));
+                    (Category) SPOT_DEFINITIONS_INNER[i].getRight(),
+                    (Integer) SPOT_DEFINITIONS_COORDINATES_INNER[i].getLeft(),
+                    (Integer) SPOT_DEFINITIONS_COORDINATES_INNER[i].getRight()));
 
         }
     }

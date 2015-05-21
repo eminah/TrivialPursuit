@@ -13,6 +13,8 @@ public class Spot {
     private Category category;
     private Spot right;
     private Spot left;
+    private int cooX;
+    private int cooY;
 
     /**
      *
@@ -20,10 +22,12 @@ public class Spot {
      * @param continent The continent of the spot
      * @param category The Category of the spot
      */
-    public Spot(Continent continent, Category category){
+    public Spot(Continent continent, Category category, int x, int y){
 
         this.continent = continent;
         this.category = category;
+        cooX = x;
+        cooY = y;
 
     }
 
@@ -35,9 +39,7 @@ public class Spot {
         return category;
     }
 
-    public Spot getRight() {
-        return right;
-    }
+    public Spot getRight() { return right;}
 
     public void setRight(Spot right) {
         this.right = right;
@@ -51,5 +53,11 @@ public class Spot {
         this.left = left;
     }
 
+    public int getCooX() {
+        return cooX;
+    }
 
+    public int getCooY() {
+        return cooY;
+    }
 }
