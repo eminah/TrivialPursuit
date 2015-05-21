@@ -1,7 +1,6 @@
 package edu.chl.trivialpursuit.model;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
-import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.ArrayList;
 
@@ -20,35 +19,28 @@ public class GameBoard {
            new ImmutablePair<Continent, Category>(Continent.ASIA, Category.HISTORY),
            new ImmutablePair<Continent, Category>(Continent.ASIA, Category.SPORT),
            new ImmutablePair<Continent, Category>(Continent.ASIA, Category.TECHNIC),
-           new ImmutablePair<Continent, Category>(Continent.ASIA, Category.ENTERTAINMENT),
-           new ImmutablePair<Continent, Category>(Continent.OCEANIA, Category.AIRPLANE),
-            new ImmutablePair<Continent, Category>(Continent.OCEANIA, Category.GEOGRAPHY),
-           new ImmutablePair<Continent, Category>(Continent.OCEANIA, Category.CULTURE),
-           new ImmutablePair<Continent, Category>(Continent.OCEANIA, Category.HISTORY),
-           new ImmutablePair<Continent, Category>(Continent.OCEANIA, Category.SPORT),
-           new ImmutablePair<Continent, Category>(Continent.OCEANIA, Category.TECHNIC),
-           new ImmutablePair<Continent, Category>(Continent.OCEANIA, Category.ENTERTAINMENT),
-           new ImmutablePair<Continent, Category>(Continent.AFRICA, Category.AIRPLANE),
+           new ImmutablePair<Continent, Category>(Continent.ASIA, Category.MEDIA),
+            new ImmutablePair<Continent, Category>(Continent.AFRICA, Category.AIRPLANE),
             new ImmutablePair<Continent, Category>(Continent.AFRICA, Category.GEOGRAPHY),
            new ImmutablePair<Continent, Category>(Continent.AFRICA, Category.CULTURE),
            new ImmutablePair<Continent, Category>(Continent.AFRICA, Category.HISTORY),
            new ImmutablePair<Continent, Category>(Continent.AFRICA, Category.SPORT),
            new ImmutablePair<Continent, Category>(Continent.AFRICA, Category.TECHNIC),
-           new ImmutablePair<Continent, Category>(Continent.AFRICA, Category.ENTERTAINMENT),
+           new ImmutablePair<Continent, Category>(Continent.AFRICA, Category.MEDIA),
            new ImmutablePair<Continent, Category>(Continent.SOUTH_AMERICA, Category.AIRPLANE),
            new ImmutablePair<Continent, Category>(Continent.SOUTH_AMERICA, Category.CULTURE),
             new ImmutablePair<Continent, Category>(Continent.SOUTH_AMERICA, Category.GEOGRAPHY),
            new ImmutablePair<Continent, Category>(Continent.SOUTH_AMERICA, Category.HISTORY),
            new ImmutablePair<Continent, Category>(Continent.SOUTH_AMERICA, Category.SPORT),
            new ImmutablePair<Continent, Category>(Continent.SOUTH_AMERICA, Category.TECHNIC),
-           new ImmutablePair<Continent, Category>(Continent.SOUTH_AMERICA, Category.ENTERTAINMENT),
+           new ImmutablePair<Continent, Category>(Continent.SOUTH_AMERICA, Category.MEDIA),
            new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.AIRPLANE),
             new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.GEOGRAPHY),
            new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.CULTURE),
            new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.HISTORY),
            new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.SPORT),
            new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.TECHNIC),
-           new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.ENTERTAINMENT),
+           new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.MEDIA),
 
 
 
@@ -61,7 +53,7 @@ public class GameBoard {
             new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.HISTORY),
             new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.SPORT),
             new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.TECHNIC),
-            new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.ENTERTAINMENT),
+            new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.MEDIA),
     };
 
     public ArrayList<Spot> getSpotsOuter() {
@@ -98,8 +90,8 @@ public class GameBoard {
     public void setBoardingSpotsOuter(){
 
        //Set the right spot to the current spot
-        for(int i = 0; i <= spotsOuter.size(); i++){
-            if(i != spotsOuter.size()) {
+        for(int i = 0; i <= spotsOuter.size()-1; i++){
+            if(i != spotsOuter.size()-1) {
                 spotsOuter.get(i).setRight(spotsOuter.get(i + 1));
             }else{
                 spotsOuter.get(i).setRight(spotsOuter.get(0));
@@ -108,7 +100,7 @@ public class GameBoard {
 
         //Set the left spot to the current spot
 
-        for(int j = 0; j <= spotsOuter.size(); j++){
+        for(int j = 0; j <= spotsOuter.size()-1; j++){
             if (j==0){
                 spotsOuter.get(j).setLeft(spotsOuter.get(spotsOuter.size()-1));
             }else{
@@ -119,8 +111,8 @@ public class GameBoard {
 
     public void setBoardingSpotsInner(){
         //Set the right spot to the current spot
-        for(int i = 0; i <= spotsInner.size(); i++){
-            if(i != spotsInner.size()) {
+        for(int i = 0; i <= spotsInner.size()-1; i++){
+            if(i != spotsInner.size()-1) {
                 spotsInner.get(i).setRight(spotsInner.get(i + 1));
             }else{
                 spotsInner.get(i).setRight(spotsInner.get(0));
@@ -129,7 +121,7 @@ public class GameBoard {
 
         //Set the left spot to the current spot
 
-        for(int j = 0; j <= spotsInner.size(); j++){
+        for(int j = 0; j <= spotsInner.size()-1; j++){
             if (j==0){
                 spotsInner.get(j).setLeft(spotsInner.get(spotsInner.size()-1));
             }else{

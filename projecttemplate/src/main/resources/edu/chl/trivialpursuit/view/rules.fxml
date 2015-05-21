@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button mnemonicParsing="false" text="Button" />
+        </items>
+      </ToolBar>
+   </bottom>
+   <top>
+      <Label alignment="CENTER" text="RULES OF THE GAME" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <Label text="The rules of the game are the following:,&#10;    - All of the players start in the continent of Europe.&#10;        From there, the players buy a ticket for the continent they want&#10;        to start on. There are 5 different continent:&#10;        Then, the players take turn by each player tossing the dice.&#10;    - Each player needs to answer at least 5 question correctly,&#10;        one from each category.&#10;    - As soon as a player has fulfilled these criteria, they have to&#10;        toss the dice and move their character until they land on a piece&#10;        with an airplane on it.&#10;    - By landing on this peace, they can fly back to Europe. The person who&#10;        makes it there first, wins the game" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

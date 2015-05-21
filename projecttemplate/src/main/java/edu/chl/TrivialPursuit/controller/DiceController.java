@@ -1,11 +1,13 @@
 package edu.chl.trivialpursuit.controller;
 
 import edu.chl.trivialpursuit.model.Dice;
+import edu.chl.trivialpursuit.view.GameBoardView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javax.inject.Inject;
+import java.io.IOException;
 
 
 /**
@@ -18,11 +20,13 @@ public class DiceController {
     @FXML ImageView dice2;
 
     @FXML
-    private void throwDices(ActionEvent e){
+    private void throwDices(ActionEvent e) throws IOException{
+
 
 
 
         dice.throwDice();
+
 
         //Change image on dice one depending on value
         switch(dice.getFirstDiceValue()){
@@ -72,6 +76,16 @@ public class DiceController {
                 break;
 
         }
+
+        //TODO timer
+
+
+        final GameBoardView gameBoardView = GameBoardView.create();
+        gameBoardView.show();
+
+        e.consume();
+
+
     }
 
 }
