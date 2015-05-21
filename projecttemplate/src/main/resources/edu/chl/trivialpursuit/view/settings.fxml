@@ -5,7 +5,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
@@ -29,7 +28,7 @@
             <Label layoutX="26.0" layoutY="6.0" text="Technical settings:" />
             <Slider layoutX="268.0" layoutY="74.0" />
             <Label layoutX="168.0" layoutY="74.0" text="Rate of music" />
-            <CheckBox layoutX="268.0" layoutY="34.0" mnemonicParsing="false" />
+            <CheckBox layoutX="268.0" layoutY="34.0" mnemonicParsing="false" selected="true" />
             <Label layoutX="168.0" layoutY="35.0" text="Music on" />
          </children>
       </Pane>
