@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ruleset xmlns="http://pmd.sourceforge.net/ruleset/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd"
-	 xsi:noNamespaceSchemaLocation="http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+		 xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd"
+		 xsi:noNamespaceSchemaLocation="http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
 	<rule ref="rulesets/internal/all-java.xml">
 		<exclude name="AvoidCatchingGenericException" />
 		<exclude name="AvoidFinalLocalVariable" />
@@ -11,6 +11,7 @@
 		<exclude name="AtLeastOneConstructor" />
 		<exclude name="BeanMembersShouldSerialize" />
 		<exclude name="CommentSize" />
+		<exclude name="CommentRequired" />
 		<exclude name="DoNotUseThreads" />
 		<exclude name="ImportFromSamePackage" />
 		<exclude name="JUnitAssertionsShouldIncludeMessage" />
@@ -24,8 +25,9 @@
 		<exclude name="ShortVariable" />
 		<exclude name="SingularField" />
 		<exclude name="UnusedPrivateField" />
+		<exclude name="UnusedPrivateMethod" />
 		<exclude name="UseConcurrentHashMap" />
-		<exclude name="UseSingleton" />
+		<exclude name="UseUtilityClass" />
 	</rule>
 	<rule ref="rulesets/java/controversial.xml/DataflowAnomalyAnalysis">
 		<properties>
@@ -44,7 +46,13 @@
 			<property name="violationSuppressXPath" value="../../..[Annotation//Name[(@Image='Getter') or (@Image='Setter')]]" />
 		</properties>
 	</rule>
-	<rule ref="rulesets/internal/all-java.xml/UseSingleton">
+	<rule ref="rulesets/internal/all-java.xml/UnusedPrivateMethod">
+		<!-- Java FX -->
+		<properties>
+			<property name="violationSuppressXPath" value="../..[Annotation//Name[@Image='FXML']]" />
+		</properties>
+	</rule>§
+	<rule ref="rulesets/internal/all-java.xml/UseUtilityClass">
 		<!-- Project Lombok -->
 		<properties>
 			<property name="violationSuppressXPath" value="../..[Annotation//Name[(@Image='NoArgsConstructor') or  (@Image='RequiredArgsConstructor')  (@Image='AllArgsConstructor')]]" />
