@@ -234,11 +234,13 @@
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="446.0" prefWidth="456.0">
          <children>
-            <Canvas fx:id="boardCanvas" height="452.0" width="450.0" />
-            <HBox layoutY="480.0" prefHeight="114.0" prefWidth="449.0" spacing="80.0">
+
+            <Canvas fx:id="boardCanvas" height="490.0" width="480.0"  />
+            <HBox layoutY="520.0" prefHeight="107.0" prefWidth="477.0" spacing="80.0">
+
                <children>
-                  <Button mnemonicParsing="false" text="Go Left" />
-                  <Button mnemonicParsing="false" text="Go Right" />
+                  <Button mnemonicParsing="false" text="Go Left" onAction="#moveLeft" />
+                  <Button mnemonicParsing="false" text="Go Right" onAction="#moveRight" />
                </children>
                <padding>
                   <Insets left="50.0" top="30.0" />

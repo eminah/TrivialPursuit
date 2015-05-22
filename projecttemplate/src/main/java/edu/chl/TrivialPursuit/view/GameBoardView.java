@@ -1,11 +1,9 @@
 package edu.chl.trivialpursuit.view;
 import com.airhacks.afterburner.injection.Injector;
+import edu.chl.trivialpursuit.controller.GameBoardController;
 import edu.chl.trivialpursuit.model.ChoosePlayer;
-
 import edu.chl.trivialpursuit.model.GameBoard;
-import edu.chl.trivialpursuit.model.Player;
-
-import javafx.scene.control.Label;
+import javafx.scene.canvas.Canvas;
 
 import javax.inject.Inject;
 import java.io.IOException;
@@ -17,16 +15,21 @@ public class GameBoardView extends BaseView{
 
     @Inject static ChoosePlayer choose;
     GameBoard game;
+    static GameBoardController gameC;
 
     private GameBoardView() {
         super();
         game = new GameBoard();
+        gameC = new GameBoardController();
+
     }
 
     public static GameBoardView create() throws  IOException{
         final GameBoardView gameBoardView = new GameBoardView();
         Injector.injectMembers(StartView.class, gameBoardView);
+        gameC.startTimer();
         return gameBoardView;
+
     }
 
 }
