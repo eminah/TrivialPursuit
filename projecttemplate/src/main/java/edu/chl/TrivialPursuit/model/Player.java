@@ -12,9 +12,6 @@ import java.util.Iterator;
  * Created by Rasti on 2015-04-23.
  */
 
-
-
-
 public  class Player {
 
     @Inject
@@ -126,113 +123,7 @@ public  class Player {
     }
 
 
-    /**
-     *  Moves the player towards right
-     *
-     * @param player The player that should be moved
-     * @param diceValue The amount of steps the player should be moved
-     */
-    public void movePlayerRight(int player, int diceValue){
 
-
-        switch(player){
-            case 1:
-                goRight(diceValue);
-                gameBoardController.setX1(spot.getCooX());
-                gameBoardController.setY1(spot.getCooY());
-
-                break;
-
-            case 2:
-                goRight(diceValue);
-                gameBoardController.setX2(spot.getCooX()-15);
-                gameBoardController.setY2(spot.getCooY());
-
-                break;
-
-            case 3:
-                goRight(diceValue);
-                gameBoardController.setX3(spot.getCooX());
-                gameBoardController.setY3(spot.getCooY()-15);
-
-                break;
-
-            case 4:
-                goRight(diceValue);
-                gameBoardController.setX4(spot.getCooX()+15);
-                gameBoardController.setY4(spot.getCooY());
-
-                break;
-
-            case 5:
-                goRight(diceValue);
-                gameBoardController.setX5(spot.getCooX());
-                gameBoardController.setY5(spot.getCooY()+15);
-
-                break;
-
-            case 6:
-                goRight(diceValue);
-                gameBoardController.setX6(spot.getCooX()-10);
-                gameBoardController.setY6(spot.getCooY()+10);
-
-                break;
-        }
-    }
-
-    /**
-     *  Moves the player towards left
-     *
-     * @param player The player that should be moved
-     * @param diceValue The amount of steps the player should be moved
-     */
-    public void movePlayerLeft(int player, int diceValue){
-
-
-        switch(player){
-            case 1:
-                goLeft(diceValue);
-                gameBoardController.setX1(spot.getCooX());
-                gameBoardController.setY1(spot.getCooY());
-
-                break;
-
-            case 2:
-                goLeft(diceValue);
-                gameBoardController.setX2(spot.getCooX()-15);
-                gameBoardController.setY2(spot.getCooY());
-
-                break;
-
-            case 3:
-                goLeft(diceValue);
-                gameBoardController.setX3(spot.getCooX());
-                gameBoardController.setY3(spot.getCooY()-15);
-
-                break;
-
-            case 4:
-                goLeft(diceValue);
-                gameBoardController.setX4(spot.getCooX()+15);
-                gameBoardController.setY4(spot.getCooY());
-
-                break;
-
-            case 5:
-                goLeft(diceValue);
-                gameBoardController.setX5(spot.getCooX());
-                gameBoardController.setY5(spot.getCooY()+15);
-
-                break;
-
-            case 6:
-                goLeft(diceValue);
-                gameBoardController.setX6(spot.getCooX()-10);
-                gameBoardController.setY6(spot.getCooY()+10);
-
-                break;
-        }
-    }
 
     public boolean getHasTicket() {
         return hasTicket;

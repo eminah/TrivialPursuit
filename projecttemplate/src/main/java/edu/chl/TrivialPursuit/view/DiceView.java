@@ -1,12 +1,9 @@
 package edu.chl.trivialpursuit.view;
 
-
-
 /**
  * Created by Rasti on 2015-05-18.
  */
 import com.airhacks.afterburner.injection.Injector;
-
 import java.io.IOException;
 
 
