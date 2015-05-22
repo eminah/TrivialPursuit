@@ -1,6 +1,5 @@
 package edu.chl.trivialpursuit.model;
 
-import java.util.Locale;
 
 /**
  * Created by helenejarl on 2015-05-07.

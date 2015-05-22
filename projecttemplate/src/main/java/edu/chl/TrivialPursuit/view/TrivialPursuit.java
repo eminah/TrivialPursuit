@@ -1,11 +1,7 @@
 package edu.chl.trivialpursuit.view;
 
 import com.airhacks.afterburner.injection.Injector;
-import edu.chl.trivialpursuit.controller.StartController;
-import edu.chl.trivialpursuit.model.Start;
-
 import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
@@ -26,12 +22,12 @@ public class TrivialPursuit extends Application {
         Injector.registerExistingAndInject(primaryStage);
 
 
-        final StartView startView = StartView.create();
-        startView.show();
+        //final StartView startView = StartView.create();
+        //startView.show();
 
 
-        //final CardView cardView = CardView.create();
-        //cardView.show();
+        final CardView cardView = CardView.create();
+        cardView.show();
 
 
     }

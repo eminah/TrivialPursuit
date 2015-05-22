@@ -1,18 +1,14 @@
 package edu.chl.trivialpursuit.controller;
 
-
+import edu.chl.trivialpursuit.view.GameBoardView;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.paint.Color;
 import javafx.util.Duration;
-
-import java.sql.Time;
+import java.io.IOException;
 
 
 /**
@@ -22,49 +18,38 @@ public class CardController{
 
     private Timeline delay;
 
-
-
-
     @FXML
     Button alt1, alt2, alt3, alt4;
 
-
-
-
-
-
     @FXML
-    public void altOnePressed(ActionEvent e)  {
-
+    public void altOnePressed(ActionEvent e) {
 
         alt1.setStyle("-fx-background-color: #65ff3c;");
         alt2.setDisable(true);
         alt3.setDisable(true);
         alt4.setDisable(true);
         startTimer();
-
-
-
     }
 
     @FXML
-    public void altTwoPressed(ActionEvent e)  {
+    public void altTwoPressed(ActionEvent e) {
 
+        if(check)
         alt2.setStyle("-fx-background-color: #65ff3c");
         alt1.setDisable(true);
         alt3.setDisable(true);
         alt4.setDisable(true);
-
+        startTimer();
     }
 
     @FXML
-    public void altThreePressed(ActionEvent e)  {
+    public void altThreePressed(ActionEvent e) {
 
         alt3.setStyle("-fx-background-color: #65ff3c");
         alt1.setDisable(true);
         alt2.setDisable(true);
         alt4.setDisable(true);
-
+        startTimer();
     }
 
     @FXML
@@ -74,16 +59,19 @@ public class CardController{
         alt1.setDisable(true);
         alt2.setDisable(true);
         alt3.setDisable(true);
-
+        startTimer();
     }
 
-    public void startTimer(){
-
+    /**
+     * An delay that starts when you click on an alternative,
+     * this delay prevents you from choose more than one alternative
+     */
+    public void startTimer() {
 
         delay = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
 
             @Override
-            public void handle(ActionEvent event) {
+            public void handle(ActionEvent event)  {
 
                 alt1.setStyle("-fx-background-color: #b2b5b7");
                 alt2.setStyle("-fx-background-color: #b2b5b7");
@@ -94,6 +82,15 @@ public class CardController{
                 alt3.setDisable(true);
                 alt4.setDisable(true);
 
+
+
+                //Changes back to the gameBoard
+                try{
+                    final GameBoardView gameBoardView = GameBoardView.create();
+                    gameBoardView.show();
+                }catch(IOException ex){
+                    ex.printStackTrace();
+                }
             }
         }));
 
