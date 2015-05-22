@@ -1,6 +1,7 @@
 package edu.chl.trivialpursuit.controller;
 
 import edu.chl.trivialpursuit.model.Dice;
+import edu.chl.trivialpursuit.model.Player;
 import edu.chl.trivialpursuit.view.GameBoardView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,6 +19,7 @@ public class DiceController {
     @Inject Dice dice;
     @FXML ImageView dice1;
     @FXML ImageView dice2;
+
 
     @FXML
     private void throwDices(ActionEvent e) throws IOException{

@@ -22,8 +22,7 @@ public class ChooseTravelController {
 
     @Inject
     ChoosePlayer choose;
-    @Inject
-    GameBoard game;
+
 
 
 
@@ -61,38 +60,20 @@ public class ChooseTravelController {
 
 
 
+
+
+
         final DiceView diceView = DiceView.create();
         diceView.show();
 
         e.consume();
 
     }
-
+        //TODO kanske bör skapa spelarna i gameboard klassen
     /**
      * Creates players based on what the player has choosen for name and Continent and adds it to a Arraylist
      */
 
-    private void createPlayers() {
-        for (int i = 0; i < choose.getNumberOfPlayers(); i++) {
-            //String choosen = (String) theBox.get(i).getValue();
 
-            String choosen = "Asia";
-
-            switch (choosen) {
-                case "Asia":
-                   players.add(new Player((String)choose.getPlayerNames().get(i),game.getSpotsOuter().get(0)));
-                    break;
-                case "Africa":
-                    players.add(new Player((String)choose.getPlayerNames().get(i),game.getSpotsOuter().get(7)));
-                    break;
-                case "South America":
-                    players.add(new Player((String)choose.getPlayerNames().get(i),game.getSpotsOuter().get(14)));
-                    break;
-                case "North America":
-                    players.add(new Player((String)choose.getPlayerNames().get(i),game.getSpotsOuter().get(21)));
-                    break;
-            }
-        }
-    }
 
 }

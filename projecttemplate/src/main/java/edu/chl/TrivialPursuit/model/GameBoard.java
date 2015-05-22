@@ -2,6 +2,7 @@ package edu.chl.trivialpursuit.model;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 
 /**
@@ -9,8 +10,25 @@ import java.util.ArrayList;
  */
 public class GameBoard {
 
-    private ArrayList<Spot> spotsOuter = new ArrayList<>();
-    private ArrayList<Spot> spotsInner = new ArrayList<>();
+    private ArrayList<Spot> spotsOuter;
+    private ArrayList<Spot> spotsInner;
+    private ArrayList<Player> players;
+    @Inject
+    private ChoosePlayer chooseP;
+    @Inject
+    private ChooseTravel chooseT;
+
+
+    public GameBoard(){
+        spotsOuter = new ArrayList<>();
+        spotsInner = new ArrayList<>();
+        players = new ArrayList<>();
+        addSpotsToListOuter();
+        setBoardingSpotsOuter();
+        addSpotsToListInner();
+        createPlayers();
+
+    }
 
     private final ImmutablePair[] SPOT_DEFINITIONS_OUTER = {
            new ImmutablePair<Continent, Category>(Continent.ASIA, Category.AIRPLANE),
@@ -115,11 +133,7 @@ public class GameBoard {
         return spotsInner;
     }
 
-    public GameBoard(){
-        addSpotsToListOuter();
-        setBoardingSpotsOuter();
-        addSpotsToListInner();
-    }
+
 
     public void addSpotsToListOuter(){
         for(int i = 0; i < SPOT_DEFINITIONS_OUTER.length; i++){
@@ -127,7 +141,8 @@ public class GameBoard {
             spotsOuter.add(new Spot((Continent) SPOT_DEFINITIONS_OUTER[i].getLeft(),
                     (Category) SPOT_DEFINITIONS_OUTER[i].getRight(),
                     (Integer) SPOT_DEFINITIONS_COORDINATES_OUTER[i].getLeft(),
-                    (Integer) SPOT_DEFINITIONS_COORDINATES_OUTER[i].getRight()));
+                    (Integer)SPOT_DEFINITIONS_COORDINATES_OUTER[i].getRight()));
+            System.out.println(SPOT_DEFINITIONS_COORDINATES_OUTER[i].getLeft());
 
         }
     }
@@ -184,5 +199,42 @@ public class GameBoard {
             }
         }
     }
+
+    /*
+    Here I create players depending on their choices of Continent and
+    number of players it is.
+     */
+    private void createPlayers() {
+        for (int i = 0; i < 6; i++) {
+            //String choosen = (String) theBox.get(i).getValue();
+
+            String choosen = "Asia";
+
+            switch (choosen) {
+                case "Asia":
+                   players.add(new Player("Rasti",getSpotsOuter().get(0)));
+                    break;
+                case "Africa":
+                    players.add(new Player((String)chooseP.getPlayerNames().get(i),getSpotsOuter().get(7)));
+                    break;
+                case "South America":
+                    players.add(new Player((String)chooseP.getPlayerNames().get(i),getSpotsOuter().get(14)));
+                    break;
+                case "North America":
+                    players.add(new Player((String)chooseP.getPlayerNames().get(i),getSpotsOuter().get(21)));
+                    break;
+
+                default:
+                    System.out.println("Something");
+                    //TODO Popup där vi säger att den måste välja något.
+            }
+        }
+    }
+
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
+
+
 
 }

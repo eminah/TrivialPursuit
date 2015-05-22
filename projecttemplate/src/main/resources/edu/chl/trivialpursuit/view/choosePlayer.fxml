@@ -16,7 +16,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <ComboBox id="numPlayers" fx:id="numPlayers" onAction="#comboAction" prefWidth="150.0" promptText="2">
+            <ComboBox id="numPlayers" fx:id="numPlayers" onAction="#comboAction" prefWidth="150.0" promptText="Choose Here">
                 <items>
 
                     <FXCollections fx:factory="observableArrayList">

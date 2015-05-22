@@ -44,7 +44,7 @@ public class ChoosePlayerController {
         chooseTravelView.show();
         choose.setNumberOfPlayers(numberChoosed);
 
-
+        addNamesToList();
         e.consume();
     }
 
@@ -62,6 +62,7 @@ public class ChoosePlayerController {
 
             this.firstTime = false;
         }
+
         this.numberChoosed = Integer.parseInt(numPlayers.getValue());
         for(int i = 0; i < numberChoosed; i++) {
             playerTexts.get(i).setDisable(false);
@@ -72,13 +73,16 @@ public class ChoosePlayerController {
             playerTexts.get(j).setDisable(true);
         }
 
-        addNamesToList();
+
     }
 
     private void addNamesToList(){
         for(int i = 0; i < numberChoosed; i++) {
-            choose.getPlayerNames().add(playerTexts.get(i).getText());
+           String name = playerTexts.get(i).getText();
+            choose.getPlayerNames().add(name);
 
         }
+
+
     }
 }

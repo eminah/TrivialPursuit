@@ -1,12 +1,12 @@
 package edu.chl.trivialpursuit.model;
 
+import edu.chl.trivialpursuit.controller.ChooseTravelController;
 import edu.chl.trivialpursuit.controller.GameBoardController;
 
 import javax.inject.Inject;
 import java.util.ArrayList;
-import java.util.EnumSet;
 import java.util.HashSet;
-import java.util.Iterator;
+
 
 /**
  * Created by Rasti on 2015-04-23.
@@ -18,16 +18,20 @@ public  class Player {
     ChoosePlayer choosePlayer;
 
     @Inject
+    GameBoard game;
+
+    @Inject
     GameBoardController gameBoardController;
 
 
 
-    private int numerOfPlayers = choosePlayer.getNumberOfPlayers();
+    private int numerOfPlayers = 6;
     private String name;
     private Spot spot;
     private boolean hasTicket = false; //Will be set to true when player has collected all Contintents
     private HashSet<Continent> collectedContinents;
     private boolean[] getTurn = new boolean[numerOfPlayers];
+
 
 
 
@@ -42,7 +46,10 @@ public  class Player {
     public Player(String name, Spot spot) {
         this.name = name;
         this.spot = spot;
+
+
         collectedContinents = new HashSet<>();
+
 
         for(int i = 0; i < numerOfPlayers; i++){
             getTurn[i] = false;
