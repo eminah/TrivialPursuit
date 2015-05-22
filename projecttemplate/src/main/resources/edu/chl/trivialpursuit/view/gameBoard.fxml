@@ -7,16 +7,14 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-           minWidth="-Infinity" prefHeight="489.0" prefWidth="675.0"
-           stylesheets="@test.css" xmlns="http://javafx.com/javafx/8"
-           xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.trivialpursuit.controller.GameBoardController">
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="648.0" stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="edu.chl.trivialpursuit.controller.GameBoardController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
             <VBox prefHeight="487.0" prefWidth="197.0">
                <children>
-                  <Label text="Player 1" fx:id="p1">
+                  <Label text="Player 1">
                      <VBox.margin>
                         <Insets left="10.0" top="5.0" />
                      </VBox.margin>
@@ -51,7 +49,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label layoutX="20.0" layoutY="15.0" text="Player 2" fx:id="p2">
+                  <Label layoutX="20.0" layoutY="15.0" text="Player 2">
                      <VBox.margin>
                         <Insets left="10.0" />
                      </VBox.margin>
@@ -89,7 +87,7 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label layoutX="10.0" layoutY="84.0" text="Player 3" fx:id="p3">
+                  <Label layoutX="10.0" layoutY="84.0" text="Player 3">
                      <VBox.margin>
                         <Insets left="10.0" />
                      </VBox.margin>
@@ -127,7 +125,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label layoutX="10.0" layoutY="153.0" text="Player 4" fx:id="p4">
+                  <Label layoutX="10.0" layoutY="153.0" text="Player 4">
                      <VBox.margin>
                         <Insets left="10.0" />
                      </VBox.margin>
@@ -164,8 +162,8 @@
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
-               </HBox>
-                  <Label layoutX="10.0" layoutY="222.0" text="Player 5" fx:id="p5">
+                  </HBox>
+                  <Label layoutX="10.0" layoutY="222.0" text="Player 5">
                      <VBox.margin>
                         <Insets left="10.0" />
                      </VBox.margin>
@@ -200,7 +198,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label layoutX="10.0" layoutY="291.0" text="Player 6" fx:id="p6">
+                  <Label layoutX="10.0" layoutY="291.0" text="Player 6">
                      <VBox.margin>
                         <Insets left="10.0" />
                      </VBox.margin>
@@ -242,7 +240,16 @@
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="446.0" prefWidth="456.0">
          <children>
-            <Canvas fx:id="boardCanvas" height="487.0" width="468.0" />
+            <Canvas fx:id="boardCanvas" height="452.0" width="450.0" />
+            <HBox layoutY="480.0" prefHeight="114.0" prefWidth="449.0" spacing="80.0">
+               <children>
+                  <Button mnemonicParsing="false" text="Go Left" />
+                  <Button mnemonicParsing="false" text="Go Right" />
+               </children>
+               <padding>
+                  <Insets left="50.0" top="30.0" />
+               </padding>
+            </HBox>
          </children></AnchorPane>
   </items>
 </SplitPane>

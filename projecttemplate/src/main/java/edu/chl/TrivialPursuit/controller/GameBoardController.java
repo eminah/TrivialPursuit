@@ -30,6 +30,8 @@ public class GameBoardController {
 
     @FXML
     Canvas boardCanvas;
+
+
     public void drawBoard(){
         GraphicsContext gc = boardCanvas.getGraphicsContext2D();
         draw(gc);
@@ -111,7 +113,6 @@ public class GameBoardController {
         gc.setFill(p6);
         gc.fillOval(x6, y6, 15, 15);
         gc.strokeOval(x6, y6, 15, 15);
-
 
 
     }

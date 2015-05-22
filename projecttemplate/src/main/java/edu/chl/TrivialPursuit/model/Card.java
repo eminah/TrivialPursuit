@@ -46,7 +46,7 @@ public class Card {
         this.player = player;
     }
 
-    public void checkAnswer(Alternative ans){
+    public boolean checkAnswer(Alternative ans){
         answer = ans;
 
         if( answer.equals(correctAlt)){
@@ -54,6 +54,9 @@ public class Card {
             if (player.checkIfAllContinents()){
                 player.setHasTicket(true);
             }
+            return true;
+        }else{
+            return false;
         }
     }
 

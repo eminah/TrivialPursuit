@@ -11,12 +11,6 @@ import javafx.stage.Stage;
 import javax.inject.Inject;
 
 
-
-import com.airhacks.afterburner.views.FXMLView;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import javax.inject.Inject;
-
 public class BaseView extends FXMLView {
     final private Scene scene;
     private @Inject Stage stage;
