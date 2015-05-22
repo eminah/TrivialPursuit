@@ -38,6 +38,7 @@ public class GameBoardController {
         GraphicsContext gc = boardCanvas.getGraphicsContext2D();
         draw(gc);
     }
+
     public void setX1(int x1) {
         this.x1 = x1;
     }

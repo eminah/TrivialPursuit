@@ -95,7 +95,7 @@ public class GameBoard {
             new ImmutablePair<>(285,448),
 
             //Coordinates for South America
-            new ImmutablePair<>(235,255),
+            new ImmutablePair<>(235,455),
             new ImmutablePair<>(170,448),
             new ImmutablePair<>(130,425),
             new ImmutablePair<>(90,395),
