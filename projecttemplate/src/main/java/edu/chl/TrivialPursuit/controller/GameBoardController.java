@@ -1,16 +1,20 @@
 package edu.chl.trivialpursuit.controller;
+import edu.chl.trivialpursuit.model.Dice;
 import edu.chl.trivialpursuit.model.GameBoard;
-import edu.chl.trivialpursuit.model.Player;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+
 import javax.inject.Inject;
+
+
 /**
  * Created by Rasti on 2015-05-14.
  */
+
 public class GameBoardController {
     private Color p1 = Color.DEEPPINK;
     private int x1;
@@ -30,10 +34,26 @@ public class GameBoardController {
     private Color p6 = Color.LAWNGREEN;
     private int x6;
     private int y6;;
+    private Dice dice = new Dice();
+    private Timeline updateBoard;
+
     @FXML
     Canvas boardCanvas;
+
     @Inject
     GameBoard game;
+
+
+
+    @FXML
+    public void moveRight(){
+        movePlayerRight(1,dice.getTotalDiceValue());
+    }
+
+    @FXML void moveLeft(){
+        movePlayerLeft(1, dice.getTotalDiceValue());
+    }
+
     public void drawBoard(){
         GraphicsContext gc = boardCanvas.getGraphicsContext2D();
         draw(gc);
@@ -66,15 +86,10 @@ public class GameBoardController {
     public void setX5(int x5) {
         this.x5 = x5;
     }
-    public void setY5(int y5) {
-        this.y5 = y5;
-    }
-    public void setX6(int x6) {
-        this.x6 = x6;
-    }
-    public void setY6(int y6) {
-        this.y6 = y6;
-    }
+    public void setY5(int y5) { this.y5 = y5; }
+    public void setX6(int x6) { this.x6 = x6; }
+    public void setY6(int y6) { this.y6 = y6; }
+
     // Searching for all coordinates by hand, time consuming - Helene
     private void draw(GraphicsContext gc){
         gc.drawImage(new Image("edu/chl/trivialpursuit/view/board_pastell.png"), 0, 0, boardCanvas.getWidth(), boardCanvas.getHeight());
@@ -96,7 +111,7 @@ public class GameBoardController {
         gc.setFill(p6);
         gc.fillOval(x6, y6, 15, 15);
         gc.strokeOval(x6, y6, 15, 15);
-        movePlayerRight(1,2);
+
     }
     public void movePlayerRight(int player, int diceValue){
         switch(player){
@@ -171,5 +186,9 @@ public class GameBoardController {
                 setY1(game.getPlayers().get(5).getSpot().getCooY());
                 break;
         }
+
+
     }
+
+
 }
