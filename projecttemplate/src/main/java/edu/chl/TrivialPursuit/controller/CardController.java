@@ -1,63 +1,103 @@
 package edu.chl.trivialpursuit.controller;
 
 
-import edu.chl.trivialpursuit.model.Card;
-import edu.chl.trivialpursuit.view.CardView;
-
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javax.inject.Inject;
-import java.io.IOException;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.paint.Color;
+import javafx.util.Duration;
+
+import java.sql.Time;
 
 
 /**
  * Created by helenejarl on 2015-05-07.
  */
-public class CardController {
+public class CardController{
 
-    @Inject
-    Card card;
+    private Timeline delay;
 
-    @Inject
-    CardView cardView;
+
+
 
     @FXML
     Button alt1, alt2, alt3, alt4;
 
 
 
+
+
+
     @FXML
-    public void altOnePressed(ActionEvent e) throws IOException {
+    public void altOnePressed(ActionEvent e)  {
 
-        alt1.setStyle("-fx-background-color: #ff6312;");
 
-        e.consume();
+        alt1.setStyle("-fx-background-color: #65ff3c;");
+        alt2.setDisable(true);
+        alt3.setDisable(true);
+        alt4.setDisable(true);
+        startTimer();
+
+
+
     }
 
     @FXML
-    public void altTwoPressed(ActionEvent e) throws IOException {
+    public void altTwoPressed(ActionEvent e)  {
 
-        alt2.setStyle("-fx-background-color: #ff1795");
+        alt2.setStyle("-fx-background-color: #65ff3c");
+        alt1.setDisable(true);
+        alt3.setDisable(true);
+        alt4.setDisable(true);
 
-        e.consume();
     }
 
     @FXML
-    public void altThreePressed(ActionEvent e) throws IOException {
+    public void altThreePressed(ActionEvent e)  {
 
-        alt3.setStyle("-fx-background-color: #43e9ff");
+        alt3.setStyle("-fx-background-color: #65ff3c");
+        alt1.setDisable(true);
+        alt2.setDisable(true);
+        alt4.setDisable(true);
 
-        e.consume();
     }
 
     @FXML
-    public void altFourPressed(ActionEvent e) throws IOException {
+    public void altFourPressed(ActionEvent e) {
 
         alt4.setStyle("-fx-background-color: #65ff3c");
-
-        e.consume();
+        alt1.setDisable(true);
+        alt2.setDisable(true);
+        alt3.setDisable(true);
 
     }
 
+    public void startTimer(){
+
+
+        delay = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+
+                alt1.setStyle("-fx-background-color: #b2b5b7");
+                alt2.setStyle("-fx-background-color: #b2b5b7");
+                alt3.setStyle("-fx-background-color: #b2b5b7");
+                alt4.setStyle("-fx-background-color: #b2b5b7");
+                alt1.setDisable(true);
+                alt2.setDisable(true);
+                alt3.setDisable(true);
+                alt4.setDisable(true);
+
+            }
+        }));
+
+        delay.play();
+
+    }
 }

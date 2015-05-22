@@ -29,10 +29,10 @@ public class TrivialPursuit extends Application {
         final StartView startView = StartView.create();
         startView.show();
 
-        /*
-        final CardView cardView = CardView.create();
-        cardView.show();
-        */
+
+        //final CardView cardView = CardView.create();
+        //cardView.show();
+
 
     }
 }

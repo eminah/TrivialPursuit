@@ -24,6 +24,8 @@ public class Card {
         category = ca;
         continent = co;
         correctAlt = correct;
+
+
     }
 
     public Category getCategory() {
