@@ -15,19 +15,17 @@ public class GameBoardView extends BaseView{
 
     @Inject static ChoosePlayer choose;
     GameBoard game;
-    static GameBoardController gameC;
+    
 
     private GameBoardView() {
         super();
-        game = new GameBoard();
-        gameC = new GameBoardController();
+
 
     }
 
     public static GameBoardView create() throws  IOException{
         final GameBoardView gameBoardView = new GameBoardView();
         Injector.injectMembers(StartView.class, gameBoardView);
-        gameC.startTimer();
         return gameBoardView;
 
     }

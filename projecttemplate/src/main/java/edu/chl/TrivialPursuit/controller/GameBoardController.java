@@ -83,9 +83,7 @@ public class GameBoardController {
     public void setY4(int y4) {
         this.y4 = y4;
     }
-    public void setX5(int x5) {
-        this.x5 = x5;
-    }
+    public void setX5(int x5) { this.x5 = x5; }
     public void setY5(int y5) { this.y5 = y5; }
     public void setX6(int x6) { this.x6 = x6; }
     public void setY6(int y6) { this.y6 = y6; }
