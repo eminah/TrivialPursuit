@@ -34,7 +34,7 @@ public class CardController{
     @FXML
     public void altTwoPressed(ActionEvent e) {
 
-        if(check)
+        
         alt2.setStyle("-fx-background-color: #65ff3c");
         alt1.setDisable(true);
         alt3.setDisable(true);
