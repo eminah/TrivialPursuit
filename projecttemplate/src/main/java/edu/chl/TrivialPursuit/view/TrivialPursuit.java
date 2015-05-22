@@ -22,12 +22,11 @@ public class TrivialPursuit extends Application {
         Injector.registerExistingAndInject(primaryStage);
 
 
-        //final StartView startView = StartView.create();
-        //startView.show();
+        final StartView startView = StartView.create();
+        startView.show();
 
 
-        final CardView cardView = CardView.create();
-        cardView.show();
+
 
 
     }

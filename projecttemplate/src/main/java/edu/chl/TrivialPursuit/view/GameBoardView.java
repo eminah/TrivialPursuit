@@ -15,7 +15,7 @@ public class GameBoardView extends BaseView{
 
     @Inject static ChoosePlayer choose;
     GameBoard game;
-    
+
 
     private GameBoardView() {
         super();
