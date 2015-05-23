@@ -18,7 +18,7 @@ public class GameBoard {
 
 
     @Inject
-    private ChoosePlayerController chooseP;
+    private ChoosePlayer chooseP;
     @Inject
     private ChooseTravel chooseT;
 
@@ -212,28 +212,56 @@ public class GameBoard {
     number of players it is.
      */
     private void createPlayers() {
-        for (int i = 0; i < 6; i++) {
-            //String choosen = (String) theBox.get(i).getValue();
+        for (int i = 0; i < chooseP.getNumberOfPlayers(); i++) {
+            String choosen = "";
+            String name = "";
 
-            String choosen = "Asia";
+            switch (i){
+                case 0:
+                    choosen = chooseT.getStartPlaceOne();
+                    name = chooseP.getNameOne();
+                    break;
+                case 1:
+                    choosen = chooseT.getStartPlaceTwo();
+                    name = chooseP.getNameTwo();
+                    break;
+                case 2:
+                    choosen = chooseT.getStartPlaceThree();
+                    name = chooseP.getNameThree();
+                    break;
+                case 3:
+                    choosen = chooseT.getStartPlaceFour();
+                    name = chooseP.getNameFour();
+                    break;
+                case 4:
+                    choosen = chooseT.getStartPlaceFive();
+                    name = chooseP.getNameFive();
+                    break;
+                case 5:
+                    choosen = chooseT.getStartPlaceSix();
+                    name = chooseP.getNameSix();
+                    break;
+
+
+
+            }
 
             switch (choosen) {
                 case "Asia":
-                   players.add(new Player("Rasti",getSpotsOuter().get(0)));
+                   players.add(new Player(name,getSpotsOuter().get(0)));
                     break;
                 case "Africa":
-                    players.add(new Player("Heléne",getSpotsOuter().get(7)));
+                    players.add(new Player(name,getSpotsOuter().get(7)));
                     break;
                 case "South America":
-                    players.add(new Player("Ina",getSpotsOuter().get(14)));
+                    players.add(new Player(name,getSpotsOuter().get(14)));
                     break;
                 case "North America":
-                    players.add(new Player("Emina",getSpotsOuter().get(21)));
+                    players.add(new Player(name,getSpotsOuter().get(21)));
                     break;
 
                 default:
-                    System.out.println("Something");
-                    //TODO Popup där vi säger att den måste välja något.
+                    throw new IllegalArgumentException("Something is wrong");
             }
         }
     }

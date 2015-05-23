@@ -34,7 +34,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-             <ComboBox fx:id="c1" promptText="Choose Continent">
+             <ComboBox fx:id="c1" promptText="Choose Continent" onAction="#firstChooice">
                  <items>
                      <FXCollections fx:factory="observableArrayList">
                          <String fx:value="Asia" />
@@ -53,7 +53,7 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <ComboBox fx:id="c2" promptText="Choose Continent">
+            <ComboBox fx:id="c2" promptText="Choose Continent" onAction="#secondChooice">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:value="Asia" />
@@ -63,7 +63,7 @@
                     </FXCollections>
                 </items>
             </ComboBox>
-            <Label layoutX="10.0" layoutY="74.0" stylesheets="@label.css" text="Player 3">
+            <Label layoutX="10.0" layoutY="74.0" stylesheets="@label.css" text="Player 3" >
                <font>
                   <Font name="Apple Chancery" size="14.0" />
                </font>
@@ -71,7 +71,7 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-             <ComboBox fx:id="c3" promptText="Choose Continent">
+             <ComboBox fx:id="c3" promptText="Choose Continent" onAction="#thirdChooice">
                  <items>
                      <FXCollections fx:factory="observableArrayList">
                          <String fx:value="Asia" />
@@ -81,7 +81,7 @@
                      </FXCollections>
                  </items>
              </ComboBox>
-            <Label layoutX="10.0" layoutY="138.0" stylesheets="@label.css" text="Player 4">
+            <Label layoutX="10.0" layoutY="138.0" stylesheets="@label.css" text="Player 4" >
                <font>
                   <Font name="Apple Chancery" size="14.0" />
                </font>
@@ -89,7 +89,7 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-             <ComboBox fx:id="c4" promptText="Choose Continent">
+             <ComboBox fx:id="c4" promptText="Choose Continent" onAction="#fourthChooice">
                  <items>
                      <FXCollections fx:factory="observableArrayList">
                          <String fx:value="Asia" />
@@ -99,7 +99,7 @@
                      </FXCollections>
                  </items>
              </ComboBox>
-            <Label layoutX="10.0" layoutY="202.0" stylesheets="@label.css" text="Player 5">
+            <Label layoutX="10.0" layoutY="202.0" stylesheets="@label.css" text="Player 5" >
                <font>
                   <Font name="Apple Chancery" size="14.0" />
                </font>
@@ -107,7 +107,7 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-             <ComboBox fx:id="c5" promptText="Choose Continent">
+             <ComboBox fx:id="c5" promptText="Choose Continent" onAction="#fifthChooice">
                  <items>
                      <FXCollections fx:factory="observableArrayList">
                          <String fx:value="Asia" />
@@ -117,7 +117,7 @@
                      </FXCollections>
                  </items>
              </ComboBox>
-            <Label layoutX="10.0" layoutY="266.0" stylesheets="@label.css" text="Player 6">
+            <Label layoutX="10.0" layoutY="266.0" stylesheets="@label.css" text="Player 6" >
                <font>
                   <Font name="Apple Chancery" size="14.0" />
                </font>
@@ -125,7 +125,7 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-             <ComboBox fx:id="c6" promptText="Choose Continent">
+             <ComboBox fx:id="c6" promptText="Choose Continent" onAction="#sixthChooice">
                  <items>
                      <FXCollections fx:factory="observableArrayList">
                          <String fx:value="Asia" />

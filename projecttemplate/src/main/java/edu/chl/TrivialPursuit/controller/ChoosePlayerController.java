@@ -49,6 +49,7 @@ public class ChoosePlayerController implements Initializable {
     private void onButtonPressed(ActionEvent e) throws IOException{
 
         addNamesToList();
+        setNameValues();
 
         final ChooseTravelView chooseTravelView = ChooseTravelView.create();
         chooseTravelView.show();
@@ -80,6 +81,33 @@ public class ChoosePlayerController implements Initializable {
         for(int i = 0; i < numberChoosed; i++) {
            String name = playerTexts.get(i).getText();
             playerNames.add(name);
+        }
+    }
+
+    private  void setNameValues(){
+        for(int i = 0; i < choosePlayer.getNumberOfPlayers(); i++){
+            switch(i){
+                case 0:
+                    choosePlayer.setNameOne(playerNames.get(i));
+                    break;
+                case 1:
+                    choosePlayer.setNameTwo(playerNames.get(i));
+                    break;
+                case 2:
+                    choosePlayer.setNameThree(playerNames.get(i));
+                    break;
+                case 3:
+                    choosePlayer.setNameFour(playerNames.get(i));
+                    break;
+                case 4:
+                    choosePlayer.setNameFive(playerNames.get(i));
+                    break;
+                case 5:
+                    choosePlayer.setNameSix(playerNames.get(i));
+                    break;
+                default:
+                    throw new IllegalArgumentException("Something is wrong");
+            }
 
         }
     }

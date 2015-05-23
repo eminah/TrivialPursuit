@@ -25,10 +25,11 @@ public class ChooseTravelController implements Initializable {
 
     @Inject
     ChoosePlayer choosePlayer;
-
-
+    @Inject
+    ChooseTravel chooseTravel;
     private ArrayList<ComboBox> theBox;
-    private boolean firstTime = true;
+    private ArrayList<String> travelChooices;
+
 
 
     @FXML
@@ -56,6 +57,36 @@ public class ChooseTravelController implements Initializable {
 
     }
 
+    @FXML
+    private void firstChooice(){
+        chooseTravel.setStartPlaceOne(c1.getValue());
+    }
+
+    @FXML
+    private void secondChooice(){
+        chooseTravel.setStartPlaceTwo(c2.getValue());
+    }
+
+    @FXML
+    private void thirdChooice(){
+        chooseTravel.setStartPlaceThree(c3.getValue());
+    }
+
+    @FXML
+    private void fourthChooice(){
+        chooseTravel.setStartPlaceFour(c4.getValue());
+    }
+
+    @FXML
+    private void fifthChooice(){
+        chooseTravel.setStartPlaceFive(c5.getValue());
+    }
+
+    @FXML
+    private void sixthChooice(){
+        chooseTravel.setStartPlaceSix(c6.getValue());
+    }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -66,10 +97,11 @@ public class ChooseTravelController implements Initializable {
         theBox.add(c4);
         theBox.add(c5);
         theBox.add(c6);
+        travelChooices = new ArrayList<>();
+
         System.out.println(choosePlayer.getNumberOfPlayers());
         for(int i = 5; i >= choosePlayer.getNumberOfPlayers(); i--) {
             theBox.get(i).setDisable(true);
         }
-
     }
 }
