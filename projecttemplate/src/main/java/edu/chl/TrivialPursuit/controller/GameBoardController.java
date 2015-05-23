@@ -1,6 +1,5 @@
 package edu.chl.trivialpursuit.controller;
-import edu.chl.trivialpursuit.model.Dice;
-import edu.chl.trivialpursuit.model.GameBoard;
+import edu.chl.trivialpursuit.model.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
@@ -44,7 +43,15 @@ public class GameBoardController implements Initializable {
     Dice dice;
 
     @Inject
+    ChoosePlayer chooseP;
+
+    @Inject
+    ChooseTravel chooseT;
+
+    @Inject
     GameBoard game;
+
+    private ArrayList<Player> players;
 
 
 
@@ -54,7 +61,7 @@ public class GameBoardController implements Initializable {
 
     @FXML
     public void moveRight(){
-        movePlayerRight(1,dice.getTotalDiceValue());
+        movePlayerRight(1, dice.getTotalDiceValue());
         drawBoard();
     }
 
@@ -123,35 +130,35 @@ public class GameBoardController implements Initializable {
     public void movePlayerRight(int player, int diceValue){
         switch(player){
             case 1:
-                game.getPlayers().get(0).goRight(diceValue);
-                setX1(game.getPlayers().get(0).getSpot().getCooX());
-                setY1(game.getPlayers().get(0).getSpot().getCooY());
+                players.get(0).goRight(diceValue);
+                setX1(players.get(0).getSpot().getCooX());
+                setY1(players.get(0).getSpot().getCooY());
 
                 break;
             case 2:
-                game.getPlayers().get(1).goRight(diceValue);
-                setX1(game.getPlayers().get(1).getSpot().getCooX());
-                setY1(game.getPlayers().get(1).getSpot().getCooY());
+                players.get(1).goRight(diceValue);
+                setX1(players.get(1).getSpot().getCooX());
+                setY1(players.get(1).getSpot().getCooY());
                 break;
             case 3:
-                game.getPlayers().get(2).goRight(diceValue);
-                setX1(game.getPlayers().get(2).getSpot().getCooX());
-                setY1(game.getPlayers().get(2).getSpot().getCooY());
+                players.get(2).goRight(diceValue);
+                setX1(players.get(2).getSpot().getCooX());
+                setY1(players.get(2).getSpot().getCooY());
                 break;
             case 4:
-                game.getPlayers().get(3).goRight(diceValue);
-                setX1(game.getPlayers().get(3).getSpot().getCooX());
-                setY1(game.getPlayers().get(3).getSpot().getCooY());;
+                players.get(3).goRight(diceValue);
+                setX1(players.get(3).getSpot().getCooX());
+                setY1(players.get(3).getSpot().getCooY());;
                 break;
             case 5:
-                game.getPlayers().get(4).goRight(diceValue);
-                setX1(game.getPlayers().get(4).getSpot().getCooX());
-                setY1(game.getPlayers().get(4).getSpot().getCooY());
+                players.get(4).goRight(diceValue);
+                setX1(players.get(4).getSpot().getCooX());
+                setY1(players.get(4).getSpot().getCooY());
                 break;
             case 6:
-                game.getPlayers().get(5).goRight(diceValue);
-                setX1(game.getPlayers().get(5).getSpot().getCooX());
-                setY1(game.getPlayers().get(5).getSpot().getCooY());
+                players.get(5).goRight(diceValue);
+                setX1(players.get(5).getSpot().getCooX());
+                setY1(players.get(5).getSpot().getCooY());
                 break;
         }
     }
@@ -164,34 +171,34 @@ public class GameBoardController implements Initializable {
     public void movePlayerLeft(int player, int diceValue){
         switch(player){
             case 1:
-                game.getPlayers().get(0).goLeft(diceValue);
-                setX1(game.getPlayers().get(0).getSpot().getCooX());
-                setY1(game.getPlayers().get(0).getSpot().getCooY());
+                players.get(0).goLeft(diceValue);
+                setX1(players.get(0).getSpot().getCooX());
+                setY1(players.get(0).getSpot().getCooY());
                 break;
             case 2:
-                game.getPlayers().get(1).goLeft(diceValue);
-                setX1(game.getPlayers().get(1).getSpot().getCooX());
-                setY1(game.getPlayers().get(1).getSpot().getCooY());
+                players.get(1).goLeft(diceValue);
+                setX1(players.get(1).getSpot().getCooX());
+                setY1(players.get(1).getSpot().getCooY());
                 break;
             case 3:
-                game.getPlayers().get(2).goLeft(diceValue);
-                setX1(game.getPlayers().get(2).getSpot().getCooX());
-                setY1(game.getPlayers().get(2).getSpot().getCooY());
+                players.get(2).goLeft(diceValue);
+                setX1(players.get(2).getSpot().getCooX());
+                setY1(players.get(2).getSpot().getCooY());
                 break;
             case 4:
-                game.getPlayers().get(3).goLeft(diceValue);
-                setX1(game.getPlayers().get(3).getSpot().getCooX());
-                setY1(game.getPlayers().get(3).getSpot().getCooY());
+                players.get(3).goLeft(diceValue);
+                setX1(players.get(3).getSpot().getCooX());
+                setY1(players.get(3).getSpot().getCooY());
                 break;
             case 5:
-                game.getPlayers().get(4).goLeft(diceValue);
-                setX1(game.getPlayers().get(4).getSpot().getCooX());
-                setY1(game.getPlayers().get(4).getSpot().getCooY());
+                players.get(4).goLeft(diceValue);
+                setX1(players.get(4).getSpot().getCooX());
+                setY1(players.get(4).getSpot().getCooY());
                 break;
             case 6:
-                game.getPlayers().get(5).goLeft(diceValue);
-                setX1(game.getPlayers().get(5).getSpot().getCooX());
-                setY1(game.getPlayers().get(5).getSpot().getCooY());
+                players.get(5).goLeft(diceValue);
+                setX1(players.get(5).getSpot().getCooX());
+                setY1(players.get(5).getSpot().getCooY());
                 break;
         }
 
@@ -202,20 +209,106 @@ public class GameBoardController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //TODO Göra detta snyggare förslagsvis med en for;
-        setX1(game.getPlayers().get(0).getSpot().getCooX());
-        setY1(game.getPlayers().get(0).getSpot().getCooY());
-        setX2(game.getPlayers().get(1).getSpot().getCooX());
-        setY2(game.getPlayers().get(1).getSpot().getCooY());
-        setX3(game.getPlayers().get(2).getSpot().getCooX());
-        setY3(game.getPlayers().get(2).getSpot().getCooY());
-        setX4(game.getPlayers().get(3).getSpot().getCooX());
-        setY4(game.getPlayers().get(3).getSpot().getCooY());
-        setX5(game.getPlayers().get(4).getSpot().getCooX());
-        setY5(game.getPlayers().get(4).getSpot().getCooY());
-        setX6(game.getPlayers().get(5).getSpot().getCooX());
-        setY6(game.getPlayers().get(5).getSpot().getCooY());
+        players = new ArrayList<>();
+        createPlayers();
+
+
+
+
+        for(int i = 0; i < chooseP.getNumberOfPlayers(); i++){
+            switch(i){
+                case 0:
+                    setX1(players.get(0).getSpot().getCooX());
+                    setY1(players.get(0).getSpot().getCooY());
+                    break;
+                case 1:
+                    setX2(players.get(i).getSpot().getCooX());
+                    setY2(players.get(i).getSpot().getCooY());
+                    break;
+                case 2:
+                    setX3(players.get(i).getSpot().getCooX());
+                    setY3(players.get(i).getSpot().getCooY());
+                    break;
+                case 3:
+                    setX4(players.get(i).getSpot().getCooX());
+                    setY4(players.get(i).getSpot().getCooY());
+                    break;
+                case 4:
+                    setX5(players.get(i).getSpot().getCooX());
+                    setY5(players.get(i).getSpot().getCooY());
+                    break;
+                case 5:
+                    setX6(players.get(i).getSpot().getCooX());
+                    setY6(players.get(i).getSpot().getCooY());
+                    break;
+                default:
+                    throw new IllegalArgumentException("Something is wrong");
+            }
+        }
+
         drawBoard();
 
        }
+    /*
+    Here I create players depending on their choices of Continent and
+    number of players it is.
+     */
+    private void createPlayers() {
+        for (int i = 0; i < chooseP.getNumberOfPlayers(); i++) {
+            String choosen = "";
+            String name = "";
 
+            switch (i){
+                case 0:
+                    choosen = chooseT.getStartPlaceOne();
+                    name = chooseP.getNameOne();
+                    break;
+                case 1:
+                    choosen = chooseT.getStartPlaceTwo();
+                    name = chooseP.getNameTwo();
+                    break;
+                case 2:
+                    choosen = chooseT.getStartPlaceThree();
+                    name = chooseP.getNameThree();
+                    break;
+                case 3:
+                    choosen = chooseT.getStartPlaceFour();
+                    name = chooseP.getNameFour();
+                    break;
+                case 4:
+                    choosen = chooseT.getStartPlaceFive();
+                    name = chooseP.getNameFive();
+                    break;
+                case 5:
+                    choosen = chooseT.getStartPlaceSix();
+                    name = chooseP.getNameSix();
+                    break;
+
+
+
+            }
+
+            switch (choosen) {
+                case "Asia":
+                    players.add(new Player(name,game.getSpotsOuter().get(0)));
+                    break;
+                case "Africa":
+                    players.add(new Player(name,game.getSpotsOuter().get(7)));
+                    break;
+                case "South America":
+                    players.add(new Player(name,game.getSpotsOuter().get(14)));
+                    break;
+                case "North America":
+                    players.add(new Player(name,game.getSpotsOuter().get(21)));
+                    break;
+
+                default:
+                    throw new IllegalArgumentException("Something is wrong");
+            }
+        }
     }
+
+    
+
+
+}

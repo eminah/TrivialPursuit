@@ -1,6 +1,6 @@
 package edu.chl.trivialpursuit.model;
 
-import edu.chl.trivialpursuit.controller.ChoosePlayerController;
+
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import javax.inject.Inject;
@@ -13,7 +13,7 @@ public class GameBoard {
 
     private ArrayList<Spot> spotsOuter;
     private ArrayList<Spot> spotsInner;
-    private ArrayList<Player> players;
+
 
 
 
@@ -28,11 +28,10 @@ public class GameBoard {
 
         spotsOuter = new ArrayList<>();
         spotsInner = new ArrayList<>();
-        players = new ArrayList<>();
         addSpotsToListOuter();
         setBoardingSpotsOuter();
         addSpotsToListInner();
-        createPlayers();
+
 
 
     }
@@ -207,68 +206,6 @@ public class GameBoard {
         }
     }
 
-    /*
-    Here I create players depending on their choices of Continent and
-    number of players it is.
-     */
-    private void createPlayers() {
-        for (int i = 0; i < chooseP.getNumberOfPlayers(); i++) {
-            String choosen = "";
-            String name = "";
-
-            switch (i){
-                case 0:
-                    choosen = chooseT.getStartPlaceOne();
-                    name = chooseP.getNameOne();
-                    break;
-                case 1:
-                    choosen = chooseT.getStartPlaceTwo();
-                    name = chooseP.getNameTwo();
-                    break;
-                case 2:
-                    choosen = chooseT.getStartPlaceThree();
-                    name = chooseP.getNameThree();
-                    break;
-                case 3:
-                    choosen = chooseT.getStartPlaceFour();
-                    name = chooseP.getNameFour();
-                    break;
-                case 4:
-                    choosen = chooseT.getStartPlaceFive();
-                    name = chooseP.getNameFive();
-                    break;
-                case 5:
-                    choosen = chooseT.getStartPlaceSix();
-                    name = chooseP.getNameSix();
-                    break;
-
-
-
-            }
-
-            switch (choosen) {
-                case "Asia":
-                   players.add(new Player(name,getSpotsOuter().get(0)));
-                    break;
-                case "Africa":
-                    players.add(new Player(name,getSpotsOuter().get(7)));
-                    break;
-                case "South America":
-                    players.add(new Player(name,getSpotsOuter().get(14)));
-                    break;
-                case "North America":
-                    players.add(new Player(name,getSpotsOuter().get(21)));
-                    break;
-
-                default:
-                    throw new IllegalArgumentException("Something is wrong");
-            }
-        }
-    }
-
-    public ArrayList<Player> getPlayers() {
-        return players;
-    }
 
 
 
