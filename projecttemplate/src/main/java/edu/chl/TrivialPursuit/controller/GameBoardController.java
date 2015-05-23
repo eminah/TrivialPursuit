@@ -2,39 +2,36 @@ package edu.chl.trivialpursuit.controller;
 import edu.chl.trivialpursuit.model.Dice;
 import edu.chl.trivialpursuit.model.GameBoard;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 import javax.inject.Inject;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 
 /**
  * Created by Rasti on 2015-05-14..
  */
 
-public class GameBoardController {
+public class GameBoardController implements Initializable {
+
+    private int x1,x2,x3,x4,x5,x6,y1,y2,y3,y4,y5,y6;
+
     private Color p1 = Color.DEEPPINK;
-    private int x1;
-    private int y1;
     private Color p2 = Color.BLUE;
-    private int x2;
-    private int y2;
     private Color p3 = Color.DARKGRAY;
-    private int x3;
-    private int y3;
     private Color p4 = Color.YELLOW;
-    private int x4;
-    private int y4;
     private Color p5 = Color.RED;
-    private int x5;
-    private int y5;
     private Color p6 = Color.LAWNGREEN;
-    private int x6;
-    private int y6;;
-    private Dice dice = new Dice();
+
+
 
 
     @FXML
@@ -44,17 +41,26 @@ public class GameBoardController {
     Label playerOneName;
 
     @Inject
+    Dice dice;
+
+    @Inject
     GameBoard game;
+
+
+
+
 
 
 
     @FXML
     public void moveRight(){
         movePlayerRight(1,dice.getTotalDiceValue());
+        drawBoard();
     }
 
     @FXML void moveLeft(){
         movePlayerLeft(1, dice.getTotalDiceValue());
+        drawBoard();
     }
 
     public void drawBoard(){
@@ -95,23 +101,23 @@ public class GameBoardController {
     private void draw(GraphicsContext gc){
         gc.drawImage(new Image("edu/chl/trivialpursuit/view/board_pastell.png"), 0, 0, boardCanvas.getWidth(), boardCanvas.getHeight());
         gc.setFill(p1);
-        gc.fillOval(x1, y1, 15, 15);
-        gc.strokeOval(x1, y1, 15, 15);
+        gc.fillOval(x1,y1, 15, 15);
+        gc.strokeOval(x1,y1, 15, 15);
         gc.setFill(p2);
-        gc.fillOval(x2, y2, 15, 15);
-        gc.strokeOval(x2, y2, 15, 15);
+        gc.fillOval(x2,y2, 15, 15);
+        gc.strokeOval(x2,y2, 15, 15);
         gc.setFill(p3);
-        gc.fillOval(x3, y3, 15, 15);
-        gc.strokeOval(x3, y3, 15, 15);
+        gc.fillOval(x3,y3, 15, 15);
+        gc.strokeOval(x3,y3, 15, 15);
         gc.setFill(p4);
-        gc.fillOval(x4, y4, 15, 15);
-        gc.strokeOval(x4, y4, 15, 15);
+        gc.fillOval(x4,y4, 15, 15);
+        gc.strokeOval(x4,y4, 15, 15);
         gc.setFill(p5);
-        gc.fillOval(x5, y5, 15, 15);
-        gc.strokeOval(x5, y5, 15, 15);
+        gc.fillOval(x5,y5, 15, 15);
+        gc.strokeOval(x5,y5, 15, 15);
         gc.setFill(p6);
-        gc.fillOval(x6, y6, 15, 15);
-        gc.strokeOval(x6, y6, 15, 15);
+        gc.fillOval(x6,y6, 15, 15);
+        gc.strokeOval(x6,y6, 15, 15);
 
     }
     public void movePlayerRight(int player, int diceValue){
@@ -120,6 +126,7 @@ public class GameBoardController {
                 game.getPlayers().get(0).goRight(diceValue);
                 setX1(game.getPlayers().get(0).getSpot().getCooX());
                 setY1(game.getPlayers().get(0).getSpot().getCooY());
+
                 break;
             case 2:
                 game.getPlayers().get(1).goRight(diceValue);
@@ -192,4 +199,23 @@ public class GameBoardController {
     }
 
 
-}
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        //TODO Göra detta snyggare förslagsvis med en for;
+        setX1(game.getPlayers().get(0).getSpot().getCooX());
+        setY1(game.getPlayers().get(0).getSpot().getCooY());
+        setX2(game.getPlayers().get(1).getSpot().getCooX());
+        setY2(game.getPlayers().get(1).getSpot().getCooY());
+        setX3(game.getPlayers().get(2).getSpot().getCooX());
+        setY3(game.getPlayers().get(2).getSpot().getCooY());
+        setX4(game.getPlayers().get(3).getSpot().getCooX());
+        setY4(game.getPlayers().get(3).getSpot().getCooY());
+        setX5(game.getPlayers().get(4).getSpot().getCooX());
+        setY5(game.getPlayers().get(4).getSpot().getCooY());
+        setX6(game.getPlayers().get(5).getSpot().getCooX());
+        setY6(game.getPlayers().get(5).getSpot().getCooY());
+        drawBoard();
+
+       }
+
+    }

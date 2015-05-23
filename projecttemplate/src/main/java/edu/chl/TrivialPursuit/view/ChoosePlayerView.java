@@ -12,12 +12,12 @@ import java.io.IOException;
 
 
 public final class ChoosePlayerView extends BaseView {
-   static ChoosePlayer choose;
+
 
 
     private ChoosePlayerView() {
         super();
-        choose = new ChoosePlayer();
+
     }
 
     public static ChoosePlayerView create() throws IOException {

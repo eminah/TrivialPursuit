@@ -7,13 +7,13 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="648.0" stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.trivialpursuit.controller.GameBoardController">
+<SplitPane dividerPositions="0.29797979797979796" stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.trivialpursuit.controller.GameBoardController">
   <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+    <AnchorPane prefHeight="576.0" prefWidth="145.0">
          <children>
             <VBox prefHeight="487.0" prefWidth="197.0">
                <children>
-                  <Label text="Player 1" fx:id="playerOneName">
+                  <Label fx:id="playerOneName" text="Player 1">
                      <VBox.margin>
                         <Insets left="10.0" top="5.0" />
                      </VBox.margin>
@@ -232,20 +232,25 @@
                </children>
             </VBox>
          </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="446.0" prefWidth="456.0">
+    <AnchorPane prefHeight="515.0" prefWidth="517.0">
          <children>
-
-            <Canvas fx:id="boardCanvas" height="490.0" width="480.0"  />
-            <HBox layoutY="520.0" prefHeight="107.0" prefWidth="477.0" spacing="80.0">
-
+            <VBox prefHeight="578.0" prefWidth="532.0" spacing="20.0">
                <children>
-                  <Button mnemonicParsing="false" text="Go Left" onAction="#moveLeft" />
-                  <Button mnemonicParsing="false" text="Go Right" onAction="#moveRight" />
+      
+                        <Canvas fx:id="boardCanvas" height="477.0" width="532.0" />
+                  <HBox prefHeight="68.0" prefWidth="532.0" spacing="80.0">
+      
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#moveLeft" text="Go Left" />
+                        <Region prefHeight="78.0" prefWidth="29.0" />
+                        <Button mnemonicParsing="false" onAction="#moveRight" prefHeight="40.0" prefWidth="121.0" text="Go Right" />
+                     </children>
+                     <padding>
+                        <Insets left="60.0" right="60.0" top="10.0" />
+                     </padding>
+                  </HBox>
                </children>
-               <padding>
-                  <Insets left="50.0" top="30.0" />
-               </padding>
-            </HBox>
+            </VBox>
          </children></AnchorPane>
   </items>
 </SplitPane>

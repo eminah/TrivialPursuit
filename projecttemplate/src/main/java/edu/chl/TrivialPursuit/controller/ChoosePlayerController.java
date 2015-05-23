@@ -28,22 +28,20 @@ public class ChoosePlayerController {
     @FXML
     private TextField tOne, tTwo, tThree,tFour,tFive,tSix;
 
-    private int numberChoosed = 0;
+    @Inject
+    private ChoosePlayer choose;
+
+    private int numberChoosed;
 
     private boolean firstTime = true;
 
-
-    @Inject ChoosePlayer choose;
 
 
 
     @FXML
     private void onButtonPressed(ActionEvent e) throws IOException{
-
         final ChooseTravelView chooseTravelView = ChooseTravelView.create();
         chooseTravelView.show();
-        choose.setNumberOfPlayers(numberChoosed);
-
         addNamesToList();
         e.consume();
     }
@@ -85,4 +83,5 @@ public class ChoosePlayerController {
 
 
     }
+
 }

@@ -1,5 +1,6 @@
 package edu.chl.trivialpursuit.model;
 
+import edu.chl.trivialpursuit.controller.ChoosePlayerController;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import javax.inject.Inject;
@@ -13,13 +14,11 @@ public class GameBoard {
     private ArrayList<Spot> spotsOuter;
     private ArrayList<Spot> spotsInner;
     private ArrayList<Player> players;
-    @Inject
-    private ChoosePlayer chooseP;
-    @Inject
-    private ChooseTravel chooseT;
+
 
 
     public GameBoard(){
+
         spotsOuter = new ArrayList<>();
         spotsInner = new ArrayList<>();
         players = new ArrayList<>();
@@ -27,6 +26,7 @@ public class GameBoard {
         setBoardingSpotsOuter();
         addSpotsToListInner();
         createPlayers();
+
 
     }
 
@@ -215,13 +215,13 @@ public class GameBoard {
                    players.add(new Player("Rasti",getSpotsOuter().get(0)));
                     break;
                 case "Africa":
-                    players.add(new Player((String)chooseP.getPlayerNames().get(i),getSpotsOuter().get(7)));
+                    players.add(new Player("Heléne",getSpotsOuter().get(7)));
                     break;
                 case "South America":
-                    players.add(new Player((String)chooseP.getPlayerNames().get(i),getSpotsOuter().get(14)));
+                    players.add(new Player("Ina",getSpotsOuter().get(14)));
                     break;
                 case "North America":
-                    players.add(new Player((String)chooseP.getPlayerNames().get(i),getSpotsOuter().get(21)));
+                    players.add(new Player("Emina",getSpotsOuter().get(21)));
                     break;
 
                 default:

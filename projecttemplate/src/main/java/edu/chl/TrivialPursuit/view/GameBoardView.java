@@ -26,9 +26,7 @@ public class GameBoardView extends BaseView{
 
     public static GameBoardView create() throws  IOException{
         final GameBoardView gameBoardView = new GameBoardView();
-        final Label label = (Label)gameBoardView.getScene().lookup("#playerOneName");
         Injector.injectMembers(StartView.class, gameBoardView);
-        System.out.println(label.getText());
         return gameBoardView;
 
     }

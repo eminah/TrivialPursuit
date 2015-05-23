@@ -69,10 +69,6 @@ public class ChooseTravelController {
         e.consume();
 
     }
-        //TODO kanske bör skapa spelarna i gameboard klassen
-    /**
-     * Creates players based on what the player has choosen for name and Continent and adds it to a Arraylist
-     */
 
 
 

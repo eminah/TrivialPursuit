@@ -14,6 +14,7 @@ public class ChoosePlayer {
     public ChoosePlayer(){
 
         playerNames = new ArrayList<>();
+        numberOfPlayers = 0;
 
     }
 
