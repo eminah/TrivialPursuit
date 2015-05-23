@@ -13,7 +13,7 @@
          <children>
             <VBox prefHeight="487.0" prefWidth="197.0">
                <children>
-                  <Label text="Player 1">
+                  <Label text="Player 1" fx:id="playerOneName">
                      <VBox.margin>
                         <Insets left="10.0" top="5.0" />
                      </VBox.margin>

@@ -1,10 +1,10 @@
 package edu.chl.trivialpursuit.controller;
 import edu.chl.trivialpursuit.model.Dice;
 import edu.chl.trivialpursuit.model.GameBoard;
-import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 
@@ -35,10 +35,13 @@ public class GameBoardController {
     private int x6;
     private int y6;;
     private Dice dice = new Dice();
-    private Timeline updateBoard;
+
 
     @FXML
     Canvas boardCanvas;
+
+    @FXML
+    Label playerOneName;
 
     @Inject
     GameBoard game;

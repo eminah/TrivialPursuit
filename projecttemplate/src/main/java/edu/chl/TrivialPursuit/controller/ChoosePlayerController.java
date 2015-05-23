@@ -28,7 +28,7 @@ public class ChoosePlayerController {
     @FXML
     private TextField tOne, tTwo, tThree,tFour,tFive,tSix;
 
-    private int numberChoosed = 2;
+    private int numberChoosed = 0;
 
     private boolean firstTime = true;
 
