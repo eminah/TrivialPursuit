@@ -34,7 +34,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-             <ComboBox fx:id="c1" disable="true" promptText="Choose Continent">
+             <ComboBox fx:id="c1" promptText="Choose Continent">
                  <items>
                      <FXCollections fx:factory="observableArrayList">
                          <String fx:value="Asia" />
@@ -53,7 +53,7 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-            <ComboBox fx:id="c2" disable="true" promptText="Choose Continent">
+            <ComboBox fx:id="c2" promptText="Choose Continent">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:value="Asia" />
@@ -71,7 +71,7 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-             <ComboBox fx:id="c3" disable="true" promptText="Choose Continent">
+             <ComboBox fx:id="c3" promptText="Choose Continent">
                  <items>
                      <FXCollections fx:factory="observableArrayList">
                          <String fx:value="Asia" />
@@ -89,7 +89,7 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-             <ComboBox fx:id="c4" disable="true" promptText="Choose Continent">
+             <ComboBox fx:id="c4" promptText="Choose Continent">
                  <items>
                      <FXCollections fx:factory="observableArrayList">
                          <String fx:value="Asia" />
@@ -107,7 +107,7 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-             <ComboBox fx:id="c5" disable="true" promptText="Choose Continent">
+             <ComboBox fx:id="c5" promptText="Choose Continent">
                  <items>
                      <FXCollections fx:factory="observableArrayList">
                          <String fx:value="Asia" />
@@ -125,7 +125,7 @@
                   <Insets left="5.0" />
                </padding>
             </Label>
-             <ComboBox fx:id="c6" disable="true" promptText="Choose Continent">
+             <ComboBox fx:id="c6" promptText="Choose Continent">
                  <items>
                      <FXCollections fx:factory="observableArrayList">
                          <String fx:value="Asia" />

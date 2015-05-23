@@ -67,8 +67,8 @@ public class ChooseTravelController implements Initializable {
         theBox.add(c5);
         theBox.add(c6);
         System.out.println(choosePlayer.getNumberOfPlayers());
-        for(int i = 5; i > choosePlayer.getNumberOfPlayers(); i--) {
-            theBox.get(i).setDisable(false);
+        for(int i = 5; i >= choosePlayer.getNumberOfPlayers(); i--) {
+            theBox.get(i).setDisable(true);
         }
 
     }
