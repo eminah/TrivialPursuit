@@ -17,6 +17,13 @@ public class GameBoard {
 
 
 
+    @Inject
+    private ChoosePlayerController chooseP;
+    @Inject
+    private ChooseTravel chooseT;
+
+
+
     public GameBoard(){
 
         spotsOuter = new ArrayList<>();

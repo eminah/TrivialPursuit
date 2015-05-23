@@ -4,6 +4,7 @@ import edu.chl.trivialpursuit.model.ChoosePlayer;
 import edu.chl.trivialpursuit.view.ChoosePlayerView;
 import edu.chl.trivialpursuit.view.ChooseTravelView;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 
 import javafx.event.ActionEvent;
@@ -13,14 +14,16 @@ import javafx.scene.control.TextField;
 import javax.inject.Inject;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 /**
  * Created by Rasti on 2015-05-05.
  */
-public class ChoosePlayerController {
+public class ChoosePlayerController implements Initializable {
 
-    private ArrayList <TextField> playerTexts;
+
 
     @FXML
     private ComboBox<String> numPlayers;
@@ -29,8 +32,11 @@ public class ChoosePlayerController {
     private TextField tOne, tTwo, tThree,tFour,tFive,tSix;
 
     @Inject
-    private ChoosePlayer choose;
 
+    ChoosePlayer choosePlayer;
+
+    private ArrayList <TextField> playerTexts;
+    private ArrayList <String> playerNames;
     private int numberChoosed;
 
     private boolean firstTime = true;
@@ -38,30 +44,26 @@ public class ChoosePlayerController {
 
 
 
+
     @FXML
     private void onButtonPressed(ActionEvent e) throws IOException{
+
+        addNamesToList();
+
         final ChooseTravelView chooseTravelView = ChooseTravelView.create();
         chooseTravelView.show();
-        addNamesToList();
+
         e.consume();
     }
 
     @FXML
     private void comboAction(ActionEvent e){
-        if(firstTime) {
-            playerTexts = new ArrayList<>();
 
-            playerTexts.add(tOne);
-            playerTexts.add(tTwo);
-            playerTexts.add(tThree);
-            playerTexts.add(tFour);
-            playerTexts.add(tFive);
-            playerTexts.add(tSix);
+        //Set value of an ints that specifies the amount of players
 
-            this.firstTime = false;
-        }
+        choosePlayer.setNumberOfPlayers(numberChoosed = Integer.parseInt(numPlayers.getValue()));
+        numberChoosed = Integer.parseInt(numPlayers.getValue());
 
-        this.numberChoosed = Integer.parseInt(numPlayers.getValue());
         for(int i = 0; i < numberChoosed; i++) {
             playerTexts.get(i).setDisable(false);
 
@@ -77,11 +79,32 @@ public class ChoosePlayerController {
     private void addNamesToList(){
         for(int i = 0; i < numberChoosed; i++) {
            String name = playerTexts.get(i).getText();
-            choose.getPlayerNames().add(name);
+            playerNames.add(name);
 
         }
+    }
+
+    /**
+     *
+     * @return The list containing all the choosen names.
+     */
+    public ArrayList<String> getPlayerNames() {
+        return playerNames;
+    }
 
 
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        playerTexts = new ArrayList<>();
+        playerNames = new ArrayList<>();
+
+        playerTexts.add(tOne);
+        playerTexts.add(tTwo);
+        playerTexts.add(tThree);
+        playerTexts.add(tFour);
+        playerTexts.add(tFive);
+        playerTexts.add(tSix);
     }
 
 }

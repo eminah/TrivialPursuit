@@ -7,27 +7,29 @@ import edu.chl.trivialpursuit.view.DiceView;
 import edu.chl.trivialpursuit.view.GameBoardView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 
 import javax.inject.Inject;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 /**
  * Created by helenejarl on 2015-05-19.
  */
-public class ChooseTravelController {
+public class ChooseTravelController implements Initializable {
 
     @Inject
-    ChoosePlayer choose;
-
-
+    ChoosePlayer choosePlayer;
 
 
     private ArrayList<ComboBox> theBox;
-    private ArrayList<Player> players;
+    private boolean firstTime = true;
+
 
     @FXML
     ComboBox<String> c1,c2,c3,c4,c5,c6;
@@ -46,22 +48,6 @@ public class ChooseTravelController {
 
     @FXML
     private void onDonePressed(ActionEvent e) throws IOException{
-        players = new ArrayList<>();
-        theBox = new ArrayList<>();
-        theBox.add(c1);
-        theBox.add(c2);
-        theBox.add(c3);
-        theBox.add(c4);
-        theBox.add(c5);
-        theBox.add(c6);
-
-        //createPlayers();
-
-
-
-
-
-
 
         final DiceView diceView = DiceView.create();
         diceView.show();
@@ -71,5 +57,19 @@ public class ChooseTravelController {
     }
 
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        theBox = new ArrayList<>();
+        theBox.add(c1);
+        theBox.add(c2);
+        theBox.add(c3);
+        theBox.add(c4);
+        theBox.add(c5);
+        theBox.add(c6);
+        System.out.println(choosePlayer.getNumberOfPlayers());
+        for(int i = 5; i > choosePlayer.getNumberOfPlayers(); i--) {
+            theBox.get(i).setDisable(false);
+        }
 
+    }
 }
