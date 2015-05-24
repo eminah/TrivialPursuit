@@ -1,5 +1,6 @@
 package edu.chl.trivialpursuit.controller;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import edu.chl.trivialpursuit.model.*;
 
 import edu.chl.trivialpursuit.model.ChoosePlayer;
@@ -27,18 +28,7 @@ import java.util.ResourceBundle;
 
 public class GameBoardController implements Initializable {
 
-    // Initial start value of all the coordinates, negative so that they will be out of the canvas
-    private int x1 = -20,x2 = -20,x3 = -20,x4 = -20,x5 = -20,x6 = -20,y1 = -20,y2 = -20,y3 = -20,y4 = -20,y5 = -20,y6 = -20;
-
-    private Color p1 = Color.DEEPPINK;
-    private Color p2 = Color.BLUE;
-    private Color p3 = Color.DARKGRAY;
-    private Color p4 = Color.YELLOW;
-    private Color p5 = Color.RED;
-    private Color p6 = Color.LAWNGREEN;
-
-
-
+    
 
     @FXML
     Canvas boardCanvas;
@@ -58,19 +48,32 @@ public class GameBoardController implements Initializable {
     @Inject
     GameBoard game;
 
+
     private ArrayList<Player> players;
+    // Initial start value of all the coordinates, negative so that they will be out of the canvas
+    private int x1 = -20,x2 = -20,x3 = -20,x4 = -20,x5 = -20,x6 = -20,y1 = -20,y2 = -20,y3 = -20,y4 = -20,y5 = -20,y6 = -20;
+    private boolean[] getTurn;
 
 
-
-
+    private Color p1 = Color.DEEPPINK;
+    private Color p2 = Color.BLUE;
+    private Color p3 = Color.DARKGRAY;
+    private Color p4 = Color.YELLOW;
+    private Color p5 = Color.RED;
+    private Color p6 = Color.LAWNGREEN;
 
 
 
 
     @FXML
     public void moveRight(){
-        movePlayerRight(1, dice.getTotalDiceValue());
+        movePlayerRight(whosTurn(), dice.getTotalDiceValue());
+        System.out.println(whosTurn());
+        setNextTurn();
+        System.out.println(whosTurn());
         drawBoard();
+
+
     }
 
     @FXML void moveLeft(){
@@ -143,32 +146,31 @@ public class GameBoardController implements Initializable {
                 players.get(0).goRight(diceValue);
                 setX1(players.get(0).getSpot().getCooX());
                 setY1(players.get(0).getSpot().getCooY());
-
                 break;
             case 2:
                 players.get(1).goRight(diceValue);
-                setX1(players.get(1).getSpot().getCooX());
-                setY1(players.get(1).getSpot().getCooY());
+                setX2(players.get(1).getSpot().getCooX());
+                setY2(players.get(1).getSpot().getCooY());
                 break;
             case 3:
                 players.get(2).goRight(diceValue);
-                setX1(players.get(2).getSpot().getCooX());
-                setY1(players.get(2).getSpot().getCooY());
+                setX3(players.get(2).getSpot().getCooX());
+                setY3(players.get(2).getSpot().getCooY());
                 break;
             case 4:
                 players.get(3).goRight(diceValue);
-                setX1(players.get(3).getSpot().getCooX());
-                setY1(players.get(3).getSpot().getCooY());;
+                setX4(players.get(3).getSpot().getCooX());
+                setY4(players.get(3).getSpot().getCooY());;
                 break;
             case 5:
                 players.get(4).goRight(diceValue);
-                setX1(players.get(4).getSpot().getCooX());
-                setY1(players.get(4).getSpot().getCooY());
+                setX5(players.get(4).getSpot().getCooX());
+                setY5(players.get(4).getSpot().getCooY());
                 break;
             case 6:
                 players.get(5).goRight(diceValue);
-                setX1(players.get(5).getSpot().getCooX());
-                setY1(players.get(5).getSpot().getCooY());
+                setX6(players.get(5).getSpot().getCooX());
+                setY6(players.get(5).getSpot().getCooY());
                 break;
         }
     }
@@ -184,11 +186,13 @@ public class GameBoardController implements Initializable {
                 players.get(0).goLeft(diceValue);
                 setX1(players.get(0).getSpot().getCooX());
                 setY1(players.get(0).getSpot().getCooY());
+                setNextTurn();
                 break;
             case 2:
                 players.get(1).goLeft(diceValue);
                 setX1(players.get(1).getSpot().getCooX());
                 setY1(players.get(1).getSpot().getCooY());
+                setNextTurn();
                 break;
             case 3:
                 players.get(2).goLeft(diceValue);
@@ -216,13 +220,54 @@ public class GameBoardController implements Initializable {
     }
 
 
+    /**
+     * Set next players turn
+     * Called if the player answers wrong
+     */
+    public void setNextTurn(){
+
+        for(int i = 0; i < getTurn.length; i++){
+            if(getTurn[i]==true){
+                getTurn[i] = false;
+                System.out.println(getTurn.length);
+                if(i+1 == getTurn.length){
+                    getTurn[0] = true;
+                    break;
+                }else{
+                    getTurn[i+1] = true;
+                    break;
+                }
+            }
+        }
+
+
+
+    }
+
+    public int whosTurn() {
+
+        for(int i = 0; i < getTurn.length; i++){
+            if(getTurn[i]==true){
+                return i+1;
+            }
+        }
+        return -1;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //TODO Göra detta snyggare förslagsvis med en for;
 
+
         players = new ArrayList<>();
         createPlayers();
 
+        getTurn = new boolean[chooseP.getNumberOfPlayers()];
+
+        for (int i = 0; i < getTurn.length; i++) {
+            getTurn[i] = false;
+        }
+        getTurn[0] = true;
 
 
 
@@ -266,7 +311,7 @@ public class GameBoardController implements Initializable {
                 case 0:
                     playerOneName.setText(chooseP.getNameOne());
                     playerOneName.setTextFill(p1);
-                    playerOneName.setFont(new Font("Verdana",15));
+                    playerOneName.setFont(new Font("Verdana", 15));
 
                     break;
                 case 1:

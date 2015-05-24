@@ -14,8 +14,6 @@ import java.util.HashSet;
 
 public  class Player {
 
-    @Inject
-    ChoosePlayer choosePlayer;
 
     @Inject
     GameBoard game;
@@ -25,14 +23,11 @@ public  class Player {
 
 
 
-    private int numerOfPlayers = 6;
+
     private String name;
     private Spot spot;
     private boolean hasTicket = false; //Will be set to true when player has collected all Contintents
     private HashSet<Continent> collectedContinents;
-    private boolean[] getTurn = new boolean[numerOfPlayers];
-
-
 
 
 
@@ -47,14 +42,8 @@ public  class Player {
         this.name = name;
         this.spot = spot;
 
-
         collectedContinents = new HashSet<>();
 
-
-        for(int i = 0; i < numerOfPlayers; i++){
-            getTurn[i] = false;
-        }
-        getTurn[0] = true;
 
     }
 
@@ -102,32 +91,7 @@ public  class Player {
     }
 
 
-    /**
-     * Set next players turn
-     * Called if the player answers wrong
-     */
-    public void setNextTurn(){
-        for(int i = 0; i < numerOfPlayers; i++){
-            if(getTurn[i]==true){
-                getTurn[i] = false;
-                if(i+1 == numerOfPlayers){
-                    getTurn[0] = true;
-                }else{
-                    getTurn[i+1] = true;
-                }
-            }
-        }
-    }
 
-    public int whosTurn() {
-
-        for(int i = 0; i < numerOfPlayers; i++){
-            if(getTurn[i]==true){
-                return i+1;
-            }
-        }
-        return -1;
-    }
 
 
 
