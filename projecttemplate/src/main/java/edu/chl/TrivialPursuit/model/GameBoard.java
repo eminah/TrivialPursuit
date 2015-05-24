@@ -83,52 +83,52 @@ public class GameBoard {
     private final ImmutablePair[] SPOT_DEFINITIONS_COORDINATES_OUTER = {
 
             //Coordinates for Asia
-            new ImmutablePair<>(225,15),
-            new ImmutablePair<>(280,26),
-            new ImmutablePair<>(320,45),
-            new ImmutablePair<>(355,60),
-            new ImmutablePair<>(385,90),
-            new ImmutablePair<>(415,130),
-            new ImmutablePair<>(429, 183),
+            new ImmutablePair<>(250,15),
+            new ImmutablePair<>(315,20),
+            new ImmutablePair<>(363,35),
+            new ImmutablePair<>(402,60),
+            new ImmutablePair<>(435,90),
+            new ImmutablePair<>(468,125),
+            new ImmutablePair<>(485, 178),
 
             //Coordinates for Africa
-            new ImmutablePair<>(438,240),
-            new ImmutablePair<>(432,290),
-            new ImmutablePair<>(418,325),
-            new ImmutablePair<>(397,360),
-            new ImmutablePair<>(370,395),
-            new ImmutablePair<>(330,425),
-            new ImmutablePair<>(285,448),
+            new ImmutablePair<>(497,230),
+            new ImmutablePair<>(490,280),
+            new ImmutablePair<>(475,315),
+            new ImmutablePair<>(455,355),
+            new ImmutablePair<>(420,390),
+            new ImmutablePair<>(375,420),
+            new ImmutablePair<>(325,440),
 
             //Coordinates for South America
-            new ImmutablePair<>(235,455),
-            new ImmutablePair<>(170,448),
-            new ImmutablePair<>(130,425),
-            new ImmutablePair<>(90,395),
-            new ImmutablePair<>(60,365),
-            new ImmutablePair<>(35,330),
-            new ImmutablePair<>(25,290),
+            new ImmutablePair<>(260,445),
+            new ImmutablePair<>(195,435),
+            new ImmutablePair<>(140,415),
+            new ImmutablePair<>(95,385),
+            new ImmutablePair<>(65,360),
+            new ImmutablePair<>(40,320),
+            new ImmutablePair<>(23,280),
 
             //Coordinates for North America
             new ImmutablePair<>(20,230),
-            new ImmutablePair<>(25,175),
-            new ImmutablePair<>(50,130),
-            new ImmutablePair<>(70,95),
-            new ImmutablePair<>(100,65),
-            new ImmutablePair<>(135,45),
-            new ImmutablePair<>(170,25),
+            new ImmutablePair<>(25,170),
+            new ImmutablePair<>(50,125),
+            new ImmutablePair<>(75,90),
+            new ImmutablePair<>(110,60),
+            new ImmutablePair<>(150,40),
+            new ImmutablePair<>(190,25),
     };
 
     private final ImmutablePair[] SPOT_DEFINITIONS_COORDINATES_INNER = {
 
             //Coordinates for EUROPE
-            new ImmutablePair<>(260,125),
-            new ImmutablePair<>(235,200),
-            new ImmutablePair<>(320,310),
-            new ImmutablePair<>(225,350),
-            new ImmutablePair<>(135,305),
-            new ImmutablePair<>(120,215),
-            new ImmutablePair<>(170,140),
+            new ImmutablePair<>(295,120),
+            new ImmutablePair<>(380,190),
+            new ImmutablePair<>(360,300),
+            new ImmutablePair<>(250,340),
+            new ImmutablePair<>(150,295),
+            new ImmutablePair<>(135,200),
+            new ImmutablePair<>(190,135),
     };
 
     public ArrayList<Spot> getSpotsOuter() {

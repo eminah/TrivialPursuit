@@ -21,7 +21,8 @@ import java.util.ResourceBundle;
 
 public class GameBoardController implements Initializable {
 
-    private int x1,x2,x3,x4,x5,x6,y1,y2,y3,y4,y5,y6;
+    // Initial start value of all the coordinates, negative so that they will be out of the canvas
+    private int x1 = -20,x2 = -20,x3 = -20,x4 = -20,x5 = -20,x6 = -20,y1 = -20,y2 = -20,y3 = -20,y4 = -20,y5 = -20,y6 = -20;
 
     private Color p1 = Color.DEEPPINK;
     private Color p2 = Color.BLUE;
@@ -73,6 +74,7 @@ public class GameBoardController implements Initializable {
     public void drawBoard(){
         GraphicsContext gc = boardCanvas.getGraphicsContext2D();
         draw(gc);
+
     }
 
     public void setX1(int x1) {
@@ -107,24 +109,25 @@ public class GameBoardController implements Initializable {
     // Searching for all coordinates by hand, time consuming - Helene
     private void draw(GraphicsContext gc){
         gc.drawImage(new Image("edu/chl/trivialpursuit/view/board_pastell.png"), 0, 0, boardCanvas.getWidth(), boardCanvas.getHeight());
+
         gc.setFill(p1);
         gc.fillOval(x1,y1, 15, 15);
         gc.strokeOval(x1,y1, 15, 15);
         gc.setFill(p2);
-        gc.fillOval(x2,y2, 15, 15);
-        gc.strokeOval(x2,y2, 15, 15);
+        gc.fillOval(x2-10,y2, 15, 15);
+        gc.strokeOval(x2-10,y2, 15, 15);
         gc.setFill(p3);
-        gc.fillOval(x3,y3, 15, 15);
-        gc.strokeOval(x3,y3, 15, 15);
+        gc.fillOval(x3,y3-10, 15, 15);
+        gc.strokeOval(x3,y3-10, 15, 15);
         gc.setFill(p4);
-        gc.fillOval(x4,y4, 15, 15);
-        gc.strokeOval(x4,y4, 15, 15);
+        gc.fillOval(x4,y4+10, 15, 15);
+        gc.strokeOval(x4,y4+10, 15, 15);
         gc.setFill(p5);
-        gc.fillOval(x5,y5, 15, 15);
-        gc.strokeOval(x5,y5, 15, 15);
+        gc.fillOval(x5+10,y5, 15, 15);
+        gc.strokeOval(x5+10,y5, 15, 15);
         gc.setFill(p6);
-        gc.fillOval(x6,y6, 15, 15);
-        gc.strokeOval(x6,y6, 15, 15);
+        gc.fillOval(x6+10,y6-10, 15, 15);
+        gc.strokeOval(x6+10,y6-10, 15, 15);
 
     }
     public void movePlayerRight(int player, int diceValue){
