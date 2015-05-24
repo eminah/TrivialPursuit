@@ -14,18 +14,16 @@ import java.io.IOException;
  */
 public class GameBoardView extends BaseView{
 
-    @Inject static ChoosePlayer choose;
-
-
-
+    private static boolean firstTime = true;
+    private static GameBoardView gameBoardView;
     private GameBoardView() {
         super();
-
-
     }
 
     public static GameBoardView create() throws  IOException{
-        final GameBoardView gameBoardView = new GameBoardView();
+        if(firstTime) {
+            gameBoardView = new GameBoardView();
+        }
         Injector.injectMembers(StartView.class, gameBoardView);
         return gameBoardView;
 

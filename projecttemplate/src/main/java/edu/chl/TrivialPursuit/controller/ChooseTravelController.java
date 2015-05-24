@@ -49,9 +49,10 @@ public class ChooseTravelController implements Initializable {
 
     @FXML
     private void onDonePressed(ActionEvent e) throws IOException{
-
-        final DiceView diceView = DiceView.create();
+        DiceView diceView = DiceView.create();
         diceView.show();
+
+
 
         e.consume();
 

@@ -32,7 +32,6 @@ public class ChoosePlayerController implements Initializable {
     private TextField tOne, tTwo, tThree,tFour,tFive,tSix;
 
     @Inject
-
     ChoosePlayer choosePlayer;
 
     private ArrayList <TextField> playerTexts;
