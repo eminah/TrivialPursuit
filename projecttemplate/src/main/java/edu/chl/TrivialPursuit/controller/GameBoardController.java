@@ -1,5 +1,10 @@
 package edu.chl.trivialpursuit.controller;
+
 import edu.chl.trivialpursuit.model.*;
+
+import edu.chl.trivialpursuit.model.ChoosePlayer;
+import edu.chl.trivialpursuit.model.Dice;
+import edu.chl.trivialpursuit.model.GameBoard;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
@@ -7,8 +12,9 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-
 import javax.inject.Inject;
 import java.net.URL;
 import java.util.ArrayList;
@@ -37,7 +43,7 @@ public class GameBoardController implements Initializable {
     Canvas boardCanvas;
 
     @FXML
-    Label playerOneName;
+    Label playerOneName,playerTwoName,playerThreeName,playerFourName,playerFiveName,playerSixName;
 
     @Inject
     Dice dice;
@@ -52,6 +58,7 @@ public class GameBoardController implements Initializable {
     GameBoard game;
 
     private ArrayList<Player> players;
+
 
 
 
@@ -209,6 +216,7 @@ public class GameBoardController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //TODO Göra detta snyggare förslagsvis med en for;
+
         players = new ArrayList<>();
         createPlayers();
 
@@ -218,8 +226,8 @@ public class GameBoardController implements Initializable {
         for(int i = 0; i < chooseP.getNumberOfPlayers(); i++){
             switch(i){
                 case 0:
-                    setX1(players.get(0).getSpot().getCooX());
-                    setY1(players.get(0).getSpot().getCooY());
+                    setX1(players.get(i).getSpot().getCooX());
+                    setY1(players.get(i).getSpot().getCooY());
                     break;
                 case 1:
                     setX2(players.get(i).getSpot().getCooX());
@@ -243,6 +251,48 @@ public class GameBoardController implements Initializable {
                     break;
                 default:
                     throw new IllegalArgumentException("Something is wrong");
+            }
+        }
+
+
+
+        //The names should be the choosen ones:
+
+        for(int i = 0; i < players.size(); i++ ){
+            switch(i){
+                case 0:
+                    playerOneName.setText(chooseP.getNameOne());
+                    playerOneName.setTextFill(p1);
+                    playerOneName.setFont(new Font("Verdana",15));
+
+                    break;
+                case 1:
+                    playerTwoName.setText(chooseP.getNameTwo());
+                    playerTwoName.setTextFill(p2);
+                    playerTwoName.setFont(new Font("Verdana", 15));
+                    break;
+                case 2:
+                    playerThreeName.setText(chooseP.getNameThree());
+                    playerThreeName.setTextFill(p3);
+                    playerThreeName.setFont(new Font("Verdana", 15));
+                    break;
+                case 3:
+                    playerFourName.setText(chooseP.getNameFour());
+                    playerFourName.setTextFill(p4);
+                    playerFourName.setFont(new Font("Verdana", 15));
+                    break;
+                case 4:
+                    playerFiveName.setText(chooseP.getNameFive());
+                    playerFiveName.setTextFill(p5);
+                    playerFiveName.setFont(new Font("Verdana", 15));
+                    break;
+                case 5:
+                    playerSixName.setText(chooseP.getNameSix());
+                    playerSixName.setTextFill(p6);
+                    playerSixName.setFont(new Font("Verdana", 15));
+                    break;
+                default:
+                    throw new IllegalArgumentException("Something Wrong");
             }
         }
 

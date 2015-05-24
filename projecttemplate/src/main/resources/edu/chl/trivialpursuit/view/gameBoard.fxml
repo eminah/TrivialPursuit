@@ -13,7 +13,7 @@
          <children>
             <VBox prefHeight="487.0" prefWidth="197.0">
                <children>
-                  <Label fx:id="playerOneName" text="Player 1">
+                  <Label fx:id="playerOneName" text="">
                      <VBox.margin>
                         <Insets left="10.0" top="5.0" />
                      </VBox.margin>
@@ -48,7 +48,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label layoutX="20.0" layoutY="15.0" text="Player 2">
+                  <Label fx:id="playerTwoName" layoutX="20.0" layoutY="15.0" text="">
                      <VBox.margin>
                         <Insets left="10.0" />
                      </VBox.margin>
@@ -86,7 +86,7 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label layoutX="10.0" layoutY="84.0" text="Player 3">
+                  <Label fx:id="playerThreeName" layoutX="10.0" layoutY="84.0" text="">
                      <VBox.margin>
                         <Insets left="10.0" />
                      </VBox.margin>
@@ -124,7 +124,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label layoutX="10.0" layoutY="153.0" text="Player 4">
+                  <Label fx:id="playerFourName" layoutX="10.0" layoutY="153.0" text="">
                      <VBox.margin>
                         <Insets left="10.0" />
                      </VBox.margin>
@@ -162,7 +162,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label layoutX="10.0" layoutY="222.0" text="Player 5">
+                  <Label fx:id="playerFiveName" layoutX="10.0" layoutY="222.0" text="">
                      <VBox.margin>
                         <Insets left="10.0" />
                      </VBox.margin>
@@ -197,7 +197,7 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label layoutX="10.0" layoutY="291.0" text="Player 6">
+                  <Label fx:id="playerSixName" layoutX="10.0" layoutY="291.0" text="">
                      <VBox.margin>
                         <Insets left="10.0" />
                      </VBox.margin>
