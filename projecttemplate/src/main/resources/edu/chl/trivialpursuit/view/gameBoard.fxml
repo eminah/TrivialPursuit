@@ -13,11 +13,16 @@
          <children>
             <VBox prefHeight="487.0" prefWidth="197.0">
                <children>
-                  <Label fx:id="playerOneName" text="">
-                     <VBox.margin>
-                        <Insets left="10.0" top="5.0" />
-                     </VBox.margin>
-                  </Label>
+                  <HBox prefHeight="16.0" prefWidth="197.0">
+                     <children>
+                        <Label fx:id="playerOneName" text="">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Label />
+                     </children>
+                  </HBox>
                   <HBox prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
                         <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
@@ -48,11 +53,12 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label fx:id="playerTwoName" layoutX="20.0" layoutY="15.0" text="">
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                  </Label>
+                  <HBox prefHeight="16.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="playerTwoName" text="" />
+                        <Label />
+                     </children>
+                  </HBox>
                   <HBox layoutX="10.0" layoutY="31.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
                         <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
@@ -86,11 +92,12 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label fx:id="playerThreeName" layoutX="10.0" layoutY="84.0" text="">
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                  </Label>
+                  <HBox prefHeight="16.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="playerThreeName" text="" />
+                        <Label />
+                     </children>
+                  </HBox>
                   <HBox layoutX="10.0" layoutY="100.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
                         <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
@@ -124,11 +131,12 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label fx:id="playerFourName" layoutX="10.0" layoutY="153.0" text="">
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                  </Label>
+                  <HBox prefHeight="16.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="playerFourName" text="" />
+                        <Label />
+                     </children>
+                  </HBox>
                   <HBox layoutX="10.0" layoutY="169.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
                         <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
@@ -162,11 +170,12 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label fx:id="playerFiveName" layoutX="10.0" layoutY="222.0" text="">
-                     <VBox.margin>
-                        <Insets left="10.0" />
-                     </VBox.margin>
-                  </Label>
+                  <HBox prefHeight="16.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="playerFiveName" text="" />
+                        <Label />
+                     </children>
+                  </HBox>
                   <HBox layoutX="10.0" layoutY="238.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
                         <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
@@ -197,11 +206,19 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <Label fx:id="playerSixName" layoutX="10.0" layoutY="291.0" text="">
+                  <HBox prefHeight="16.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="playerSixName" text="">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                        <Label />
+                     </children>
                      <VBox.margin>
                         <Insets left="10.0" />
                      </VBox.margin>
-                  </Label>
+                  </HBox>
                   <HBox layoutX="10.0" layoutY="307.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
                         <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">

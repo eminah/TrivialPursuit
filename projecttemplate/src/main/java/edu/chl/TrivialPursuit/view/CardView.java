@@ -9,6 +9,8 @@ import java.io.IOException;
 
 public final class CardView extends BaseView {
 
+    private static boolean ifFirst = true;
+    private static CardView cardView;
 
     private CardView() {
         super();
@@ -17,9 +19,13 @@ public final class CardView extends BaseView {
     }
 
     public static CardView create() throws IOException {
-        final CardView cV = new CardView();
-        Injector.injectMembers(StartView.class,cV);
-        return cV;
+        
+        if(ifFirst){
+            cardView = new CardView();
+        }
+
+        Injector.injectMembers(CardView.class,cardView);
+        return cardView;
     }
 
 
