@@ -24,7 +24,7 @@ public class GameBoardView extends BaseView{
         if(firstTime) {
             gameBoardView = new GameBoardView();
         }
-        Injector.injectMembers(StartView.class, gameBoardView);
+        Injector.injectMembers(GameBoardView.class, gameBoardView);
         return gameBoardView;
 
     }
