@@ -6,6 +6,7 @@ import edu.chl.trivialpursuit.model.*;
 import edu.chl.trivialpursuit.model.ChoosePlayer;
 import edu.chl.trivialpursuit.model.Dice;
 import edu.chl.trivialpursuit.model.GameBoard;
+import edu.chl.trivialpursuit.view.DiceView;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
@@ -17,6 +18,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javax.inject.Inject;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -76,9 +78,11 @@ public class GameBoardController implements Initializable {
 
     }
 
-    @FXML void moveLeft(){
+    @FXML void moveLeft() throws IOException{
         movePlayerLeft(1, dice.getTotalDiceValue());
         drawBoard();
+        DiceView dice = DiceView.create();
+        dice.show();
     }
 
     public void drawBoard(){
