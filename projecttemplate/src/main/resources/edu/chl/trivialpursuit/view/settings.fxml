@@ -5,8 +5,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
@@ -24,10 +22,6 @@
             <TextField layoutX="266.0" layoutY="161.0" />
             <TextField layoutX="266.0" layoutY="197.0" />
             <TextField layoutX="266.0" layoutY="233.0" />
-
-            <Label layoutX="43.0" layoutY="36.0" text="Personal settings:" />
-            <Label layoutX="140.0" layoutY="80.0" text="Change username:" />
-            <TextField layoutX="267.0" layoutY="75.0" />
 
          </children>
       </Pane>
@@ -48,8 +42,6 @@
             <CheckBox layoutX="268.0" layoutY="34.0" mnemonicParsing="false" selected="true" />
             <Label layoutX="168.0" layoutY="35.0" text="Music on" />
             <Button layoutX="452.0" layoutY="55.0" mnemonicParsing="false" text="Save" />
-
-            <Label layoutX="168.0" layoutY="74.0" text="Rate of music" />
             <CheckBox layoutX="268.0" layoutY="34.0" mnemonicParsing="false" />
             <Label layoutX="168.0" layoutY="35.0" text="Music on" />
          </children>
