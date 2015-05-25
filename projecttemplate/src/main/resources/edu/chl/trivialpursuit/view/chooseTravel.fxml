@@ -26,7 +26,7 @@
    <center>
       <VBox spacing="7.0" BorderPane.alignment="CENTER">
          <children>
-            <Label stylesheets="@label.css" text="Player 1">
+            <Label stylesheets="@label.css" text="Player 1" fx:id="playerOneName">
                <padding>
                   <Insets left="5.0" />
                </padding>
@@ -45,7 +45,7 @@
                  </items>
              </ComboBox>
 
-             <Label layoutX="10.0" layoutY="10.0" stylesheets="@label.css" text="Player 2">
+             <Label layoutX="10.0" layoutY="10.0" stylesheets="@label.css" text="Player 2" fx:id="playerTwoName">
                <font>
                   <Font size="14.0" />
                </font>
@@ -63,7 +63,7 @@
                     </FXCollections>
                 </items>
             </ComboBox>
-            <Label layoutX="10.0" layoutY="74.0" stylesheets="@label.css" text="Player 3" >
+            <Label layoutX="10.0" layoutY="74.0" stylesheets="@label.css" text="Player 3" fx:id="playerThreeName" >
                <font>
                   <Font name="Apple Chancery" size="14.0" />
                </font>
@@ -81,7 +81,7 @@
                      </FXCollections>
                  </items>
              </ComboBox>
-            <Label layoutX="10.0" layoutY="138.0" stylesheets="@label.css" text="Player 4" >
+            <Label layoutX="10.0" layoutY="138.0" stylesheets="@label.css" text="Player 4" fx:id="playerFourName" >
                <font>
                   <Font name="Apple Chancery" size="14.0" />
                </font>
@@ -99,7 +99,7 @@
                      </FXCollections>
                  </items>
              </ComboBox>
-            <Label layoutX="10.0" layoutY="202.0" stylesheets="@label.css" text="Player 5" >
+            <Label layoutX="10.0" layoutY="202.0" stylesheets="@label.css" text="Player 5" fx:id="playerFiveName" >
                <font>
                   <Font name="Apple Chancery" size="14.0" />
                </font>
@@ -117,7 +117,7 @@
                      </FXCollections>
                  </items>
              </ComboBox>
-            <Label layoutX="10.0" layoutY="266.0" stylesheets="@label.css" text="Player 6" >
+            <Label layoutX="10.0" layoutY="266.0" stylesheets="@label.css" text="Player 6" fx:id="playerSixName" >
                <font>
                   <Font name="Apple Chancery" size="14.0" />
                </font>
