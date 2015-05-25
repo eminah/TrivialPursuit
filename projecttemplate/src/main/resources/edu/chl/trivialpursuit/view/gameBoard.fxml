@@ -13,15 +13,18 @@
          <children>
             <VBox prefHeight="487.0" prefWidth="197.0">
                <children>
-                  <HBox prefHeight="16.0" prefWidth="197.0">
+                  <HBox prefHeight="16.0" prefWidth="197.0" spacing="10.0">
                      <children>
                         <Label fx:id="playerOneName" text="">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
                         </Label>
-                        <Label />
+                        <Label fx:id="playerOneTurn" text="" />
                      </children>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
                   </HBox>
                   <HBox prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
@@ -53,11 +56,14 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox prefHeight="16.0" prefWidth="200.0">
+                  <HBox prefHeight="16.0" prefWidth="200.0" spacing="10.0">
                      <children>
-                        <Label fx:id="playerTwoName" text="" />
-                        <Label />
+                        <Label fx:id="playerTwoName" />
+                        <Label fx:id="playerTwoTurn" />
                      </children>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="31.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
@@ -92,11 +98,14 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox prefHeight="16.0" prefWidth="200.0">
+                  <HBox prefHeight="16.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <Label fx:id="playerThreeName" text="" />
-                        <Label />
+                        <Label fx:id="playerThreeTurn" text="" />
                      </children>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="100.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
@@ -131,11 +140,14 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox prefHeight="16.0" prefWidth="200.0">
+                  <HBox prefHeight="16.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <Label fx:id="playerFourName" text="" />
-                        <Label />
+                        <Label fx:id="playerFourTurn" text=""/>
                      </children>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="169.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
@@ -170,11 +182,14 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox prefHeight="16.0" prefWidth="200.0">
+                  <HBox prefHeight="16.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <Label fx:id="playerFiveName" text="" />
-                        <Label />
+                        <Label fx:id="playerFiveTurn" text=""/>
                      </children>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="238.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
@@ -206,14 +221,14 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox prefHeight="16.0" prefWidth="200.0">
+                  <HBox prefHeight="16.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <Label fx:id="playerSixName" text="">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
                         </Label>
-                        <Label />
+                        <Label fx:id="playerSixTurn" text=""/>
                      </children>
                      <VBox.margin>
                         <Insets left="10.0" />

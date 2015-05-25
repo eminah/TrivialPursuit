@@ -38,6 +38,9 @@ public class GameBoardController implements Initializable {
     @FXML
     Label playerOneName,playerTwoName,playerThreeName,playerFourName,playerFiveName,playerSixName;
 
+    @FXML
+    Label playerOneTurn,playerTwoTurn,playerThreeTurn,playerFourTurn,playerFiveTurn,playerSixTurn;
+
     @Inject
     Dice dice;
 
@@ -63,6 +66,13 @@ public class GameBoardController implements Initializable {
     private Color p4 = Color.YELLOW;
     private Color p5 = Color.RED;
     private Color p6 = Color.LAWNGREEN;
+
+    private Font labels = new Font("Verdana", 15);
+    private Font arrow = new Font("Verdana",18);
+
+    private ArrayList<Label> setLabelTurn;
+
+
 
 
 
@@ -243,7 +253,51 @@ public class GameBoardController implements Initializable {
             }
         }
 
-
+        switch (whosTurn()){
+            case 1:
+                for(int i = 0;i < setLabelTurn.size(); i++){
+                    setLabelTurn.get(i).setText("");
+                }
+                playerOneTurn.setText("<--");
+                playerOneTurn.setFont(arrow);
+                break;
+            case 2:
+                for(int i = 0;i < setLabelTurn.size(); i++){
+                    setLabelTurn.get(i).setText("");
+                }
+                playerTwoTurn.setText("<--");
+                playerTwoTurn.setFont(arrow);
+                break;
+            case 3:
+                for(int i = 0;i < setLabelTurn.size(); i++){
+                    setLabelTurn.get(i).setText("");
+                }
+                playerThreeTurn.setText("<--");
+                playerThreeTurn.setFont(arrow);
+                break;
+            case 4:
+                for(int i = 0;i < setLabelTurn.size(); i++){
+                    setLabelTurn.get(i).setText("");
+                }
+                playerFourTurn.setText("<--");
+                playerFourTurn.setFont(arrow);
+                break;
+            case 5:
+                for(int i = 0;i < setLabelTurn.size(); i++){
+                    setLabelTurn.get(i).setText("");
+                }
+                playerFiveTurn.setText("<--");
+                playerFiveTurn.setFont(arrow);
+                break;
+            case 6:
+                for(int i = 0;i < setLabelTurn.size(); i++){
+                    setLabelTurn.get(i).setText("");
+                }
+                playerSixTurn.setText("<--");
+                playerSixTurn.setFont(arrow);
+                break;
+            default: throw new IllegalArgumentException("Wrong whos turn");
+        }
 
     }
 
@@ -265,12 +319,45 @@ public class GameBoardController implements Initializable {
         players = new ArrayList<>();
         createPlayers();
 
+
+
+        setLabelTurn = new ArrayList<>();
+        for(int i = 0; i<chooseP.getNumberOfPlayers(); i++){
+            switch (i){
+                case 0:
+                    setLabelTurn.add(playerOneTurn);
+                    break;
+                case 1:
+                    setLabelTurn.add(playerTwoTurn);
+                    break;
+                case 2:
+                    setLabelTurn.add(playerThreeTurn);
+                    break;
+                case 3:
+                    setLabelTurn.add(playerFourTurn);
+                    break;
+                case 4:
+                    setLabelTurn.add(playerFiveTurn);
+                    break;
+                case 5:
+                    setLabelTurn.add(playerSixTurn);
+                    break;
+                default: throw new IllegalArgumentException ("Your bad!");
+            }
+        }
+
+
         getTurn = new boolean[chooseP.getNumberOfPlayers()];
 
         for (int i = 0; i < getTurn.length; i++) {
             getTurn[i] = false;
         }
         getTurn[0] = true;
+
+
+
+        playerOneTurn.setText("<--");
+        playerOneTurn.setFont(arrow);
 
 
 
@@ -314,33 +401,33 @@ public class GameBoardController implements Initializable {
                 case 0:
                     playerOneName.setText(chooseP.getNameOne());
                     playerOneName.setTextFill(p1);
-                    playerOneName.setFont(new Font("Verdana", 15));
+                    playerOneName.setFont(labels);
 
                     break;
                 case 1:
                     playerTwoName.setText(chooseP.getNameTwo());
                     playerTwoName.setTextFill(p2);
-                    playerTwoName.setFont(new Font("Verdana", 15));
+                    playerTwoName.setFont(labels);
                     break;
                 case 2:
                     playerThreeName.setText(chooseP.getNameThree());
                     playerThreeName.setTextFill(p3);
-                    playerThreeName.setFont(new Font("Verdana", 15));
+                    playerThreeName.setFont(labels);
                     break;
                 case 3:
                     playerFourName.setText(chooseP.getNameFour());
                     playerFourName.setTextFill(p4);
-                    playerFourName.setFont(new Font("Verdana", 15));
+                    playerFourName.setFont(labels);
                     break;
                 case 4:
                     playerFiveName.setText(chooseP.getNameFive());
                     playerFiveName.setTextFill(p5);
-                    playerFiveName.setFont(new Font("Verdana", 15));
+                    playerFiveName.setFont(labels);
                     break;
                 case 5:
                     playerSixName.setText(chooseP.getNameSix());
                     playerSixName.setTextFill(p6);
-                    playerSixName.setFont(new Font("Verdana", 15));
+                    playerSixName.setFont(labels);
                     break;
                 default:
                     throw new IllegalArgumentException("Something Wrong");
