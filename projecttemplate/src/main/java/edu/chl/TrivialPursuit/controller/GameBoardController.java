@@ -80,9 +80,7 @@ public class GameBoardController implements Initializable {
     @FXML
     public void moveRight(){
         movePlayerRight(whosTurn(), dice.getTotalDiceValue());
-        System.out.println(whosTurn());
         setNextTurn();
-        System.out.println(whosTurn());
         drawBoard();
 
 
@@ -90,6 +88,7 @@ public class GameBoardController implements Initializable {
 
     @FXML void moveLeft() throws IOException{
         movePlayerLeft(whosTurn(), dice.getTotalDiceValue());
+        setNextTurn();
         drawBoard();
 
     }
@@ -199,33 +198,31 @@ public class GameBoardController implements Initializable {
                 players.get(0).goLeft(diceValue);
                 setX1(players.get(0).getSpot().getCooX());
                 setY1(players.get(0).getSpot().getCooY());
-                setNextTurn();
                 break;
             case 2:
                 players.get(1).goLeft(diceValue);
-                setX1(players.get(1).getSpot().getCooX());
-                setY1(players.get(1).getSpot().getCooY());
-                setNextTurn();
+                setX2(players.get(1).getSpot().getCooX());
+                setY2(players.get(1).getSpot().getCooY());
                 break;
             case 3:
                 players.get(2).goLeft(diceValue);
-                setX1(players.get(2).getSpot().getCooX());
-                setY1(players.get(2).getSpot().getCooY());
+                setX3(players.get(2).getSpot().getCooX());
+                setY3(players.get(2).getSpot().getCooY());
                 break;
             case 4:
                 players.get(3).goLeft(diceValue);
-                setX1(players.get(3).getSpot().getCooX());
-                setY1(players.get(3).getSpot().getCooY());
+                setX4(players.get(3).getSpot().getCooX());
+                setY4(players.get(3).getSpot().getCooY());
                 break;
             case 5:
                 players.get(4).goLeft(diceValue);
-                setX1(players.get(4).getSpot().getCooX());
-                setY1(players.get(4).getSpot().getCooY());
+                setX5(players.get(4).getSpot().getCooX());
+                setY5(players.get(4).getSpot().getCooY());
                 break;
             case 6:
                 players.get(5).goLeft(diceValue);
-                setX1(players.get(5).getSpot().getCooX());
-                setY1(players.get(5).getSpot().getCooY());
+                setX6(players.get(5).getSpot().getCooX());
+                setY6(players.get(5).getSpot().getCooY());
                 break;
         }
 

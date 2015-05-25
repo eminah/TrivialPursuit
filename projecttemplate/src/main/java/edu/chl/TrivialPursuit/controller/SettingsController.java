@@ -21,7 +21,7 @@ public class SettingsController {
     }
 
     public void getMusicVolume(){
-        
+
     }
 
 }
