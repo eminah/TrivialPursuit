@@ -15,15 +15,15 @@ public class Card {
     /**
      *
      * @param co the continent of the card
-     * @param correct the correct alternative of the card
+     * @param ca the
      */
 
     // We removed the category to simplify the game for now,
     // TODO we will add it later if there is time
-    public Card(Continent co, Alternative correct){
-        //category = ca;
+    public Card(Category ca,Continent co){
+        category = ca;
         continent = co;
-        correctAlt = correct;
+
 
 
     }
@@ -36,9 +36,14 @@ public class Card {
         return continent;
     }
 
+    public void setCorrectAlt(Alternative correctAlt) {
+        this.correctAlt = correctAlt;
+    }
+
     public Alternative getCorrectAlt() {
         return correctAlt;
     }
+
 
     public void setAnswer(Alternative answer) {
         this.answer = answer;

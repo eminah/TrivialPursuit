@@ -12,12 +12,17 @@ public class GameBoard {
 
     private ArrayList<Spot> spotsOuter;
     private ArrayList<Spot> spotsInner;
+    private ArrayList<Card> cardsOuter;
+    private ArrayList<Card> cardsInner;
 
 
     public GameBoard(){
 
         spotsOuter = new ArrayList<>();
         spotsInner = new ArrayList<>();
+        cardsOuter = new ArrayList<>();
+        cardsInner = new ArrayList<>();
+        createCardsOuter();
         addSpotsToListOuter();
         setBoardingSpotsOuter();
         addSpotsToListInner();
@@ -137,7 +142,7 @@ public class GameBoard {
                     (Category) SPOT_DEFINITIONS_OUTER[i].getRight(),
                     (Integer) SPOT_DEFINITIONS_COORDINATES_OUTER[i].getLeft(),
                     (Integer)SPOT_DEFINITIONS_COORDINATES_OUTER[i].getRight(),
-                    new Card((Continent) SPOT_DEFINITIONS_OUTER[i].getLeft(), Alternative.ALTERNATIVE1))
+                    cardsOuter.get(i))
             );
         }
     }
@@ -149,7 +154,7 @@ public class GameBoard {
                     (Category) SPOT_DEFINITIONS_INNER[i].getRight(),
                     (Integer) SPOT_DEFINITIONS_COORDINATES_INNER[i].getLeft(),
                     (Integer) SPOT_DEFINITIONS_COORDINATES_INNER[i].getRight(),
-                    new Card((Continent) SPOT_DEFINITIONS_OUTER[i].getLeft(), Alternative.ALTERNATIVE2))
+                    cardsInner.get(i))
             );
         }
     }
@@ -194,6 +199,20 @@ public class GameBoard {
             }else{
                 spotsInner.get(j).setLeft(spotsInner.get(j-1));
             }
+        }
+    }
+
+    public void createCardsOuter(){
+        for(int i = 0; i < SPOT_DEFINITIONS_COORDINATES_OUTER.length; i++){
+            cardsOuter.add(new Card((Category)SPOT_DEFINITIONS_COORDINATES_OUTER[i].getLeft(),
+                    (Continent) SPOT_DEFINITIONS_COORDINATES_OUTER[i].getRight()));
+        }
+    }
+
+    public void createCardsInner(){
+        for(int i = 0; i < SPOT_DEFINITIONS_COORDINATES_INNER.length; i++){
+            cardsInner.add(new Card((Category)SPOT_DEFINITIONS_COORDINATES_INNER[i].getLeft(),
+                    (Continent) SPOT_DEFINITIONS_COORDINATES_INNER[i].getRight()));
         }
     }
 }
