@@ -14,13 +14,14 @@ public class Card {
 
     /**
      *
-     * @param ca the category of the card
      * @param co the continent of the card
      * @param correct the correct alternative of the card
      */
 
-    public Card(Category ca, Continent co, Alternative correct){
-        category = ca;
+    // We removed the category to simplify the game for now,
+    // TODO we will add it later if there is time
+    public Card(Continent co, Alternative correct){
+        //category = ca;
         continent = co;
         correctAlt = correct;
 
