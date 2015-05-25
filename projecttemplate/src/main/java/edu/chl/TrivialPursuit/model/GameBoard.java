@@ -23,6 +23,7 @@ public class GameBoard {
         cardsOuter = new ArrayList<>();
         cardsInner = new ArrayList<>();
         createCardsOuter();
+        createCardsInner();
         addSpotsToListOuter();
         setBoardingSpotsOuter();
         addSpotsToListInner();
@@ -203,16 +204,16 @@ public class GameBoard {
     }
 
     public void createCardsOuter(){
-        for(int i = 0; i < SPOT_DEFINITIONS_COORDINATES_OUTER.length; i++){
-            cardsOuter.add(new Card((Category)SPOT_DEFINITIONS_COORDINATES_OUTER[i].getLeft(),
-                    (Continent) SPOT_DEFINITIONS_COORDINATES_OUTER[i].getRight()));
+        for(int i = 0; i < SPOT_DEFINITIONS_OUTER.length; i++){
+            cardsOuter.add(new Card((Continent)SPOT_DEFINITIONS_OUTER[i].getLeft(),
+                    (Category)SPOT_DEFINITIONS_OUTER[i].getRight()));
         }
     }
 
     public void createCardsInner(){
-        for(int i = 0; i < SPOT_DEFINITIONS_COORDINATES_INNER.length; i++){
-            cardsInner.add(new Card((Category)SPOT_DEFINITIONS_COORDINATES_INNER[i].getLeft(),
-                    (Continent) SPOT_DEFINITIONS_COORDINATES_INNER[i].getRight()));
+        for(int i = 0; i < SPOT_DEFINITIONS_INNER.length; i++){
+            cardsInner.add(new Card((Continent)SPOT_DEFINITIONS_INNER[i].getLeft(),
+                    (Category) SPOT_DEFINITIONS_INNER[i].getRight()));
         }
     }
 }

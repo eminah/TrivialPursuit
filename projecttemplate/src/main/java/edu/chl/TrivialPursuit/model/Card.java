@@ -20,7 +20,7 @@ public class Card {
 
     // We removed the category to simplify the game for now,
     // TODO we will add it later if there is time
-    public Card(Category ca,Continent co){
+    public Card(Continent co, Category ca){
         category = ca;
         continent = co;
 
