@@ -1,0 +1,53 @@
+﻿Meeting Agenda
+
+ Date: 25/5-15
+
+ Facilitator: Ina Tran
+
+ Participants: Emina Hromic, Ina Tran, Heléne Jarl, Rasti Tengman.         
+
+
+1. Objectives (5 min). Resolve any issues preventing the team to continue.
+
+The following things need to be resolved before Thursday:
+
+
+* Make the question cards. 
+* Make test programs. 
+* The RAD should be continued on.
+* The SDD should be continued on.
+
+
+
+
+2. Reports (15 min) from previous meeting
+
+
+* Finished the game board. 
+* Connected every spot to a cordinate. 
+* Fixed so that correct number of players are created. 
+
+
+
+
+3. Discussion items (35 min) 
+
+
+* We need to continue writing on both the SDD and RAD. Possibly divide it so that each individual can write on a specific task. 
+* If someone doesn't have anything to do, look what still has do be done, ask if someone is doing that already, if not. DO IT.
+ 
+
+
+4. Outcomes and assignments (5 min) 
+
+The following assignments should be done, or at least started, by each individual until next Thursday. 
+* Get something done, so we will finish on time.
+* Start with the test programs. 
+
+
+
+5. Wrap up
+
+
+   * Have to continue on the RAD and SDD
+   * Everyone needs to program now!
