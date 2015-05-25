@@ -15,8 +15,6 @@ public class GameBoard {
     private ArrayList<Spot> spotsInner;
 
 
-
-
     @Inject
     private ChoosePlayer chooseP;
     @Inject

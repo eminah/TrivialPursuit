@@ -92,10 +92,6 @@ public  class Player {
 
 
 
-
-
-
-
     public boolean getHasTicket() {
         return hasTicket;
     }

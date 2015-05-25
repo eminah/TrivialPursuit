@@ -41,9 +41,6 @@ public class ChoosePlayerController implements Initializable {
     private boolean firstTime = true;
 
 
-
-
-
     @FXML
     private void onButtonPressed(ActionEvent e) throws IOException{
 
