@@ -24,12 +24,7 @@ public class TrivialPursuit extends Application {
 
         final StartView startView = StartView.create();
         startView.show();
-
-
-
-
-
-
+        
 
     }
 }
