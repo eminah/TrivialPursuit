@@ -98,6 +98,8 @@ public class GameBoardController implements Initializable {
         left.setDisable(true);
         drawBoard();
 
+        startTimer();
+
 
 
 
@@ -109,6 +111,8 @@ public class GameBoardController implements Initializable {
         right.setDisable(true);
         left.setDisable(true);
         drawBoard();
+
+        startTimer();
 
     }
 
@@ -530,6 +534,9 @@ public class GameBoardController implements Initializable {
                 }catch(IOException ex){
                     ex.printStackTrace();
                 }
+
+                right.setDisable(false);
+                left.setDisable(false);
             }
         }));
 

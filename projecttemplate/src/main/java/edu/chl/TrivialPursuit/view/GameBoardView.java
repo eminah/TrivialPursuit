@@ -23,6 +23,7 @@ public class GameBoardView extends BaseView{
     public static GameBoardView create() throws  IOException{
         if(firstTime) {
             gameBoardView = new GameBoardView();
+            firstTime = false;
         }
         Injector.injectMembers(GameBoardView.class, gameBoardView);
         return gameBoardView;
