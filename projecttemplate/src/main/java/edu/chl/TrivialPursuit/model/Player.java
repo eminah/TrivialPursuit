@@ -81,12 +81,7 @@ public  class Player {
         }
 
     }
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 1ddf01f13fd3496dc19ad14b6141fe2fb48a2dd7
+    
     public boolean getHasTicket() {
         return hasTicket;
     }
