@@ -18,9 +18,15 @@ public final class StartView extends BaseView {
         super();
     }
 
+
+
     public static StartView create() throws IOException {
         final StartView startView = new StartView();
         Injector.injectMembers(StartView.class,startView);
         return startView;
     }
+
+
+
+
 }

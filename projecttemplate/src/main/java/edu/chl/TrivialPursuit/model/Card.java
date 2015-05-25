@@ -1,6 +1,5 @@
 package edu.chl.trivialpursuit.model;
 
-import java.util.Locale;
 
 /**
  * Created by helenejarl on 2015-05-07.
@@ -24,6 +23,8 @@ public class Card {
         category = ca;
         continent = co;
         correctAlt = correct;
+
+
     }
 
     public Category getCategory() {
@@ -46,7 +47,7 @@ public class Card {
         this.player = player;
     }
 
-    public void checkAnswer(Alternative ans){
+    public boolean checkAnswer(Alternative ans){
         answer = ans;
 
         if( answer.equals(correctAlt)){
@@ -54,6 +55,9 @@ public class Card {
             if (player.checkIfAllContinents()){
                 player.setHasTicket(true);
             }
+            return true;
+        }else{
+            return false;
         }
     }
 

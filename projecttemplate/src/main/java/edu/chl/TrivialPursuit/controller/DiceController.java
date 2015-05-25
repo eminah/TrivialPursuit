@@ -1,11 +1,18 @@
 package edu.chl.trivialpursuit.controller;
 
 import edu.chl.trivialpursuit.model.Dice;
+import edu.chl.trivialpursuit.model.Player;
 import edu.chl.trivialpursuit.view.GameBoardView;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
+
 import javax.inject.Inject;
 import java.io.IOException;
 
@@ -18,9 +25,13 @@ public class DiceController {
     @Inject Dice dice;
     @FXML ImageView dice1;
     @FXML ImageView dice2;
+    @FXML Button throwButton;
+
+    private Timeline delay;
 
     @FXML
     private void throwDices(ActionEvent e) throws IOException{
+
 
 
 
@@ -77,14 +88,32 @@ public class DiceController {
 
         }
 
-        //TODO timer
+        throwButton.setDisable(true);
+        startTimer();
+    }
+
+    public void startTimer(){
 
 
-        final GameBoardView gameBoardView = GameBoardView.create();
-        gameBoardView.show();
+        delay = new Timeline(new KeyFrame(Duration.seconds(0.7), new EventHandler<ActionEvent>() {
 
-        e.consume();
+            @Override
+            public void handle(ActionEvent e) {
+                try {
+                    final GameBoardView gameBoardView = GameBoardView.create();
+                    gameBoardView.show();
 
+                    e.consume();
+                }catch (IOException ex){
+                    ex.printStackTrace();
+                }
+
+                throwButton.setDisable(false);
+
+            }
+        }));
+
+        delay.play();
 
     }
 

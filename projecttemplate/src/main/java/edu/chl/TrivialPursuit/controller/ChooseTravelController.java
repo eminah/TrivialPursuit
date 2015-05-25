@@ -7,28 +7,30 @@ import edu.chl.trivialpursuit.view.DiceView;
 import edu.chl.trivialpursuit.view.GameBoardView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 
 import javax.inject.Inject;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 /**
  * Created by helenejarl on 2015-05-19.
  */
-public class ChooseTravelController {
+public class ChooseTravelController implements Initializable {
 
     @Inject
-    ChoosePlayer choose;
+    ChoosePlayer choosePlayer;
     @Inject
-    GameBoard game;
-
-
-
+    ChooseTravel chooseTravel;
     private ArrayList<ComboBox> theBox;
-    private ArrayList<Player> players;
+    private ArrayList<String> travelChooices;
+
+
 
     @FXML
     ComboBox<String> c1,c2,c3,c4,c5,c6;
@@ -47,7 +49,48 @@ public class ChooseTravelController {
 
     @FXML
     private void onDonePressed(ActionEvent e) throws IOException{
-        players = new ArrayList<>();
+        DiceView diceView = DiceView.create();
+        diceView.show();
+
+
+
+        e.consume();
+
+    }
+
+    @FXML
+    private void firstChooice(){
+        chooseTravel.setStartPlaceOne(c1.getValue());
+    }
+
+    @FXML
+    private void secondChooice(){
+        chooseTravel.setStartPlaceTwo(c2.getValue());
+    }
+
+    @FXML
+    private void thirdChooice(){
+        chooseTravel.setStartPlaceThree(c3.getValue());
+    }
+
+    @FXML
+    private void fourthChooice(){
+        chooseTravel.setStartPlaceFour(c4.getValue());
+    }
+
+    @FXML
+    private void fifthChooice(){
+        chooseTravel.setStartPlaceFive(c5.getValue());
+    }
+
+    @FXML
+    private void sixthChooice(){
+        chooseTravel.setStartPlaceSix(c6.getValue());
+    }
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         theBox = new ArrayList<>();
         theBox.add(c1);
         theBox.add(c2);
@@ -55,44 +98,11 @@ public class ChooseTravelController {
         theBox.add(c4);
         theBox.add(c5);
         theBox.add(c6);
+        travelChooices = new ArrayList<>();
 
-        //createPlayers();
-
-
-
-
-        final DiceView diceView = DiceView.create();
-        diceView.show();
-
-        e.consume();
-
-    }
-
-    /**
-     * Creates players based on what the player has choosen for name and Continent and adds it to a Arraylist
-     */
-
-    private void createPlayers() {
-        for (int i = 0; i < choose.getNumberOfPlayers(); i++) {
-            //String choosen = (String) theBox.get(i).getValue();
-
-            String choosen = "Asia";
-
-            switch (choosen) {
-                case "Asia":
-                   players.add(new Player((String)choose.getPlayerNames().get(i),game.getSpotsOuter().get(0)));
-                    break;
-                case "Africa":
-                    players.add(new Player((String)choose.getPlayerNames().get(i),game.getSpotsOuter().get(7)));
-                    break;
-                case "South America":
-                    players.add(new Player((String)choose.getPlayerNames().get(i),game.getSpotsOuter().get(14)));
-                    break;
-                case "North America":
-                    players.add(new Player((String)choose.getPlayerNames().get(i),game.getSpotsOuter().get(21)));
-                    break;
-            }
+        System.out.println(choosePlayer.getNumberOfPlayers());
+        for(int i = 5; i >= choosePlayer.getNumberOfPlayers(); i--) {
+            theBox.get(i).setDisable(true);
         }
     }
-
 }

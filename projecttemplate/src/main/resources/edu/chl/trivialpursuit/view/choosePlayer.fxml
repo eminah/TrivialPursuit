@@ -16,7 +16,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <ComboBox id="numPlayers" fx:id="numPlayers" onAction="#comboAction" prefWidth="150.0" promptText="2">
+            <ComboBox id="numPlayers" fx:id="numPlayers" onAction="#comboAction" prefWidth="150.0" promptText="Choose Here">
                 <items>
 
                     <FXCollections fx:factory="observableArrayList">
@@ -45,9 +45,9 @@
                <padding>
                   <Insets top="20.0" />
                </padding></Label>
-            <TextField fx:id="tOne" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="1 - 10 Characters (name)" />
+            <TextField fx:id="tOne" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="1 - 10 Characters (name)" />
             <Label stylesheets="@label.css" text="Player 2" />
-            <TextField fx:id="tTwo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="1 - 10 Characters (name)" />
+            <TextField fx:id="tTwo" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="1 - 10 Characters (name)" />
             <Label stylesheets="@label.css" text="Player 3" />
             <TextField fx:id="tThree" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" promptText="1 - 10 Characters (name)" />
             <Label stylesheets="@label.css" text="Player 4" />

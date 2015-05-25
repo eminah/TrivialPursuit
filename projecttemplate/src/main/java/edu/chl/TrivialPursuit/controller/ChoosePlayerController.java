@@ -4,6 +4,7 @@ import edu.chl.trivialpursuit.model.ChoosePlayer;
 import edu.chl.trivialpursuit.view.ChoosePlayerView;
 import edu.chl.trivialpursuit.view.ChooseTravelView;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 
 import javafx.event.ActionEvent;
@@ -13,14 +14,16 @@ import javafx.scene.control.TextField;
 import javax.inject.Inject;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 /**
  * Created by Rasti on 2015-05-05.
  */
-public class ChoosePlayerController {
+public class ChoosePlayerController implements Initializable {
 
-    private ArrayList <TextField> playerTexts;
+
 
     @FXML
     private ComboBox<String> numPlayers;
@@ -28,41 +31,39 @@ public class ChoosePlayerController {
     @FXML
     private TextField tOne, tTwo, tThree,tFour,tFive,tSix;
 
-    private int numberChoosed = 2;
+    @Inject
+    ChoosePlayer choosePlayer;
+
+    private ArrayList <TextField> playerTexts;
+    private ArrayList <String> playerNames;
+    private int numberChoosed;
 
     private boolean firstTime = true;
 
 
-    @Inject ChoosePlayer choose;
 
 
 
     @FXML
     private void onButtonPressed(ActionEvent e) throws IOException{
 
+        addNamesToList();
+        setNameValues();
+
         final ChooseTravelView chooseTravelView = ChooseTravelView.create();
         chooseTravelView.show();
-        choose.setNumberOfPlayers(numberChoosed);
-
 
         e.consume();
     }
 
     @FXML
     private void comboAction(ActionEvent e){
-        if(firstTime) {
-            playerTexts = new ArrayList<>();
 
-            playerTexts.add(tOne);
-            playerTexts.add(tTwo);
-            playerTexts.add(tThree);
-            playerTexts.add(tFour);
-            playerTexts.add(tFive);
-            playerTexts.add(tSix);
+        //Set value of an ints that specifies the amount of players
 
-            this.firstTime = false;
-        }
-        this.numberChoosed = Integer.parseInt(numPlayers.getValue());
+        choosePlayer.setNumberOfPlayers(numberChoosed = Integer.parseInt(numPlayers.getValue()));
+        numberChoosed = Integer.parseInt(numPlayers.getValue());
+
         for(int i = 0; i < numberChoosed; i++) {
             playerTexts.get(i).setDisable(false);
 
@@ -72,13 +73,65 @@ public class ChoosePlayerController {
             playerTexts.get(j).setDisable(true);
         }
 
-        addNamesToList();
+
     }
 
     private void addNamesToList(){
         for(int i = 0; i < numberChoosed; i++) {
-            choose.getPlayerNames().add(playerTexts.get(i).getText());
+           String name = playerTexts.get(i).getText();
+            playerNames.add(name);
+        }
+    }
+
+    private  void setNameValues(){
+        for(int i = 0; i < choosePlayer.getNumberOfPlayers(); i++){
+            switch(i){
+                case 0:
+                    choosePlayer.setNameOne(playerNames.get(i));
+                    break;
+                case 1:
+                    choosePlayer.setNameTwo(playerNames.get(i));
+                    break;
+                case 2:
+                    choosePlayer.setNameThree(playerNames.get(i));
+                    break;
+                case 3:
+                    choosePlayer.setNameFour(playerNames.get(i));
+                    break;
+                case 4:
+                    choosePlayer.setNameFive(playerNames.get(i));
+                    break;
+                case 5:
+                    choosePlayer.setNameSix(playerNames.get(i));
+                    break;
+                default:
+                    throw new IllegalArgumentException("Something is wrong");
+            }
 
         }
     }
+
+    /**
+     *
+     * @return The list containing all the choosen names.
+     */
+    public ArrayList<String> getPlayerNames() {
+        return playerNames;
+    }
+
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        playerTexts = new ArrayList<>();
+        playerNames = new ArrayList<>();
+
+        playerTexts.add(tOne);
+        playerTexts.add(tTwo);
+        playerTexts.add(tThree);
+        playerTexts.add(tFour);
+        playerTexts.add(tFive);
+        playerTexts.add(tSix);
+    }
+
 }

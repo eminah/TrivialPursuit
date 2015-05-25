@@ -1,6 +1,9 @@
 package edu.chl.trivialpursuit.view;
 import com.airhacks.afterburner.injection.Injector;
+import edu.chl.trivialpursuit.controller.GameBoardController;
 import edu.chl.trivialpursuit.model.ChoosePlayer;
+import edu.chl.trivialpursuit.model.GameBoard;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Label;
 
 import javax.inject.Inject;
@@ -11,18 +14,19 @@ import java.io.IOException;
  */
 public class GameBoardView extends BaseView{
 
+    private static boolean firstTime = true;
+    private static GameBoardView gameBoardView;
     private GameBoardView() {
         super();
     }
 
     public static GameBoardView create() throws  IOException{
-        final GameBoardView gameBoardView = new GameBoardView();
-
-        Label p1Name = (Label) gameBoardView.getScene().lookup("#p1");
-
-        Injector.injectMembers(StartView.class, gameBoardView);
-       // p1Name.setText("hejhej");
+        if(firstTime) {
+            gameBoardView = new GameBoardView();
+        }
+        Injector.injectMembers(GameBoardView.class, gameBoardView);
         return gameBoardView;
+
     }
 
 }
