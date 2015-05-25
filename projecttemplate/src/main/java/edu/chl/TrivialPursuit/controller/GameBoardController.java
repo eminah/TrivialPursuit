@@ -1,22 +1,31 @@
 package edu.chl.trivialpursuit.controller;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
 import edu.chl.trivialpursuit.model.*;
 
 import edu.chl.trivialpursuit.model.ChoosePlayer;
 import edu.chl.trivialpursuit.model.Dice;
 import edu.chl.trivialpursuit.model.GameBoard;
+import edu.chl.trivialpursuit.view.CardView;
 import edu.chl.trivialpursuit.view.DiceView;
+import edu.chl.trivialpursuit.view.GameBoardView;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+
 import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;
@@ -40,6 +49,9 @@ public class GameBoardController implements Initializable {
 
     @FXML
     Label playerOneTurn,playerTwoTurn,playerThreeTurn,playerFourTurn,playerFiveTurn,playerSixTurn;
+
+    @FXML
+    Button left,right;
 
     @Inject
     Dice dice;
@@ -71,6 +83,7 @@ public class GameBoardController implements Initializable {
     private Font arrow = new Font("Verdana",18);
 
     private ArrayList<Label> setLabelTurn;
+    private Timeline setDelay;
 
 
 
@@ -81,7 +94,11 @@ public class GameBoardController implements Initializable {
     public void moveRight(){
         movePlayerRight(whosTurn(), dice.getTotalDiceValue());
         setNextTurn();
+        right.setDisable(true);
+        left.setDisable(true);
         drawBoard();
+
+
 
 
     }
@@ -89,6 +106,8 @@ public class GameBoardController implements Initializable {
     @FXML void moveLeft() throws IOException{
         movePlayerLeft(whosTurn(), dice.getTotalDiceValue());
         setNextTurn();
+        right.setDisable(true);
+        left.setDisable(true);
         drawBoard();
 
     }
@@ -496,4 +515,26 @@ public class GameBoardController implements Initializable {
     public ArrayList<Player> getPlayers() {
         return players;
     }
+
+    public void startTimer() {
+
+        setDelay = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event)  {
+
+
+                try{
+                    final CardView cardView = CardView.create();
+                    cardView.show();
+                }catch(IOException ex){
+                    ex.printStackTrace();
+                }
+            }
+        }));
+
+        setDelay.play();
+
+    }
+
 }
