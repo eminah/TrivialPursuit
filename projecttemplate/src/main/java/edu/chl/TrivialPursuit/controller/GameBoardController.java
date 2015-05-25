@@ -81,8 +81,7 @@ public class GameBoardController implements Initializable {
     @FXML void moveLeft() throws IOException{
         movePlayerLeft(1, dice.getTotalDiceValue());
         drawBoard();
-        DiceView dice = DiceView.create();
-        dice.show();
+       
     }
 
     public void drawBoard(){
