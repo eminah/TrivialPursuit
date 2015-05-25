@@ -23,6 +23,7 @@ public class GameBoard {
         addSpotsToListInner();
     }
 
+
     private final ImmutablePair[] SPOT_DEFINITIONS_OUTER = {
            new ImmutablePair<Continent, Category>(Continent.ASIA, Category.AIRPLANE),
            new ImmutablePair<Continent, Category>(Continent.ASIA, Category.GEOGRAPHY),
@@ -54,6 +55,7 @@ public class GameBoard {
            new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.MEDIA),
     };
 
+
     private final ImmutablePair[] SPOT_DEFINITIONS_INNER = {
             new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.AIRPLANE),
             new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.GEOGRAPHY),
@@ -63,6 +65,7 @@ public class GameBoard {
             new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.TECHNIC),
             new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.MEDIA),
     };
+
 
     private final ImmutablePair[] SPOT_DEFINITIONS_COORDINATES_OUTER = {
 
@@ -103,6 +106,7 @@ public class GameBoard {
             new ImmutablePair<>(190,25),
     };
 
+
     private final ImmutablePair[] SPOT_DEFINITIONS_COORDINATES_INNER = {
 
             //Coordinates for EUROPE
@@ -115,14 +119,15 @@ public class GameBoard {
             new ImmutablePair<>(190,135),
     };
 
+
     public ArrayList<Spot> getSpotsOuter() {
         return spotsOuter;
     }
 
+
     public ArrayList<Spot> getSpotsInner() {
         return spotsInner;
     }
-
 
 
     public void addSpotsToListOuter(){
@@ -136,6 +141,7 @@ public class GameBoard {
             );
         }
     }
+
     public void addSpotsToListInner(){
         for(int i = 0; i < SPOT_DEFINITIONS_INNER.length; i++){
 
@@ -147,6 +153,7 @@ public class GameBoard {
             );
         }
     }
+
     //Sets the left and right spot to every spot
     public void setBoardingSpotsOuter(){
 
