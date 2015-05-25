@@ -1,13 +1,11 @@
 package edu.chl.trivialpursuit.model;
 
 
-
 /**
  * Created by Rasti on 2015-05-02.
  */
 
 public class Spot {
-
 
     private Continent continent;
     private Category category;
@@ -19,9 +17,9 @@ public class Spot {
 
     /**
      *
-
      * @param continent The continent of the spot
-     * @param category The Category of the spot
+     * @param category The category of the spot
+     * @param card The right card for the spot
      */
     public Spot(Continent continent, Category category, int x, int y, Card card){
 
@@ -31,7 +29,6 @@ public class Spot {
         cooY = y;
         this.card = card;
     }
-
 
 
     public Continent getContinent() {

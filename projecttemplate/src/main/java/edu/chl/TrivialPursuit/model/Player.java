@@ -1,10 +1,8 @@
 package edu.chl.trivialpursuit.model;
 
-import edu.chl.trivialpursuit.controller.ChooseTravelController;
 import edu.chl.trivialpursuit.controller.GameBoardController;
 
 import javax.inject.Inject;
-import java.util.ArrayList;
 import java.util.HashSet;
 
 
@@ -14,7 +12,6 @@ import java.util.HashSet;
 
 public  class Player {
 
-
     @Inject
     GameBoard game;
 
@@ -22,13 +19,10 @@ public  class Player {
     GameBoardController gameBoardController;
 
 
-
-
     private String name;
     private Spot spot;
     private boolean hasTicket = false; //Will be set to true when player has collected all Contintents
     private HashSet<Continent> collectedContinents;
-
 
 
     /**
@@ -43,8 +37,6 @@ public  class Player {
         this.spot = spot;
 
         collectedContinents = new HashSet<>();
-
-
     }
 
     public String getName() {
@@ -91,11 +83,6 @@ public  class Player {
     }
 
 
-
-
-
-
-
     public boolean getHasTicket() {
         return hasTicket;
     }
@@ -105,7 +92,7 @@ public  class Player {
     }
 
     public boolean checkIfAllContinents(){
-       return collectedContinents.size() == 5;
+       return collectedContinents.size() == 4;
     }
 }
 

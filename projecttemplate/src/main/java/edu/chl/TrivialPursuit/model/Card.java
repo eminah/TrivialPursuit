@@ -14,8 +14,8 @@ public class Card {
 
     /**
      *
+     * @param ca the category of the card
      * @param co the continent of the card
-     * @param ca the
      */
 
     // We removed the category to simplify the game for now,
@@ -23,9 +23,6 @@ public class Card {
     public Card(Continent co, Category ca){
         category = ca;
         continent = co;
-
-
-
     }
 
     public Category getCategory() {
@@ -36,14 +33,13 @@ public class Card {
         return continent;
     }
 
-    public void setCorrectAlt(Alternative correctAlt) {
-        this.correctAlt = correctAlt;
-    }
-
     public Alternative getCorrectAlt() {
         return correctAlt;
     }
 
+    public void setCorrectAlt(Alternative correctAlt) {
+        this.correctAlt = correctAlt;
+    }
 
     public void setAnswer(Alternative answer) {
         this.answer = answer;
@@ -66,6 +62,4 @@ public class Card {
             return false;
         }
     }
-
-
 }

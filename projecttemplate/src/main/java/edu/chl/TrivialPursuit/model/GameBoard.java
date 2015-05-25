@@ -1,9 +1,9 @@
 package edu.chl.trivialpursuit.model;
 
-
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import java.util.ArrayList;
+
 
 /**
  * Created by inatran on 15-05-04.
@@ -82,7 +82,7 @@ public class GameBoard {
             new ImmutablePair<>(402,60),
             new ImmutablePair<>(435,90),
             new ImmutablePair<>(468,125),
-            new ImmutablePair<>(485, 178),
+            new ImmutablePair<>(485,178),
 
             //Coordinates for Africa
             new ImmutablePair<>(497,230),
@@ -160,6 +160,7 @@ public class GameBoard {
         }
     }
 
+
     //Sets the left and right spot to every spot
     public void setBoardingSpotsOuter(){
 
@@ -202,6 +203,7 @@ public class GameBoard {
             }
         }
     }
+
 
     public void createCardsOuter(){
         for(int i = 0; i < SPOT_DEFINITIONS_OUTER.length; i++){
