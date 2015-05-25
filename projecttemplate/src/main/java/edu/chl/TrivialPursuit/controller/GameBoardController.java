@@ -493,7 +493,7 @@ public class GameBoardController implements Initializable {
         }
     }
 
-    
-
-
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
 }

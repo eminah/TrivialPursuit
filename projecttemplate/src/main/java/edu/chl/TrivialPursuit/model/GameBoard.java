@@ -1,10 +1,9 @@
 package edu.chl.trivialpursuit.model;
 
-
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
-import javax.inject.Inject;
 import java.util.ArrayList;
+
 
 /**
  * Created by inatran on 15-05-04.
@@ -14,11 +13,8 @@ public class GameBoard {
     private ArrayList<Spot> spotsOuter;
     private ArrayList<Spot> spotsInner;
 
-
-    @Inject
-    private ChoosePlayer chooseP;
-    @Inject
-    private ChooseTravel chooseT;
+    private ArrayList<Card> cardsOuter;
+    private ArrayList<Card> cardsInner;
 
 
 
@@ -26,13 +22,15 @@ public class GameBoard {
 
         spotsOuter = new ArrayList<>();
         spotsInner = new ArrayList<>();
+        cardsOuter = new ArrayList<>();
+        cardsInner = new ArrayList<>();
+        createCardsOuter();
+        createCardsInner();
         addSpotsToListOuter();
         setBoardingSpotsOuter();
         addSpotsToListInner();
-
-
-
     }
+
 
     private final ImmutablePair[] SPOT_DEFINITIONS_OUTER = {
            new ImmutablePair<Continent, Category>(Continent.ASIA, Category.AIRPLANE),
@@ -63,10 +61,8 @@ public class GameBoard {
            new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.SPORT),
            new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.TECHNIC),
            new ImmutablePair<Continent, Category>(Continent.NORTH_AMERICA, Category.MEDIA),
-
-
-
     };
+
 
     private final ImmutablePair[] SPOT_DEFINITIONS_INNER = {
             new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.AIRPLANE),
@@ -78,6 +74,7 @@ public class GameBoard {
             new ImmutablePair<Continent, Category>(Continent.EUROPE, Category.MEDIA),
     };
 
+
     private final ImmutablePair[] SPOT_DEFINITIONS_COORDINATES_OUTER = {
 
             //Coordinates for Asia
@@ -87,7 +84,7 @@ public class GameBoard {
             new ImmutablePair<>(402,60),
             new ImmutablePair<>(435,90),
             new ImmutablePair<>(468,125),
-            new ImmutablePair<>(485, 178),
+            new ImmutablePair<>(485,178),
 
             //Coordinates for Africa
             new ImmutablePair<>(497,230),
@@ -117,6 +114,7 @@ public class GameBoard {
             new ImmutablePair<>(190,25),
     };
 
+
     private final ImmutablePair[] SPOT_DEFINITIONS_COORDINATES_INNER = {
 
             //Coordinates for EUROPE
@@ -129,14 +127,15 @@ public class GameBoard {
             new ImmutablePair<>(190,135),
     };
 
+
     public ArrayList<Spot> getSpotsOuter() {
         return spotsOuter;
     }
 
+
     public ArrayList<Spot> getSpotsInner() {
         return spotsInner;
     }
-
 
 
     public void addSpotsToListOuter(){
@@ -145,21 +144,25 @@ public class GameBoard {
             spotsOuter.add(new Spot((Continent) SPOT_DEFINITIONS_OUTER[i].getLeft(),
                     (Category) SPOT_DEFINITIONS_OUTER[i].getRight(),
                     (Integer) SPOT_DEFINITIONS_COORDINATES_OUTER[i].getLeft(),
-                    (Integer)SPOT_DEFINITIONS_COORDINATES_OUTER[i].getRight()));
-            System.out.println(SPOT_DEFINITIONS_COORDINATES_OUTER[i].getLeft());
-
+                    (Integer)SPOT_DEFINITIONS_COORDINATES_OUTER[i].getRight(),
+                    cardsOuter.get(i))
+            );
         }
     }
+
     public void addSpotsToListInner(){
         for(int i = 0; i < SPOT_DEFINITIONS_INNER.length; i++){
 
             spotsInner.add(new Spot((Continent)SPOT_DEFINITIONS_INNER[i].getLeft(),
                     (Category) SPOT_DEFINITIONS_INNER[i].getRight(),
                     (Integer) SPOT_DEFINITIONS_COORDINATES_INNER[i].getLeft(),
-                    (Integer) SPOT_DEFINITIONS_COORDINATES_INNER[i].getRight()));
-
+                    (Integer) SPOT_DEFINITIONS_COORDINATES_INNER[i].getRight(),
+                    cardsInner.get(i))
+            );
         }
     }
+
+
     //Sets the left and right spot to every spot
     public void setBoardingSpotsOuter(){
 
@@ -173,7 +176,6 @@ public class GameBoard {
         }
 
         //Set the left spot to the current spot
-
         for(int j = 0; j <= spotsOuter.size()-1; j++){
             if (j==0){
                 spotsOuter.get(j).setLeft(spotsOuter.get(spotsOuter.size()-1));
@@ -205,6 +207,17 @@ public class GameBoard {
     }
 
 
+    public void createCardsOuter(){
+        for(int i = 0; i < SPOT_DEFINITIONS_OUTER.length; i++){
+            cardsOuter.add(new Card((Continent)SPOT_DEFINITIONS_OUTER[i].getLeft(),
+                    (Category)SPOT_DEFINITIONS_OUTER[i].getRight()));
+        }
+    }
 
-
+    public void createCardsInner(){
+        for(int i = 0; i < SPOT_DEFINITIONS_INNER.length; i++){
+            cardsInner.add(new Card((Continent)SPOT_DEFINITIONS_INNER[i].getLeft(),
+                    (Category) SPOT_DEFINITIONS_INNER[i].getRight()));
+        }
+    }
 }
