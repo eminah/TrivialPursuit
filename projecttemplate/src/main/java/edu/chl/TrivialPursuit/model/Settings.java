@@ -5,6 +5,4 @@ package edu.chl.trivialpursuit.model;
  */
 public class Settings {
 
-
-
 }
