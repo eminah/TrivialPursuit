@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.collections.*?>
 
-<BorderPane stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="edu.chl.trivialpursuit.controller.ChoosePlayerController">
+<BorderPane stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.trivialpursuit.controller.ChoosePlayerController">
    <top>
       <HBox prefHeight="64.0" prefWidth="600.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
@@ -33,7 +32,7 @@
                   <Insets />
                </opaqueInsets>
             </ComboBox>
-            <Label text="" fx:id="starLabel">
+            <Label fx:id="starLabel" text="">
                <HBox.margin>
                   <Insets />
                </HBox.margin>

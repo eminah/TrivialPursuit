@@ -68,7 +68,9 @@ public class GameBoardController implements Initializable {
 
     private ArrayList<Player> players;
     // Initial start value of all the coordinates, negative so that they will be out of the canvas
-    private int x1 = -20,x2 = -20,x3 = -20,x4 = -20,x5 = -20,x6 = -20,y1 = -20,y2 = -20,y3 = -20,y4 = -20,y5 = -20,y6 = -20;
+    //private int x1 = -20,x2 = -20,x3 = -20,x4 = -20,x5 = -20,x6 = -20,y1 = -20,y2 = -20,y3 = -20,y4 = -20,y5 = -20,y6 = -20;
+    private int[] coorX= {-1,-20,-20,-20,-20,-20,-20};
+    private int[] coorY= {-1,-20,-20,-20,-20,-20,-20};
     private boolean[] getTurn;
 
 
@@ -92,7 +94,7 @@ public class GameBoardController implements Initializable {
 
     @FXML
     public void moveRight(){
-        movePlayerRight(whosTurn(), dice.getTotalDiceValue());
+        movePlayer(whosTurn(), dice.getTotalDiceValue(), "R");
         setNextTurn();
         right.setDisable(true);
         left.setDisable(true);
@@ -106,7 +108,7 @@ public class GameBoardController implements Initializable {
     }
 
     @FXML void moveLeft() throws IOException{
-        movePlayerLeft(whosTurn(), dice.getTotalDiceValue());
+        movePlayer(whosTurn(), dice.getTotalDiceValue(), "L");
         setNextTurn();
         right.setDisable(true);
         left.setDisable(true);
@@ -116,141 +118,62 @@ public class GameBoardController implements Initializable {
 
     }
 
+
+    private void movePlayer(int player, int diceValue, String direction) {
+
+        int correctPlayer = player - 1;
+
+        if (direction.equals("L")) {
+            players.get(correctPlayer).goLeft(diceValue);
+        }else {
+            players.get(correctPlayer).goRight(diceValue);
+        }
+        setCoordinates(player);
+    }
+
+    private void setCoordinates(int player){
+        for(int i = 1; i <= player; i++){
+            coorX[i] = players.get(i-1).getSpot().getCooX();
+            coorY[i] = players.get(i-1).getSpot().getCooY();
+
+        }
+        drawBoard();
+    }
+
     public void drawBoard(){
         GraphicsContext gc = boardCanvas.getGraphicsContext2D();
         draw(gc);
 
     }
 
-    public void setX1(int x1) {
-        this.x1 = x1;
-    }
-    public void setY1(int y1) {
-        this.y1 = y1;
-    }
-    public void setX2(int x2) {
-        this.x2 = x2;
-    }
-    public void setY2(int y2) {
-        this.y2 = y2;
-    }
-    public void setX3(int x3) {
-        this.x3 = x3;
-    }
-    public void setY3(int y3) {
-        this.y3 = y3;
-    }
-    public void setX4(int x4) {
-        this.x4 = x4;
-    }
-    public void setY4(int y4) {
-        this.y4 = y4;
-    }
-    public void setX5(int x5) { this.x5 = x5; }
-    public void setY5(int y5) { this.y5 = y5; }
-    public void setX6(int x6) { this.x6 = x6; }
-    public void setY6(int y6) { this.y6 = y6; }
+
 
     // Searching for all coordinates by hand, time consuming - Helene
     private void draw(GraphicsContext gc){
         gc.drawImage(new Image("edu/chl/trivialpursuit/view/board_pastell.png"), 0, 0, boardCanvas.getWidth(), boardCanvas.getHeight());
 
         gc.setFill(p1);
-        gc.fillOval(x1,y1, 15, 15);
-        gc.strokeOval(x1,y1, 15, 15);
+        gc.fillOval(coorX[1],coorY[1], 15, 15);
+        gc.strokeOval(coorX[1],coorY[1], 15, 15);
         gc.setFill(p2);
-        gc.fillOval(x2-10,y2, 15, 15);
-        gc.strokeOval(x2-10,y2, 15, 15);
+        gc.fillOval(coorX[2]-10,coorY[2], 15, 15);
+        gc.strokeOval(coorX[2]-10,coorY[2], 15, 15);
         gc.setFill(p3);
-        gc.fillOval(x3,y3-10, 15, 15);
-        gc.strokeOval(x3,y3-10, 15, 15);
+        gc.fillOval(coorX[3],coorY[3]-10, 15, 15);
+        gc.strokeOval(coorX[3],coorY[3]-10, 15, 15);
         gc.setFill(p4);
-        gc.fillOval(x4,y4+10, 15, 15);
-        gc.strokeOval(x4,y4+10, 15, 15);
+        gc.fillOval(coorX[4],coorY[4]+10, 15, 15);
+        gc.strokeOval(coorX[4],coorY[4]+10, 15, 15);
         gc.setFill(p5);
-        gc.fillOval(x5+10,y5, 15, 15);
-        gc.strokeOval(x5+10,y5, 15, 15);
+        gc.fillOval(coorX[5]+10,coorY[5], 15, 15);
+        gc.strokeOval(coorX[5]+10,coorY[5], 15, 15);
         gc.setFill(p6);
-        gc.fillOval(x6+10,y6-10, 15, 15);
-        gc.strokeOval(x6+10,y6-10, 15, 15);
+        gc.fillOval(coorX[6]+10,coorY[6]-10, 15, 15);
+        gc.strokeOval(coorX[6]+10,coorY[6]-10,  15, 15);
 
     }
-    public void movePlayerRight(int player, int diceValue){
-        switch(player){
-            case 1:
-                players.get(0).goRight(diceValue);
-                setX1(players.get(0).getSpot().getCooX());
-                setY1(players.get(0).getSpot().getCooY());
-                break;
-            case 2:
-                players.get(1).goRight(diceValue);
-                setX2(players.get(1).getSpot().getCooX());
-                setY2(players.get(1).getSpot().getCooY());
-                break;
-            case 3:
-                players.get(2).goRight(diceValue);
-                setX3(players.get(2).getSpot().getCooX());
-                setY3(players.get(2).getSpot().getCooY());
-                break;
-            case 4:
-                players.get(3).goRight(diceValue);
-                setX4(players.get(3).getSpot().getCooX());
-                setY4(players.get(3).getSpot().getCooY());;
-                break;
-            case 5:
-                players.get(4).goRight(diceValue);
-                setX5(players.get(4).getSpot().getCooX());
-                setY5(players.get(4).getSpot().getCooY());
-                break;
-            case 6:
-                players.get(5).goRight(diceValue);
-                setX6(players.get(5).getSpot().getCooX());
-                setY6(players.get(5).getSpot().getCooY());
-                break;
-        }
-    }
-    /**
-     *  Moves the player towards left
-     *
-     * @param player The player that should be moved
-     * @param diceValue The amount of steps the player should be moved
-     */
-    public void movePlayerLeft(int player, int diceValue){
-        switch(player){
-            case 1:
-                players.get(0).goLeft(diceValue);
-                setX1(players.get(0).getSpot().getCooX());
-                setY1(players.get(0).getSpot().getCooY());
-                break;
-            case 2:
-                players.get(1).goLeft(diceValue);
-                setX2(players.get(1).getSpot().getCooX());
-                setY2(players.get(1).getSpot().getCooY());
-                break;
-            case 3:
-                players.get(2).goLeft(diceValue);
-                setX3(players.get(2).getSpot().getCooX());
-                setY3(players.get(2).getSpot().getCooY());
-                break;
-            case 4:
-                players.get(3).goLeft(diceValue);
-                setX4(players.get(3).getSpot().getCooX());
-                setY4(players.get(3).getSpot().getCooY());
-                break;
-            case 5:
-                players.get(4).goLeft(diceValue);
-                setX5(players.get(4).getSpot().getCooX());
-                setY5(players.get(4).getSpot().getCooY());
-                break;
-            case 6:
-                players.get(5).goLeft(diceValue);
-                setX6(players.get(5).getSpot().getCooX());
-                setY6(players.get(5).getSpot().getCooY());
-                break;
-        }
 
 
-    }
 
 
     /**
@@ -273,6 +196,12 @@ public class GameBoardController implements Initializable {
             }
         }
 
+        setArrow();
+
+
+    }
+
+    private void setArrow(){
         switch (whosTurn()){
             case 1:
                 for(int i = 0;i < setLabelTurn.size(); i++){
@@ -318,7 +247,6 @@ public class GameBoardController implements Initializable {
                 break;
             default: throw new IllegalArgumentException("Wrong whos turn");
         }
-
     }
 
     public int whosTurn() {
@@ -381,35 +309,8 @@ public class GameBoardController implements Initializable {
 
 
 
-        for(int i = 0; i < chooseP.getNumberOfPlayers(); i++){
-            switch(i){
-                case 0:
-                    setX1(players.get(i).getSpot().getCooX());
-                    setY1(players.get(i).getSpot().getCooY());
-                    break;
-                case 1:
-                    setX2(players.get(i).getSpot().getCooX());
-                    setY2(players.get(i).getSpot().getCooY());
-                    break;
-                case 2:
-                    setX3(players.get(i).getSpot().getCooX());
-                    setY3(players.get(i).getSpot().getCooY());
-                    break;
-                case 3:
-                    setX4(players.get(i).getSpot().getCooX());
-                    setY4(players.get(i).getSpot().getCooY());
-                    break;
-                case 4:
-                    setX5(players.get(i).getSpot().getCooX());
-                    setY5(players.get(i).getSpot().getCooY());
-                    break;
-                case 5:
-                    setX6(players.get(i).getSpot().getCooX());
-                    setY6(players.get(i).getSpot().getCooY());
-                    break;
-                default:
-                    throw new IllegalArgumentException("Something is wrong");
-            }
+        for(int i = 1; i <= chooseP.getNumberOfPlayers(); i++){
+            setCoordinates(chooseP.getNumberOfPlayers());
         }
 
 
@@ -516,9 +417,9 @@ public class GameBoardController implements Initializable {
         }
     }
 
-    public ArrayList<Player> getPlayers() {
-        return players;
-    }
+   // public ArrayList<Player> getPlayers() {
+    //    return players;
+    //}
 
     public void startTimer() {
 
@@ -543,5 +444,7 @@ public class GameBoardController implements Initializable {
         setDelay.play();
 
     }
+
+
 
 }
