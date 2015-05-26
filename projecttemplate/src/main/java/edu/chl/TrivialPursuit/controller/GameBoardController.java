@@ -74,12 +74,12 @@ public class GameBoardController implements Initializable {
     private boolean[] getTurn;
 
 
-    private Color p1 = Color.DEEPPINK;
-    private Color p2 = Color.BLUE;
-    private Color p3 = Color.DARKGRAY;
-    private Color p4 = Color.YELLOW;
-    private Color p5 = Color.RED;
-    private Color p6 = Color.LAWNGREEN;
+    private Color p1 = Color.GREENYELLOW;
+    private Color p2 = Color.CYAN;
+    private Color p3 = Color.RED;
+    private Color p4 = Color.FUCHSIA;
+    private Color p5 = Color.FORESTGREEN;
+    private Color p6 = Color.BLUE;
 
     private Font labels = new Font("Verdana", 15);
     private Font arrow = new Font("Verdana",18);
@@ -156,20 +156,20 @@ public class GameBoardController implements Initializable {
         gc.fillOval(coorX[1],coorY[1], 15, 15);
         gc.strokeOval(coorX[1],coorY[1], 15, 15);
         gc.setFill(p2);
-        gc.fillOval(coorX[2]-10,coorY[2], 15, 15);
-        gc.strokeOval(coorX[2]-10,coorY[2], 15, 15);
+        gc.fillOval(coorX[2]-12,coorY[2], 15, 15);
+        gc.strokeOval(coorX[2]-12,coorY[2], 15, 15);
         gc.setFill(p3);
-        gc.fillOval(coorX[3],coorY[3]-10, 15, 15);
-        gc.strokeOval(coorX[3],coorY[3]-10, 15, 15);
+        gc.fillOval(coorX[3],coorY[3]-12, 15, 15);
+        gc.strokeOval(coorX[3],coorY[3]-12, 15, 15);
         gc.setFill(p4);
-        gc.fillOval(coorX[4],coorY[4]+10, 15, 15);
-        gc.strokeOval(coorX[4],coorY[4]+10, 15, 15);
+        gc.fillOval(coorX[4],coorY[4]+12, 15, 15);
+        gc.strokeOval(coorX[4],coorY[4]+12, 15, 15);
         gc.setFill(p5);
-        gc.fillOval(coorX[5]+10,coorY[5], 15, 15);
-        gc.strokeOval(coorX[5]+10,coorY[5], 15, 15);
+        gc.fillOval(coorX[5]+12,coorY[5], 15, 15);
+        gc.strokeOval(coorX[5]+12,coorY[5], 15, 15);
         gc.setFill(p6);
-        gc.fillOval(coorX[6]+10,coorY[6]-10, 15, 15);
-        gc.strokeOval(coorX[6]+10,coorY[6]-10,  15, 15);
+        gc.fillOval(coorX[6]+12,coorY[6]-12, 15, 15);
+        gc.strokeOval(coorX[6]+12,coorY[6]-12,  15, 15);
 
     }
 

@@ -72,33 +72,33 @@ public class ChooseTravelController implements Initializable {
     @FXML
     private void firstChooice(){
 
-        setStartPlace(c1,1);
+        setStartPlace(c1, 1);
     }
 
     @FXML
     private void secondChooice(){
-        setStartPlace(c2,2);
+        setStartPlace(c2, 2);
     }
 
     @FXML
     private void thirdChooice(){
-        setStartPlace(c3,3);
+        setStartPlace(c3, 3);
 
     }
 
     @FXML
     private void fourthChooice(){
-        setStartPlace(c4,4);
+        setStartPlace(c4, 4);
     }
 
     @FXML
     private void fifthChooice(){
-        setStartPlace(c5,5);
+        setStartPlace(c5, 5);
     }
 
     @FXML
     private void sixthChooice(){
-        setStartPlace(c6,6);
+        setStartPlace(c6, 6);
     }
 
 
@@ -145,94 +145,19 @@ public class ChooseTravelController implements Initializable {
 
         switch(choosePlayer.getNumberOfPlayers()){
             case 2:
-                playerOneName.setText(choosePlayer.getNameOne());
-                playerTwoName.setText(choosePlayer.getNameTwo());
-                mustChooseOne.setText("*");
-                mustChooseOne.setFont(star);
-                mustChooseOne.setTextFill(Color.RED);
-                mustChooseSec.setText("*");
-                mustChooseSec.setFont(star);
-                mustChooseSec.setTextFill(Color.RED);
+                twoPlayers();
                 break;
             case 3:
-                playerOneName.setText(choosePlayer.getNameOne());
-                playerTwoName.setText(choosePlayer.getNameTwo());
-                playerThreeName.setText(choosePlayer.getNameThree());
-                mustChooseOne.setText("*");
-                mustChooseOne.setFont(star);
-                mustChooseOne.setTextFill(Color.RED);
-                mustChooseSec.setText("*");
-                mustChooseSec.setFont(star);
-                mustChooseSec.setTextFill(Color.RED);
-                mustChooseThird.setText("*");
-                mustChooseThird.setFont(star);
-                mustChooseThird.setTextFill(Color.RED);
+                threePlayers();
                 break;
             case 4:
-                playerOneName.setText(choosePlayer.getNameOne());
-                playerTwoName.setText(choosePlayer.getNameTwo());
-                playerThreeName.setText(choosePlayer.getNameThree());
-                playerFourName.setText(choosePlayer.getNameFour());
-                mustChooseOne.setText("*");
-                mustChooseOne.setFont(star);
-                mustChooseOne.setTextFill(Color.RED);
-                mustChooseSec.setText("*");
-                mustChooseSec.setFont(star);
-                mustChooseSec.setTextFill(Color.RED);
-                mustChooseThird.setText("*");
-                mustChooseThird.setFont(star);
-                mustChooseThird.setTextFill(Color.RED);
-                mustChooseFourth.setText("*");
-                mustChooseFourth.setFont(star);
-                mustChooseFourth.setTextFill(Color.RED);
+                fourPlayers();
                 break;
             case 5:
-                playerOneName.setText(choosePlayer.getNameOne());
-                playerTwoName.setText(choosePlayer.getNameTwo());
-                playerThreeName.setText(choosePlayer.getNameThree());
-                playerFourName.setText(choosePlayer.getNameFour());
-                playerFiveName.setText(choosePlayer.getNameFive());
-                mustChooseOne.setText("*");
-                mustChooseOne.setFont(star);
-                mustChooseOne.setTextFill(Color.RED);
-                mustChooseSec.setText("*");
-                mustChooseSec.setFont(star);
-                mustChooseSec.setTextFill(Color.RED);
-                mustChooseThird.setText("*");
-                mustChooseThird.setFont(star);
-                mustChooseThird.setTextFill(Color.RED);
-                mustChooseFourth.setText("*");
-                mustChooseFourth.setFont(star);
-                mustChooseFourth.setTextFill(Color.RED);
-                mustChooseFifth.setText("*");
-                mustChooseFifth.setFont(star);
-                mustChooseFifth.setTextFill(Color.RED);
+                fivePlayers();
                 break;
             case 6:
-                playerOneName.setText(choosePlayer.getNameOne());
-                playerTwoName.setText(choosePlayer.getNameTwo());
-                playerThreeName.setText(choosePlayer.getNameThree());
-                playerFourName.setText(choosePlayer.getNameFour());
-                playerFiveName.setText(choosePlayer.getNameFive());
-                playerSixName.setText(choosePlayer.getNameSix());
-                mustChooseOne.setText("*");
-                mustChooseOne.setFont(star);
-                mustChooseOne.setTextFill(Color.RED);
-                mustChooseSec.setText("*");
-                mustChooseSec.setFont(star);
-                mustChooseSec.setTextFill(Color.RED);
-                mustChooseThird.setText("*");
-                mustChooseThird.setFont(star);
-                mustChooseThird.setTextFill(Color.RED);
-                mustChooseFourth.setText("*");
-                mustChooseFourth.setFont(star);
-                mustChooseFourth.setTextFill(Color.RED);
-                mustChooseFifth.setText("*");
-                mustChooseFifth.setFont(star);
-                mustChooseFifth.setTextFill(Color.RED);
-                mustChooseSixth.setText("*");
-                mustChooseSixth.setFont(star);
-                mustChooseSixth.setTextFill(Color.RED);
+                sixPlayer();
                 break;
 
             default:
@@ -240,6 +165,55 @@ public class ChooseTravelController implements Initializable {
         }
     }
 
+    private void placeStar(Label travel){
+        travel.setText("*");
+        travel.setFont(star);
+        travel.setTextFill(Color.RED);
+
+    }
+
+    private void twoPlayers(){
+        playerOneName.setText(choosePlayer.getNameOne());
+        playerTwoName.setText(choosePlayer.getNameTwo());
+        placeStar(mustChooseOne);
+        placeStar(mustChooseSec);
+    }
+
+    private void threePlayers(){
+        twoPlayers();
+        playerThreeName.setText(choosePlayer.getNameThree());
+        placeStar(mustChooseThird);
+
+    }
+
+    private void fourPlayers(){
+        threePlayers();
+        playerThreeName.setText(choosePlayer.getNameThree());
+        playerFourName.setText(choosePlayer.getNameFour());
+        placeStar(mustChooseThird);
+        placeStar(mustChooseFourth);
+    }
+
+    private void fivePlayers(){
+        fourPlayers();
+        playerThreeName.setText(choosePlayer.getNameThree());
+        playerFourName.setText(choosePlayer.getNameFour());
+        playerFiveName.setText(choosePlayer.getNameFive());
+        placeStar(mustChooseThird);
+        placeStar(mustChooseFourth);
+        placeStar(mustChooseFifth);
+    }
+    private void sixPlayer(){
+        fivePlayers();
+        playerThreeName.setText(choosePlayer.getNameThree());
+        playerFourName.setText(choosePlayer.getNameFour());
+        playerFiveName.setText(choosePlayer.getNameFive());
+        playerSixName.setText(choosePlayer.getNameSix());
+        placeStar(mustChooseThird);
+        placeStar(mustChooseFourth);
+        placeStar(mustChooseFifth);
+        placeStar(mustChooseSixth);
+    }
     private void checkChooices(){
         switch (choosePlayer.getNumberOfPlayers()) {
             case 2:
