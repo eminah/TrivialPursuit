@@ -1,17 +1,15 @@
 package edu.chl.trivialpursuit.controller;
 
-import edu.chl.trivialpursuit.view.GameBoardView;
+import edu.chl.trivialpursuit.view.DiceView;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.util.Duration;
+
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 
 /**
@@ -86,11 +84,10 @@ public class CardController{
                 alt4.setDisable(true);
 
 
-
                 //Changes back to the gameBoard
                 try{
-                    final GameBoardView gameBoardView = GameBoardView.create();
-                    gameBoardView.show();
+                    final DiceView diceView = DiceView.create();
+                    diceView.show();
                 }catch(IOException ex){
                     ex.printStackTrace();
                 }
