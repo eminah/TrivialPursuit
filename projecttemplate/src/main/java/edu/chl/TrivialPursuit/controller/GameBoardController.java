@@ -74,12 +74,12 @@ public class GameBoardController implements Initializable {
     private boolean[] getTurn;
 
 
-    private Color p1 = Color.DEEPPINK;
-    private Color p2 = Color.BLUE;
-    private Color p3 = Color.DARKGRAY;
-    private Color p4 = Color.YELLOW;
-    private Color p5 = Color.RED;
-    private Color p6 = Color.LAWNGREEN;
+    private Color p1 = Color.GREENYELLOW;
+    private Color p2 = Color.CYAN;
+    private Color p3 = Color.RED;
+    private Color p4 = Color.FUCHSIA;
+    private Color p5 = Color.FORESTGREEN;
+    private Color p6 = Color.BLUE;
 
     private Font labels = new Font("Verdana", 15);
     private Font arrow = new Font("Verdana",18);
