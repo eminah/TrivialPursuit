@@ -71,39 +71,59 @@ public class ChooseTravelController implements Initializable {
 
     @FXML
     private void firstChooice(){
-        chooseTravel.setStartPlaceOne(c1.getValue());
-        checkChooices();
+
+        setStartPlace(c1,1);
     }
 
     @FXML
     private void secondChooice(){
-        chooseTravel.setStartPlaceTwo(c2.getValue());
-        checkChooices();
+        setStartPlace(c2,2);
     }
 
     @FXML
     private void thirdChooice(){
-        chooseTravel.setStartPlaceThree(c3.getValue());
-        checkChooices();
+        setStartPlace(c3,3);
 
     }
 
     @FXML
     private void fourthChooice(){
-        chooseTravel.setStartPlaceFour(c4.getValue());
-        checkChooices();
+        setStartPlace(c4,4);
     }
 
     @FXML
     private void fifthChooice(){
-        chooseTravel.setStartPlaceFive(c5.getValue());
-        checkChooices();
+        setStartPlace(c5,5);
     }
 
     @FXML
     private void sixthChooice(){
-        chooseTravel.setStartPlaceSix(c6.getValue());
-        checkChooices();
+        setStartPlace(c6,6);
+    }
+
+
+    private void setStartPlace(ComboBox theBoxChoosen, int i){
+        switch(i) {
+            case 1: chooseTravel.setStartPlaceOne((String) theBoxChoosen.getValue());
+            checkChooices();
+                break;
+            case 2: chooseTravel.setStartPlaceTwo((String) theBoxChoosen.getValue());
+                checkChooices();
+                break;
+            case 3: chooseTravel.setStartPlaceThree((String) theBoxChoosen.getValue());
+                checkChooices();
+                break;
+            case 4: chooseTravel.setStartPlaceFour((String) theBoxChoosen.getValue());
+                checkChooices();
+                break;
+            case 5: chooseTravel.setStartPlaceFive((String) theBoxChoosen.getValue());
+                checkChooices();
+                break;
+            case 6: chooseTravel.setStartPlaceSix((String) theBoxChoosen.getValue());
+                checkChooices();
+                break;
+        }
+
     }
 
 
