@@ -29,67 +29,50 @@ public class DiceController {
 
     private Timeline delay;
 
+
     @FXML
     private void throwDices(ActionEvent e) throws IOException{
 
-
-
-
-
         dice.throwDice();
+        changeDiceImage(dice1,dice.getFirstDiceValue());
 
 
-        //Change image on dice one depending on value
-        switch(dice.getFirstDiceValue()){
-
-            case 1:
-                dice1.setImage(new Image("edu/chl/trivialpursuit/view/diceOne.png"));
-                break;
-            case 2:
-                dice1.setImage(new Image("edu/chl/trivialpursuit/view/diceTwo.png"));
-                break;
-            case 3:
-                dice1.setImage(new Image("edu/chl/trivialpursuit/view/diceThree.png"));
-                break;
-            case 4:
-                dice1.setImage(new Image("edu/chl/trivialpursuit/view/diceFour.png"));
-                break;
-            case 5:
-                dice1.setImage(new Image("edu/chl/trivialpursuit/view/diceFive.png"));
-                break;
-            case 6:
-                dice1.setImage(new Image("edu/chl/trivialpursuit/view/diceSix.png"));
-                break;
-
-        }
-
-        // Change image on dice one depending on value....
-
-        switch(dice.getSecondDiceValue()){
-
-            case 1:
-                dice2.setImage(new Image("edu/chl/trivialpursuit/view/diceOne.png"));
-                break;
-            case 2:
-                dice2.setImage(new Image("edu/chl/trivialpursuit/view/diceTwo.png"));
-                break;
-            case 3:
-                dice2.setImage(new Image("edu/chl/trivialpursuit/view/diceThree.png"));
-                break;
-            case 4:
-                dice2.setImage(new Image("edu/chl/trivialpursuit/view/diceFour.png"));
-                break;
-            case 5:
-                dice2.setImage(new Image("edu/chl/trivialpursuit/view/diceFive.png"));
-                break;
-            case 6:
-                dice2.setImage(new Image("edu/chl/trivialpursuit/view/diceSix.png"));
-                break;
-
-        }
 
         throwButton.setDisable(true);
         startTimer();
+    }
+
+    private void changeDiceImage(ImageView dicePicture, int firstValue){
+
+        int witchDice = firstValue;
+            for (int i = 0;  i < 2; i++){
+                switch (witchDice) {
+
+                    case 1:
+                        dicePicture.setImage(new Image("edu/chl/trivialpursuit/view/diceOne.png"));
+                        break;
+                    case 2:
+                        dicePicture.setImage(new Image("edu/chl/trivialpursuit/view/diceTwo.png"));
+                        break;
+                    case 3:
+                        dicePicture.setImage(new Image("edu/chl/trivialpursuit/view/diceThree.png"));
+                        break;
+                    case 4:
+                        dicePicture.setImage(new Image("edu/chl/trivialpursuit/view/diceFour.png"));
+                        break;
+                    case 5:
+                        dicePicture.setImage(new Image("edu/chl/trivialpursuit/view/diceFive.png"));
+                        break;
+                    case 6:
+                        dicePicture.setImage(new Image("edu/chl/trivialpursuit/view/diceSix.png"));
+                        break;
+
+                }
+
+                witchDice = dice.getSecondDiceValue();
+                dicePicture = dice2;
+
+            }
     }
 
     public void startTimer(){
