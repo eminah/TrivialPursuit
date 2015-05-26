@@ -1,26 +1,43 @@
 package edu.chl.trivialpursuit.controller;
 
+import edu.chl.trivialpursuit.model.Alternative;
+import edu.chl.trivialpursuit.model.Card;
+import edu.chl.trivialpursuit.model.Continent;
+import edu.chl.trivialpursuit.model.GameBoard;
 import edu.chl.trivialpursuit.view.DiceView;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.util.Duration;
 
+import javax.inject.Inject;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
 /**
  * Created by helenejarl on 2015-05-07.
  */
-public class CardController{
+public class CardController implements Initializable{
 
-    private Timeline delay;
+    @FXML
+    Label question;
 
     @FXML
     Button alt1, alt2, alt3, alt4;
+
+    @Inject
+    GameBoard game;
+
+
+
+    private Timeline delay;
 
     @FXML
     public void altOnePressed(ActionEvent e) {
@@ -63,6 +80,7 @@ public class CardController{
         startTimer();
     }
 
+
     /**
      * An delay that starts when you click on an alternative,
      * this delay prevents you from choose more than one alternative
@@ -98,5 +116,53 @@ public class CardController{
 
     }
 
+    /**
+     * Gets continent of the card that is  connected to the current players spot
+     * @param continent the continent of the specifik card that the player will get
+     */
+    private void setCard(Continent continent){
 
+        if( continent == Continent.ASIA){
+            //card.setCorrectAlt(Alternative.ALTERNATIVE2);
+            question.setText("This is an Asia Question, please press on Asia:");
+            alt1.setText("Africa");
+            alt2.setText("Asia");
+            alt3.setText("North America");
+            alt4.setText("South Ametica");
+
+        }else if( continent == Continent.AFRICA){
+
+            //card.setCorrectAlt(Alternative.ALTERNATIVE1);
+            question.setText("This is an Africa Question, please press on Africa:");
+            alt1.setText("Africa");
+            alt2.setText("Asia");
+            alt3.setText("North America");
+            alt4.setText("South Ametica");
+
+        }else if(continent == Continent.NORTH_AMERICA){
+            //card.setCorrectAlt(Alternative.ALTERNATIVE3);
+            question.setText("This is an North America Question, please press on North America:");
+            alt1.setText("Africa");
+            alt2.setText("Asia");
+            alt3.setText("North America");
+            alt4.setText("South Ametica");
+
+        }else{
+
+            //card.setCorrectAlt(Alternative.ALTERNATIVE4);
+            question.setText("This is an South America Question, please press on South America:");
+            alt1.setText("Africa");
+            alt2.setText("Asia");
+            alt3.setText("North America");
+            alt4.setText("South Ametica");
+        }
+
+    }
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        setCard(game.getPlayers().get(game.getTurn()-1).getSpot().getCard().getContinent());
+    }
 }

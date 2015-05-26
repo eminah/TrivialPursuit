@@ -12,17 +12,14 @@ import java.util.HashSet;
 
 public  class Player {
 
-    @Inject
-    GameBoard game;
 
-    @Inject
-    GameBoardController gameBoardController;
 
 
     private String name;
     private Spot spot;
     private boolean hasTicket = false; //Will be set to true when player has collected all Contintents
     private HashSet<Continent> collectedContinents;
+    private int turn;
 
 
     /**
@@ -93,6 +90,14 @@ public  class Player {
 
     public boolean checkIfAllContinents(){
        return collectedContinents.size() == 4;
+    }
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public void setTurn(int turn) {
+        this.turn = turn;
     }
 }
 

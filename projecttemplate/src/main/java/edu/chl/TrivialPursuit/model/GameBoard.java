@@ -15,11 +15,12 @@ public class GameBoard {
 
     private ArrayList<Card> cardsOuter;
     private ArrayList<Card> cardsInner;
-
+    private ArrayList<Player> players;
+    private int turn;
 
 
     public GameBoard(){
-
+        players = new ArrayList<>();
         spotsOuter = new ArrayList<>();
         spotsInner = new ArrayList<>();
         cardsOuter = new ArrayList<>();
@@ -214,10 +215,30 @@ public class GameBoard {
         }
     }
 
+
+
     public void createCardsInner(){
         for(int i = 0; i < SPOT_DEFINITIONS_INNER.length; i++){
             cardsInner.add(new Card((Continent)SPOT_DEFINITIONS_INNER[i].getLeft(),
                     (Category) SPOT_DEFINITIONS_INNER[i].getRight()));
         }
+
+
+    }
+
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(ArrayList<Player> players) {
+        this.players = players;
+    }
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public void setTurn(int turn) {
+        this.turn = turn;
     }
 }

@@ -19,7 +19,7 @@ public class Card {
      */
 
     // We removed the category to simplify the game for now,
-    // TODO we will add it later if there is time
+    // TODO we will not use the Category, maybe later if time
     public Card(Continent co, Category ca){
         category = ca;
         continent = co;
@@ -45,9 +45,7 @@ public class Card {
         this.answer = answer;
     }
 
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
+
 
     public boolean checkAnswer(Alternative ans){
         answer = ans;

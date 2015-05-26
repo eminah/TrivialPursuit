@@ -188,9 +188,11 @@ public class GameBoardController implements Initializable {
                 System.out.println(getTurn.length);
                 if(i+1 == getTurn.length){
                     getTurn[0] = true;
+                    game.setTurn(whosTurn());
                     break;
                 }else{
                     getTurn[i+1] = true;
+                    game.setTurn(whosTurn());
                     break;
                 }
             }
@@ -266,6 +268,8 @@ public class GameBoardController implements Initializable {
 
         players = new ArrayList<>();
         createPlayers();
+        game.setPlayers(players);
+        game.setTurn(1);
 
 
 
@@ -416,10 +420,9 @@ public class GameBoardController implements Initializable {
             }
         }
     }
-
-   // public ArrayList<Player> getPlayers() {
-    //    return players;
-    //}
+    public ArrayList<Player> getPlayers() {
+       return players;
+    }
 
     public void startTimer() {
 
