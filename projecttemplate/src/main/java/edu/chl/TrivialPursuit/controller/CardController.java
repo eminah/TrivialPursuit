@@ -1,9 +1,6 @@
 package edu.chl.trivialpursuit.controller;
 
-import edu.chl.trivialpursuit.model.Alternative;
-import edu.chl.trivialpursuit.model.Card;
-import edu.chl.trivialpursuit.model.Continent;
-import edu.chl.trivialpursuit.model.GameBoard;
+import edu.chl.trivialpursuit.model.*;
 import edu.chl.trivialpursuit.view.DiceView;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -38,6 +35,10 @@ public class CardController implements Initializable{
 
 
     private Timeline delay;
+    private Alternative correctAlt;
+    private Alternative answer;
+    private Player player;
+
 
     @FXML
     public void altOnePressed(ActionEvent e) {
@@ -163,6 +164,35 @@ public class CardController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        setCard(game.getPlayers().get(game.getTurn()-1).getSpot().getCard().getContinent());
+        setCard(game.getPlayers().get(game.getTurn() - 1).getSpot().getCard().getContinent());
+    }
+
+
+    public Alternative getCorrectAlt() {
+        return correctAlt;
+    }
+
+    public void setCorrectAlt(Alternative correctAlt) {
+        this.correctAlt = correctAlt;
+    }
+
+    public void setAnswer(Alternative answer) {
+        this.answer = answer;
+    }
+
+
+
+    public boolean checkAnswer(Alternative ans){
+        answer = ans;
+
+        if( answer.equals(correctAlt)){
+            //player.getCollectedContinents().add(continent);
+            if (player.checkIfAllContinents()){
+                player.setHasTicket(true);
+            }
+            return true;
+        }else{
+            return false;
+        }
     }
 }

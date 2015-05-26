@@ -8,9 +8,6 @@ public class Card {
 
     private Category category;
     private Continent continent;
-    private Alternative correctAlt;
-    private Alternative answer;
-    private Player player;
 
     /**
      *
@@ -33,31 +30,5 @@ public class Card {
         return continent;
     }
 
-    public Alternative getCorrectAlt() {
-        return correctAlt;
-    }
 
-    public void setCorrectAlt(Alternative correctAlt) {
-        this.correctAlt = correctAlt;
-    }
-
-    public void setAnswer(Alternative answer) {
-        this.answer = answer;
-    }
-
-
-
-    public boolean checkAnswer(Alternative ans){
-        answer = ans;
-
-        if( answer.equals(correctAlt)){
-            player.getCollectedContinents().add(continent);
-            if (player.checkIfAllContinents()){
-                player.setHasTicket(true);
-            }
-            return true;
-        }else{
-            return false;
-        }
-    }
 }
