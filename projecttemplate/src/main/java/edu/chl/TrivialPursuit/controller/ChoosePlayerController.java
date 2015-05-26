@@ -5,11 +5,14 @@ import edu.chl.trivialpursuit.view.ChoosePlayerView;
 import edu.chl.trivialpursuit.view.ChooseTravelView;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 
 import javax.inject.Inject;
 
@@ -27,6 +30,12 @@ public class ChoosePlayerController implements Initializable {
 
     @FXML
     private ComboBox<String> numPlayers;
+
+    @FXML
+    Button doneButton;
+
+    @FXML
+    Label starLabel;
 
     @FXML
     private TextField tOne, tTwo, tThree,tFour,tFive,tSix;
@@ -53,6 +62,9 @@ public class ChoosePlayerController implements Initializable {
         e.consume();
     }
 
+
+
+
     @FXML
     private void comboAction(ActionEvent e){
 
@@ -70,6 +82,8 @@ public class ChoosePlayerController implements Initializable {
             playerTexts.get(j).setDisable(true);
         }
 
+        doneButton.setDisable(false);
+
 
     }
 
@@ -81,31 +95,31 @@ public class ChoosePlayerController implements Initializable {
     }
 
     private  void setNameValues(){
-        for(int i = 0; i < choosePlayer.getNumberOfPlayers(); i++){
-            switch(i){
-                case 0:
-                    choosePlayer.setNameOne(playerNames.get(i));
-                    break;
-                case 1:
-                    choosePlayer.setNameTwo(playerNames.get(i));
-                    break;
-                case 2:
-                    choosePlayer.setNameThree(playerNames.get(i));
-                    break;
-                case 3:
-                    choosePlayer.setNameFour(playerNames.get(i));
-                    break;
-                case 4:
-                    choosePlayer.setNameFive(playerNames.get(i));
-                    break;
-                case 5:
-                    choosePlayer.setNameSix(playerNames.get(i));
-                    break;
-                default:
-                    throw new IllegalArgumentException("Something is wrong");
-            }
 
-        }
+            for (int i = 0; i < choosePlayer.getNumberOfPlayers(); i++) {
+                switch (i) {
+                    case 0:
+                        choosePlayer.setNameOne(playerNames.get(i));
+                        break;
+                    case 1:
+                        choosePlayer.setNameTwo(playerNames.get(i));
+                        break;
+                    case 2:
+                        choosePlayer.setNameThree(playerNames.get(i));
+                        break;
+                    case 3:
+                        choosePlayer.setNameFour(playerNames.get(i));
+                        break;
+                    case 4:
+                        choosePlayer.setNameFive(playerNames.get(i));
+                        break;
+                    case 5:
+                        choosePlayer.setNameSix(playerNames.get(i));
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Something is wrong");
+                }
+            }
     }
 
     /**
@@ -129,6 +143,11 @@ public class ChoosePlayerController implements Initializable {
         playerTexts.add(tFour);
         playerTexts.add(tFive);
         playerTexts.add(tSix);
+
+        starLabel.setText("*");
+        starLabel.setFont(new Font("Verdana", 18));
+        starLabel.setTextFill(Color.RED);
+
     }
 
 }
