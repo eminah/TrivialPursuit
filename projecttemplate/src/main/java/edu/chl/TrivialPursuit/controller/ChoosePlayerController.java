@@ -1,21 +1,18 @@
 package edu.chl.trivialpursuit.controller;
 
 import edu.chl.trivialpursuit.model.ChoosePlayer;
-import edu.chl.trivialpursuit.view.ChoosePlayerView;
 import edu.chl.trivialpursuit.view.ChooseTravelView;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-
-import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 import javax.inject.Inject;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -45,7 +42,7 @@ public class ChoosePlayerController implements Initializable {
 
     private ArrayList <TextField> playerTexts;
     private ArrayList <String> playerNames;
-    private int numberChoosed;
+    private int numberChosen;
 
     private boolean firstTime = true;
 
@@ -63,22 +60,20 @@ public class ChoosePlayerController implements Initializable {
     }
 
 
-
-
     @FXML
     private void comboAction(ActionEvent e){
 
         //Set value of an ints that specifies the amount of players
 
-        choosePlayer.setNumberOfPlayers(numberChoosed = Integer.parseInt(numPlayers.getValue()));
-        numberChoosed = Integer.parseInt(numPlayers.getValue());
+        choosePlayer.setNumberOfPlayers(numberChosen = Integer.parseInt(numPlayers.getValue()));
+        numberChosen = Integer.parseInt(numPlayers.getValue());
 
-        for(int i = 0; i < numberChoosed; i++) {
+        for(int i = 0; i < numberChosen; i++) {
             playerTexts.get(i).setDisable(false);
 
         }
 
-        for(int j = 5; j >= numberChoosed; j--){
+        for(int j = 5; j >= numberChosen; j--){
             playerTexts.get(j).setDisable(true);
         }
 
@@ -88,7 +83,7 @@ public class ChoosePlayerController implements Initializable {
     }
 
     private void addNamesToList(){
-        for(int i = 0; i < numberChoosed; i++) {
+        for(int i = 0; i < numberChosen; i++) {
            String name = playerTexts.get(i).getText();
             playerNames.add(name);
         }

@@ -4,6 +4,7 @@ package edu.chl.trivialpursuit.view;
  * Created by Rasti on 2015-05-18.
  */
 import com.airhacks.afterburner.injection.Injector;
+
 import java.io.IOException;
 
 
@@ -20,8 +21,8 @@ public final class DiceView extends BaseView {
     public static DiceView create() throws IOException {
 
         if (firstTime) {
-            diceView = new DiceView();
             firstTime = false;
+            diceView = new DiceView();
         }
         Injector.injectMembers(DiceView.class,diceView);
         return diceView;
