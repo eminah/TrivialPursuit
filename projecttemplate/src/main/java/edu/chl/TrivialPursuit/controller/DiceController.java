@@ -2,6 +2,7 @@ package edu.chl.trivialpursuit.controller;
 
 import edu.chl.trivialpursuit.model.ChoosePlayer;
 import edu.chl.trivialpursuit.model.Dice;
+import edu.chl.trivialpursuit.model.GameBoard;
 import edu.chl.trivialpursuit.view.GameBoardView;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -26,6 +27,7 @@ import java.util.ResourceBundle;
 public class DiceController implements Initializable {
 
     @Inject Dice dice;
+    @Inject GameBoard game;
     @Inject ChoosePlayer choose;
     @FXML ImageView dice1;
     @FXML ImageView dice2;
@@ -98,6 +100,10 @@ public class DiceController implements Initializable {
                 }
 
                 throwButton.setDisable(false);
+
+                game.getLabelTurns().get(game.getTurn()-1).setText("<-- " + dice.getTotalDiceValue() + " steps!");
+
+
 
             }
         }));

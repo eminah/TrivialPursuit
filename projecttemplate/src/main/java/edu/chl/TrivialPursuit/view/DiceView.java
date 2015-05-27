@@ -20,7 +20,7 @@ public final class DiceView extends BaseView {
     public static DiceView create() throws IOException {
 
         if (firstTime) {
-            firstTime = false;
+
             diceView = new DiceView();
         }
         Injector.injectMembers(DiceView.class,diceView);
