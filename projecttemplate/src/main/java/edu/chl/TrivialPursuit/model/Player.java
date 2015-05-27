@@ -14,7 +14,7 @@ public  class Player {
 
     private String name;
     private Spot spot;
-    private boolean hasTicket = false; //Will be set to true when player has collected all Contintents
+    private boolean hasTicket; //Will be set to true when player has collected all Contintents
     private HashSet<Continent> collectedContinents;
     private int turn;
 
@@ -31,6 +31,7 @@ public  class Player {
         this.name = name;
         this.spot = spot;
         this.collectedContinents = hashSet;
+        hasTicket = false;
 
 
     }

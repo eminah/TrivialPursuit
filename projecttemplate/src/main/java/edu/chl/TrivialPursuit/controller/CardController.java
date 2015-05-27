@@ -196,6 +196,8 @@ public class CardController implements Initializable{
             Player currentPlayer = game.getPlayers().get(game.getTurn()-1);
             Continent currentContinent = game.getPlayers().get(game.getTurn()-1).getSpot().getCard().getContinent();
             currentPlayer.getCollectedContinents().add(currentContinent);
+            System.out.println( currentPlayer.getCollectedContinents().size());
+
 
             switch(theAlt){
                 case 1:
@@ -217,6 +219,7 @@ public class CardController implements Initializable{
 
             if (currentPlayer.checkIfAllContinents()){
                 currentPlayer.setHasTicket(true);
+                System.out.println(currentPlayer.getName() + " har nu alla kontinenter");
             }
             return true;
         }else{
