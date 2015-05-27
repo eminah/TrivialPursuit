@@ -128,6 +128,7 @@ public class GameBoardController implements Initializable {
         game.setPlayers(players);
         setNames();
         addLabelTurns();
+        game.setLabelTurns(setLabelTurn);
         game.setTurn(1);
         setArrow();
         setTheCoordinates();
