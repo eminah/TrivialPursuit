@@ -128,25 +128,25 @@ public class DiceController implements Initializable {
     private void setName(){
         switch (game.getTurn()){
             case 1:
-                who.setText(choose.getNameOne());
+                who.setText(choose.getNameOne() + " throw the dices!");
                 break;
             case 2:
-                who.setText(choose.getNameTwo());
+                who.setText(choose.getNameTwo() + " throw the dices!");
                 break;
             case 3:
-                who.setText(choose.getNameThree());
+                who.setText(choose.getNameThree()  + " throw the dices!");
                 break;
             case 4:
-                who.setText(choose.getNameFour());
+                who.setText(choose.getNameFour()  + " throw the dices!");
                 break;
             case 5:
-                who.setText(choose.getNameFive());
+                who.setText(choose.getNameFive()  + " throw the dices!");
                 break;
             case 6:
-                who.setText(choose.getNameSix());
+                who.setText(choose.getNameSix()  + " throw the dices!");
                 break;
             default:
-                who.setText(choose.getNameOne());
+                who.setText(choose.getNameOne()  + " throw the dices!");
 
         }
     }
