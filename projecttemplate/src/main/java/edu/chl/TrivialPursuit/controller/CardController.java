@@ -287,7 +287,8 @@ public class CardController implements Initializable{
             }
         }
 
-        setNextTurn();
+        setArrow();
+        game.setTurn(whosTurn());
 
 
     }

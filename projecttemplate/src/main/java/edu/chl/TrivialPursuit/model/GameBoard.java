@@ -17,7 +17,9 @@ public class GameBoard {
     private ArrayList<Card> cardsOuter;
     private ArrayList<Card> cardsInner;
     private ArrayList<Player> players;
+
     private ArrayList<Label> labelTurns;
+
     private int turn;
 
 
@@ -246,11 +248,16 @@ public class GameBoard {
         this.turn = turn;
     }
 
+
     public ArrayList<Label> getLabelTurns() {
         return labelTurns;
     }
 
     public void setLabelTurns(ArrayList<Label> labelTurns) {
         this.labelTurns = labelTurns;
+
     }
 }
+
+
+
