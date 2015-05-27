@@ -1,5 +1,6 @@
 package edu.chl.trivialpursuit.model;
 
+import javafx.scene.control.Label;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import java.util.ArrayList;
@@ -16,11 +17,13 @@ public class GameBoard {
     private ArrayList<Card> cardsOuter;
     private ArrayList<Card> cardsInner;
     private ArrayList<Player> players;
+    private ArrayList<Label> labels;
     private int turn;
 
 
     public GameBoard(){
         players = new ArrayList<>();
+        labels = new ArrayList<>();
         spotsOuter = new ArrayList<>();
         spotsInner = new ArrayList<>();
         cardsOuter = new ArrayList<>();
@@ -241,4 +244,15 @@ public class GameBoard {
     public void setTurn(int turn) {
         this.turn = turn;
     }
+
+    public ArrayList<Label> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(ArrayList<Label> labels) {
+        this.labels = labels;
+    }
 }
+
+
+

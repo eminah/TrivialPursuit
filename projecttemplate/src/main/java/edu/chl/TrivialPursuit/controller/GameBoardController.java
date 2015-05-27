@@ -120,6 +120,7 @@ public class GameBoardController implements Initializable {
         gc.fillOval(coorX[6]+12,coorY[6]-12, 15, 15);
         gc.strokeOval(coorX[6]+12,coorY[6]-12,  15, 15);
     }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         players = new ArrayList<>();
@@ -128,6 +129,7 @@ public class GameBoardController implements Initializable {
         game.setPlayers(players);
         setNames();
         addLabelTurns();
+        game.setLabels(setLabelTurn);
         game.setTurn(1);
         setArrow();
         setTheCoordinates();
