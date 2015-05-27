@@ -303,8 +303,28 @@ public class CardController implements Initializable{
         for (int i = 0; i < getTurn.length; i++) {
             getTurn[i] = false;
         }
-        getTurn[0] = true;
+        int turnIndex = game.getTurn()-1;
+        switch(turnIndex) {
 
+            case 0:
+            getTurn[turnIndex] = true;
+                break;
+            case 1:
+                getTurn[turnIndex] = true;
+                break;
+            case 2:
+                getTurn[turnIndex] = true;
+                break;
+            case 3:
+                getTurn[turnIndex] = true;
+                break;
+            case 4:
+                getTurn[turnIndex] = true;
+                break;
+            case 5:
+                getTurn[turnIndex] = true;
+                break;
+        }
 
     }
 
