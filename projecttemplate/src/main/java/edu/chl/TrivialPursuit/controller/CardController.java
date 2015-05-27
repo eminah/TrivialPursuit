@@ -240,7 +240,7 @@ public class CardController implements Initializable{
             }
 
             setNextTurn();
-            setArrow();
+
 
 
 
@@ -287,56 +287,11 @@ public class CardController implements Initializable{
             }
         }
 
-        setArrow();
+
 
 
     }
 
-    public void setArrow(){
-
-
-
-        int theOneToChange = game.getTurn() - 1;
-
-
-        //remove the arrow
-        for(int i = 0;i < game.getLabelTurns().size(); i++){
-            game.getLabelTurns().get(i).setText("");
-        }
-
-
-
-        // places the arrow on the correct player
-        switch (whosTurn()){
-
-
-            case 1:
-                game.getLabelTurns().get(theOneToChange).setText("<--" + +dice.getTotalDiceValue() + " steps!");
-                game.getLabelTurns().get(theOneToChange).setFont(arrow);
-                break;
-            case 2:
-                game.getLabelTurns().get(theOneToChange).setText("<--" + +dice.getTotalDiceValue() + " steps!");
-                game.getLabelTurns().get(theOneToChange).setFont(arrow);
-                break;
-            case 3:
-                game.getLabelTurns().get(theOneToChange).setText("<--" + +dice.getTotalDiceValue() + " steps!");
-                game.getLabelTurns().get(theOneToChange).setFont(arrow);
-                break;
-            case 4:
-                game.getLabelTurns().get(theOneToChange).setText("<--" + +dice.getTotalDiceValue() + " steps!");
-                game.getLabelTurns().get(theOneToChange).setFont(arrow);
-                break;
-            case 5:
-                game.getLabelTurns().get(theOneToChange).setText("<--" + +dice.getTotalDiceValue() + " steps!");
-                game.getLabelTurns().get(theOneToChange).setFont(arrow);
-                break;
-            case 6:
-                game.getLabelTurns().get(theOneToChange).setText("<--" + +dice.getTotalDiceValue() + " steps!");
-                game.getLabelTurns().get(theOneToChange).setFont(arrow);
-                break;
-            default: throw new IllegalArgumentException("Wrong whos turn");
-        }
-    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

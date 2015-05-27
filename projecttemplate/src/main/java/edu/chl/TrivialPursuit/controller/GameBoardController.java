@@ -59,7 +59,7 @@ public class GameBoardController implements Initializable {
     private Color p5 = Color.FORESTGREEN;
     private Color p6 = Color.BLUE;
     private Font labels = new Font("Verdana", 15);
-    private Font arrow = new Font("Verdana",18);
+    private Font arrow = new Font("Verdana",16);
     private ArrayList<Label> setLabelTurn;
     private Timeline setDelay;
     @FXML
@@ -131,7 +131,7 @@ public class GameBoardController implements Initializable {
         addLabelTurns();
         game.setLabelTurns(setLabelTurn);
         game.setTurn(1);
-        game.getLabelTurns().get(0).setText("<--" + +dice.getTotalDiceValue() + " steps!");
+        game.getLabelTurns().get(0).setText("<-- " + +dice.getTotalDiceValue() + " steps!");
         game.getLabelTurns().get(0).setFont(arrow);
         setTheCoordinates();
         drawBoard();

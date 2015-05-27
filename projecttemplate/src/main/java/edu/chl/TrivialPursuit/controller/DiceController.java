@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Font;
 import javafx.util.Duration;
 import javax.inject.Inject;
 import java.io.IOException;
@@ -35,6 +36,7 @@ public class DiceController implements Initializable {
     @FXML Label who;
 
     private Timeline delay;
+    private Font arrow = new Font("Verdana",16);
 
 
 
@@ -42,7 +44,7 @@ public class DiceController implements Initializable {
     private void throwDices(ActionEvent e) throws IOException{
 
         dice.throwDice();
-        changeDiceImage(dice1,dice.getFirstDiceValue());
+        changeDiceImage(dice1, dice.getFirstDiceValue());
 
 
 
@@ -101,8 +103,8 @@ public class DiceController implements Initializable {
 
                 throwButton.setDisable(false);
 
-                game.getLabelTurns().get(game.getTurn()-1).setText("<-- " + dice.getTotalDiceValue() + " steps!");
-
+                fixArrow();
+                setName();
 
 
             }
@@ -112,9 +114,46 @@ public class DiceController implements Initializable {
 
     }
 
+    private void fixArrow(){
+        //remove the arrow
+        for(int i = 0;i < game.getLabelTurns().size(); i++) {
+            game.getLabelTurns().get(i).setText("");
+        }
+
+
+        game.getLabelTurns().get(game.getTurn()-1).setText("<-- " + dice.getTotalDiceValue() + " steps!");
+        game.getLabelTurns().get(game.getTurn()-1).setFont(arrow);
+    }
+
+    private void setName(){
+        switch (game.getTurn()){
+            case 1:
+                who.setText(choose.getNameOne());
+                break;
+            case 2:
+                who.setText(choose.getNameTwo());
+                break;
+            case 3:
+                who.setText(choose.getNameThree());
+                break;
+            case 4:
+                who.setText(choose.getNameFour());
+                break;
+            case 5:
+                who.setText(choose.getNameFive());
+                break;
+            case 6:
+                who.setText(choose.getNameSix());
+                break;
+            default:
+                who.setText(choose.getNameOne());
+
+        }
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        who.setText(choose.getNameOne());
+        setName();
     }
 }
 
