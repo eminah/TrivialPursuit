@@ -240,6 +240,7 @@ public class CardController implements Initializable{
             }
 
             setNextTurn();
+            setArrow();
 
 
 
@@ -274,7 +275,6 @@ public class CardController implements Initializable{
         for(int i = 0; i < getTurn.length; i++){
             if(getTurn[i]==true){
                 getTurn[i] = false;
-                System.out.println(getTurn.length);
                 if(i+1 == getTurn.length){
                     getTurn[0] = true;
                     game.setTurn(whosTurn());
@@ -288,7 +288,6 @@ public class CardController implements Initializable{
         }
 
         setArrow();
-        game.setTurn(whosTurn());
 
 
     }
@@ -296,7 +295,8 @@ public class CardController implements Initializable{
     public void setArrow(){
 
 
-        int theOneToChange = game.getTurn()-1;
+
+        int theOneToChange = game.getTurn() - 1;
 
 
         //remove the arrow
@@ -307,7 +307,7 @@ public class CardController implements Initializable{
 
 
         // places the arrow on the correct player
-        switch (game.getTurn()){
+        switch (whosTurn()){
 
 
             case 1:

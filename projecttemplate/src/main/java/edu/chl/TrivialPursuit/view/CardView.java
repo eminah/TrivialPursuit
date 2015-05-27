@@ -23,6 +23,7 @@ public final class CardView extends BaseView {
 
         if (ifFirst) {
             cardView = new CardView();
+            ifFirst = false;
         }
 
         Injector.injectMembers(CardView.class, cardView);
