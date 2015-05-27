@@ -32,24 +32,13 @@ import java.util.ResourceBundle;
  */
 public class GameBoardController implements Initializable {
 
-    @FXML
-    Canvas boardCanvas;
-    @FXML
-    Label playerOneName,playerTwoName,playerThreeName,playerFourName,playerFiveName,playerSixName;
-    @FXML
-    Label playerOneTurn,playerTwoTurn,playerThreeTurn,playerFourTurn,playerFiveTurn,playerSixTurn;
-    @FXML
-    Button left,right;
-    @FXML
-    ImageView as1,as2,as3,as4,as5,as6,af1,af2,af3,af4,af5,af6,s1,s2,s3,s4,s5,s6,n1,n2,n3,n4,n5,n6;
-    @Inject
-    Dice dice;
-    @Inject
-    ChoosePlayer chooseP;
-    @Inject
-    ChooseTravel chooseT;
-    @Inject
-    GameBoard game;
+    @Inject Dice dice;
+
+    @Inject ChoosePlayer chooseP;
+
+    @Inject ChooseTravel chooseT;
+
+    @Inject GameBoard game;
 
     private ArrayList<Player> players;
     private ArrayList<ImageView> imAs;
@@ -69,6 +58,16 @@ public class GameBoardController implements Initializable {
     private Font arrow = new Font("Verdana",16);
     private Timeline setDelay;
 
+    @FXML Canvas boardCanvas;
+
+    @FXML Label playerOneName,playerTwoName,playerThreeName,playerFourName,playerFiveName,playerSixName;
+
+    @FXML Label playerOneTurn,playerTwoTurn,playerThreeTurn,playerFourTurn,playerFiveTurn,playerSixTurn;
+
+    @FXML Button left,right;
+
+    @FXML ImageView as1,as2,as3,as4,as5,as6,af1,af2,af3,af4,af5,af6,s1,s2,s3,s4,s5,s6,n1,n2,n3,n4,n5,n6;
+
     @FXML
     private void moveRight(){
         movePlayer(game.getTurn(), dice.getTotalDiceValue(), "R");
@@ -77,6 +76,7 @@ public class GameBoardController implements Initializable {
         drawBoard();
         startTimer();
     }
+
     @FXML
     private void moveLeft() throws IOException{
         movePlayer(game.getTurn(), dice.getTotalDiceValue(), "L");
@@ -85,6 +85,7 @@ public class GameBoardController implements Initializable {
         drawBoard();
         startTimer();
     }
+
     private void movePlayer(int player, int diceValue, String direction) {
         int correctPlayer = player - 1;
         if (direction.equals("L")) {
@@ -94,6 +95,7 @@ public class GameBoardController implements Initializable {
         }
         setCoordinates(player);
     }
+
     private void setCoordinates(int player){
         for(int i = 1; i <= player; i++){
             coorX[i] = players.get(i-1).getSpot().getCooX();
@@ -101,6 +103,7 @@ public class GameBoardController implements Initializable {
         }
         drawBoard();
     }
+
     public void drawBoard(){
         GraphicsContext gc = boardCanvas.getGraphicsContext2D();
         draw(gc);
@@ -127,7 +130,6 @@ public class GameBoardController implements Initializable {
         gc.fillOval(coorX[6] + 12, coorY[6] - 12, 15, 15);
         gc.strokeOval(coorX[6] + 12, coorY[6] - 12, 15, 15);
     }
-
 
     //The names should be the choosen ones:
     private void setNames() {
@@ -168,6 +170,7 @@ public class GameBoardController implements Initializable {
             }
         }
     }
+
     /*
     Here I create players depending on their choices of Continent and
     number of players it is.
@@ -220,6 +223,7 @@ public class GameBoardController implements Initializable {
             }
         }
     }
+
     public void addLabelTurns(){
         for(int i = 0; i<chooseP.getNumberOfPlayers(); i++){
             switch (i){
@@ -245,12 +249,12 @@ public class GameBoardController implements Initializable {
             }
         }
     }
+
     public void setTheCoordinates() {
         for (int i = 1; i <= chooseP.getNumberOfPlayers(); i++) {
             setCoordinates(chooseP.getNumberOfPlayers());
         }
     }
-
 
     public void startTimer() {
         setDelay = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
@@ -330,7 +334,6 @@ public class GameBoardController implements Initializable {
         game.setiAf(imAf);
         game.setiS(imS);
         game.setiN(imN);
-
         setTheCoordinates();
         drawBoard();
     }

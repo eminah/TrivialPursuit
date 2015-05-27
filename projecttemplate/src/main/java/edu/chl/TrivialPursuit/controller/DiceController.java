@@ -21,32 +21,33 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
 /**
  * Created by inatran on 15-04-28.
  */
 public class DiceController implements Initializable {
 
     @Inject Dice dice;
+
     @Inject GameBoard game;
+
     @Inject ChoosePlayer choose;
-    @FXML ImageView dice1;
-    @FXML ImageView dice2;
-    @FXML Button throwButton;
-    @FXML Label who;
 
     private Timeline delay;
     private Font arrow = new Font("Verdana",16);
 
+    @FXML ImageView dice1;
 
+    @FXML ImageView dice2;
+
+    @FXML Button throwButton;
+
+    @FXML Label who;
 
     @FXML
     private void throwDices(ActionEvent e) throws IOException{
 
         dice.throwDice();
         changeDiceImage(dice1, dice.getFirstDiceValue());
-
-
 
         throwButton.setDisable(true);
         startTimer();
@@ -57,7 +58,6 @@ public class DiceController implements Initializable {
         int witchDice = firstValue;
             for (int i = 0;  i < 2; i++){
                 switch (witchDice) {
-
                     case 1:
                         dicePicture.setImage(new Image("edu/chl/trivialpursuit/view/diceOne.png"));
                         break;
@@ -76,17 +76,13 @@ public class DiceController implements Initializable {
                     case 6:
                         dicePicture.setImage(new Image("edu/chl/trivialpursuit/view/diceSix.png"));
                         break;
-
                 }
-
                 witchDice = dice.getSecondDiceValue();
                 dicePicture = dice2;
-
             }
     }
 
     public void startTimer(){
-
 
         delay = new Timeline(new KeyFrame(Duration.seconds(0.7), new EventHandler<ActionEvent>() {
 
@@ -102,16 +98,11 @@ public class DiceController implements Initializable {
                 }
 
                 throwButton.setDisable(false);
-
                 fixArrow();
                 setName();
-
-
             }
         }));
-
         delay.play();
-
     }
 
     private void fixArrow(){
@@ -119,8 +110,6 @@ public class DiceController implements Initializable {
         for(int i = 0;i < game.getLabelTurns().size(); i++) {
             game.getLabelTurns().get(i).setText("");
         }
-
-
         game.getLabelTurns().get(game.getTurn()-1).setText("<-- " + dice.getTotalDiceValue() + " steps!");
         game.getLabelTurns().get(game.getTurn()-1).setFont(arrow);
     }
@@ -147,7 +136,6 @@ public class DiceController implements Initializable {
                 break;
             default:
                 who.setText(choose.getNameOne()  + " throw the dices!");
-
         }
     }
 
@@ -156,6 +144,3 @@ public class DiceController implements Initializable {
         setName();
     }
 }
-
-
-

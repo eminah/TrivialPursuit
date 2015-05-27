@@ -21,7 +21,5 @@ public class GameBoardView extends BaseView{
         }
         Injector.injectMembers(GameBoardView.class, gameBoardView);
         return gameBoardView;
-
     }
-
 }

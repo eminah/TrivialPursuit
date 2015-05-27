@@ -3,7 +3,6 @@ package edu.chl.trivialpursuit.view;
 import com.airhacks.afterburner.injection.Injector;
 import java.io.IOException;
 
-
 /**
  * Created by eminahromic on 2015-05-11.
  */
@@ -18,6 +17,5 @@ private RulesView() {
         final RulesView rulesView = new RulesView();
         Injector.injectMembers(RulesView.class,rulesView);
         return rulesView;
-
     }
 }

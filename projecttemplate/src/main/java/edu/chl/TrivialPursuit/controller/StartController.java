@@ -10,21 +10,17 @@ import java.io.IOException;
 
 public class StartController {
 
-private @Inject Stage stage;
+    private @Inject Stage stage;
 
     @FXML
     @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
 
     private void onStartPressed(ActionEvent e) throws IOException {
-        //Hejsan
+
         final ChoosePlayerView chooseView = ChoosePlayerView.create();
         chooseView.show();
 
-
         e.consume();
-
-
-
     }
 
     @FXML
@@ -35,5 +31,4 @@ private @Inject Stage stage;
         stage.close();
 
     }
-
 }

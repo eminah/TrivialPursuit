@@ -30,6 +30,5 @@ public class RulesController {
     private void onEndPressed(ActionEvent e){
 
         stage.close();
-
     }
 }

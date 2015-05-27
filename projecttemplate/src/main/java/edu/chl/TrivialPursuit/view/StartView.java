@@ -6,10 +6,7 @@ import java.io.IOException;
 /**
  * Created by Rasti on 2015-05-18.
  */
-
-
 public final class StartView extends BaseView {
-
 
     private StartView() {
         super();

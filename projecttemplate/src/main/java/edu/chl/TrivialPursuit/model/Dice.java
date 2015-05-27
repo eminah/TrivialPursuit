@@ -28,8 +28,5 @@ public class Dice {
     public void throwDice(){
         firstDiceValue = 1 + random.nextInt(6);
         secondDiceValue = 1 + random.nextInt(6);
-
-
     }
 }
-

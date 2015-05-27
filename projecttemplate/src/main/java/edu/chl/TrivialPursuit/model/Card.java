@@ -29,6 +29,4 @@ public class Card {
     public Continent getContinent() {
         return continent;
     }
-
-
 }

@@ -4,7 +4,6 @@ import com.airhacks.afterburner.injection.Injector;
 import edu.chl.trivialpursuit.model.ChooseTravel;
 import java.io.IOException;
 
-
 /**
  * Created by helenejarl on 2015-05-19.
  */

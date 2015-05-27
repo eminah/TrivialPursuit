@@ -22,29 +22,20 @@ import java.util.ResourceBundle;
  */
 public class ChoosePlayerController implements Initializable {
 
-
-
-    @FXML
-    private ComboBox<String> numPlayers;
-
-    @FXML
-    Button doneButton;
-
-    @FXML
-    Label starLabel;
-
-    @FXML
-    private TextField tOne, tTwo, tThree,tFour,tFive,tSix;
-
-    @Inject
-    ChoosePlayer choosePlayer;
+    @Inject ChoosePlayer choosePlayer;
 
     private ArrayList <TextField> playerTexts;
     private ArrayList <String> playerNames;
     private int numberChosen;
-
     private boolean firstTime = true;
 
+    @FXML private ComboBox<String> numPlayers;
+
+    @FXML Button doneButton;
+
+    @FXML Label starLabel;
+
+    @FXML private TextField tOne, tTwo, tThree,tFour,tFive,tSix;
 
     @FXML
     private void onButtonPressed(ActionEvent e) throws IOException{
@@ -58,27 +49,21 @@ public class ChoosePlayerController implements Initializable {
         e.consume();
     }
 
-
     @FXML
     private void comboAction(ActionEvent e){
 
         //Set value of an ints that specifies the amount of players
-
         choosePlayer.setNumberOfPlayers(numberChosen = Integer.parseInt(numPlayers.getValue()));
         numberChosen = Integer.parseInt(numPlayers.getValue());
 
         for(int i = 0; i < numberChosen; i++) {
             playerTexts.get(i).setDisable(false);
-
         }
 
         for(int j = 5; j >= numberChosen; j--){
             playerTexts.get(j).setDisable(true);
         }
-
         doneButton.setDisable(false);
-
-
     }
 
     private void addNamesToList(){
@@ -124,24 +109,18 @@ public class ChoosePlayerController implements Initializable {
         return playerNames;
     }
 
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         playerTexts = new ArrayList<>();
         playerNames = new ArrayList<>();
-
         playerTexts.add(tOne);
         playerTexts.add(tTwo);
         playerTexts.add(tThree);
         playerTexts.add(tFour);
         playerTexts.add(tFive);
         playerTexts.add(tSix);
-
         starLabel.setText("*");
         starLabel.setFont(new Font("Verdana", 18));
         starLabel.setTextFill(Color.RED);
-
     }
-
 }

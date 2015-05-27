@@ -22,56 +22,40 @@ import java.util.ResourceBundle;
  */
 public class ChooseTravelController implements Initializable {
 
-    @Inject
-    ChoosePlayer choosePlayer;
-    @Inject
-    ChooseTravel chooseTravel;
+    @Inject ChoosePlayer choosePlayer;
+
+    @Inject ChooseTravel chooseTravel;
+
     private ArrayList<ComboBox> theBox;
     private ArrayList<String> travelChooices;
     private Font star = new Font("Verdana",18);
 
+    @FXML Label playerOneName,playerTwoName,playerThreeName,playerFourName,playerFiveName,playerSixName;
 
+    @FXML Label mustChooseOne,mustChooseSec,mustChooseThird,mustChooseFourth,mustChooseFifth,mustChooseSixth;
 
-    @FXML
-    Label playerOneName,playerTwoName,playerThreeName,playerFourName,playerFiveName,playerSixName;
+    @FXML ComboBox<String> c1,c2,c3,c4,c5,c6;
 
-    @FXML
-    Label mustChooseOne,mustChooseSec,mustChooseThird,mustChooseFourth,mustChooseFifth,mustChooseSixth;
-
-    @FXML
-    ComboBox<String> c1,c2,c3,c4,c5,c6;
-
-    @FXML
-    Button buttonDone;
-
+    @FXML Button buttonDone;
 
     @FXML
     private void onBackPressed(ActionEvent e) throws IOException{
 
         final ChoosePlayerView chooseView = ChoosePlayerView.create();
         chooseView.show();
-
-
         e.consume();
-
     }
 
     @FXML
     private void onDonePressed(ActionEvent e) throws IOException{
 
-
         DiceView diceView = DiceView.create();
         diceView.show();
-
-
-
         e.consume();
-
     }
 
     @FXML
     private void firstChooice(){
-
         setStartPlace(c1, 1);
     }
 
@@ -101,7 +85,6 @@ public class ChooseTravelController implements Initializable {
         setStartPlace(c6, 6);
     }
 
-
     private void setStartPlace(ComboBox theBoxChoosen, int i){
         switch(i) {
             case 1: chooseTravel.setStartPlaceOne((String) theBoxChoosen.getValue());
@@ -123,53 +106,12 @@ public class ChooseTravelController implements Initializable {
                 checkChooices();
                 break;
         }
-
-    }
-
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        theBox = new ArrayList<>();
-        theBox.add(c1);
-        theBox.add(c2);
-        theBox.add(c3);
-        theBox.add(c4);
-        theBox.add(c5);
-        theBox.add(c6);
-        travelChooices = new ArrayList<>();
-
-
-        for(int i = 5; i >= choosePlayer.getNumberOfPlayers(); i--) {
-            theBox.get(i).setDisable(true);
-        }
-
-        switch(choosePlayer.getNumberOfPlayers()){
-            case 2:
-                twoPlayers();
-                break;
-            case 3:
-                threePlayers();
-                break;
-            case 4:
-                fourPlayers();
-                break;
-            case 5:
-                fivePlayers();
-                break;
-            case 6:
-                sixPlayer();
-                break;
-
-            default:
-                throw new IllegalArgumentException("Something wrong when setting playersName");
-        }
     }
 
     private void placeStar(Label travel){
         travel.setText("*");
         travel.setFont(star);
         travel.setTextFill(Color.RED);
-
     }
 
     private void twoPlayers(){
@@ -203,6 +145,7 @@ public class ChooseTravelController implements Initializable {
         placeStar(mustChooseFourth);
         placeStar(mustChooseFifth);
     }
+
     private void sixPlayer(){
         fivePlayers();
         playerThreeName.setText(choosePlayer.getNameThree());
@@ -214,6 +157,7 @@ public class ChooseTravelController implements Initializable {
         placeStar(mustChooseFifth);
         placeStar(mustChooseSixth);
     }
+
     private void checkChooices(){
         switch (choosePlayer.getNumberOfPlayers()) {
             case 2:
@@ -242,8 +186,44 @@ public class ChooseTravelController implements Initializable {
                 }
                 break;
             default:
-
                 throw new IllegalArgumentException("You must choose all continents");
+        }
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        theBox = new ArrayList<>();
+        theBox.add(c1);
+        theBox.add(c2);
+        theBox.add(c3);
+        theBox.add(c4);
+        theBox.add(c5);
+        theBox.add(c6);
+        travelChooices = new ArrayList<>();
+
+        for(int i = 5; i >= choosePlayer.getNumberOfPlayers(); i--) {
+            theBox.get(i).setDisable(true);
+        }
+
+        switch(choosePlayer.getNumberOfPlayers()){
+            case 2:
+                twoPlayers();
+                break;
+            case 3:
+                threePlayers();
+                break;
+            case 4:
+                fourPlayers();
+                break;
+            case 5:
+                fivePlayers();
+                break;
+            case 6:
+                sixPlayer();
+                break;
+
+            default:
+                throw new IllegalArgumentException("Something wrong when setting playersName");
         }
     }
 }

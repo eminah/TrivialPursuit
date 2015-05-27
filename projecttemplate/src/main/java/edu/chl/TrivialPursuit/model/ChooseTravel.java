@@ -7,10 +7,6 @@ public class ChooseTravel {
 
     private String startPlaceOne,startPlaceTwo,startPlaceThree,startPlaceFour,startPlaceFive,startPlaceSix ;
 
-    public void ChooseTravel() {
-
-    }
-
     public String getStartPlaceOne() {
         return startPlaceOne;
     }

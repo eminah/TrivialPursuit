@@ -21,32 +21,16 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.ResourceBundle;
 
-
 /**
  * Created by helenejarl on 2015-05-07.
  */
 public class CardController implements Initializable{
 
-    @FXML
-    Label question;
+    @Inject GameBoard game;
 
-    @FXML
-    Button alt1, alt2, alt3, alt4;
+    @Inject ChoosePlayer chooseP;
 
-    @Inject
-    GameBoard game;
-
-    @Inject
-    ChoosePlayer chooseP;
-
-    @Inject
-    Dice dice;
-
-
-
-
-
-
+    @Inject Dice dice;
 
     private Timeline delay;
     private Alternative correctAlt;
@@ -54,8 +38,9 @@ public class CardController implements Initializable{
     private boolean[] getTurn;
     private Font arrow = new Font("Verdana",18);
 
+    @FXML Label question;
 
-
+    @FXML Button alt1, alt2, alt3, alt4;
 
     @FXML
     public void altOnePressed(ActionEvent e) {
@@ -86,7 +71,6 @@ public class CardController implements Initializable{
         startTimer();
     }
 
-
     /**
      * An delay that starts when you click on an alternative,
      * this delay prevents you from choose more than one alternative
@@ -113,9 +97,7 @@ public class CardController implements Initializable{
                 }
             }
         }));
-
         delay.play();
-
     }
 
     private void disableAllAlts(int theChoosen){
@@ -139,7 +121,6 @@ public class CardController implements Initializable{
                 alt4.setDisable(false);
                 break;
         }
-
     }
 
     private void enableAllAlts(){
@@ -164,7 +145,6 @@ public class CardController implements Initializable{
             alt4.setText("South Ametica");
 
         }else if( continent == Continent.AFRICA){
-
             correctAlt = Alternative.ALTERNATIVE1;
             question.setText("This is an Africa Question, please press on Africa:");
             alt1.setText("Africa");
@@ -179,9 +159,7 @@ public class CardController implements Initializable{
             alt2.setText("Asia");
             alt3.setText("North America");
             alt4.setText("South Ametica");
-
         }else{
-
             correctAlt = Alternative.ALTERNATIVE4;
             question.setText("This is an South America Question, please press on South America:");
             alt1.setText("Africa");
@@ -189,43 +167,37 @@ public class CardController implements Initializable{
             alt3.setText("North America");
             alt4.setText("South Ametica");
         }
-
     }
 
     public boolean checkAnswer(int theAlt, Alternative ans){
         answer = ans;
 
-
         if( answer.equals(correctAlt)){
             Player currentPlayer = game.getPlayers().get(game.getTurn()-1);
             Continent currentContinent = game.getPlayers().get(game.getTurn()-1).getSpot().getCard().getContinent();
             currentPlayer.getCollectedContinents().add(currentContinent);
-            //setContinent(currentContinent);
             changePic(currentPlayer);
-
-
 
             switch(theAlt){
                 case 1:
                     alt1.setStyle("-fx-background-color: lawngreen");
-
                     break;
                 case 2:
                     alt2.setStyle("-fx-background-color: lawngreen");
                     break;
                 case 3:
                     alt3.setStyle("-fx-background-color: lawngreen");
-
                     break;
                 case 4:
                     alt4.setStyle("-fx-background-color: lawngreen");
-
                     break;
             }
 
+            //TODO Dialog för sysout:en
             if (currentPlayer.checkIfAllContinents()){
                 currentPlayer.setHasTicket(true);
-                System.out.println(currentPlayer.getName() + " har nu alla kontinenter");
+                System.out.println(currentPlayer.getName() + " know have collected all continents,/n" +
+                        " and now have the ticket to Europe!  ");
             }
             return true;
         }else{
@@ -233,26 +205,18 @@ public class CardController implements Initializable{
             switch(theAlt){
                 case 1:
                     alt1.setStyle("-fx-background-color: red");
-
                     break;
                 case 2:
                     alt2.setStyle("-fx-background-color: red");
                     break;
                 case 3:
                     alt3.setStyle("-fx-background-color: red");
-
                     break;
                 case 4:
                     alt4.setStyle("-fx-background-color: red");
-
                     break;
             }
-
             setNextTurn();
-
-
-
-
             return false;
         }
     }
@@ -273,13 +237,9 @@ public class CardController implements Initializable{
         if(continentSet.contains(Continent.NORTH_AMERICA)){
             setPic(game.getiN(), 4);
         }
-
     }
 
-
     private void setPic(ArrayList<ImageView> iv, int i){
-        System.out.println(iv.size());
-        System.out.println(iv.get(0));
         int pTurn = whosTurn()-1;
         switch (whosTurn()){
             case 1:
@@ -383,17 +343,8 @@ public class CardController implements Initializable{
         }
     }
 
-    public void setContinent(Continent continent) {
-
-
-    }
-
-
-
-
 
     public int whosTurn() {
-
         for(int i = 0; i < getTurn.length; i++){
             if(getTurn[i]==true){
                 return i+1;
@@ -403,14 +354,10 @@ public class CardController implements Initializable{
     }
 
 
-
     /**
      * Set next players turn
      * Called if the player answers wrong
      */
-
-
-
     public void setNextTurn(){
 
         for(int i = 0; i < getTurn.length; i++){
@@ -427,12 +374,7 @@ public class CardController implements Initializable{
                 }
             }
         }
-
-
-
-
     }
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -466,13 +408,5 @@ public class CardController implements Initializable{
                 getTurn[turnIndex] = true;
                 break;
         }
-
     }
-
-
 }
-
-
-
-
-

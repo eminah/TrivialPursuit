@@ -2,15 +2,10 @@ package edu.chl.trivialpursuit.model;
 
 import java.util.HashSet;
 
-
 /**
  * Created by Rasti on 2015-04-23.
  */
-
 public  class Player {
-
-
-
 
     private String name;
     private Spot spot;
@@ -18,9 +13,7 @@ public  class Player {
     private HashSet<Continent> collectedContinents;
     private int turn;
 
-
     /**
-     *
      * The constructor creats a new HashSet, where the collected continents will be added.
      *
      * @param name the name of the player
@@ -32,8 +25,6 @@ public  class Player {
         this.spot = spot;
         this.collectedContinents = hashSet;
         hasTicket = false;
-
-
     }
 
     public String getName() {
@@ -51,9 +42,6 @@ public  class Player {
     public void setSpot(Spot spot) {
         this.spot = spot;
     }
-
-
-
 
     /**
      *
@@ -74,9 +62,7 @@ public  class Player {
         for(int i = 0; i<steps; i++){
             spot = spot.getRight();
         }
-
     }
-
 
     public boolean getHasTicket() {
         return hasTicket;
@@ -105,7 +91,4 @@ public  class Player {
     public void setCollectedContinents(HashSet<Continent> collectedContinents) {
         this.collectedContinents = collectedContinents;
     }
-
 }
-
-

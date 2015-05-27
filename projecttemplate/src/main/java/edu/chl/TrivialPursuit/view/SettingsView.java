@@ -16,6 +16,5 @@ public final class SettingsView extends BaseView {
         final SettingsView settingsView = new SettingsView();
         Injector.injectMembers(SettingsView.class, settingsView);
         return settingsView;
-
     }
 }

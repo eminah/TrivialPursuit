@@ -1,10 +1,8 @@
 package edu.chl.trivialpursuit.model;
 
-
 /**
  * Created by Rasti on 2015-05-02.
  */
-
 public class Spot {
 
     private Continent continent;
@@ -29,7 +27,6 @@ public class Spot {
         cooY = y;
         this.card = card;
     }
-
 
     public Continent getContinent() {
         return continent;
