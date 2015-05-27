@@ -17,16 +17,24 @@ public class GameBoard {
     private ArrayList<Card> cardsOuter;
     private ArrayList<Card> cardsInner;
     private ArrayList<Player> players;
+<<<<<<< HEAD
 
     private ArrayList<Label> labelTurns;
 
+=======
+    private ArrayList<Label> labels;
+>>>>>>> origin/Rasti
     private int turn;
 
 
     public GameBoard(){
 
         players = new ArrayList<>();
+<<<<<<< HEAD
         labelTurns = new ArrayList<>();
+=======
+        labels = new ArrayList<>();
+>>>>>>> origin/Rasti
         spotsOuter = new ArrayList<>();
         spotsInner = new ArrayList<>();
         cardsOuter = new ArrayList<>();
@@ -248,6 +256,7 @@ public class GameBoard {
         this.turn = turn;
     }
 
+<<<<<<< HEAD
 
     public ArrayList<Label> getLabelTurns() {
         return labelTurns;
@@ -256,6 +265,14 @@ public class GameBoard {
     public void setLabelTurns(ArrayList<Label> labelTurns) {
         this.labelTurns = labelTurns;
 
+=======
+    public ArrayList<Label> getLabels() {
+        return labels;
+    }
+
+    public void setLabels(ArrayList<Label> labels) {
+        this.labels = labels;
+>>>>>>> origin/Rasti
     }
 }
 
