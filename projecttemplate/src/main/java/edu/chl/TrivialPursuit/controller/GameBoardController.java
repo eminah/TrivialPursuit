@@ -56,10 +56,7 @@ public class GameBoardController implements Initializable {
     private ArrayList<ImageView> imAf;
     private ArrayList<ImageView> imS;
     private ArrayList<ImageView> imN;
-;
     private ArrayList<Label> setLabelTurn;
-    // Initial start value of all the coordinates, negative so that they will be out of the canvas
-    //private int x1 = -20,x2 = -20,x3 = -20,x4 = -20,x5 = -20,x6 = -20,y1 = -20,y2 = -20,y3 = -20,y4 = -20,y5 = -20,y6 = -20;
     private int[] coorX= {-1,-20,-20,-20,-20,-20,-20};
     private int[] coorY= {-1,-20,-20,-20,-20,-20,-20};
     private Color p1 = Color.GREENYELLOW;
@@ -108,7 +105,7 @@ public class GameBoardController implements Initializable {
         GraphicsContext gc = boardCanvas.getGraphicsContext2D();
         draw(gc);
     }
-    // Searching for all coordinates by hand, time consuming - Helene
+
     private void draw(GraphicsContext gc){
         gc.drawImage(new Image("edu/chl/trivialpursuit/view/board_pastell.png"), 0, 0, boardCanvas.getWidth(), boardCanvas.getHeight());
         gc.setFill(p1);

@@ -200,7 +200,7 @@ public class CardController implements Initializable{
             Player currentPlayer = game.getPlayers().get(game.getTurn()-1);
             Continent currentContinent = game.getPlayers().get(game.getTurn()-1).getSpot().getCard().getContinent();
             currentPlayer.getCollectedContinents().add(currentContinent);
-            setContinent(currentContinent);
+            //setContinent(currentContinent);
             changePic(currentPlayer);
 
 
@@ -291,7 +291,7 @@ public class CardController implements Initializable{
                         iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/africa_gold.png"));
                         break;
                     case 3:
-                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/northAm_gold.png"));
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/southAm_gold.png"));
                         break;
                     case 4:
                         iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/northAm_gold.png"));
@@ -301,80 +301,80 @@ public class CardController implements Initializable{
             case 2:
                 switch (i){
                     case 1:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/asia_gold.png"));
                         break;
                     case 2:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/africa_gold.png"));
                         break;
                     case 3:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/southAm_gold.png"));
                         break;
                     case 4:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/northAm_gold.png"));
                         break;
                 }
                 break;
             case 3:
                 switch (i){
                     case 1:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/asia_gold.png"));
                         break;
                     case 2:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/africa_gold.png"));
                         break;
                     case 3:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/southAm_gold.png"));
                         break;
                     case 4:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/northAm_gold.png"));
                         break;
                 }
                 break;
             case 4:
                 switch (i){
                     case 1:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/asia_gold.png"));
                         break;
                     case 2:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/africa_gold.png"));
                         break;
                     case 3:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/southAm_gold.png"));
                         break;
                     case 4:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/northAm_gold.png"));
                         break;
                 }
                 break;
             case 5:
                 switch (i){
                     case 1:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/asia_gold.png"));
                         break;
                     case 2:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/africa_gold.png"));
                         break;
                     case 3:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/southAm_gold.png"));
                         break;
                     case 4:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/northAm_gold.png"));
                         break;
                 }
                 break;
             case 6:
                 switch (i){
                     case 1:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/asia_gold.png"));
                         break;
                     case 2:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/africa_gold.png"));
                         break;
                     case 3:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/southAm_gold.png"));
                         break;
                     case 4:
-
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/northAm_gold.png"));
                         break;
                 }
                 break;
@@ -383,9 +383,11 @@ public class CardController implements Initializable{
         }
     }
 
-    public void setContinent(Continent continent){
+    public void setContinent(Continent continent) {
+
 
     }
+
 
 
 

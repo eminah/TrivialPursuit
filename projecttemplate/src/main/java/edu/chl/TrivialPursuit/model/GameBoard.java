@@ -84,6 +84,7 @@ public class GameBoard {
     };
 
 
+    // Searching for all coordinates by hand, time consuming - Helene
     private final ImmutablePair[] SPOT_DEFINITIONS_COORDINATES_OUTER = {
 
             //Coordinates for Asia
