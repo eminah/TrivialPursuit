@@ -10,11 +10,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
 import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.ResourceBundle;
 
 
@@ -196,7 +200,9 @@ public class CardController implements Initializable{
             Player currentPlayer = game.getPlayers().get(game.getTurn()-1);
             Continent currentContinent = game.getPlayers().get(game.getTurn()-1).getSpot().getCard().getContinent();
             currentPlayer.getCollectedContinents().add(currentContinent);
-            System.out.println( currentPlayer.getCollectedContinents().size());
+            setContinent(currentContinent);
+            changePic(currentPlayer);
+
 
 
             switch(theAlt){
@@ -249,6 +255,136 @@ public class CardController implements Initializable{
 
             return false;
         }
+    }
+
+    private void changePic(Player player){
+
+        HashSet<Continent> continentSet = player.getCollectedContinents();
+
+        if(continentSet.contains(Continent.ASIA)){
+            setPic(game.getiAs(), 1);
+        }
+        if(continentSet.contains(Continent.AFRICA)){
+            setPic(game.getiAf(), 2);
+        }
+        if(continentSet.contains(Continent.SOUTH_AMERICA)){
+            setPic(game.getiS(), 3);
+        }
+        if(continentSet.contains(Continent.NORTH_AMERICA)){
+            setPic(game.getiN(), 4);
+        }
+
+    }
+
+
+    private void setPic(ArrayList<ImageView> iv, int i){
+        System.out.println(iv.size());
+        System.out.println(iv.get(0));
+        int pTurn = whosTurn()-1;
+        switch (whosTurn()){
+            case 1:
+                switch (i){
+                    case 1:
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/asia_gold.png"));
+                        break;
+                    case 2:
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/africa_gold.png"));
+                        break;
+                    case 3:
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/northAm_gold.png"));
+                        break;
+                    case 4:
+                        iv.get(pTurn).setImage(new Image("edu/chl/trivialpursuit/view/northAm_gold.png"));
+                        break;
+                }
+                break;
+            case 2:
+                switch (i){
+                    case 1:
+
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                }
+                break;
+            case 3:
+                switch (i){
+                    case 1:
+
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                }
+                break;
+            case 4:
+                switch (i){
+                    case 1:
+
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                }
+                break;
+            case 5:
+                switch (i){
+                    case 1:
+
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                }
+                break;
+            case 6:
+                switch (i){
+                    case 1:
+
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                }
+                break;
+            default:
+                throw new IllegalArgumentException("");
+        }
+    }
+
+    public void setContinent(Continent continent){
+
     }
 
 

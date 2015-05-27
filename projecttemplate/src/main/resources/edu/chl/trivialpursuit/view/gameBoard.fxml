@@ -28,22 +28,22 @@
                   </HBox>
                   <HBox prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
-                        <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="as1" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@asia_gray.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="af1" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@africa_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="n1" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@northAm_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="s1" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@southAm_grey.png" />
                            </image>
@@ -67,17 +67,17 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="31.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
-                        <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="as2" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@asia_gray.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="af2" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@africa_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="n2" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@northAm_grey.png" />
                            </image>
@@ -85,7 +85,7 @@
                               <Insets bottom="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <ImageView fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="s2" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@southAm_grey.png" />
                            </image>
@@ -109,12 +109,12 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="100.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
-                        <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="as3" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@asia_gray.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="af3" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@africa_grey.png" />
                            </image>
@@ -122,12 +122,12 @@
                               <Insets bottom="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="n3" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@northAm_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="s3" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@southAm_grey.png" />
                            </image>
@@ -143,7 +143,7 @@
                   <HBox prefHeight="16.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <Label fx:id="playerFourName" text="" />
-                        <Label fx:id="playerFourTurn" text=""/>
+                        <Label fx:id="playerFourTurn" text="" />
                      </children>
                      <VBox.margin>
                         <Insets left="10.0" />
@@ -151,12 +151,12 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="169.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
-                        <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="as4" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@asia_gray.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="af4" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@africa_grey.png" />
                            </image>
@@ -164,12 +164,12 @@
                               <Insets />
                            </HBox.margin>
                         </ImageView>
-                        <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="n4" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@northAm_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="s4" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@southAm_grey.png" />
                            </image>
@@ -185,7 +185,7 @@
                   <HBox prefHeight="16.0" prefWidth="200.0" spacing="10.0">
                      <children>
                         <Label fx:id="playerFiveName" text="" />
-                        <Label fx:id="playerFiveTurn" text=""/>
+                        <Label fx:id="playerFiveTurn" text="" />
                      </children>
                      <VBox.margin>
                         <Insets left="10.0" />
@@ -193,22 +193,22 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="238.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
-                        <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="as5" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@asia_gray.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="af5" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@africa_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="n5" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@northAm_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="s5" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@southAm_grey.png" />
                            </image>
@@ -228,7 +228,7 @@
                               <Insets />
                            </HBox.margin>
                         </Label>
-                        <Label fx:id="playerSixTurn" text=""/>
+                        <Label fx:id="playerSixTurn" text="" />
                      </children>
                      <VBox.margin>
                         <Insets left="10.0" />
@@ -236,22 +236,22 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="307.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
-                        <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="as6" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@asia_gray.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="af6" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@africa_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="n6" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@northAm_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="s6" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@southAm_grey.png" />
                            </image>
@@ -273,9 +273,9 @@
                   <HBox prefHeight="68.0" prefWidth="532.0" spacing="80.0">
       
                      <children>
-                        <Button mnemonicParsing="false" onAction="#moveLeft" text="Go Left" fx:id="left"  />
+                        <Button fx:id="left" mnemonicParsing="false" onAction="#moveLeft" text="Go Left" />
                         <Region prefHeight="78.0" prefWidth="29.0" />
-                        <Button mnemonicParsing="false" onAction="#moveRight" prefHeight="40.0" prefWidth="121.0" text="Go Right" fx:id="right" />
+                        <Button fx:id="right" mnemonicParsing="false" onAction="#moveRight" prefHeight="40.0" prefWidth="121.0" text="Go Right" />
                      </children>
                      <padding>
                         <Insets left="60.0" right="60.0" top="10.0" />

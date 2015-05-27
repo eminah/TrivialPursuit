@@ -16,6 +16,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
@@ -39,6 +40,8 @@ public class GameBoardController implements Initializable {
     Label playerOneTurn,playerTwoTurn,playerThreeTurn,playerFourTurn,playerFiveTurn,playerSixTurn;
     @FXML
     Button left,right;
+    @FXML
+    ImageView as1,as2,as3,as4,as5,as6,af1,af2,af3,af4,af5,af6,s1,s2,s3,s4,s5,s6,n1,n2,n3,n4,n5,n6;
     @Inject
     Dice dice;
     @Inject
@@ -47,7 +50,14 @@ public class GameBoardController implements Initializable {
     ChooseTravel chooseT;
     @Inject
     GameBoard game;
+
     private ArrayList<Player> players;
+    private ArrayList<ImageView> imAs;
+    private ArrayList<ImageView> imAf;
+    private ArrayList<ImageView> imS;
+    private ArrayList<ImageView> imN;
+;
+    private ArrayList<Label> setLabelTurn;
     // Initial start value of all the coordinates, negative so that they will be out of the canvas
     //private int x1 = -20,x2 = -20,x3 = -20,x4 = -20,x5 = -20,x6 = -20,y1 = -20,y2 = -20,y3 = -20,y4 = -20,y5 = -20,y6 = -20;
     private int[] coorX= {-1,-20,-20,-20,-20,-20,-20};
@@ -60,8 +70,8 @@ public class GameBoardController implements Initializable {
     private Color p6 = Color.BLUE;
     private Font labels = new Font("Verdana", 15);
     private Font arrow = new Font("Verdana",16);
-    private ArrayList<Label> setLabelTurn;
     private Timeline setDelay;
+
     @FXML
     private void moveRight(){
         movePlayer(game.getTurn(), dice.getTotalDiceValue(), "R");
@@ -119,22 +129,6 @@ public class GameBoardController implements Initializable {
         gc.setFill(p6);
         gc.fillOval(coorX[6] + 12, coorY[6] - 12, 15, 15);
         gc.strokeOval(coorX[6] + 12, coorY[6] - 12, 15, 15);
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        players = new ArrayList<>();
-        setLabelTurn = new ArrayList<>();
-        createPlayers();
-        game.setPlayers(players);
-        setNames();
-        addLabelTurns();
-        game.setLabelTurns(setLabelTurn);
-        game.setTurn(1);
-        game.getLabelTurns().get(0).setText("<-- " + +dice.getTotalDiceValue() + " steps!");
-        game.getLabelTurns().get(0).setFont(arrow);
-        setTheCoordinates();
-        drawBoard();
     }
 
 
@@ -276,5 +270,71 @@ public class GameBoardController implements Initializable {
             }
         }));
         setDelay.play();
+    }
+
+    private void addAs(){
+        System.out.println(as1.toString());
+        imAs.add(as1);
+        imAs.add(as2);
+        imAs.add(as3);
+        imAs.add(as4);
+        imAs.add(as5);
+        imAs.add(as6);
+    }
+
+    private void addAf(){
+        imAf.add(af1);
+        imAf.add(af2);
+        imAf.add(af3);
+        imAf.add(af4);
+        imAf.add(af5);
+        imAf.add(af6);
+    }
+
+    private void addS(){
+        imS.add(s1);
+        imS.add(s2);
+        imS.add(s3);
+        imS.add(s4);
+        imS.add(s5);
+        imS.add(s6);
+    }
+
+    private void addN(){
+        imN.add(n1);
+        imN.add(n2);
+        imN.add(n3);
+        imN.add(n4);
+        imN.add(n5);
+        imN.add(n6);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        players = new ArrayList<>();
+        setLabelTurn = new ArrayList<>();
+        imAs = new ArrayList<>();
+        imAf = new ArrayList<>();
+        imS = new ArrayList<>();
+        imN = new ArrayList<>();
+        createPlayers();
+        game.setPlayers(players);
+        setNames();
+        addLabelTurns();
+        game.setLabelTurns(setLabelTurn);
+        game.setTurn(1);
+        game.getLabelTurns().get(0).setText("<-- " + +dice.getTotalDiceValue() + " steps!");
+        game.getLabelTurns().get(0).setFont(arrow);
+        addAs();
+        addAf();
+        addS();
+        addN();
+        game.setiAs(imAs);
+        game.setiAf(imAf);
+        game.setiS(imS);
+        game.setiN(imN);
+
+        setTheCoordinates();
+        drawBoard();
     }
 }

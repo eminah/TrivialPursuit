@@ -1,6 +1,7 @@
 package edu.chl.trivialpursuit.model;
 
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 
 import java.util.ArrayList;
@@ -17,6 +18,10 @@ public class GameBoard {
     private ArrayList<Card> cardsInner;
     private ArrayList<Player> players;
     private ArrayList<Label> labelTurns;
+    private ArrayList<ImageView> iAs;
+    private ArrayList<ImageView>  iAf;
+    private ArrayList<ImageView>  iS;
+    private ArrayList<ImageView>  iN;
     private int turn;
 
 
@@ -255,7 +260,37 @@ public class GameBoard {
         this.labelTurns = labelTurns;
     }
 
+    public ArrayList<ImageView> getiAs() {
+        return iAs;
+    }
 
+    public void setiAs(ArrayList<ImageView> iAs) {
+        this.iAs = iAs;
+    }
+
+    public ArrayList<ImageView> getiAf() {
+        return iAf;
+    }
+
+    public void setiAf(ArrayList<ImageView> iAf) {
+        this.iAf = iAf;
+    }
+
+    public ArrayList<ImageView> getiS() {
+        return iS;
+    }
+
+    public void setiS(ArrayList<ImageView> iS) {
+        this.iS = iS;
+    }
+
+    public ArrayList<ImageView> getiN() {
+        return iN;
+    }
+
+    public void setiN(ArrayList<ImageView> iN) {
+        this.iN = iN;
+    }
 }
 
 
