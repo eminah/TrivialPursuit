@@ -10,11 +10,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashSet;
 import java.util.ResourceBundle;
 
 
@@ -34,50 +36,41 @@ public class CardController implements Initializable{
 
 
 
+
+
     private Timeline delay;
     private Alternative correctAlt;
     private Alternative answer;
-    private Player player;
+
+
 
 
     @FXML
     public void altOnePressed(ActionEvent e) {
-
-        alt1.setStyle("-fx-background-color: #65ff3c;");
-        alt2.setDisable(true);
-        alt3.setDisable(true);
-        alt4.setDisable(true);
+        checkAnswer(1,Alternative.ALTERNATIVE1);
+        disableAllAlts(1);
         startTimer();
     }
 
     @FXML
     public void altTwoPressed(ActionEvent e) {
 
-        
-        alt2.setStyle("-fx-background-color: #65ff3c");
-        alt1.setDisable(true);
-        alt3.setDisable(true);
-        alt4.setDisable(true);
+        checkAnswer(2,Alternative.ALTERNATIVE2);
+        disableAllAlts(2);
         startTimer();
     }
 
     @FXML
     public void altThreePressed(ActionEvent e) {
-
-        alt3.setStyle("-fx-background-color: #65ff3c");
-        alt1.setDisable(true);
-        alt2.setDisable(true);
-        alt4.setDisable(true);
+        checkAnswer(3,Alternative.ALTERNATIVE3);
+        disableAllAlts(3);
         startTimer();
     }
 
     @FXML
     public void altFourPressed(ActionEvent e) {
-
-        alt4.setStyle("-fx-background-color: #65ff3c");
-        alt1.setDisable(true);
-        alt2.setDisable(true);
-        alt3.setDisable(true);
+        checkAnswer(4,Alternative.ALTERNATIVE4);
+        disableAllAlts(4);
         startTimer();
     }
 
@@ -97,11 +90,7 @@ public class CardController implements Initializable{
                 alt2.setStyle("-fx-background-color: #b2b5b7");
                 alt3.setStyle("-fx-background-color: #b2b5b7");
                 alt4.setStyle("-fx-background-color: #b2b5b7");
-                alt1.setDisable(true);
-                alt2.setDisable(true);
-                alt3.setDisable(true);
-                alt4.setDisable(true);
-
+                enableAllAlts();
 
                 //Changes back to the gameBoard
                 try{
@@ -117,6 +106,37 @@ public class CardController implements Initializable{
 
     }
 
+    private void disableAllAlts(int theChoosen){
+
+        alt1.setDisable(true);
+        alt2.setDisable(true);
+        alt3.setDisable(true);
+        alt4.setDisable(true);
+
+        switch (theChoosen){
+            case 1:
+                alt1.setDisable(false);
+                break;
+            case 2:
+                alt2.setDisable(false);
+                break;
+            case 3:
+                alt3.setDisable(false);
+                break;
+            case 4:
+                alt4.setDisable(false);
+                break;
+        }
+
+    }
+
+    private void enableAllAlts(){
+        alt1.setDisable(false);
+        alt2.setDisable(false);
+        alt3.setDisable(false);
+        alt4.setDisable(false);
+    }
+
     /**
      * Gets continent of the card that is  connected to the current players spot
      * @param continent the continent of the specifik card that the player will get
@@ -124,7 +144,7 @@ public class CardController implements Initializable{
     private void setCard(Continent continent){
 
         if( continent == Continent.ASIA){
-            //card.setCorrectAlt(Alternative.ALTERNATIVE2);
+            correctAlt = Alternative.ALTERNATIVE2;
             question.setText("This is an Asia Question, please press on Asia:");
             alt1.setText("Africa");
             alt2.setText("Asia");
@@ -133,7 +153,7 @@ public class CardController implements Initializable{
 
         }else if( continent == Continent.AFRICA){
 
-            //card.setCorrectAlt(Alternative.ALTERNATIVE1);
+            correctAlt = Alternative.ALTERNATIVE1;
             question.setText("This is an Africa Question, please press on Africa:");
             alt1.setText("Africa");
             alt2.setText("Asia");
@@ -141,7 +161,7 @@ public class CardController implements Initializable{
             alt4.setText("South Ametica");
 
         }else if(continent == Continent.NORTH_AMERICA){
-            //card.setCorrectAlt(Alternative.ALTERNATIVE3);
+            correctAlt = Alternative.ALTERNATIVE3;
             question.setText("This is an North America Question, please press on North America:");
             alt1.setText("Africa");
             alt2.setText("Asia");
@@ -150,7 +170,7 @@ public class CardController implements Initializable{
 
         }else{
 
-            //card.setCorrectAlt(Alternative.ALTERNATIVE4);
+            correctAlt = Alternative.ALTERNATIVE4;
             question.setText("This is an South America Question, please press on South America:");
             alt1.setText("Africa");
             alt2.setText("Asia");
@@ -160,39 +180,71 @@ public class CardController implements Initializable{
 
     }
 
+    public boolean checkAnswer(int theAlt, Alternative ans){
+        answer = ans;
+
+
+        if( answer.equals(correctAlt)){
+            Player currentPlayer = game.getPlayers().get(game.getTurn()-1);
+            Continent currentContinent = game.getPlayers().get(game.getTurn()-1).getSpot().getCard().getContinent();
+            currentPlayer.getCollectedContinents().add(currentContinent);
+
+            switch(theAlt){
+                case 1:
+                    alt1.setStyle("-fx-background-color: lawngreen");
+
+                    break;
+                case 2:
+                    alt2.setStyle("-fx-background-color: lawngreen");
+                    break;
+                case 3:
+                    alt3.setStyle("-fx-background-color: lawngreen");
+
+                    break;
+                case 4:
+                    alt4.setStyle("-fx-background-color: lawngreen");
+
+                    break;
+            }
+
+            if (currentPlayer.checkIfAllContinents()){
+                currentPlayer.setHasTicket(true);
+            }
+            return true;
+        }else{
+
+            switch(theAlt){
+                case 1:
+                    alt1.setStyle("-fx-background-color: red");
+
+                    break;
+                case 2:
+                    alt2.setStyle("-fx-background-color: red");
+                    break;
+                case 3:
+                    alt3.setStyle("-fx-background-color: red");
+
+                    break;
+                case 4:
+                    alt4.setStyle("-fx-background-color: red");
+
+                    break;
+            }
+
+
+
+            return false;
+        }
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         setCard(game.getPlayers().get(game.getTurn() - 1).getSpot().getCard().getContinent());
     }
-
-
-    public Alternative getCorrectAlt() {
-        return correctAlt;
-    }
-
-    public void setCorrectAlt(Alternative correctAlt) {
-        this.correctAlt = correctAlt;
-    }
-
-    public void setAnswer(Alternative answer) {
-        this.answer = answer;
-    }
-
-
-
-    public boolean checkAnswer(Alternative ans){
-        answer = ans;
-
-        if( answer.equals(correctAlt)){
-            //player.getCollectedContinents().add(continent);
-            if (player.checkIfAllContinents()){
-                player.setHasTicket(true);
-            }
-            return true;
-        }else{
-            return false;
-        }
-    }
 }
+
+
+
+
+

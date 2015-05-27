@@ -1,5 +1,6 @@
 package edu.chl.trivialpursuit.controller;
 
+import edu.chl.trivialpursuit.model.ChoosePlayer;
 import edu.chl.trivialpursuit.model.Dice;
 import edu.chl.trivialpursuit.model.Player;
 import edu.chl.trivialpursuit.view.GameBoardView;
@@ -8,26 +9,33 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
 import javax.inject.Inject;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
 /**
  * Created by inatran on 15-04-28.
  */
-public class DiceController {
+public class DiceController implements Initializable {
 
     @Inject Dice dice;
+    @Inject ChoosePlayer choose;
     @FXML ImageView dice1;
     @FXML ImageView dice2;
     @FXML Button throwButton;
+    @FXML Label who;
 
     private Timeline delay;
+
 
 
     @FXML
@@ -100,6 +108,10 @@ public class DiceController {
 
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        who.setText(choose.getNameOne());
+    }
 }
 
 

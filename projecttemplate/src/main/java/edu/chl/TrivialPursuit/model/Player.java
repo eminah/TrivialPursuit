@@ -28,12 +28,14 @@ public  class Player {
      *
      * @param name the name of the player
      * @param spot the spot that the player chooses to start
+     * @param hashSet the set that will contain the players collected cotinents
      */
-    public Player(String name, Spot spot) {
+    public Player(String name, Spot spot, HashSet<Continent> hashSet) {
         this.name = name;
         this.spot = spot;
+        this.collectedContinents = hashSet;
 
-        collectedContinents = new HashSet<>();
+
     }
 
     public String getName() {
@@ -52,9 +54,7 @@ public  class Player {
         this.spot = spot;
     }
 
-    public HashSet<Continent> getCollectedContinents() {
-        return collectedContinents;
-    }
+
 
 
     /**
@@ -99,6 +99,15 @@ public  class Player {
     public void setTurn(int turn) {
         this.turn = turn;
     }
+
+    public HashSet<Continent> getCollectedContinents() {
+        return collectedContinents;
+    }
+
+    public void setCollectedContinents(HashSet<Continent> collectedContinents) {
+        this.collectedContinents = collectedContinents;
+    }
+
 }
 
 

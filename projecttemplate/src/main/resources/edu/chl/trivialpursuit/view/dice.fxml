@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="400.0" prefWidth="600.0" stylesheets="@test.css" xmlns="http://javafx.com/javafx/8"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="edu.chl.trivialpursuit.controller.DiceController">
+<BorderPane stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.trivialpursuit.controller.DiceController">
    <center>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="152.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView  fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" fx:id="dice1">
+            <ImageView fx:id="dice1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                 <image>
                   <Image url="@diceOne.png" />
                </image>
             </ImageView>
             <Region prefHeight="350.0" prefWidth="110.0" />
-            <ImageView  fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" fx:id="dice2">
+            <ImageView fx:id="dice2" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@diceOne.png" />
                </image>
@@ -32,8 +31,22 @@
    <bottom>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#throwDices" text="Throw Dices" fx:id="throwButton" />
+            <Button fx:id="throwButton" mnemonicParsing="false" onAction="#throwDices" text="Throw Dices" />
          </children>
       </StackPane>
    </bottom>
+   <top>
+      <FlowPane prefHeight="85.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Här skall de stå vems tur det är" fx:id="who">
+               <font>
+                  <Font size="26.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" top="5.0" />
+               </padding>
+            </Label>
+         </children>
+      </FlowPane>
+   </top>
 </BorderPane>

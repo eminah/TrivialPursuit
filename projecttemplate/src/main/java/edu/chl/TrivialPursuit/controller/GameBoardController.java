@@ -30,6 +30,7 @@ import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.ResourceBundle;
 
 
@@ -95,7 +96,6 @@ public class GameBoardController implements Initializable {
     @FXML
     public void moveRight(){
         movePlayer(whosTurn(), dice.getTotalDiceValue(), "R");
-        setNextTurn();
         right.setDisable(true);
         left.setDisable(true);
         drawBoard();
@@ -109,7 +109,6 @@ public class GameBoardController implements Initializable {
 
     @FXML void moveLeft() throws IOException{
         movePlayer(whosTurn(), dice.getTotalDiceValue(), "L");
-        setNextTurn();
         right.setDisable(true);
         left.setDisable(true);
         drawBoard();
@@ -180,6 +179,9 @@ public class GameBoardController implements Initializable {
      * Set next players turn
      * Called if the player answers wrong
      */
+
+    //TODO flytta denna till cardController
+
     public void setNextTurn(){
 
         for(int i = 0; i < getTurn.length; i++){
@@ -209,47 +211,49 @@ public class GameBoardController implements Initializable {
                 for(int i = 0;i < setLabelTurn.size(); i++){
                     setLabelTurn.get(i).setText("");
                 }
-                playerOneTurn.setText("<--");
+                playerOneTurn.setText("<--" + + dice.getTotalDiceValue() + " steps!");
                 playerOneTurn.setFont(arrow);
                 break;
             case 2:
                 for(int i = 0;i < setLabelTurn.size(); i++){
                     setLabelTurn.get(i).setText("");
                 }
-                playerTwoTurn.setText("<--");
+                playerTwoTurn.setText("<-- " +  dice.getTotalDiceValue() + " steps!");
                 playerTwoTurn.setFont(arrow);
                 break;
             case 3:
                 for(int i = 0;i < setLabelTurn.size(); i++){
                     setLabelTurn.get(i).setText("");
                 }
-                playerThreeTurn.setText("<--");
+                playerThreeTurn.setText("<-- " + dice.getTotalDiceValue() + " steps!");
                 playerThreeTurn.setFont(arrow);
                 break;
             case 4:
                 for(int i = 0;i < setLabelTurn.size(); i++){
                     setLabelTurn.get(i).setText("");
                 }
-                playerFourTurn.setText("<--");
+                playerFourTurn.setText("<-- " + dice.getTotalDiceValue() + " steps!");
                 playerFourTurn.setFont(arrow);
                 break;
             case 5:
                 for(int i = 0;i < setLabelTurn.size(); i++){
                     setLabelTurn.get(i).setText("");
                 }
-                playerFiveTurn.setText("<--");
+                playerFiveTurn.setText("<-- " + dice.getTotalDiceValue() + " steps!");
                 playerFiveTurn.setFont(arrow);
                 break;
             case 6:
                 for(int i = 0;i < setLabelTurn.size(); i++){
                     setLabelTurn.get(i).setText("");
                 }
-                playerSixTurn.setText("<--");
+                playerSixTurn.setText("<-- " + dice.getTotalDiceValue() + " steps!");
                 playerSixTurn.setFont(arrow);
                 break;
             default: throw new IllegalArgumentException("Wrong whos turn");
         }
     }
+
+    //TODO flytta till cardController
 
     public int whosTurn() {
 
@@ -308,7 +312,7 @@ public class GameBoardController implements Initializable {
 
 
 
-        playerOneTurn.setText("<--");
+        playerOneTurn.setText("<-- " + dice.getTotalDiceValue() + " steps!");
         playerOneTurn.setFont(arrow);
 
 
@@ -403,16 +407,16 @@ public class GameBoardController implements Initializable {
 
             switch (choosen) {
                 case "Asia":
-                    players.add(new Player(name,game.getSpotsOuter().get(0)));
+                    players.add(new Player(name,game.getSpotsOuter().get(0),new HashSet<Continent>()));
                     break;
                 case "Africa":
-                    players.add(new Player(name,game.getSpotsOuter().get(7)));
+                    players.add(new Player(name,game.getSpotsOuter().get(7), new HashSet<Continent>()));
                     break;
                 case "South America":
-                    players.add(new Player(name,game.getSpotsOuter().get(14)));
+                    players.add(new Player(name,game.getSpotsOuter().get(14), new HashSet<Continent>()));
                     break;
                 case "North America":
-                    players.add(new Player(name,game.getSpotsOuter().get(21)));
+                    players.add(new Player(name,game.getSpotsOuter().get(21), new HashSet<Continent>()));
                     break;
 
                 default:
@@ -420,9 +424,7 @@ public class GameBoardController implements Initializable {
             }
         }
     }
-    public ArrayList<Player> getPlayers() {
-       return players;
-    }
+
 
     public void startTimer() {
 
