@@ -1,13 +1,12 @@
 package edu.chl.trivialpursuit.view;
 
+import com.airhacks.afterburner.injection.Injector;
+import java.io.IOException;
+
+
 /**
  * Created by eminahromic on 2015-05-11.
  */
-
-import com.airhacks.afterburner.injection.Injector;
-
-import java.io.IOException;
-
 public final class RulesView extends BaseView {
 
 

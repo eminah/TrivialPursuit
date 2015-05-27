@@ -1,12 +1,6 @@
 package edu.chl.trivialpursuit.view;
-import com.airhacks.afterburner.injection.Injector;
-import edu.chl.trivialpursuit.controller.GameBoardController;
-import edu.chl.trivialpursuit.model.ChoosePlayer;
-import edu.chl.trivialpursuit.model.GameBoard;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.control.Label;
 
-import javax.inject.Inject;
+import com.airhacks.afterburner.injection.Injector;
 import java.io.IOException;
 
 /**

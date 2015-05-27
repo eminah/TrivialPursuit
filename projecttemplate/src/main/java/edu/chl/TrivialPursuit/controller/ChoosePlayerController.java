@@ -11,7 +11,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-
 import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;

@@ -5,13 +5,12 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 
-/*
+/**
   Application entry class (if using standard java and Swing)
 */
 public class TrivialPursuit extends Application {
 
-
- //Detta är våran main bla bla
+    
     public static void main(String[] args) {
         launch();
     }

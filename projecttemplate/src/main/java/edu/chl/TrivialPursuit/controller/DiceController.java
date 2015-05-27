@@ -2,7 +2,6 @@ package edu.chl.trivialpursuit.controller;
 
 import edu.chl.trivialpursuit.model.ChoosePlayer;
 import edu.chl.trivialpursuit.model.Dice;
-import edu.chl.trivialpursuit.model.Player;
 import edu.chl.trivialpursuit.view.GameBoardView;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -15,7 +14,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
-
 import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;

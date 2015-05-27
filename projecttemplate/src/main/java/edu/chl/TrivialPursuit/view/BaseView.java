@@ -1,16 +1,13 @@
 package edu.chl.trivialpursuit.view;
 
-/**
- * Created by Rasti on 2015-05-18.
- */
-
 import com.airhacks.afterburner.views.FXMLView;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import javax.inject.Inject;
 
-
+/**
+ * Created by Rasti on 2015-05-18.
+ */
 public class BaseView extends FXMLView {
     final private Scene scene;
     private @Inject Stage stage;

@@ -1,6 +1,5 @@
 package edu.chl.trivialpursuit.model;
 
-import java.util.ArrayList;
 
 /**
  * Created by Rasti on 2015-05-05.

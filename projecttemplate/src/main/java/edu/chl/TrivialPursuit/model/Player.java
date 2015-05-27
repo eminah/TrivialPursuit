@@ -1,8 +1,5 @@
 package edu.chl.trivialpursuit.model;
 
-import edu.chl.trivialpursuit.controller.GameBoardController;
-
-import javax.inject.Inject;
 import java.util.HashSet;
 
 
