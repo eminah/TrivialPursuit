@@ -34,6 +34,12 @@ public class CardController implements Initializable{
     @Inject
     GameBoard game;
 
+    @Inject
+    ChoosePlayer chooseP;
+
+    @Inject
+    GameBoardController gameBoardController;
+
 
 
 
@@ -41,6 +47,7 @@ public class CardController implements Initializable{
     private Timeline delay;
     private Alternative correctAlt;
     private Alternative answer;
+    private boolean[] getTurn;
 
 
 
@@ -55,21 +62,21 @@ public class CardController implements Initializable{
     @FXML
     public void altTwoPressed(ActionEvent e) {
 
-        checkAnswer(2,Alternative.ALTERNATIVE2);
+        checkAnswer(2, Alternative.ALTERNATIVE2);
         disableAllAlts(2);
         startTimer();
     }
 
     @FXML
     public void altThreePressed(ActionEvent e) {
-        checkAnswer(3,Alternative.ALTERNATIVE3);
+        checkAnswer(3, Alternative.ALTERNATIVE3);
         disableAllAlts(3);
         startTimer();
     }
 
     @FXML
     public void altFourPressed(ActionEvent e) {
-        checkAnswer(4,Alternative.ALTERNATIVE4);
+        checkAnswer(4, Alternative.ALTERNATIVE4);
         disableAllAlts(4);
         startTimer();
     }
@@ -231,17 +238,75 @@ public class CardController implements Initializable{
                     break;
             }
 
+            setNextTurn();
+
 
 
             return false;
         }
     }
 
+
+
+
+    public int whosTurn() {
+
+        for(int i = 0; i < getTurn.length; i++){
+            if(getTurn[i]==true){
+                return i+1;
+            }
+        }
+        return -1;
+    }
+
+
+
+    /**
+     * Set next players turn
+     * Called if the player answers wrong
+     */
+
+
+
+    public void setNextTurn(){
+
+        for(int i = 0; i < getTurn.length; i++){
+            if(getTurn[i]==true){
+                getTurn[i] = false;
+                System.out.println(getTurn.length);
+                if(i+1 == getTurn.length){
+                    getTurn[0] = true;
+                    game.setTurn(whosTurn());
+                    break;
+                }else{
+                    getTurn[i+1] = true;
+                    game.setTurn(whosTurn());
+                    break;
+                }
+            }
+        }
+
+        //gameBoardController.setArrow();
+
+
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         setCard(game.getPlayers().get(game.getTurn() - 1).getSpot().getCard().getContinent());
+
+        getTurn = new boolean[chooseP.getNumberOfPlayers()];
+
+        for (int i = 0; i < getTurn.length; i++) {
+            getTurn[i] = false;
+        }
+        getTurn[0] = true;
+
+
     }
+
+
 }
 
 

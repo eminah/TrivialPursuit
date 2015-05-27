@@ -72,7 +72,7 @@ public class GameBoardController implements Initializable {
     //private int x1 = -20,x2 = -20,x3 = -20,x4 = -20,x5 = -20,x6 = -20,y1 = -20,y2 = -20,y3 = -20,y4 = -20,y5 = -20,y6 = -20;
     private int[] coorX= {-1,-20,-20,-20,-20,-20,-20};
     private int[] coorY= {-1,-20,-20,-20,-20,-20,-20};
-    private boolean[] getTurn;
+
 
 
     private Color p1 = Color.GREENYELLOW;
@@ -95,7 +95,7 @@ public class GameBoardController implements Initializable {
 
     @FXML
     public void moveRight(){
-        movePlayer(whosTurn(), dice.getTotalDiceValue(), "R");
+        movePlayer(game.getTurn(), dice.getTotalDiceValue(), "R");
         right.setDisable(true);
         left.setDisable(true);
         drawBoard();
@@ -108,7 +108,7 @@ public class GameBoardController implements Initializable {
     }
 
     @FXML void moveLeft() throws IOException{
-        movePlayer(whosTurn(), dice.getTotalDiceValue(), "L");
+        movePlayer(game.getTurn(), dice.getTotalDiceValue(), "L");
         right.setDisable(true);
         left.setDisable(true);
         drawBoard();
@@ -175,38 +175,9 @@ public class GameBoardController implements Initializable {
 
 
 
-    /**
-     * Set next players turn
-     * Called if the player answers wrong
-     */
 
-    //TODO flytta denna till cardController
-
-    public void setNextTurn(){
-
-        for(int i = 0; i < getTurn.length; i++){
-            if(getTurn[i]==true){
-                getTurn[i] = false;
-                System.out.println(getTurn.length);
-                if(i+1 == getTurn.length){
-                    getTurn[0] = true;
-                    game.setTurn(whosTurn());
-                    break;
-                }else{
-                    getTurn[i+1] = true;
-                    game.setTurn(whosTurn());
-                    break;
-                }
-            }
-        }
-
-        setArrow();
-
-
-    }
-
-    private void setArrow(){
-        switch (whosTurn()){
+    public void setArrow(){
+        switch (game.getTurn()){
             case 1:
                 for(int i = 0;i < setLabelTurn.size(); i++){
                     setLabelTurn.get(i).setText("");
@@ -253,22 +224,10 @@ public class GameBoardController implements Initializable {
         }
     }
 
-    //TODO flytta till cardController
 
-    public int whosTurn() {
-
-        for(int i = 0; i < getTurn.length; i++){
-            if(getTurn[i]==true){
-                return i+1;
-            }
-        }
-        return -1;
-    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //TODO Göra detta snyggare förslagsvis med en for;
-
 
         players = new ArrayList<>();
         createPlayers();
@@ -303,12 +262,7 @@ public class GameBoardController implements Initializable {
         }
 
 
-        getTurn = new boolean[chooseP.getNumberOfPlayers()];
 
-        for (int i = 0; i < getTurn.length; i++) {
-            getTurn[i] = false;
-        }
-        getTurn[0] = true;
 
 
 
