@@ -111,14 +111,14 @@ public class GameBoardController implements Initializable {
         gc.fillOval(coorX[3],coorY[3]-12, 15, 15);
         gc.strokeOval(coorX[3],coorY[3]-12, 15, 15);
         gc.setFill(p4);
-        gc.fillOval(coorX[4],coorY[4]+12, 15, 15);
-        gc.strokeOval(coorX[4],coorY[4]+12, 15, 15);
+        gc.fillOval(coorX[4], coorY[4] + 12, 15, 15);
+        gc.strokeOval(coorX[4], coorY[4] + 12, 15, 15);
         gc.setFill(p5);
-        gc.fillOval(coorX[5]+12,coorY[5], 15, 15);
-        gc.strokeOval(coorX[5]+12,coorY[5], 15, 15);
+        gc.fillOval(coorX[5] + 12, coorY[5], 15, 15);
+        gc.strokeOval(coorX[5] + 12, coorY[5], 15, 15);
         gc.setFill(p6);
-        gc.fillOval(coorX[6]+12,coorY[6]-12, 15, 15);
-        gc.strokeOval(coorX[6]+12,coorY[6]-12,  15, 15);
+        gc.fillOval(coorX[6] + 12, coorY[6] - 12, 15, 15);
+        gc.strokeOval(coorX[6] + 12, coorY[6] - 12, 15, 15);
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -130,7 +130,8 @@ public class GameBoardController implements Initializable {
         addLabelTurns();
         game.setLabelTurns(setLabelTurn);
         game.setTurn(1);
-        setArrow();
+        game.getLabelTurns().get(0).setText("<--" + +dice.getTotalDiceValue() + " steps!");
+        game.getLabelTurns().get(0).setFont(arrow);
         setTheCoordinates();
         drawBoard();
     }
@@ -257,53 +258,8 @@ public class GameBoardController implements Initializable {
             setCoordinates(chooseP.getNumberOfPlayers());
         }
     }
-    public void setArrow(){
-        switch (game.getTurn()){
-            case 1:
-                for(int i = 0;i < setLabelTurn.size(); i++){
-                    setLabelTurn.get(i).setText("");
-                }
-                playerOneTurn.setText("<--" + + dice.getTotalDiceValue() + " steps!");
-                playerOneTurn.setFont(arrow);
-                break;
-            case 2:
-                for(int i = 0;i < setLabelTurn.size(); i++){
-                    setLabelTurn.get(i).setText("");
-                }
-                playerTwoTurn.setText("<-- " +  dice.getTotalDiceValue() + " steps!");
-                playerTwoTurn.setFont(arrow);
-                break;
-            case 3:
-                for(int i = 0;i < setLabelTurn.size(); i++){
-                    setLabelTurn.get(i).setText("");
-                }
-                playerThreeTurn.setText("<-- " + dice.getTotalDiceValue() + " steps!");
-                playerThreeTurn.setFont(arrow);
-                break;
-            case 4:
-                for(int i = 0;i < setLabelTurn.size(); i++){
-                    setLabelTurn.get(i).setText("");
-                }
-                playerFourTurn.setText("<-- " + dice.getTotalDiceValue() + " steps!");
-                playerFourTurn.setFont(arrow);
-                break;
-            case 5:
-                for(int i = 0;i < setLabelTurn.size(); i++){
-                    setLabelTurn.get(i).setText("");
-                }
-                playerFiveTurn.setText("<-- " + dice.getTotalDiceValue() + " steps!");
-                playerFiveTurn.setFont(arrow);
-                break;
-            case 6:
-                for(int i = 0;i < setLabelTurn.size(); i++){
-                    setLabelTurn.get(i).setText("");
-                }
-                playerSixTurn.setText("<-- " + dice.getTotalDiceValue() + " steps!");
-                playerSixTurn.setFont(arrow);
-                break;
-            default: throw new IllegalArgumentException("Wrong whos turn");
-        }
-    }
+
+
     public void startTimer() {
         setDelay = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
             @Override

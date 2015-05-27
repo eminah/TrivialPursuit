@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.text.Font;
 import javafx.util.Duration;
 import javax.inject.Inject;
 import java.io.IOException;
@@ -35,7 +36,9 @@ public class CardController implements Initializable{
     ChoosePlayer chooseP;
 
     @Inject
-    GameBoardController gameBoardController;
+    Dice dice;
+
+
 
 
 
@@ -45,6 +48,7 @@ public class CardController implements Initializable{
     private Alternative correctAlt;
     private Alternative answer;
     private boolean[] getTurn;
+    private Font arrow = new Font("Verdana",18);
 
 
 
@@ -283,9 +287,54 @@ public class CardController implements Initializable{
             }
         }
 
-        //gameBoardController.setArrow();
+        setNextTurn();
 
 
+    }
+
+    public void setArrow(){
+
+
+        int theOneToChange = game.getTurn()-1;
+
+
+        //remove the arrow
+        for(int i = 0;i < game.getLabelTurns().size(); i++){
+            game.getLabelTurns().get(i).setText("");
+        }
+
+
+
+        // places the arrow on the correct player
+        switch (game.getTurn()){
+
+
+            case 1:
+                game.getLabelTurns().get(theOneToChange).setText("<--" + +dice.getTotalDiceValue() + " steps!");
+                game.getLabelTurns().get(theOneToChange).setFont(arrow);
+                break;
+            case 2:
+                game.getLabelTurns().get(theOneToChange).setText("<--" + +dice.getTotalDiceValue() + " steps!");
+                game.getLabelTurns().get(theOneToChange).setFont(arrow);
+                break;
+            case 3:
+                game.getLabelTurns().get(theOneToChange).setText("<--" + +dice.getTotalDiceValue() + " steps!");
+                game.getLabelTurns().get(theOneToChange).setFont(arrow);
+                break;
+            case 4:
+                game.getLabelTurns().get(theOneToChange).setText("<--" + +dice.getTotalDiceValue() + " steps!");
+                game.getLabelTurns().get(theOneToChange).setFont(arrow);
+                break;
+            case 5:
+                game.getLabelTurns().get(theOneToChange).setText("<--" + +dice.getTotalDiceValue() + " steps!");
+                game.getLabelTurns().get(theOneToChange).setFont(arrow);
+                break;
+            case 6:
+                game.getLabelTurns().get(theOneToChange).setText("<--" + +dice.getTotalDiceValue() + " steps!");
+                game.getLabelTurns().get(theOneToChange).setFont(arrow);
+                break;
+            default: throw new IllegalArgumentException("Wrong whos turn");
+        }
     }
 
     @Override
