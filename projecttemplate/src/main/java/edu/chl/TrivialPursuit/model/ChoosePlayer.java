@@ -1,6 +1,10 @@
 package edu.chl.trivialpursuit.model;
 
 
+import javafx.event.ActionEvent;
+
+import java.util.ArrayList;
+
 /**
  * Created by Rasti on 2015-05-05.
  */
@@ -8,9 +12,15 @@ public class ChoosePlayer {
 
     private int numberOfPlayers;
     private String nameOne, nameTwo, nameThree, nameFour,nameFive, nameSix;
+    public ArrayList<String> playerNameArray = new ArrayList<>();
 
     public ChoosePlayer(){
+
         numberOfPlayers = 0;
+    }
+
+    private void setArray(String name){
+        playerNameArray.add(name);
     }
 
     public int getNumberOfPlayers() {
@@ -26,6 +36,7 @@ public class ChoosePlayer {
     }
 
     public void setNameOne(String nameOne) {
+        setArray(nameOne);
         this.nameOne = nameOne;
     }
 
@@ -34,6 +45,7 @@ public class ChoosePlayer {
     }
 
     public void setNameTwo(String nameTwo) {
+        setArray(nameTwo);
         this.nameTwo = nameTwo;
     }
 
@@ -42,6 +54,7 @@ public class ChoosePlayer {
     }
 
     public void setNameThree(String nameThree) {
+        setArray(nameThree);
         this.nameThree = nameThree;
     }
 
@@ -50,6 +63,7 @@ public class ChoosePlayer {
     }
 
     public void setNameFour(String nameFour) {
+        setArray(nameFour);
         this.nameFour = nameFour;
     }
 
@@ -58,6 +72,7 @@ public class ChoosePlayer {
     }
 
     public void setNameFive(String nameFive) {
+        setArray(nameFive);
         this.nameFive = nameFive;
     }
 
@@ -66,6 +81,7 @@ public class ChoosePlayer {
     }
 
     public void setNameSix(String nameSix) {
+        setArray(nameSix);
         this.nameSix = nameSix;
     }
 }

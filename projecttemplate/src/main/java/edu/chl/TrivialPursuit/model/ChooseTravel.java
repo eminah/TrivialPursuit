@@ -1,17 +1,25 @@
 package edu.chl.trivialpursuit.model;
 
+import java.util.ArrayList;
+
 /**
  * Created by helenejarl on 2015-05-19.
  */
 public class ChooseTravel {
 
     private String startPlaceOne,startPlaceTwo,startPlaceThree,startPlaceFour,startPlaceFive,startPlaceSix ;
+    public ArrayList<String> contintentToStartArray = new ArrayList<>();
+
+    public void setArray(String continent){
+        contintentToStartArray.add(continent);
+    }
 
     public String getStartPlaceOne() {
         return startPlaceOne;
     }
 
     public void setStartPlaceOne(String startPlaceOne) {
+        setArray(startPlaceOne);
         this.startPlaceOne = startPlaceOne;
     }
 
@@ -20,6 +28,7 @@ public class ChooseTravel {
     }
 
     public void setStartPlaceTwo(String startPlaceTwo) {
+        setArray(startPlaceTwo);
         this.startPlaceTwo = startPlaceTwo;
     }
 
@@ -28,6 +37,7 @@ public class ChooseTravel {
     }
 
     public void setStartPlaceThree(String startPlaceThree) {
+        setArray(startPlaceThree);
         this.startPlaceThree = startPlaceThree;
     }
 
@@ -36,6 +46,7 @@ public class ChooseTravel {
     }
 
     public void setStartPlaceFour(String startPlaceFour) {
+        setArray(startPlaceFour);
         this.startPlaceFour = startPlaceFour;
     }
 
@@ -44,6 +55,7 @@ public class ChooseTravel {
     }
 
     public void setStartPlaceFive(String startPlaceFive) {
+        setArray(startPlaceFive);
         this.startPlaceFive = startPlaceFive;
     }
 
@@ -52,6 +64,7 @@ public class ChooseTravel {
     }
 
     public void setStartPlaceSix(String startPlaceSix) {
+        setArray(startPlaceSix);
         this.startPlaceSix = startPlaceSix;
     }
 }

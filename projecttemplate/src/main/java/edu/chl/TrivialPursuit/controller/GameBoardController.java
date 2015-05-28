@@ -145,50 +145,22 @@ public class GameBoardController implements Initializable {
     number of players it is.
      */
     private void createPlayers() {
+
         for (int i = 0; i < chooseP.getNumberOfPlayers(); i++) {
             String choosen = "";
             String name = "";
-            switch (i){
-                case 0:
-                    choosen = chooseT.getStartPlaceOne();
-                    name = chooseP.getNameOne();
-                    break;
-                case 1:
-                    choosen = chooseT.getStartPlaceTwo();
-                    name = chooseP.getNameTwo();
-                    break;
-                case 2:
-                    choosen = chooseT.getStartPlaceThree();
-                    name = chooseP.getNameThree();
-                    break;
-                case 3:
-                    choosen = chooseT.getStartPlaceFour();
-                    name = chooseP.getNameFour();
-                    break;
-                case 4:
-                    choosen = chooseT.getStartPlaceFive();
-                    name = chooseP.getNameFive();
-                    break;
-                case 5:
-                    choosen = chooseT.getStartPlaceSix();
-                    name = chooseP.getNameSix();
-                    break;
-            }
-            switch (choosen) {
-                case "Asia":
-                    players.add(new Player(name,game.getSpotsOuter().get(0),new HashSet<Continent>()));
-                    break;
-                case "Africa":
-                    players.add(new Player(name,game.getSpotsOuter().get(7), new HashSet<Continent>()));
-                    break;
-                case "South America":
-                    players.add(new Player(name,game.getSpotsOuter().get(14), new HashSet<Continent>()));
-                    break;
-                case "North America":
-                    players.add(new Player(name,game.getSpotsOuter().get(21), new HashSet<Continent>()));
-                    break;
-                default:
-                    throw new IllegalArgumentException("Something is wrong");
+
+            choosen = chooseT.contintentToStartArray.get(i);
+            name = chooseP.playerNameArray.get(i);
+
+            if (choosen.equals("Asia")){
+                players.add(new Player(name,game.getSpotsOuter().get(0),new HashSet<Continent>()));
+            }else if (choosen.equals("Africa")){
+                players.add(new Player(name,game.getSpotsOuter().get(7), new HashSet<Continent>()));
+            }else if (choosen.equals("South America")){
+                players.add(new Player(name,game.getSpotsOuter().get(14), new HashSet<Continent>()));
+            }else{
+                players.add(new Player(name,game.getSpotsOuter().get(21), new HashSet<Continent>()));
             }
         }
     }
@@ -344,8 +316,8 @@ public class GameBoardController implements Initializable {
         imS = new ArrayList<>();
         imN = new ArrayList<>();
         playersNameLabels = new Label[6];
-        addPlayerNameLabels();
         createPlayers();
+        addPlayerNameLabels();
         game.setPlayers(players);
         setNames();
         addLabelTurns();
