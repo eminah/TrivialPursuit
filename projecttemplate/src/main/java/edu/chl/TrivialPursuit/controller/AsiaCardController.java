@@ -1,7 +1,9 @@
 package edu.chl.trivialpursuit.controller;
 
 import edu.chl.trivialpursuit.model.Alternative;
+import edu.chl.trivialpursuit.model.Continent;
 import edu.chl.trivialpursuit.model.GameBoard;
+import edu.chl.trivialpursuit.model.Player;
 import edu.chl.trivialpursuit.view.DiceView;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -28,17 +30,20 @@ public class AsiaCardController {
     private Timeline disableButtonDelay;
     private Button theButtonPressed;
     private int currentPlayerTurnIndex;
+    private Player currentPlayer;
 
     @FXML
     public void onButtonPressed(ActionEvent e) {
         theButtonPressed = (Button) e.getSource();
         currentPlayerTurnIndex = game.getTurn()-1;
+        currentPlayer = game.getPlayers().get(game.getTurn()-1);
 
 
         if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))){
             theButtonPressed.setStyle("-fx-background-color: lawngreen");
             ImageView theContinentToChange = game.getiAf().get(currentPlayerTurnIndex);
-            theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/africa_gold.png"));
+            theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/asia_gold.png"));
+            currentPlayer.getCollectedContinents().add(Continent.AFRICA);
             startTimer();
         }else{
             theButtonPressed.setStyle("-fx-background-color: red");
