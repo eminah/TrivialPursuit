@@ -52,15 +52,11 @@ public class GameBoardController implements Initializable {
     private ArrayList<Label> setLabelTurn;
     private int[] coorX= {-1,-20,-20,-20,-20,-20,-20};
     private int[] coorY= {-1,-20,-20,-20,-20,-20,-20};
-    private Color p1 = Color.GREENYELLOW;
-    private Color p2 = Color.CYAN;
-    private Color p3 = Color.RED;
-    private Color p4 = Color.FUCHSIA;
-    private Color p5 = Color.FORESTGREEN;
-    private Color p6 = Color.BLUE;
+    private Color[] playerColor = {Color.GREENYELLOW,Color.CYAN,Color.RED,Color.FUCHSIA,Color.FORESTGREEN,Color.BLUE};
     private Font labels = new Font("Verdana", 15);
     private Font arrow = new Font("Verdana",16);
     private Timeline setDelay;
+    private Label[] playersNameLabels;
 
     @FXML Canvas boardCanvas;
 
@@ -115,63 +111,32 @@ public class GameBoardController implements Initializable {
 
     private void draw(GraphicsContext gc){
         gc.drawImage(new Image("edu/chl/trivialpursuit/view/board_pastell.png"), 0, 0, boardCanvas.getWidth(), boardCanvas.getHeight());
-        gc.setFill(p1);
+        gc.setFill(playerColor[0]);
         gc.fillOval(coorX[1],coorY[1], 15, 15);
         gc.strokeOval(coorX[1],coorY[1], 15, 15);
-        gc.setFill(p2);
+        gc.setFill(playerColor[1]);
         gc.fillOval(coorX[2]-12,coorY[2], 15, 15);
         gc.strokeOval(coorX[2]-12,coorY[2], 15, 15);
-        gc.setFill(p3);
+        gc.setFill(playerColor[2]);
         gc.fillOval(coorX[3],coorY[3]-12, 15, 15);
         gc.strokeOval(coorX[3],coorY[3]-12, 15, 15);
-        gc.setFill(p4);
+        gc.setFill(playerColor[3]);
         gc.fillOval(coorX[4], coorY[4] + 12, 15, 15);
         gc.strokeOval(coorX[4], coorY[4] + 12, 15, 15);
-        gc.setFill(p5);
+        gc.setFill(playerColor[4]);
         gc.fillOval(coorX[5] + 12, coorY[5], 15, 15);
         gc.strokeOval(coorX[5] + 12, coorY[5], 15, 15);
-        gc.setFill(p6);
+        gc.setFill(playerColor[5]);
         gc.fillOval(coorX[6] + 12, coorY[6] - 12, 15, 15);
         gc.strokeOval(coorX[6] + 12, coorY[6] - 12, 15, 15);
     }
 
-    //The names should be the choosen ones:
+
     private void setNames() {
         for (int i = 0; i < players.size(); i++) {
-            switch (i) {
-                case 0:
-                    playerOneName.setText(chooseP.getNameOne());
-                    playerOneName.setTextFill(p1);
-                    playerOneName.setFont(labels);
-                    break;
-                case 1:
-                    playerTwoName.setText(chooseP.getNameTwo());
-                    playerTwoName.setTextFill(p2);
-                    playerTwoName.setFont(labels);
-                    break;
-                case 2:
-                    playerThreeName.setText(chooseP.getNameThree());
-                    playerThreeName.setTextFill(p3);
-                    playerThreeName.setFont(labels);
-                    break;
-                case 3:
-                    playerFourName.setText(chooseP.getNameFour());
-                    playerFourName.setTextFill(p4);
-                    playerFourName.setFont(labels);
-                    break;
-                case 4:
-                    playerFiveName.setText(chooseP.getNameFive());
-                    playerFiveName.setTextFill(p5);
-                    playerFiveName.setFont(labels);
-                    break;
-                case 5:
-                    playerSixName.setText(chooseP.getNameSix());
-                    playerSixName.setTextFill(p6);
-                    playerSixName.setFont(labels);
-                    break;
-                default:
-                    throw new IllegalArgumentException("Something Wrong");
-            }
+            playersNameLabels[i].setText(game.getPlayers().get(i).getName());
+            playersNameLabels[i].setTextFill(playerColor[i]);
+            playersNameLabels[i].setFont(labels);
         }
     }
 
@@ -362,6 +327,14 @@ public class GameBoardController implements Initializable {
         imN.add(n6);
     }
 
+    private void addPlayerNameLabels(){
+        playersNameLabels[0] = playerOneName;
+        playersNameLabels[1] = playerTwoName;
+        playersNameLabels[2] = playerThreeName;
+        playersNameLabels[3] = playerFourName;
+        playersNameLabels[4] = playerFiveName;
+        playersNameLabels[5] = playerSixName;
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         players = new ArrayList<>();
@@ -370,6 +343,8 @@ public class GameBoardController implements Initializable {
         imAf = new ArrayList<>();
         imS = new ArrayList<>();
         imN = new ArrayList<>();
+        playersNameLabels = new Label[6];
+        addPlayerNameLabels();
         createPlayers();
         game.setPlayers(players);
         setNames();
