@@ -50,6 +50,7 @@ public class GameBoardController implements Initializable {
     private ArrayList<ImageView> imS;
     private ArrayList<ImageView> imN;
     private ArrayList<Label> setLabelTurn;
+    private ArrayList<Label> playerTurnArray;
     private int[] coorX= {-1,-20,-20,-20,-20,-20,-20};
     private int[] coorY= {-1,-20,-20,-20,-20,-20,-20};
     private Color[] playerColor = {Color.GREENYELLOW,Color.CYAN,Color.RED,Color.FUCHSIA,Color.FORESTGREEN,Color.BLUE};
@@ -167,27 +168,7 @@ public class GameBoardController implements Initializable {
 
     public void addLabelTurns(){
         for(int i = 0; i<chooseP.getNumberOfPlayers(); i++){
-            switch (i){
-                case 0:
-                    setLabelTurn.add(playerOneTurn);
-                    break;
-                case 1:
-                    setLabelTurn.add(playerTwoTurn);
-                    break;
-                case 2:
-                    setLabelTurn.add(playerThreeTurn);
-                    break;
-                case 3:
-                    setLabelTurn.add(playerFourTurn);
-                    break;
-                case 4:
-                    setLabelTurn.add(playerFiveTurn);
-                    break;
-                case 5:
-                    setLabelTurn.add(playerSixTurn);
-                    break;
-                default: throw new IllegalArgumentException ("Your bad!");
-            }
+            setLabelTurn.add(playerTurnArray.get(i));
         }
     }
 
@@ -299,7 +280,7 @@ public class GameBoardController implements Initializable {
         imN.add(n6);
     }
 
-    private void addPlayerNameLabels(){
+    private void addPlayerNameLabelsToArray(){
         playersNameLabels[0] = playerOneName;
         playersNameLabels[1] = playerTwoName;
         playersNameLabels[2] = playerThreeName;
@@ -307,17 +288,28 @@ public class GameBoardController implements Initializable {
         playersNameLabels[4] = playerFiveName;
         playersNameLabels[5] = playerSixName;
     }
+
+    private void addLabelTurnsToArray(){
+        playerTurnArray.add(playerOneTurn);
+        playerTurnArray.add(playerTwoTurn);
+        playerTurnArray.add(playerThreeTurn);
+        playerTurnArray.add(playerFourTurn);
+        playerTurnArray.add(playerFiveTurn);
+        playerTurnArray.add(playerSixTurn);
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         players = new ArrayList<>();
         setLabelTurn = new ArrayList<>();
+        playerTurnArray = new ArrayList<>();
+        addLabelTurnsToArray();
         imAs = new ArrayList<>();
         imAf = new ArrayList<>();
         imS = new ArrayList<>();
         imN = new ArrayList<>();
         playersNameLabels = new Label[6];
         createPlayers();
-        addPlayerNameLabels();
+        addPlayerNameLabelsToArray();
         game.setPlayers(players);
         setNames();
         addLabelTurns();
