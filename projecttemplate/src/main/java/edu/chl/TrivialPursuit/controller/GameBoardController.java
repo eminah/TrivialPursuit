@@ -14,9 +14,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Alert;
+//import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Dialog;
+//import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -283,24 +283,24 @@ public class GameBoardController implements Initializable {
                      */
 
                     if(currentPlayer.getHasTicket()) {
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        /*Alert alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setTitle("CONGRATULATIONS!");
                         alert.setHeaderText("I can see that you own a ticket wich means that you have enough\n" +
                                 "evidence that you have been around the world!");
                         alert.setContentText("Have a nice trip back to europe!");
-                        alert.showAndWait();
+                        alert.showAndWait();*/
                         //move to Europe
                         right.setDisable(false);
                         left.setDisable(false);
                        
                         drawBoard();
                     }else{
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        /*Alert alert = new Alert(Alert.AlertType.INFORMATION);
                         alert.setTitle("To Bad!");
                         alert.setHeaderText("You have no ticket, wich means that you need to collect more continents!");
                         alert.setContentText("Come back when you have enough evidence that you have been arround the world, \n" +
                                 " to get a ticket back to Europe");
-                        alert.showAndWait();
+                        alert.showAndWait();*/
 
                         right.setDisable(false);
                         left.setDisable(false);
