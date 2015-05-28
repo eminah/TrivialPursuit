@@ -36,6 +36,7 @@ import java.util.ResourceBundle;
  */
 public class GameBoardController implements Initializable {
 
+    //JADNFJNDAJ
     @Inject Dice dice;
 
     @Inject ChoosePlayer chooseP;
