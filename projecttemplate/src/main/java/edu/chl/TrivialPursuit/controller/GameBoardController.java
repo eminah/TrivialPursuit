@@ -292,7 +292,7 @@ public class GameBoardController implements Initializable {
                         //move to Europe
                         right.setDisable(false);
                         left.setDisable(false);
-                        currentPlayer.setSpot(game.getSpotsInner().get(0));
+                       
                         drawBoard();
                     }else{
                         Alert alert = new Alert(Alert.AlertType.INFORMATION);
