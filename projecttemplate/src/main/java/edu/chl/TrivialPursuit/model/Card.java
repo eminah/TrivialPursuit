@@ -22,6 +22,7 @@ public class Card {
         continent = co;
     }
 
+    //Hejsan
     public Category getCategory() {
         return category;
     }
