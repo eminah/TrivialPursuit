@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * Created by Rasti on 2015-05-28.
  */
-public class SouthAmericaCardView {
+public class SouthAmericaCardView extends BaseView {
     private static boolean ifFirst = true;
     private static SouthAmericaCardView southAmericaCardView;
 

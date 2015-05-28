@@ -3,12 +3,12 @@ package edu.chl.trivialpursuit.model;
 /**
  * Created by Rasti on 2015-05-28.
  */
-public class AsiaCard {
+public class AsiaCard extends Card {
 
     private Alternative correctAlternative;
 
-    public AsiaCard(Alternative correctAlternative){
-        this.correctAlternative = correctAlternative;
+    public AsiaCard(){
+        correctAlternative = Alternative.ALTERNATIVE_FOUR;
     }
 
     public Alternative getCorrectAlternative() {

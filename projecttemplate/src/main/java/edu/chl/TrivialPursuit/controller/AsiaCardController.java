@@ -40,7 +40,7 @@ public class AsiaCardController {
 
         if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))){
             theButtonPressed.setStyle("-fx-background-color: lawngreen");
-            ImageView theContinentToChange = game.getiAf().get(currentPlayerTurnIndex);
+            ImageView theContinentToChange = game.getiAs().get(currentPlayerTurnIndex);
             theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/asia_gold.png"));
             currentPlayer.getCollectedContinents().add(Continent.ASIA);
             startTimer();

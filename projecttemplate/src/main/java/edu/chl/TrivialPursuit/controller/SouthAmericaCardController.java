@@ -40,7 +40,7 @@ public class SouthAmericaCardController {
 
         if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))){
             theButtonPressed.setStyle("-fx-background-color: lawngreen");
-            ImageView theContinentToChange = game.getiAf().get(currentPlayerTurnIndex);
+            ImageView theContinentToChange = game.getiS().get(currentPlayerTurnIndex);
             theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/southAm_gold.png"));
             currentPlayer.getCollectedContinents().add(Continent.SOUTH_AMERICA);
             startTimer();

@@ -42,7 +42,7 @@ public class NorthAmericaCardController {
 
         if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))){
             theButtonPressed.setStyle("-fx-background-color: lawngreen");
-            ImageView theContinentToChange = game.getiAf().get(currentPlayerTurnIndex);
+            ImageView theContinentToChange = game.getiN().get(currentPlayerTurnIndex);
             theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/northAm_gold.png"));
             currentPlayer.getCollectedContinents().add(Continent.NORTH_AMERICA);
 

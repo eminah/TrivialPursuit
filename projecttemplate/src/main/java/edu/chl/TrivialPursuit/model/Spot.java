@@ -11,7 +11,7 @@ public class Spot {
     private Spot left;
     private int cooX;
     private int cooY;
-    private AfricaCard card;
+    private Card card;
 
     /**
      *
@@ -19,7 +19,7 @@ public class Spot {
      * @param category The category of the spot
      * @param card The right card for the spot
      */
-    public Spot(Continent continent, Category category, int x, int y, AfricaCard card){
+    public Spot(Continent continent, Category category, int x, int y, Card card){
 
         this.continent = continent;
         this.category = category;
@@ -58,7 +58,7 @@ public class Spot {
         return cooY;
     }
 
-    public AfricaCard getCard() {
+    public Card getCard() {
         return card;
     }
 }

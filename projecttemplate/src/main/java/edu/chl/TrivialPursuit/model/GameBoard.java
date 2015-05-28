@@ -10,10 +10,11 @@ import java.util.ArrayList;
  */
 public class GameBoard {
 
-    private ArrayList<Spot> spotsOuter;
-    private ArrayList<Spot> spotsInner;
-    private ArrayList<Card> cardsOuter;
-    private ArrayList<Card> cardsInner;
+    final private ArrayList<Spot> spotsOuter;
+    final private ArrayList<Spot> spotsInner;
+    final private ArrayList<Card> cards;
+
+   // private ArrayList<Card> cardsInner;
     private ArrayList<Player> players;
     private ArrayList<Label> labelTurns;
     private ArrayList<ImageView> iAs;
@@ -28,13 +29,14 @@ public class GameBoard {
         labelTurns = new ArrayList<>();
         spotsOuter = new ArrayList<>();
         spotsInner = new ArrayList<>();
-        cardsOuter = new ArrayList<>();
-        cardsInner = new ArrayList<>();
-        createCardsOuter();
-        createCardsInner();
+        cards = new ArrayList<>();
+        addCardsAsia();
+        addCardsAfrica();
+        addCardsSouthAmerica();
+        addCardsNorthAmerica();
         addSpotsToListOuter();
         setBoardingSpotsOuter();
-        addSpotsToListInner();
+        //addSpotsToListInner();
     }
 
     private final ImmutablePair[] SPOT_DEFINITIONS_OUTER = {
@@ -136,23 +138,22 @@ public class GameBoard {
             spotsOuter.add(new Spot((Continent) SPOT_DEFINITIONS_OUTER[i].getLeft(),
                     (Category) SPOT_DEFINITIONS_OUTER[i].getRight(),
                     (Integer) SPOT_DEFINITIONS_COORDINATES_OUTER[i].getLeft(),
-                    (Integer)SPOT_DEFINITIONS_COORDINATES_OUTER[i].getRight(),
-                    new AfricaCard(Alternative.ALTERNATIVE_THREE))
+                    (Integer)SPOT_DEFINITIONS_COORDINATES_OUTER[i].getRight(), cards.get(i)
+                    )
             );
         }
     }
 
-    public void addSpotsToListInner(){
+    /*public void addSpotsToListInner(){
         for(int i = 0; i < SPOT_DEFINITIONS_INNER.length; i++){
 
             spotsInner.add(new Spot((Continent)SPOT_DEFINITIONS_INNER[i].getLeft(),
                     (Category) SPOT_DEFINITIONS_INNER[i].getRight(),
                     (Integer) SPOT_DEFINITIONS_COORDINATES_INNER[i].getLeft(),
-                    (Integer) SPOT_DEFINITIONS_COORDINATES_INNER[i].getRight(),
-                    new AfricaCard(Alternative.ALTERNATIVE_THREE))
+                    (Integer) SPOT_DEFINITIONS_COORDINATES_INNER[i].getRight(),)
             );
         }
-    }
+    }*/
 
     //Sets the left and right spot to every spot
     public void setBoardingSpotsOuter(){
@@ -196,17 +197,27 @@ public class GameBoard {
         }
     }
 
-    public void createCardsOuter(){
-        for(int i = 0; i < SPOT_DEFINITIONS_OUTER.length; i++){
-            cardsOuter.add(new Card((Continent)SPOT_DEFINITIONS_OUTER[i].getLeft(),
-                    (Category)SPOT_DEFINITIONS_OUTER[i].getRight()));
+    public void addCardsAfrica(){
+        for(int i = 0; i < 7; i++){
+            cards.add(new AfricaCard());
         }
     }
 
-    public void createCardsInner(){
-        for(int i = 0; i < SPOT_DEFINITIONS_INNER.length; i++){
-            cardsInner.add(new Card((Continent)SPOT_DEFINITIONS_INNER[i].getLeft(),
-                    (Category) SPOT_DEFINITIONS_INNER[i].getRight()));
+    public void addCardsNorthAmerica(){
+      for(int i = 0; i<7; i++){
+          cards.add(new NorthAmericaCard());
+      }
+    }
+
+    public void addCardsSouthAmerica(){
+        for(int i = 0; i<7; i++){
+            cards.add(new SouthAmericaCard());
+        }
+    }
+
+    public void addCardsAsia(){
+        for(int i = 0; i<7; i++){
+            cards.add(new AsiaCard());
         }
     }
 
@@ -214,9 +225,9 @@ public class GameBoard {
         return spotsOuter;
     }
 
-    public ArrayList<Spot> getSpotsInner() {
+   /* public ArrayList<Spot> getSpotsInner() {
         return spotsInner;
-    }
+    }*/
 
     public ArrayList<Player> getPlayers() {
         return players;

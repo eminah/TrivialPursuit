@@ -4,8 +4,7 @@ import edu.chl.trivialpursuit.model.*;
 import edu.chl.trivialpursuit.model.ChoosePlayer;
 import edu.chl.trivialpursuit.model.Dice;
 import edu.chl.trivialpursuit.model.GameBoard;
-import edu.chl.trivialpursuit.view.AfricaCardView;
-import edu.chl.trivialpursuit.view.DiceView;
+import edu.chl.trivialpursuit.view.*;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -72,8 +71,7 @@ public class GameBoardController implements Initializable {
     @FXML
     private void moveRight(){
         movePlayer(game.getTurn(), dice.getTotalDiceValue(), "R");
-        right.setDisable(true);
-        left.setDisable(true);
+        disableTheButtonsRightLeft();
         drawBoard();
         startTimer();
     }
@@ -81,8 +79,7 @@ public class GameBoardController implements Initializable {
     @FXML
     private void moveLeft() throws IOException{
         movePlayer(game.getTurn(), dice.getTotalDiceValue(), "L");
-        right.setDisable(true);
-        left.setDisable(true);
+        disableTheButtonsRightLeft();
         drawBoard();
         startTimer();
     }
@@ -181,20 +178,19 @@ public class GameBoardController implements Initializable {
     public void startTimer() {
         int currentTurn = game.getTurn() -1;
         Player currentPlayer = game.getPlayers().get(currentTurn);
-        Category currentPlayerSpotCat = currentPlayer.getSpot().getCategory();
+        Category currentPlayerSpotCategory = currentPlayer.getSpot().getCategory();
+        Continent currrentPlayerSpotContinent = currentPlayer.getSpot().getContinent();
         setDelay = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+
             @Override
-            public void handle(ActionEvent event)  {
-                if(currentPlayerSpotCat != Category.AIRPLANE){
+            public void handle(ActionEvent event){
+                if(currentPlayerSpotCategory != Category.AIRPLANE){
                     try {
-                        final AfricaCardView cardView = AfricaCardView.create();
-                        cardView.show();
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
+                        changeToRightView(currrentPlayerSpotContinent);
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                    right.setDisable(false);
-                    left.setDisable(false);
-            }else{
+                }else{
                     /*
                      * If the player that lands on an airplane spot owns a ticket he will be congratulated
                      * and moved to europe, else there will only be a dialog that tells the player
@@ -327,5 +323,40 @@ public class GameBoardController implements Initializable {
         game.setiN(imN);
         setTheCoordinates();
         drawBoard();
+    }
+
+    private void changeToRightView(Continent continent) throws IOException{
+        if(continent == Continent.AFRICA) {
+
+            final AfricaCardView cardView = AfricaCardView.create();
+            cardView.show();
+            enableTheButtonsRightLeft();
+
+
+        } else if(continent == Continent.ASIA){
+
+            final AsiaCardView cardView = AsiaCardView.create();
+            cardView.show();
+            enableTheButtonsRightLeft();
+
+        }else if(continent == Continent.NORTH_AMERICA){
+            final NorthAmericaCardView cardView = NorthAmericaCardView.create();
+            cardView.show();
+            enableTheButtonsRightLeft();
+
+        }else{
+            final SouthAmericaCardView cardView = SouthAmericaCardView.create();
+            cardView.show();
+            enableTheButtonsRightLeft();
+        }
+    }
+
+    private void enableTheButtonsRightLeft(){
+        right.setDisable(false);
+        left.setDisable(false);
+    }
+    private void disableTheButtonsRightLeft(){
+        right.setDisable(true);
+        left.setDisable(true);
     }
 }

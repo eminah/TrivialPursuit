@@ -3,13 +3,13 @@ package edu.chl.trivialpursuit.model;
 /**
  * Created by Rasti on 2015-05-28.
  */
-public class NorthAmericaCard {
+public class NorthAmericaCard extends Card{
 
     private Alternative correctAlternative;
 
-    public NorthAmericaCard(Alternative correctAlternative){
+    public NorthAmericaCard(){
 
-        this.correctAlternative = correctAlternative;
+        correctAlternative = Alternative.ALTERNATIVE_TWO;
     }
 
     public Alternative getCorrectAlternative() {

@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
  * Created by Rasti on 2015-05-28.
  */
-public class AsiaCardView {
+public class AsiaCardView extends BaseView{
 
     private static boolean ifFirst = true;
     private static AsiaCardView asiaView;
