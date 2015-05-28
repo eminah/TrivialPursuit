@@ -21,11 +21,10 @@ import java.io.IOException;
  * Created by Rasti on 2015-05-28.
  */
 public class AsiaCardController {
+    @Inject GameBoard game;
 
-    @FXML
-    Button altOne,altTwo,altThree,altFour;
-    @Inject
-    GameBoard game;
+    @FXML Button altOne,altTwo,altThree,altFour;
+
     private Timeline changeViewDelay;
     private Timeline disableButtonDelay;
     private Button theButtonPressed;
@@ -43,7 +42,7 @@ public class AsiaCardController {
             theButtonPressed.setStyle("-fx-background-color: lawngreen");
             ImageView theContinentToChange = game.getiAf().get(currentPlayerTurnIndex);
             theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/asia_gold.png"));
-            currentPlayer.getCollectedContinents().add(Continent.AFRICA);
+            currentPlayer.getCollectedContinents().add(Continent.ASIA);
             startTimer();
         }else{
             theButtonPressed.setStyle("-fx-background-color: red");
