@@ -8,14 +8,17 @@ public class NorthAmericaCard {
     private Alternative correctAlternative;
 
     public NorthAmericaCard(Alternative correctAlternative){
+
         this.correctAlternative = correctAlternative;
     }
 
     public Alternative getCorrectAlternative() {
+
         return correctAlternative;
     }
 
     public void setCorrectAlternative(Alternative correctAlternative) {
+
         this.correctAlternative = correctAlternative;
     }
 
