@@ -65,8 +65,6 @@ public class AfricaCardController {
         }else{
             return Alternative.ALTERNATIVE_FOUR;
         }
-
-
     }
 
     public void startTimer() {
@@ -112,18 +110,4 @@ public class AfricaCardController {
         altThree.setDisable(true);
         altFour.setDisable(true);
     }
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
