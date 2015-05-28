@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.trivialpursuit.controller.AfricaController">
+    <children>
+        <Label fx:id="question" alignment="TOP_LEFT" prefHeight="268.0" prefWidth="600.0" text="The Question&#10;&#10;&#10;&#10;">
+            <font>
+                <Font size="17.0" />
+            </font>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </Label>
+        <HBox prefHeight="130.0" prefWidth="600.0">
+            <children>
+                <Button fx:id="alt1" mnemonicParsing="false" onAction="#altOnePressed" prefHeight="130.0" prefWidth="300.0" text="ALTERNATIVE 1" />
+                <Button fx:id="alt2" mnemonicParsing="false" onAction="#altTwoPressed" prefHeight="130.0" prefWidth="300.0" text="ALTERNATIVE 2" />
+            </children>
+        </HBox>
+        <HBox prefHeight="130.0" prefWidth="600.0">
+            <children>
+                <Button fx:id="alt3" mnemonicParsing="false" onAction="#altThreePressed" prefHeight="130.0" prefWidth="300.0" text="ALTERNATIVE 3" />
+                <Button fx:id="alt4" mnemonicParsing="false" onAction="#altFourPressed" prefHeight="130.0" prefWidth="300.0" text="ALTERNATIVE 4" />
+            </children>
+        </HBox>
+    </children>
+</VBox>
