@@ -33,12 +33,13 @@ public class AfricaCardController {
     public void onButtonPressed(ActionEvent e) {
         theButtonPressed = (Button) e.getSource();
         currentPlayerTurnIndex = game.getTurn()-1;
+        currentPlayer = game.getPlayers().get(currentPlayerTurnIndex);
 
 
         if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))){
            theButtonPressed.setStyle("-fx-background-color: lawngreen");
             ImageView theContinentToChange = game.getiAf().get(currentPlayerTurnIndex);
-            currentPlayer.getCollectedContinents().add(Continent.ASIA);
+            currentPlayer.getCollectedContinents().add(Continent.AFRICA);
             theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/africa_gold.png"));
             startTimer();
         }else{
