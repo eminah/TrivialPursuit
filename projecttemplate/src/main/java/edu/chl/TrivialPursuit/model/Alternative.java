@@ -8,5 +8,8 @@ package edu.chl.trivialpursuit.model;
  * This class is made to handle Alternatives
  */
 public enum Alternative {
-    ALTERNATIVE1,ALTERNATIVE2,ALTERNATIVE3,ALTERNATIVE4
+    ALTERNATIVE_ONE,
+    ALTERNATIVE_TWO,
+    ALTERNATIVE_THREE,
+    ALTERNATIVE_FOUR
 }

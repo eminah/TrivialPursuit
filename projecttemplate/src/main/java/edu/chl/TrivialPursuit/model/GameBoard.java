@@ -137,7 +137,7 @@ public class GameBoard {
                     (Category) SPOT_DEFINITIONS_OUTER[i].getRight(),
                     (Integer) SPOT_DEFINITIONS_COORDINATES_OUTER[i].getLeft(),
                     (Integer)SPOT_DEFINITIONS_COORDINATES_OUTER[i].getRight(),
-                    cardsOuter.get(i))
+                    new AfricaCard(Alternative.ALTERNATIVE_THREE))
             );
         }
     }
@@ -149,7 +149,7 @@ public class GameBoard {
                     (Category) SPOT_DEFINITIONS_INNER[i].getRight(),
                     (Integer) SPOT_DEFINITIONS_COORDINATES_INNER[i].getLeft(),
                     (Integer) SPOT_DEFINITIONS_COORDINATES_INNER[i].getRight(),
-                    cardsInner.get(i))
+                    new AfricaCard(Alternative.ALTERNATIVE_THREE))
             );
         }
     }

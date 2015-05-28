@@ -44,7 +44,7 @@ public class CardController implements Initializable{
 
     @FXML
     public void altOnePressed(ActionEvent e) {
-        checkAnswer(1,Alternative.ALTERNATIVE1);
+        checkAnswer(1,Alternative.ALTERNATIVE_ONE);
         disableAllAlts(1);
         startTimer();
     }
@@ -52,21 +52,21 @@ public class CardController implements Initializable{
     @FXML
     public void altTwoPressed(ActionEvent e) {
 
-        checkAnswer(2, Alternative.ALTERNATIVE2);
+        checkAnswer(2, Alternative.ALTERNATIVE_TWO);
         disableAllAlts(2);
         startTimer();
     }
 
     @FXML
     public void altThreePressed(ActionEvent e) {
-        checkAnswer(3, Alternative.ALTERNATIVE3);
+        checkAnswer(3, Alternative.ALTERNATIVE_THREE);
         disableAllAlts(3);
         startTimer();
     }
 
     @FXML
     public void altFourPressed(ActionEvent e) {
-        checkAnswer(4, Alternative.ALTERNATIVE4);
+        checkAnswer(4, Alternative.ALTERNATIVE_FOUR);
         disableAllAlts(4);
         startTimer();
     }
@@ -137,7 +137,7 @@ public class CardController implements Initializable{
     private void setCard(Continent continent){
 
         if( continent == Continent.ASIA){
-            correctAlt = Alternative.ALTERNATIVE2;
+            correctAlt = Alternative.ALTERNATIVE_TWO;
             question.setText("This is an Asia Question, please press on Asia:");
             alt1.setText("Africa");
             alt2.setText("Asia");
@@ -145,7 +145,7 @@ public class CardController implements Initializable{
             alt4.setText("South Ametica");
 
         }else if( continent == Continent.AFRICA){
-            correctAlt = Alternative.ALTERNATIVE1;
+            correctAlt = Alternative.ALTERNATIVE_ONE;
             question.setText("This is an Africa Question, please press on Africa:");
             alt1.setText("Africa");
             alt2.setText("Asia");
@@ -153,14 +153,14 @@ public class CardController implements Initializable{
             alt4.setText("South Ametica");
 
         }else if(continent == Continent.NORTH_AMERICA){
-            correctAlt = Alternative.ALTERNATIVE3;
+            correctAlt = Alternative.ALTERNATIVE_THREE;
             question.setText("This is an North America Question, please press on North America:");
             alt1.setText("Africa");
             alt2.setText("Asia");
             alt3.setText("North America");
             alt4.setText("South Ametica");
         }else{
-            correctAlt = Alternative.ALTERNATIVE4;
+            correctAlt = Alternative.ALTERNATIVE_FOUR;
             question.setText("This is an South America Question, please press on South America:");
             alt1.setText("Africa");
             alt2.setText("Asia");
@@ -174,8 +174,8 @@ public class CardController implements Initializable{
 
         if( answer.equals(correctAlt)){
             Player currentPlayer = game.getPlayers().get(game.getTurn()-1);
-            Continent currentContinent = game.getPlayers().get(game.getTurn()-1).getSpot().getCard().getContinent();
-            currentPlayer.getCollectedContinents().add(currentContinent);
+            //Continent currentContinent = game.getPlayers().get(game.getTurn()-1).getSpot().getCard().getContinent();
+           // currentPlayer.getCollectedContinents().add(currentContinent);
             changePic(currentPlayer);
 
             switch(theAlt){
@@ -379,7 +379,7 @@ public class CardController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        setCard(game.getPlayers().get(game.getTurn() - 1).getSpot().getCard().getContinent());
+        //setCard(game.getPlayers().get(game.getTurn() - 1).getSpot().getCard().getContinent());
 
         getTurn = new boolean[chooseP.getNumberOfPlayers()];
 

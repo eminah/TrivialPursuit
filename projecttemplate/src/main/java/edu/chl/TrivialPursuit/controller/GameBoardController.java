@@ -4,7 +4,7 @@ import edu.chl.trivialpursuit.model.*;
 import edu.chl.trivialpursuit.model.ChoosePlayer;
 import edu.chl.trivialpursuit.model.Dice;
 import edu.chl.trivialpursuit.model.GameBoard;
-import edu.chl.trivialpursuit.view.CardView;
+import edu.chl.trivialpursuit.view.AfricaCardView;
 import edu.chl.trivialpursuit.view.DiceView;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -269,7 +269,7 @@ public class GameBoardController implements Initializable {
             public void handle(ActionEvent event)  {
                 if(currentPlayerSpotCat != Category.AIRPLANE){
                     try {
-                        final CardView cardView = CardView.create();
+                        final AfricaCardView cardView = AfricaCardView.create();
                         cardView.show();
                     } catch (IOException ex) {
                         ex.printStackTrace();

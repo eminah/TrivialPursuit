@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.trivialpursuit.controller.AfricaCardController">
+    <children>
+        <Label fx:id="question" alignment="TOP_LEFT" prefHeight="268.0" prefWidth="600.0" text="&#10;This is an africa question,&#10;the correct alternative is Africa!&#10;&#10;&#10;&#10;">
+            <font>
+                <Font size="29.0" />
+            </font>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </Label>
+        <HBox prefHeight="130.0" prefWidth="600.0">
+            <children>
+                <Button fx:id="altOne" mnemonicParsing="false" onAction="#onButtonPressed" prefHeight="130.0" prefWidth="300.0" text="South America" />
+                <Button fx:id="altTwo" mnemonicParsing="false" onAction="#onButtonPressed" prefHeight="130.0" prefWidth="300.0" text="North America" />
+            </children>
+        </HBox>
+        <HBox prefHeight="130.0" prefWidth="600.0">
+            <children>
+                <Button fx:id="altThree" mnemonicParsing="false" onAction="#onButtonPressed" prefHeight="130.0" prefWidth="300.0" text="Africa" />
+                <Button fx:id="altFour" mnemonicParsing="false" onAction="#onButtonPressed" prefHeight="130.0" prefWidth="300.0" text="Asia" />
+            </children>
+        </HBox>
+    </children>
+</VBox>
