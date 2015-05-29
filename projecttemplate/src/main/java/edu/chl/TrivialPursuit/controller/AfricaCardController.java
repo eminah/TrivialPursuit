@@ -41,6 +41,10 @@ public class AfricaCardController {
             ImageView theContinentToChange = game.getiAf().get(currentPlayerTurnIndex);
             currentPlayer.getCollectedContinents().add(Continent.AFRICA);
             theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/africa_gold.png"));
+
+            if(currentPlayer.getCollectedContinents().size() == 4) {
+                currentPlayer.setHasTicket(true);
+            }
             startTimer();
         }else{
             theButtonPressed.setStyle("-fx-background-color: red");

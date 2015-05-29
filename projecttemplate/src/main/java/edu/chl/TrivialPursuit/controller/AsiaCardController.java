@@ -43,8 +43,12 @@ public class AsiaCardController {
             ImageView theContinentToChange = game.getiAs().get(currentPlayerTurnIndex);
             theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/asia_gold.png"));
             currentPlayer.getCollectedContinents().add(Continent.ASIA);
+
+            if(currentPlayer.getCollectedContinents().size() == 4) {
+                currentPlayer.setHasTicket(true);
+            }
             startTimer();
-        }else{
+        } else {
             theButtonPressed.setStyle("-fx-background-color: red");
             game.setNextTurn(game.getAmountOfPlayersPlaying());
             startTimer();

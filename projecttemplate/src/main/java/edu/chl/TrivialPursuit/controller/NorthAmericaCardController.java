@@ -46,8 +46,11 @@ public class NorthAmericaCardController {
             theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/northAm_gold.png"));
             currentPlayer.getCollectedContinents().add(Continent.NORTH_AMERICA);
 
+            if(currentPlayer.getCollectedContinents().size() == 4) {
+                currentPlayer.setHasTicket(true);
+            }
             startTimer();
-        }else{
+        } else {
             theButtonPressed.setStyle("-fx-background-color: red");
             game.setNextTurn(game.getAmountOfPlayersPlaying());
             startTimer();

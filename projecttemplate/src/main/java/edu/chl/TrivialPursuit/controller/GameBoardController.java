@@ -1,10 +1,7 @@
 package edu.chl.trivialpursuit.controller;
 
 import edu.chl.trivialpursuit.model.*;
-import edu.chl.trivialpursuit.view.AfricaCardView;
-import edu.chl.trivialpursuit.view.AsiaCardView;
-import edu.chl.trivialpursuit.view.NorthAmericaCardView;
-import edu.chl.trivialpursuit.view.SouthAmericaCardView;
+import edu.chl.trivialpursuit.view.*;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -30,7 +27,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.ResourceBundle;
 
-//import javafx.scene.control.Dialog;
 
 /**
  * Created by Rasti on 2015-05-14..
@@ -192,15 +188,31 @@ public class GameBoardController implements Initializable {
 
     private void generateTicketDialog(boolean isOnAirplaneSpot){
 
+        int startPlaceEurope = 0;
+        int currentTurn = game.getTurn() -1;
+        Player currentPlayer = game.getPlayers().get(currentTurn);
+
         if(isOnAirplaneSpot){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Information Dialog");
-            alert.setHeaderText("Look, an Information Dialog");
-            alert.setContentText("I have a great message for you!");
+            if(currentPlayer.getHasTicket()) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Congratulations!");
+                alert.setHeaderText("You have now collected enough evidence for travelling around the world.");
+                alert.setContentText("You will now fly back to Europe!");
+                alert.showAndWait();
 
-            alert.showAndWait();
+                enableTheButtonsRightLeft();
 
-            enableTheButtonsRightLeft();
+                currentPlayer.setSpot(game.getSpotsInner().get(startPlaceEurope));
+                setCoordinates(currentTurn+1);
+                drawBoard();
+                game.setNextTurn(game.getAmountOfPlayersPlaying());
+                try {
+                    DiceView dv = DiceView.create();
+                    dv.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 

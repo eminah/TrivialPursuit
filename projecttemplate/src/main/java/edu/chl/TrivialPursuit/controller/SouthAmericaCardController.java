@@ -43,8 +43,12 @@ public class SouthAmericaCardController {
             ImageView theContinentToChange = game.getiS().get(currentPlayerTurnIndex);
             theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/southAm_gold.png"));
             currentPlayer.getCollectedContinents().add(Continent.SOUTH_AMERICA);
+
+            if(currentPlayer.getCollectedContinents().size() == 4) {
+                currentPlayer.setHasTicket(true);
+            }
             startTimer();
-        }else{
+        } else {
             theButtonPressed.setStyle("-fx-background-color: red");
             game.setNextTurn(game.getAmountOfPlayersPlaying());
             startTimer();

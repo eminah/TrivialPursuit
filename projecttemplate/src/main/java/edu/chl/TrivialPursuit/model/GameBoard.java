@@ -108,9 +108,9 @@ public class GameBoard {
         return spotsOuter;
     }
 
-   /* public ArrayList<Spot> getSpotsInner() {
+    public ArrayList<Spot> getSpotsInner() {
         return spotsInner;
-    }*/
+    }
 
     private final ImmutablePair[] SPOT_DEFINITIONS_OUTER = {
            new ImmutablePair<Continent, Category>(Continent.ASIA, Category.AIRPLANE),
