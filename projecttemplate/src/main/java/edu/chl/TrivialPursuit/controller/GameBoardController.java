@@ -256,37 +256,6 @@ public class GameBoardController implements Initializable {
         playerTurnArray.add(playerFiveTurn);
         playerTurnArray.add(playerSixTurn);
     }
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        players = new ArrayList<>();
-        setLabelTurn = new ArrayList<>();
-        playerTurnArray = new ArrayList<>();
-        addLabelTurnsToArray();
-        imAs = new ArrayList<>();
-        imAf = new ArrayList<>();
-        imS = new ArrayList<>();
-        imN = new ArrayList<>();
-        playersNameLabels = new Label[6];
-        createPlayers();
-        addPlayerNameLabelsToArray();
-        game.setPlayers(players);
-        setNames();
-        addLabelTurns();
-        game.setLabelTurns(setLabelTurn);
-        game.setTurn(1);
-        game.getLabelTurns().get(0).setText("<-- " + +dice.getTotalDiceValue() + " steps!");
-        game.getLabelTurns().get(0).setFont(arrow);
-        addAs();
-        addAf();
-        addS();
-        addN();
-        game.setiAs(imAs);
-        game.setiAf(imAf);
-        game.setiS(imS);
-        game.setiN(imN);
-        setTheCoordinates();
-        drawBoard();
-    }
 
     private void changeToRightView(Continent continent) throws IOException{
         if(continent == Continent.AFRICA) {
@@ -321,5 +290,37 @@ public class GameBoardController implements Initializable {
     private void disableTheButtonsRightLeft(){
         right.setDisable(true);
         left.setDisable(true);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        players = new ArrayList<>();
+        setLabelTurn = new ArrayList<>();
+        playerTurnArray = new ArrayList<>();
+        addLabelTurnsToArray();
+        imAs = new ArrayList<>();
+        imAf = new ArrayList<>();
+        imS = new ArrayList<>();
+        imN = new ArrayList<>();
+        playersNameLabels = new Label[6];
+        createPlayers();
+        addPlayerNameLabelsToArray();
+        game.setPlayers(players);
+        setNames();
+        addLabelTurns();
+        game.setLabelTurns(setLabelTurn);
+        game.setTurn(1);
+        game.getLabelTurns().get(0).setText("<-- " + +dice.getTotalDiceValue() + " steps!");
+        game.getLabelTurns().get(0).setFont(arrow);
+        addAs();
+        addAf();
+        addS();
+        addN();
+        game.setiAs(imAs);
+        game.setiAf(imAf);
+        game.setiS(imS);
+        game.setiN(imN);
+        setTheCoordinates();
+        drawBoard();
     }
 }

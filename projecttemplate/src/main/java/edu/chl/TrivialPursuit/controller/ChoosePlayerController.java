@@ -52,7 +52,6 @@ public class ChoosePlayerController implements Initializable {
     @FXML
     private void comboAction(ActionEvent e){
 
-        //Set value of an ints that specifies the amount of players
         choosePlayer.setNumberOfPlayers(numberChosen = Integer.parseInt(numPlayers.getValue()));
         numberChosen = Integer.parseInt(numPlayers.getValue());
 
