@@ -273,9 +273,9 @@
                   <HBox prefHeight="68.0" prefWidth="532.0" spacing="80.0">
       
                      <children>
-                        <Button fx:id="left" mnemonicParsing="false" onAction="#moveLeft" text="Go Left" />
+                        <Button fx:id="left" mnemonicParsing="false" onAction="#move" text="Go Left" />
                         <Region prefHeight="78.0" prefWidth="29.0" />
-                        <Button fx:id="right" mnemonicParsing="false" onAction="#moveRight" prefHeight="40.0" prefWidth="121.0" text="Go Right" />
+                        <Button fx:id="right" mnemonicParsing="false" onAction="#move" prefHeight="40.0" prefWidth="121.0" text="Go Right" />
                      </children>
                      <padding>
                         <Insets left="60.0" right="60.0" top="10.0" />

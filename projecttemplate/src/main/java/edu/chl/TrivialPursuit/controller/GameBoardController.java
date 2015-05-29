@@ -69,24 +69,23 @@ public class GameBoardController implements Initializable {
     @FXML ImageView as1,as2,as3,as4,as5,as6,af1,af2,af3,af4,af5,af6,s1,s2,s3,s4,s5,s6,n1,n2,n3,n4,n5,n6;
 
     @FXML
-    private void moveRight(){
-        movePlayer(game.getTurn(), dice.getTotalDiceValue(), "R");
+    private void move(ActionEvent e){
+        Button buttonPressed = (Button)e.getSource();
+        if(buttonPressed == right) {
+            movePlayer(game.getTurn(), dice.getTotalDiceValue(),"Right" );
+        }else{
+            movePlayer(game.getTurn(), dice.getTotalDiceValue(),"Left" );
+        }
         disableTheButtonsRightLeft();
         drawBoard();
         startTimer();
     }
 
-    @FXML
-    private void moveLeft() throws IOException{
-        movePlayer(game.getTurn(), dice.getTotalDiceValue(), "L");
-        disableTheButtonsRightLeft();
-        drawBoard();
-        startTimer();
-    }
+
 
     private void movePlayer(int player, int diceValue, String direction) {
         int correctPlayer = player - 1;
-        if (direction.equals("L")) {
+        if (direction.equals("Left")) {
             players.get(correctPlayer).goLeft(diceValue);
         }else {
             players.get(correctPlayer).goRight(diceValue);
@@ -190,52 +189,16 @@ public class GameBoardController implements Initializable {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                }else{
+                }
                     /*
                      * If the player that lands on an airplane spot owns a ticket he will be congratulated
                      * and moved to europe, else there will only be a dialog that tells the player
                      * that he needs to collect more cotinents and the turn will be switched
                      */
 
-                    if(currentPlayer.getHasTicket()) {
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("CONGRATULATIONS!");
-                        alert.setHeaderText("I can see that you own a ticket wich means that you have enough\n" +
-                                "evidence that you have been around the world!");
-                        alert.setContentText("Have a nice trip back to europe!");
-                        alert.showAndWait();
-                        right.setDisable(false);
-                        left.setDisable(false);
-                       
-                        drawBoard();
-                    }else{
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("To Bad!");
-                        alert.setHeaderText("You have no ticket, wich means that you need to collect more continents!");
-                        alert.setContentText("Come back when you have enough evidence that you have been arround the world, \n" +
-                                " to get a ticket back to Europe");
-                        alert.showAndWait();
 
-                        right.setDisable(false);
-                        left.setDisable(false);
-
-                        if(game.getTurn() == chooseP.getNumberOfPlayers()){
-                            game.setTurn(1);
-                        }else{
-                            game.setTurn(game.getTurn() + 1);
-
-                            try {
-                                DiceView dice = DiceView.create();
-                                dice.show();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-
-                        }
-
-                    }
                 }
-            }
+
         }));
         setDelay.play();
     }
