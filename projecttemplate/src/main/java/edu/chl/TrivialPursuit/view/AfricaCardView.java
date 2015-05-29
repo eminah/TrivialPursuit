@@ -21,7 +21,7 @@ public class AfricaCardView extends BaseView {
             africaView = new AfricaCardView();
         }
 
-        Injector.injectMembers(CardView.class, africaView);
+        Injector.injectMembers(StartView.class, africaView);
         return africaView;
     }
 }

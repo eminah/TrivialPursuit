@@ -21,7 +21,7 @@ public class NorthAmericaCardView extends BaseView {
             northAmericaCardView = new NorthAmericaCardView();
         }
 
-        Injector.injectMembers(CardView.class, northAmericaCardView);
+        Injector.injectMembers(StartView.class, northAmericaCardView);
         return northAmericaCardView;
     }
 }

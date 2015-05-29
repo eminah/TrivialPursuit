@@ -32,7 +32,7 @@ public class AsiaCardController {
     private Player currentPlayer;
 
     @FXML
-    public void onButtonPressed(ActionEvent e) {
+    private void onButtonPressed(ActionEvent e) {
         theButtonPressed = (Button) e.getSource();
         currentPlayerTurnIndex = game.getTurn()-1;
         currentPlayer = game.getPlayers().get(game.getTurn()-1);

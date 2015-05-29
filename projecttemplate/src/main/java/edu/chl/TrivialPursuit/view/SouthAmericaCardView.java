@@ -1,7 +1,6 @@
 package edu.chl.trivialpursuit.view;
 
 import com.airhacks.afterburner.injection.Injector;
-import edu.chl.trivialpursuit.model.SouthAmericaCard;
 
 import java.io.IOException;
 
@@ -22,7 +21,7 @@ public class SouthAmericaCardView extends BaseView {
             southAmericaCardView = new SouthAmericaCardView();
         }
 
-        Injector.injectMembers(CardView.class, southAmericaCardView);
+        Injector.injectMembers(StartView.class, southAmericaCardView);
         return southAmericaCardView;
     }
 }

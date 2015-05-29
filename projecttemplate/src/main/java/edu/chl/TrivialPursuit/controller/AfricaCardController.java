@@ -30,7 +30,7 @@ public class AfricaCardController {
 
 
     @FXML
-    public void onButtonPressed(ActionEvent e) {
+    private void onButtonPressed(ActionEvent e) {
         theButtonPressed = (Button) e.getSource();
         currentPlayerTurnIndex = game.getTurn()-1;
         currentPlayer = game.getPlayers().get(currentPlayerTurnIndex);
