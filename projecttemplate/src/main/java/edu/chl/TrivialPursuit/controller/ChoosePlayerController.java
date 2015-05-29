@@ -106,7 +106,7 @@ public class ChoosePlayerController implements Initializable {
 
     /**
      *
-     * @return The list containing all the choosen names.
+     * @return The list containing all the chosen names.
      */
     public ArrayList<String> getPlayerNames() {
         return playerNames;

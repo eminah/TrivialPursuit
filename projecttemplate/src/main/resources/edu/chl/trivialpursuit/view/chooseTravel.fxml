@@ -10,184 +10,184 @@
 
 <BorderPane stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="edu.chl.trivialpursuit.controller.ChooseTravelController">
-   <top>
-      <StackPane BorderPane.alignment="CENTER">
-         <children>
-            <Label prefHeight="56.0" prefWidth="491.0" text="Where do you want the travel to begin?" textFill="#1306d0">
-               <font>
-                  <Font name="Apple Chancery" size="28.0" />
-               </font>
-               <effect>
-                  <InnerShadow color="#0eae02" height="10.75" radius="2.3125" width="0.5" />
-               </effect>
-            </Label>
-         </children>
-      </StackPane>
-   </top>
-   <center>
-      <VBox spacing="7.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label fx:id="playerOneName" stylesheets="@label.css" text="Player 1">
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <HBox prefWidth="200.0" spacing="5.0">
-               <children>
-                   <ComboBox fx:id="c1" onAction="#firstChoice" promptText="Choose Continent">
-                       <items>
-                           <FXCollections fx:factory="observableArrayList">
-                               <String fx:value="Asia" />
-                               <String fx:value="Africa" />
-                               <String fx:value="South America" />
-                               <String fx:value="North America" />
-                           </FXCollections>
-                       </items>
-                   </ComboBox>
-                  <Label fx:id="mustChooseOne" />
-               </children>
-            </HBox>
+    <top>
+        <StackPane BorderPane.alignment="CENTER">
+            <children>
+                <Label prefHeight="56.0" prefWidth="491.0" text="Where do you want the travel to begin?" textFill="#1306d0">
+                    <font>
+                        <Font name="Apple Chancery" size="28.0" />
+                    </font>
+                    <effect>
+                        <InnerShadow color="#0eae02" height="10.75" radius="2.3125" width="0.5" />
+                    </effect>
+                </Label>
+            </children>
+        </StackPane>
+    </top>
+    <center>
+        <VBox spacing="7.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="playerOneName" stylesheets="@label.css" text="Player 1">
+                    <padding>
+                        <Insets left="5.0" />
+                    </padding>
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <HBox prefWidth="200.0" spacing="5.0">
+                    <children>
+                        <ComboBox fx:id="choose1" onAction="#choice" promptText="Choose Continent">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Asia" />
+                                    <String fx:value="Africa" />
+                                    <String fx:value="South America" />
+                                    <String fx:value="North America" />
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                        <Label fx:id="mustChooseOne" />
+                    </children>
+                </HBox>
 
-             <Label fx:id="playerTwoName" layoutX="10.0" layoutY="10.0" stylesheets="@label.css" text="Player 2">
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </Label>
-            <HBox prefWidth="200.0" spacing="5.0">
-               <children>
-                  <ComboBox fx:id="c2" onAction="#secondChoice" promptText="Choose Continent">
-                      <items>
-                          <FXCollections fx:factory="observableArrayList">
-                              <String fx:value="Asia" />
-                              <String fx:value="Africa" />
-                              <String fx:value="South America" />
-                              <String fx:value="North America" />
-                          </FXCollections>
-                      </items>
-                  </ComboBox>
-                  <Label fx:id="mustChooseSec" />
-               </children>
-            </HBox>
-            <Label fx:id="playerThreeName" layoutX="10.0" layoutY="74.0" stylesheets="@label.css" text="Player 3">
-               <font>
-                  <Font name="Apple Chancery" size="14.0" />
-               </font>
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </Label>
-            <HBox prefWidth="200.0" spacing="5.0">
-               <children>
-                   <ComboBox fx:id="c3" onAction="#thirdChoice" promptText="Choose Continent">
-                       <items>
-                           <FXCollections fx:factory="observableArrayList">
-                               <String fx:value="Asia" />
-                               <String fx:value="Africa" />
-                               <String fx:value="South America" />
-                               <String fx:value="North America" />
-                           </FXCollections>
-                       </items>
-                   </ComboBox>
-                  <Label fx:id="mustChooseThird" />
-               </children>
-            </HBox>
-            <Label fx:id="playerFourName" layoutX="10.0" layoutY="138.0" stylesheets="@label.css" text="Player 4">
-               <font>
-                  <Font name="Apple Chancery" size="14.0" />
-               </font>
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </Label>
-            <HBox prefWidth="200.0" spacing="5.0">
-               <children>
-                   <ComboBox fx:id="c4" onAction="#fourthChoice" promptText="Choose Continent">
-                       <items>
-                           <FXCollections fx:factory="observableArrayList">
-                               <String fx:value="Asia" />
-                               <String fx:value="Africa" />
-                               <String fx:value="South America" />
-                               <String fx:value="North America" />
-                           </FXCollections>
-                       </items>
-                   </ComboBox>
-                  <Label fx:id="mustChooseFourth" />
-               </children>
-            </HBox>
-            <Label fx:id="playerFiveName" layoutX="10.0" layoutY="202.0" stylesheets="@label.css" text="Player 5">
-               <font>
-                  <Font name="Apple Chancery" size="14.0" />
-               </font>
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </Label>
-            <HBox prefWidth="200.0" spacing="5.0">
-               <children>
-                   <ComboBox fx:id="c5" onAction="#fifthChoice" promptText="Choose Continent">
-                       <items>
-                           <FXCollections fx:factory="observableArrayList">
-                               <String fx:value="Asia" />
-                               <String fx:value="Africa" />
-                               <String fx:value="South America" />
-                               <String fx:value="North America" />
-                           </FXCollections>
-                       </items>
-                   </ComboBox>
-                  <Label fx:id="mustChooseFifth"/>
-               </children>
-            </HBox>
-            <Label fx:id="playerSixName" layoutX="10.0" layoutY="266.0" stylesheets="@label.css" text="Player 6">
-               <font>
-                  <Font name="Apple Chancery" size="14.0" />
-               </font>
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </Label>
-            <HBox prefWidth="200.0" spacing="5.0">
-               <children>
-                   <ComboBox fx:id="c6" onAction="#sixthChoice" promptText="Choose Continent">
-                       <items>
-                           <FXCollections fx:factory="observableArrayList">
-                               <String fx:value="Asia" />
-                               <String fx:value="Africa" />
-                               <String fx:value="South America" />
-                               <String fx:value="North America" />
-                           </FXCollections>
-                       </items>
-                   </ComboBox>
-                  <Label fx:id="mustChooseSixth"/>
-               </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
-         </children>
-         <padding>
-            <Insets left="20.0" />
-         </padding>
-      </VBox>
-   </center>
-   <bottom>
-      <HBox prefHeight="80.0" prefWidth="605.0" spacing="180.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button mnemonicParsing="false" onAction="#onBackPressed" text="Back" />
+                <Label fx:id="playerTwoName" layoutX="10.0" layoutY="10.0" stylesheets="@label.css" text="Player 2">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="5.0" />
+                    </padding>
+                </Label>
+                <HBox prefWidth="200.0" spacing="5.0">
+                    <children>
+                        <ComboBox fx:id="choose2" onAction="#choice" promptText="Choose Continent">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Asia" />
+                                    <String fx:value="Africa" />
+                                    <String fx:value="South America" />
+                                    <String fx:value="North America" />
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                        <Label fx:id="mustChooseSec" />
+                    </children>
+                </HBox>
+                <Label fx:id="playerThreeName" layoutX="10.0" layoutY="74.0" stylesheets="@label.css" text="Player 3">
+                    <font>
+                        <Font name="Apple Chancery" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="5.0" />
+                    </padding>
+                </Label>
+                <HBox prefWidth="200.0" spacing="5.0">
+                    <children>
+                        <ComboBox fx:id="choose3" onAction="#choice" promptText="Choose Continent">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Asia" />
+                                    <String fx:value="Africa" />
+                                    <String fx:value="South America" />
+                                    <String fx:value="North America" />
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                        <Label fx:id="mustChooseThird" />
+                    </children>
+                </HBox>
+                <Label fx:id="playerFourName" layoutX="10.0" layoutY="138.0" stylesheets="@label.css" text="Player 4">
+                    <font>
+                        <Font name="Apple Chancery" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="5.0" />
+                    </padding>
+                </Label>
+                <HBox prefWidth="200.0" spacing="5.0">
+                    <children>
+                        <ComboBox fx:id="choose4" onAction="#choice" promptText="Choose Continent">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Asia" />
+                                    <String fx:value="Africa" />
+                                    <String fx:value="South America" />
+                                    <String fx:value="North America" />
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                        <Label fx:id="mustChooseFourth" />
+                    </children>
+                </HBox>
+                <Label fx:id="playerFiveName" layoutX="10.0" layoutY="202.0" stylesheets="@label.css" text="Player 5">
+                    <font>
+                        <Font name="Apple Chancery" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="5.0" />
+                    </padding>
+                </Label>
+                <HBox prefWidth="200.0" spacing="5.0">
+                    <children>
+                        <ComboBox fx:id="choose5" onAction="#choice" promptText="Choose Continent">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Asia" />
+                                    <String fx:value="Africa" />
+                                    <String fx:value="South America" />
+                                    <String fx:value="North America" />
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                        <Label fx:id="mustChooseFifth"/>
+                    </children>
+                </HBox>
+                <Label fx:id="playerSixName" layoutX="10.0" layoutY="266.0" stylesheets="@label.css" text="Player 6">
+                    <font>
+                        <Font name="Apple Chancery" size="14.0" />
+                    </font>
+                    <padding>
+                        <Insets left="5.0" />
+                    </padding>
+                </Label>
+                <HBox prefWidth="200.0" spacing="5.0">
+                    <children>
+                        <ComboBox fx:id="choose6" onAction="#choice" promptText="Choose Continent">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Asia" />
+                                    <String fx:value="Africa" />
+                                    <String fx:value="South America" />
+                                    <String fx:value="North America" />
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                        <Label fx:id="mustChooseSixth"/>
+                    </children>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </HBox>
+            </children>
+            <padding>
+                <Insets left="20.0" />
+            </padding>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox prefHeight="80.0" prefWidth="605.0" spacing="180.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button mnemonicParsing="false" onAction="#onBackPressed" text="Back" />
 
-            <Button disable="true" mnemonicParsing="false" onAction="#onDonePressed" text="Done" fx:id="buttonDone"/>
-         </children>
-         <padding>
-            <Insets left="70.0" right="70.0" top="21.0" />
-         </padding>
-         <opaqueInsets>
-            <Insets top="10.0" />
-         </opaqueInsets>
-      </HBox>
-   </bottom>
+                <Button disable="true" mnemonicParsing="false" onAction="#onDonePressed" text="Done" fx:id="buttonDone"/>
+            </children>
+            <padding>
+                <Insets left="70.0" right="70.0" top="21.0" />
+            </padding>
+            <opaqueInsets>
+                <Insets top="10.0" />
+            </opaqueInsets>
+        </HBox>
+    </bottom>
 </BorderPane>

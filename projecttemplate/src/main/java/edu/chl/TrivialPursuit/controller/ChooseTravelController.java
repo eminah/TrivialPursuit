@@ -1,10 +1,8 @@
 package edu.chl.trivialpursuit.controller;
 
-import edu.chl.trivialpursuit.model.ChoosePlayer;
-import edu.chl.trivialpursuit.model.ChooseTravel;
+import edu.chl.trivialpursuit.model.*;
 import edu.chl.trivialpursuit.view.ChoosePlayerView;
 import edu.chl.trivialpursuit.view.DiceView;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,7 +11,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-
 import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;
@@ -29,7 +26,7 @@ public class ChooseTravelController implements Initializable {
 
     @Inject ChooseTravel chooseTravel;
 
-    private ArrayList<ComboBox> theBox;
+    private ArrayList<ComboBox> comboBoxArray;
     private ArrayList<String> travelChoices;
     private Font star = new Font("Verdana",18);
 
@@ -37,12 +34,11 @@ public class ChooseTravelController implements Initializable {
 
     @FXML Label mustChooseOne,mustChooseSec,mustChooseThird,mustChooseFourth,mustChooseFifth,mustChooseSixth;
 
-    @FXML ComboBox<String> c1,c2,c3,c4,c5,c6;
+    @FXML ComboBox<String> choose1,choose2,choose3,choose4,choose5,choose6;
 
     @FXML Button buttonDone;
 
     @FXML
-    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     private void onBackPressed(ActionEvent e) throws IOException{
 
         final ChoosePlayerView chooseView = ChoosePlayerView.create();
@@ -59,56 +55,13 @@ public class ChooseTravelController implements Initializable {
     }
 
     @FXML
-    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
-    private void firstChoice(){
-        setStartPlace(c1, 1);
-    }
-
-    @FXML
-    private void secondChoice(){
-        setStartPlace(c2, 2);
-    }
-
-    @FXML
-    private void thirdChoice(){
-        setStartPlace(c3, 3);
-    }
-
-    @FXML
-    private void fourthChoice(){
-        setStartPlace(c4, 4);
-    }
-
-    @FXML
-    private void fifthChoice(){
-        setStartPlace(c5, 5);
-    }
-
-    @FXML
-    private void sixthChoice(){
-        setStartPlace(c6, 6);
-    }
-
-    private void setStartPlace(ComboBox theBoxChosen, int i){
-        switch(i) {
-            case 1: chooseTravel.setStartPlaceOne((String) theBoxChosen.getValue());
-            checkChoices();
-                break;
-            case 2: chooseTravel.setStartPlaceTwo((String) theBoxChosen.getValue());
-                checkChoices();
-                break;
-            case 3: chooseTravel.setStartPlaceThree((String) theBoxChosen.getValue());
-                checkChoices();
-                break;
-            case 4: chooseTravel.setStartPlaceFour((String) theBoxChosen.getValue());
-                checkChoices();
-                break;
-            case 5: chooseTravel.setStartPlaceFive((String) theBoxChosen.getValue());
-                checkChoices();
-                break;
-            case 6: chooseTravel.setStartPlaceSix((String) theBoxChosen.getValue());
-                checkChoices();
-                break;
+    private void choice(ActionEvent e) throws IOException{
+        ComboBox comboChosen = (ComboBox)e.getSource();
+        for (int i = 1; i <= choosePlayer.getNumberOfPlayers(); i++){
+            if (comboChosen == comboBoxArray.get(i-1)){
+                chooseTravel.setStartPlace((String) comboBoxArray.get(i - 1).getValue(), i);
+                checkChooices();
+            }
         }
     }
 
@@ -162,30 +115,30 @@ public class ChooseTravelController implements Initializable {
         placeStar(mustChooseSixth);
     }
 
-    private void checkChoices(){
+    private void checkChooices(){
         switch (choosePlayer.getNumberOfPlayers()) {
             case 2:
-                if (c1.getValue() != null && c2.getValue() != null) {
+                if (choose1.getValue() != null && choose2.getValue() != null) {
                     buttonDone.setDisable(false);
                 }
                 break;
             case 3:
-                if (c1.getValue() != null && c2.getValue() != null && c3.getValue()!= null) {
+                if (choose1.getValue() != null && choose2.getValue() != null && choose3.getValue()!= null) {
                     buttonDone.setDisable(false);
                 }
                 break;
             case 4:
-                if (c1.getValue() != null && c2.getValue() != null && c3.getValue()!= null && c4.getValue()!=null) {
+                if (choose1.getValue() != null && choose2.getValue() != null && choose3.getValue()!= null && choose4.getValue()!=null) {
                     buttonDone.setDisable(false);
                 }
                 break;
             case 5:
-                if (c1.getValue() != null && c2.getValue() != null && c3.getValue()!= null && c4.getValue()!=null && c5.getValue()!=null) {
+                if (choose1.getValue() != null && choose2.getValue() != null && choose3.getValue()!= null && choose4.getValue()!=null && choose5.getValue()!=null) {
                     buttonDone.setDisable(false);
                 }
                 break;
             case 6:
-                if (c1.getValue() != null && c2.getValue() != null && c3.getValue()!= null && c4.getValue()!=null && c5.getValue()!=null && c6.getValue()!=null) {
+                if (choose1.getValue() != null && choose2.getValue() != null && choose3.getValue()!= null && choose4.getValue()!=null && choose5.getValue()!=null && choose6.getValue()!=null) {
                     buttonDone.setDisable(false);
                 }
                 break;
@@ -196,17 +149,17 @@ public class ChooseTravelController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        theBox = new ArrayList<>();
-        theBox.add(c1);
-        theBox.add(c2);
-        theBox.add(c3);
-        theBox.add(c4);
-        theBox.add(c5);
-        theBox.add(c6);
+        comboBoxArray = new ArrayList<>();
+        comboBoxArray.add(choose1);
+        comboBoxArray.add(choose2);
+        comboBoxArray.add(choose3);
+        comboBoxArray.add(choose4);
+        comboBoxArray.add(choose5);
+        comboBoxArray.add(choose6);
         travelChoices = new ArrayList<>();
 
         for(int i = 5; i >= choosePlayer.getNumberOfPlayers(); i--) {
-            theBox.get(i).setDisable(true);
+            comboBoxArray.get(i).setDisable(true);
         }
 
         switch(choosePlayer.getNumberOfPlayers()){
