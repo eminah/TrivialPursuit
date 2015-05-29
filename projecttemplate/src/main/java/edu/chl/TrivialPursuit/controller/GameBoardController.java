@@ -5,6 +5,7 @@ import edu.chl.trivialpursuit.view.AfricaCardView;
 import edu.chl.trivialpursuit.view.AsiaCardView;
 import edu.chl.trivialpursuit.view.NorthAmericaCardView;
 import edu.chl.trivialpursuit.view.SouthAmericaCardView;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -70,6 +71,7 @@ public class GameBoardController implements Initializable {
     @FXML ImageView as1,as2,as3,as4,as5,as6,af1,af2,af3,af4,af5,af6,s1,s2,s3,s4,s5,s6,n1,n2,n3,n4,n5,n6;
 
     @FXML
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     private void move(ActionEvent e){
         Button buttonPressed = (Button)e.getSource();
         if(buttonPressed == right) {

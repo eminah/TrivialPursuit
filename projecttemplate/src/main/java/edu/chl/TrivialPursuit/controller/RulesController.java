@@ -26,7 +26,6 @@ public class RulesController {
 
     @FXML
     @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
-
     private void onEndPressed(ActionEvent e){
 
         stage.close();

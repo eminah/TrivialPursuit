@@ -37,7 +37,7 @@
             </Label>
             <HBox prefWidth="200.0" spacing="5.0">
                <children>
-                   <ComboBox fx:id="c1" onAction="#firstChooice" promptText="Choose Continent">
+                   <ComboBox fx:id="c1" onAction="#firstChoice" promptText="Choose Continent">
                        <items>
                            <FXCollections fx:factory="observableArrayList">
                                <String fx:value="Asia" />
@@ -61,7 +61,7 @@
             </Label>
             <HBox prefWidth="200.0" spacing="5.0">
                <children>
-                  <ComboBox fx:id="c2" onAction="#secondChooice" promptText="Choose Continent">
+                  <ComboBox fx:id="c2" onAction="#secondChoice" promptText="Choose Continent">
                       <items>
                           <FXCollections fx:factory="observableArrayList">
                               <String fx:value="Asia" />
@@ -84,7 +84,7 @@
             </Label>
             <HBox prefWidth="200.0" spacing="5.0">
                <children>
-                   <ComboBox fx:id="c3" onAction="#thirdChooice" promptText="Choose Continent">
+                   <ComboBox fx:id="c3" onAction="#thirdChoice" promptText="Choose Continent">
                        <items>
                            <FXCollections fx:factory="observableArrayList">
                                <String fx:value="Asia" />
@@ -107,7 +107,7 @@
             </Label>
             <HBox prefWidth="200.0" spacing="5.0">
                <children>
-                   <ComboBox fx:id="c4" onAction="#fourthChooice" promptText="Choose Continent">
+                   <ComboBox fx:id="c4" onAction="#fourthChoice" promptText="Choose Continent">
                        <items>
                            <FXCollections fx:factory="observableArrayList">
                                <String fx:value="Asia" />
@@ -130,7 +130,7 @@
             </Label>
             <HBox prefWidth="200.0" spacing="5.0">
                <children>
-                   <ComboBox fx:id="c5" onAction="#fifthChooice" promptText="Choose Continent">
+                   <ComboBox fx:id="c5" onAction="#fifthChoice" promptText="Choose Continent">
                        <items>
                            <FXCollections fx:factory="observableArrayList">
                                <String fx:value="Asia" />
@@ -153,7 +153,7 @@
             </Label>
             <HBox prefWidth="200.0" spacing="5.0">
                <children>
-                   <ComboBox fx:id="c6" onAction="#sixthChooice" promptText="Choose Continent">
+                   <ComboBox fx:id="c6" onAction="#sixthChoice" promptText="Choose Continent">
                        <items>
                            <FXCollections fx:factory="observableArrayList">
                                <String fx:value="Asia" />

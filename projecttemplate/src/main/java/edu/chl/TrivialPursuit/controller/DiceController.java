@@ -4,6 +4,7 @@ import edu.chl.trivialpursuit.model.ChoosePlayer;
 import edu.chl.trivialpursuit.model.Dice;
 import edu.chl.trivialpursuit.model.GameBoard;
 import edu.chl.trivialpursuit.view.GameBoardView;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -16,6 +17,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
+
 import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;
@@ -44,6 +46,7 @@ public class DiceController implements Initializable {
     @FXML Label who;
 
     @FXML
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     private void throwDice(ActionEvent e) throws IOException{
 
         dice.throwDice();

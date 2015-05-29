@@ -2,6 +2,7 @@ package edu.chl.trivialpursuit.controller;
 
 import edu.chl.trivialpursuit.model.ChoosePlayer;
 import edu.chl.trivialpursuit.view.ChooseTravelView;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+
 import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;
@@ -38,6 +40,7 @@ public class ChoosePlayerController implements Initializable {
     @FXML private TextField tOne, tTwo, tThree,tFour,tFive,tSix;
 
     @FXML
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     private void onButtonPressed(ActionEvent e) throws IOException{
 
         addNamesToList();
@@ -50,6 +53,7 @@ public class ChoosePlayerController implements Initializable {
     }
 
     @FXML
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     private void comboAction(ActionEvent e){
 
         choosePlayer.setNumberOfPlayers(numberChosen = Integer.parseInt(numPlayers.getValue()));
