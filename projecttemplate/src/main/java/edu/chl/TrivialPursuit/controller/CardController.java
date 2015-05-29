@@ -136,21 +136,21 @@ public class CardController implements Initializable{
      */
     private void setCard(Continent continent){
 
-        if( continent == Continent.ASIA){
+        if(continent == Continent.ASIA){
             correctAlt = Alternative.ALTERNATIVE_TWO;
             question.setText("This is an Asia Question, please press on Asia:");
             alt1.setText("Africa");
             alt2.setText("Asia");
             alt3.setText("North America");
-            alt4.setText("South Ametica");
+            alt4.setText("South America");
 
-        }else if( continent == Continent.AFRICA){
+        }else if(continent == Continent.AFRICA){
             correctAlt = Alternative.ALTERNATIVE_ONE;
             question.setText("This is an Africa Question, please press on Africa:");
             alt1.setText("Africa");
             alt2.setText("Asia");
             alt3.setText("North America");
-            alt4.setText("South Ametica");
+            alt4.setText("South America");
 
         }else if(continent == Continent.NORTH_AMERICA){
             correctAlt = Alternative.ALTERNATIVE_THREE;
@@ -158,14 +158,14 @@ public class CardController implements Initializable{
             alt1.setText("Africa");
             alt2.setText("Asia");
             alt3.setText("North America");
-            alt4.setText("South Ametica");
+            alt4.setText("South America");
         }else{
             correctAlt = Alternative.ALTERNATIVE_FOUR;
             question.setText("This is an South America Question, please press on South America:");
             alt1.setText("Africa");
             alt2.setText("Asia");
             alt3.setText("North America");
-            alt4.setText("South Ametica");
+            alt4.setText("South America");
         }
     }
 

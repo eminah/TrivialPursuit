@@ -44,7 +44,7 @@ public class DiceController implements Initializable {
     @FXML Label who;
 
     @FXML
-    private void throwDices(ActionEvent e) throws IOException{
+    private void throwDice(ActionEvent e) throws IOException{
 
         dice.throwDice();
         changeDiceImage(dice1, dice.getFirstDiceValue());
@@ -117,25 +117,25 @@ public class DiceController implements Initializable {
     private void setName(){
         switch (game.getTurn()){
             case 1:
-                who.setText(choose.getNameOne() + " throw the dices!");
+                who.setText(choose.getNameOne() + ", throw the dice!");
                 break;
             case 2:
-                who.setText(choose.getNameTwo() + " throw the dices!");
+                who.setText(choose.getNameTwo() + ", throw the dice!");
                 break;
             case 3:
-                who.setText(choose.getNameThree()  + " throw the dices!");
+                who.setText(choose.getNameThree()  + ", throw the dice!");
                 break;
             case 4:
-                who.setText(choose.getNameFour()  + " throw the dices!");
+                who.setText(choose.getNameFour()  + ", throw the dice!");
                 break;
             case 5:
-                who.setText(choose.getNameFive()  + " throw the dices!");
+                who.setText(choose.getNameFive()  + ", throw the dice!");
                 break;
             case 6:
-                who.setText(choose.getNameSix()  + " throw the dices!");
+                who.setText(choose.getNameSix()  + ", throw the dice!");
                 break;
             default:
-                who.setText(choose.getNameOne()  + " throw the dices!");
+                who.setText(choose.getNameOne()  + ", throw the dice!");
         }
     }
 
