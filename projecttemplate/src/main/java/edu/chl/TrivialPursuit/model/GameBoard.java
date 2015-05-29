@@ -6,7 +6,7 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 import java.util.ArrayList;
 
 /**
- * Created by inatran on 15-05-04.
+ * Created by Ina Tran on 15-05-04.
  */
 public class GameBoard {
 

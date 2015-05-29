@@ -24,7 +24,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Created by inatran on 15-04-28.
+ * Created by Ina Tran on 15-04-28.
  */
 public class DiceController implements Initializable {
 

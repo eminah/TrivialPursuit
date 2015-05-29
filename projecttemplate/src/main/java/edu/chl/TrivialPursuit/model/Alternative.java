@@ -1,7 +1,7 @@
 package edu.chl.trivialpursuit.model;
 
 /**
- * Created by helenejarl on 2015-05-11.
+ * Created by Heléne Jarl on 2015-05-11.
  */
 
 /**
