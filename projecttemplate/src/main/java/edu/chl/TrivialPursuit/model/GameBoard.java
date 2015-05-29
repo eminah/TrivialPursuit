@@ -22,6 +22,7 @@ public class GameBoard {
     private ArrayList<ImageView>  iS;
     private ArrayList<ImageView>  iN;
     private int turn;
+    private int amountOfPlayersPlaying;
 
     public GameBoard(){
 
@@ -221,6 +222,14 @@ public class GameBoard {
         }
     }
 
+    public void setNextTurn(int theAmountOfPlayers) {
+        if(turn == theAmountOfPlayers) {
+            turn = 1;
+        } else {
+            turn = turn + 1;
+        }
+    }
+
     public ArrayList<Spot> getSpotsOuter() {
         return spotsOuter;
     }
@@ -283,5 +292,13 @@ public class GameBoard {
 
     public void setiN(ArrayList<ImageView> iN) {
         this.iN = iN;
+    }
+
+    public int getAmountOfPlayersPlaying() {
+        return amountOfPlayersPlaying;
+    }
+
+    public void setAmountOfPlayersPlaying(int amountOfPlayersPlaying) {
+        this.amountOfPlayersPlaying = amountOfPlayersPlaying;
     }
 }

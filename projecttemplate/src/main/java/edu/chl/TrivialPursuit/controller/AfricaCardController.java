@@ -44,6 +44,7 @@ public class AfricaCardController {
             startTimer();
         }else{
             theButtonPressed.setStyle("-fx-background-color: red");
+            game.setNextTurn(game.getAmountOfPlayersPlaying());
             startTimer();
         }
 

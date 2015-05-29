@@ -59,6 +59,7 @@ public class GameBoardController implements Initializable {
     private Font arrow = new Font("Verdana",16);
     private Timeline setDelay;
     private Label[] playersNameLabels;
+    private int numberOfPlayersPlaying;
 
     @FXML Canvas boardCanvas;
 
@@ -146,34 +147,39 @@ public class GameBoardController implements Initializable {
      */
     private void createPlayers() {
 
-        for (int i = 0; i < chooseP.getNumberOfPlayers(); i++) {
-            String choosen = "";
+        int startPlaceAsia = 0;
+        int startPlaceAfrica = 7;
+        int startPlaceSouthAmerica = 14;
+        int startPlaceNorthAmerica = 21;
+
+        for (int i = 0; i < numberOfPlayersPlaying; i++) {
+            String chosen = "";
             String name = "";
 
-            choosen = chooseT.contintentToStartArray.get(i);
+            chosen = chooseT.continentToStartArray.get(i);
             name = chooseP.playerNameArray.get(i);
 
-            if (choosen.equals("Asia")){
-                players.add(new Player(name,game.getSpotsOuter().get(0),new HashSet<Continent>()));
-            }else if (choosen.equals("Africa")){
-                players.add(new Player(name,game.getSpotsOuter().get(7), new HashSet<Continent>()));
-            }else if (choosen.equals("South America")){
-                players.add(new Player(name,game.getSpotsOuter().get(14), new HashSet<Continent>()));
+            if (chosen.equals("Asia")){
+                players.add(new Player(name,game.getSpotsOuter().get(startPlaceAsia),new HashSet<Continent>()));
+            }else if (chosen.equals("Africa")){
+                players.add(new Player(name,game.getSpotsOuter().get(startPlaceAfrica), new HashSet<Continent>()));
+            }else if (chosen.equals("South America")){
+                players.add(new Player(name,game.getSpotsOuter().get(startPlaceSouthAmerica), new HashSet<Continent>()));
             }else{
-                players.add(new Player(name,game.getSpotsOuter().get(21), new HashSet<Continent>()));
+                players.add(new Player(name,game.getSpotsOuter().get(startPlaceNorthAmerica), new HashSet<Continent>()));
             }
         }
     }
 
     public void addLabelTurns(){
-        for(int i = 0; i<chooseP.getNumberOfPlayers(); i++){
+        for(int i = 0; i<numberOfPlayersPlaying; i++){
             setLabelTurn.add(playerTurnArray.get(i));
         }
     }
 
     public void setTheCoordinates() {
-        for (int i = 1; i <= chooseP.getNumberOfPlayers(); i++) {
-            setCoordinates(chooseP.getNumberOfPlayers());
+        for (int i = 1; i <= numberOfPlayersPlaying; i++) {
+            setCoordinates(numberOfPlayersPlaying);
         }
     }
 
@@ -202,14 +208,14 @@ public class GameBoardController implements Initializable {
         int currentTurn = game.getTurn() -1;
         Player currentPlayer = game.getPlayers().get(currentTurn);
         Category currentPlayerSpotCategory = currentPlayer.getSpot().getCategory();
-        Continent currrentPlayerSpotContinent = currentPlayer.getSpot().getContinent();
+        Continent currentPlayerSpotContinent = currentPlayer.getSpot().getContinent();
         setDelay = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
 
             @Override
             public void handle(ActionEvent event) {
                 if (currentPlayerSpotCategory != Category.AIRPLANE) {
                     try {
-                        changeToRightView(currrentPlayerSpotContinent);
+                        changeToRightView(currentPlayerSpotContinent);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -310,6 +316,8 @@ public class GameBoardController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        numberOfPlayersPlaying = chooseP.getNumberOfPlayers();
+        game.setAmountOfPlayersPlaying(numberOfPlayersPlaying);
         players = new ArrayList<>();
         setLabelTurn = new ArrayList<>();
         playerTurnArray = new ArrayList<>();

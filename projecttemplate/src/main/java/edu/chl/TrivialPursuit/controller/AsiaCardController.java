@@ -46,6 +46,7 @@ public class AsiaCardController {
             startTimer();
         }else{
             theButtonPressed.setStyle("-fx-background-color: red");
+            game.setNextTurn(game.getAmountOfPlayersPlaying());
             startTimer();
         }
 
