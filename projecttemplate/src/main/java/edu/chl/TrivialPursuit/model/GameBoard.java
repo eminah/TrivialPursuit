@@ -14,7 +14,7 @@ public class GameBoard {
     final private ArrayList<Spot> spotsInner;
     final private ArrayList<Card> cards;
 
-   // private ArrayList<Card> cardsInner;
+    private ArrayList<Card> cardsInner;
     private ArrayList<Player> players;
     private ArrayList<Label> labelTurns;
     private ArrayList<ImageView> iAs;
@@ -37,7 +37,7 @@ public class GameBoard {
         addCardsNorthAmerica();
         addSpotsToListOuter();
         setBoardingSpotsOuter();
-        //addSpotsToListInner();
+        addSpotsToListInner();
     }
 
     public ArrayList<Player> getPlayers() {
@@ -217,16 +217,16 @@ public class GameBoard {
         }
     }
 
-    /*public void addSpotsToListInner(){
+    public void addSpotsToListInner(){
         for(int i = 0; i < SPOT_DEFINITIONS_INNER.length; i++){
 
             spotsInner.add(new Spot((Continent)SPOT_DEFINITIONS_INNER[i].getLeft(),
                     (Category) SPOT_DEFINITIONS_INNER[i].getRight(),
                     (Integer) SPOT_DEFINITIONS_COORDINATES_INNER[i].getLeft(),
-                    (Integer) SPOT_DEFINITIONS_COORDINATES_INNER[i].getRight(),)
+                    (Integer) SPOT_DEFINITIONS_COORDINATES_INNER[i].getRight(),new EuropeCard())
             );
         }
-    }*/
+    }
 
     //Sets the left and right spot to every spot
     public void setBoardingSpotsOuter(){
