@@ -1,6 +1,7 @@
-package edu.chl.trivialpursuit.view;
+package edu.chl.trivialpursuit;
 
 import com.airhacks.afterburner.injection.Injector;
+import edu.chl.trivialpursuit.view.StartView;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
