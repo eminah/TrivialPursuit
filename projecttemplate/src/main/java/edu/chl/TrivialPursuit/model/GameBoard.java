@@ -40,6 +40,78 @@ public class GameBoard {
         //addSpotsToListInner();
     }
 
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(ArrayList<Player> players) {
+        this.players = players;
+    }
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public void setTurn(int turn) {
+        this.turn = turn;
+    }
+
+    public ArrayList<Label> getLabelTurns() {
+        return labelTurns;
+    }
+
+    public void setLabelTurns(ArrayList<Label> labelTurns) {
+        this.labelTurns = labelTurns;
+    }
+
+    public ArrayList<ImageView> getiAs() {
+        return iAs;
+    }
+
+    public void setiAs(ArrayList<ImageView> iAs) {
+        this.iAs = iAs;
+    }
+
+    public ArrayList<ImageView> getiAf() {
+        return iAf;
+    }
+
+    public void setiAf(ArrayList<ImageView> iAf) {
+        this.iAf = iAf;
+    }
+
+    public ArrayList<ImageView> getiS() {
+        return iS;
+    }
+
+    public void setiS(ArrayList<ImageView> iS) {
+        this.iS = iS;
+    }
+
+    public ArrayList<ImageView> getiN() {
+        return iN;
+    }
+
+    public void setiN(ArrayList<ImageView> iN) {
+        this.iN = iN;
+    }
+
+    public int getAmountOfPlayersPlaying() {
+        return amountOfPlayersPlaying;
+    }
+
+    public void setAmountOfPlayersPlaying(int amountOfPlayersPlaying) {
+        this.amountOfPlayersPlaying = amountOfPlayersPlaying;
+    }
+
+    public ArrayList<Spot> getSpotsOuter() {
+        return spotsOuter;
+    }
+
+   /* public ArrayList<Spot> getSpotsInner() {
+        return spotsInner;
+    }*/
+
     private final ImmutablePair[] SPOT_DEFINITIONS_OUTER = {
            new ImmutablePair<Continent, Category>(Continent.ASIA, Category.AIRPLANE),
            new ImmutablePair<Continent, Category>(Continent.ASIA, Category.GEOGRAPHY),
@@ -228,77 +300,5 @@ public class GameBoard {
         } else {
             turn = turn + 1;
         }
-    }
-
-    public ArrayList<Spot> getSpotsOuter() {
-        return spotsOuter;
-    }
-
-   /* public ArrayList<Spot> getSpotsInner() {
-        return spotsInner;
-    }*/
-
-    public ArrayList<Player> getPlayers() {
-        return players;
-    }
-
-    public void setPlayers(ArrayList<Player> players) {
-        this.players = players;
-    }
-
-    public int getTurn() {
-        return turn;
-    }
-
-    public void setTurn(int turn) {
-        this.turn = turn;
-    }
-
-    public ArrayList<Label> getLabelTurns() {
-        return labelTurns;
-    }
-
-    public void setLabelTurns(ArrayList<Label> labelTurns) {
-        this.labelTurns = labelTurns;
-    }
-
-    public ArrayList<ImageView> getiAs() {
-        return iAs;
-    }
-
-    public void setiAs(ArrayList<ImageView> iAs) {
-        this.iAs = iAs;
-    }
-
-    public ArrayList<ImageView> getiAf() {
-        return iAf;
-    }
-
-    public void setiAf(ArrayList<ImageView> iAf) {
-        this.iAf = iAf;
-    }
-
-    public ArrayList<ImageView> getiS() {
-        return iS;
-    }
-
-    public void setiS(ArrayList<ImageView> iS) {
-        this.iS = iS;
-    }
-
-    public ArrayList<ImageView> getiN() {
-        return iN;
-    }
-
-    public void setiN(ArrayList<ImageView> iN) {
-        this.iN = iN;
-    }
-
-    public int getAmountOfPlayersPlaying() {
-        return amountOfPlayersPlaying;
-    }
-
-    public void setAmountOfPlayersPlaying(int amountOfPlayersPlaying) {
-        this.amountOfPlayersPlaying = amountOfPlayersPlaying;
     }
 }

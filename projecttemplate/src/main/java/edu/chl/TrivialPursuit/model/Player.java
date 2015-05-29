@@ -43,6 +43,34 @@ public  class Player {
         this.spot = spot;
     }
 
+    public boolean getHasTicket() {
+        return hasTicket;
+    }
+
+    public void setHasTicket(boolean hasTicket) {
+        this.hasTicket = hasTicket;
+    }
+
+    public boolean checkIfAllContinents(){
+        return collectedContinents.size() == 4;
+    }
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public void setTurn(int turn) {
+        this.turn = turn;
+    }
+
+    public HashSet<Continent> getCollectedContinents() {
+        return collectedContinents;
+    }
+
+    public void setCollectedContinents(HashSet<Continent> collectedContinents) {
+        this.collectedContinents = collectedContinents;
+    }
+
     /**
      *
      * @param steps the amount of steps the player goes to the left Direction
@@ -62,33 +90,5 @@ public  class Player {
         for(int i = 0; i<steps; i++){
             spot = spot.getRight();
         }
-    }
-
-    public boolean getHasTicket() {
-        return hasTicket;
-    }
-
-    public void setHasTicket(boolean hasTicket) {
-        this.hasTicket = hasTicket;
-    }
-
-    public boolean checkIfAllContinents(){
-       return collectedContinents.size() == 4;
-    }
-
-    public int getTurn() {
-        return turn;
-    }
-
-    public void setTurn(int turn) {
-        this.turn = turn;
-    }
-
-    public HashSet<Continent> getCollectedContinents() {
-        return collectedContinents;
-    }
-
-    public void setCollectedContinents(HashSet<Continent> collectedContinents) {
-        this.collectedContinents = collectedContinents;
     }
 }

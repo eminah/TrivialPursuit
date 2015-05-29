@@ -13,12 +13,6 @@ public class Spot {
     private int cooY;
     private Card card;
 
-    /**
-     *
-     * @param continent The continent of the spot
-     * @param category The category of the spot
-     * @param card The right card for the spot
-     */
     public Spot(Continent continent, Category category, int theXCoordinate, int theYCoordinate , Card card){
 
         this.continent = continent;

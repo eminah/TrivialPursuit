@@ -20,6 +20,7 @@ public class ChoosePlayer {
     }
 
     private void setArray(String name){
+
         playerNameArray.add(name);
     }
 
