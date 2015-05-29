@@ -189,8 +189,9 @@ public class GameBoardController implements Initializable {
     private void generateTicketDialog(boolean isOnAirplaneSpot){
 
         int startPlaceEurope = 0;
-        int currentTurn = game.getTurn() -1;
-        Player currentPlayer = game.getPlayers().get(currentTurn);
+        int currentTurnIndex = game.getTurn() -1;
+        int currentTurn = game.getTurn();
+        Player currentPlayer = game.getPlayers().get(currentTurnIndex);
 
         if(isOnAirplaneSpot){
             if(currentPlayer.getHasTicket()) {
@@ -203,14 +204,24 @@ public class GameBoardController implements Initializable {
                 enableTheButtonsRightLeft();
 
                 currentPlayer.setSpot(game.getSpotsInner().get(startPlaceEurope));
-                setCoordinates(currentTurn+1);
+                setCoordinates(currentTurn);
                 drawBoard();
                 game.setNextTurn(game.getAmountOfPlayersPlaying());
-                try {
-                    DiceView dv = DiceView.create();
-                    dv.show();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                currentPlayer = game.getPlayers().get(currentTurnIndex);
+                Continent currentPlayerSpotContinent = currentPlayer.getSpot().getContinent();
+                Category currentPlayerSpotCategory = currentPlayer.getSpot().getCategory();
+
+                if(currentPlayerSpotContinent == Continent.EUROPE && currentPlayerSpotCategory == Category.AIRPLANE) {
+                    movePlayer(currentTurn, 1, "Right");
+                } else if(currentPlayerSpotContinent == Continent.EUROPE) {
+                    movePlayer(currentTurn, 0, "Right");
+                } else {
+                    try {
+                        DiceView dv = DiceView.create();
+                        dv.show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
