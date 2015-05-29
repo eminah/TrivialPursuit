@@ -19,12 +19,12 @@ public class Spot {
      * @param category The category of the spot
      * @param card The right card for the spot
      */
-    public Spot(Continent continent, Category category, int x, int y, Card card){
+    public Spot(Continent continent, Category category, int theXCoordinate, int theYCoordinate , Card card){
 
         this.continent = continent;
         this.category = category;
-        cooX = x;
-        cooY = y;
+        cooX = theXCoordinate;
+        cooY = theYCoordinate;
         this.card = card;
     }
 
