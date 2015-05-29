@@ -1,10 +1,10 @@
 package edu.chl.trivialpursuit.controller;
 
 import edu.chl.trivialpursuit.model.*;
-import edu.chl.trivialpursuit.model.ChoosePlayer;
-import edu.chl.trivialpursuit.model.Dice;
-import edu.chl.trivialpursuit.model.GameBoard;
-import edu.chl.trivialpursuit.view.*;
+import edu.chl.trivialpursuit.view.AfricaCardView;
+import edu.chl.trivialpursuit.view.AsiaCardView;
+import edu.chl.trivialpursuit.view.NorthAmericaCardView;
+import edu.chl.trivialpursuit.view.SouthAmericaCardView;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -13,22 +13,23 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-//import javafx.scene.control.Alert;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-//import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
+
 import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.ResourceBundle;
+
+//import javafx.scene.control.Dialog;
 
 /**
  * Created by Rasti on 2015-05-14..
@@ -78,9 +79,9 @@ public class GameBoardController implements Initializable {
         }
         disableTheButtonsRightLeft();
         drawBoard();
+        generateTicketDialog(checkIfSpotisAirplane());
         startTimer();
     }
-
 
 
     private void movePlayer(int player, int diceValue, String direction) {
@@ -174,6 +175,27 @@ public class GameBoardController implements Initializable {
         }
     }
 
+    private boolean checkIfSpotisAirplane(){
+        int currentTurn = game.getTurn() -1;
+        Player currentPlayer = game.getPlayers().get(currentTurn);
+        Category currentPlayerSpotCategory = currentPlayer.getSpot().getCategory();
+        return currentPlayerSpotCategory == Category.AIRPLANE;
+    }
+
+    private void generateTicketDialog(boolean isOnAirplaneSpot){
+
+        if(isOnAirplaneSpot){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText("Look, an Information Dialog");
+            alert.setContentText("I have a great message for you!");
+
+            alert.showAndWait();
+
+            enableTheButtonsRightLeft();
+        }
+    }
+
     public void startTimer() {
         int currentTurn = game.getTurn() -1;
         Player currentPlayer = game.getPlayers().get(currentTurn);
@@ -182,23 +204,15 @@ public class GameBoardController implements Initializable {
         setDelay = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
 
             @Override
-            public void handle(ActionEvent event){
-                if(currentPlayerSpotCategory != Category.AIRPLANE){
+            public void handle(ActionEvent event) {
+                if (currentPlayerSpotCategory != Category.AIRPLANE) {
                     try {
                         changeToRightView(currrentPlayerSpotContinent);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
-                    /*
-                     * If the player that lands on an airplane spot owns a ticket he will be congratulated
-                     * and moved to europe, else there will only be a dialog that tells the player
-                     * that he needs to collect more cotinents and the turn will be switched
-                     */
-
-
-                }
-
+            }
         }));
         setDelay.play();
     }

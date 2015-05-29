@@ -31,7 +31,7 @@
    <bottom>
       <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="throwButton" mnemonicParsing="false" onAction="#throwDices" text="Throw Dices" />
+            <Button fx:id="throwButton" mnemonicParsing="false" onAction="#throwDice" text="Throw Dice" />
          </children>
       </StackPane>
    </bottom>
