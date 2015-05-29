@@ -49,13 +49,6 @@ public class AsiaCardController {
             game.setNextTurn(game.getAmountOfPlayersPlaying());
             startTimer();
         }
-
-    }
-
-    public boolean trueIfCorrectAnswer(Alternative answer){
-        currentPlayerTurnIndex = game.getTurn()-1;
-        Alternative theCorrectAlternativeOfTheCard = game.getPlayers().get(currentPlayerTurnIndex).getSpot().getCard().getCorrectAlternative();
-        return answer == theCorrectAlternativeOfTheCard ;
     }
 
     public Alternative getAnswerAsAlternative(Button pressed){
@@ -68,8 +61,12 @@ public class AsiaCardController {
         }else{
             return Alternative.ALTERNATIVE_FOUR;
         }
+    }
 
-
+    public boolean trueIfCorrectAnswer(Alternative answer){
+        currentPlayerTurnIndex = game.getTurn()-1;
+        Alternative theCorrectAlternativeOfTheCard = game.getPlayers().get(currentPlayerTurnIndex).getSpot().getCard().getCorrectAlternative();
+        return answer == theCorrectAlternativeOfTheCard ;
     }
 
     public void startTimer() {
