@@ -1,7 +1,7 @@
 package edu.chl.trivialpursuit.model;
 import java.util.ArrayList;
 /**
- * Created by helenejarl on 2015-05-19.
+ * Created by Heléne Jarl on 2015-05-19.
  */
 public class ChooseTravel {
     private String startPlaceOne,startPlaceTwo,startPlaceThree,startPlaceFour,startPlaceFive,startPlaceSix ;

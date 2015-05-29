@@ -4,7 +4,7 @@ import com.airhacks.afterburner.injection.Injector;
 import java.io.IOException;
 
 /**
- * Created by helenejarl on 2015-05-07.
+ * Created by Heléne Jarl 2015-05-07.
  *
  */
 public final class CardView extends BaseView {

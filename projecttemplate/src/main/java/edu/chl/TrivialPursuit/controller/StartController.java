@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import javax.inject.Inject;
 import java.io.IOException;
 
+
 public class StartController {
 
     private @Inject Stage stage;

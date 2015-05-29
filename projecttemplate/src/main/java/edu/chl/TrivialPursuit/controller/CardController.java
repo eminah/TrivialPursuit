@@ -22,7 +22,7 @@ import java.util.HashSet;
 import java.util.ResourceBundle;
 
 /**
- * Created by helenejarl on 2015-05-07.
+ * Created by Heléne Jarl on 2015-05-07.
  */
 public class CardController implements Initializable{
 

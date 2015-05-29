@@ -5,7 +5,7 @@ import edu.chl.trivialpursuit.model.ChooseTravel;
 import java.io.IOException;
 
 /**
- * Created by helenejarl on 2015-05-19.
+ * Created by Heléne Jarl on 2015-05-19.
  */
 public class ChooseTravelView extends BaseView {
     ChooseTravel travel;

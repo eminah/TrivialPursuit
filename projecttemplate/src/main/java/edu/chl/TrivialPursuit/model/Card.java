@@ -2,7 +2,7 @@ package edu.chl.trivialpursuit.model;
 
 
 /**
- * Created by helenejarl on 2015-05-07.
+ * Created by Heléne Jarl on 2015-05-07.
  */
 public class Card {
     private Alternative correctAlternative;
