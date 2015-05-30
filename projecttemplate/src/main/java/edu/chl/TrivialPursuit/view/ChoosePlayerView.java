@@ -8,13 +8,21 @@ import java.io.IOException;
  */
 public final class ChoosePlayerView extends BaseView {
 
+    private static boolean firstTime = true;
+    private static ChoosePlayerView choosePlayerView;
+
     private ChoosePlayerView() {
+
         super();
     }
 
     public static ChoosePlayerView create() throws IOException {
-        final ChoosePlayerView choosePlayerView = new ChoosePlayerView();
-        Injector.injectMembers(StartView.class,choosePlayerView);
+
+        if(firstTime){
+            choosePlayerView = new ChoosePlayerView();
+            firstTime =false;
+        }
+        Injector.injectMembers(ChoosePlayerView.class, choosePlayerView);
         return choosePlayerView;
     }
 }

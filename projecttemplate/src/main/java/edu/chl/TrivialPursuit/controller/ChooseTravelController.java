@@ -22,24 +22,30 @@ import java.util.ResourceBundle;
  */
 public class ChooseTravelController implements Initializable {
 
-    @Inject ChoosePlayer choosePlayer;
+    @Inject
+    ChoosePlayer choosePlayer;
 
-    @Inject ChooseTravel chooseTravel;
+    @Inject
+    ChooseTravel chooseTravel;
 
     private ArrayList<ComboBox> comboBoxArray;
     private ArrayList<String> travelChoices;
-    private Font star = new Font("Verdana",18);
-
-    @FXML Label playerOneName,playerTwoName,playerThreeName,playerFourName,playerFiveName,playerSixName;
-
-    @FXML Label mustChooseOne,mustChooseSec,mustChooseThird,mustChooseFourth,mustChooseFifth,mustChooseSixth;
-
-    @FXML ComboBox<String> choose1,choose2,choose3,choose4,choose5,choose6;
-
-    @FXML Button buttonDone;
+    private Font star = new Font("Verdana", 18);
 
     @FXML
-    private void onBackPressed(ActionEvent e) throws IOException{
+    Label playerOneName, playerTwoName, playerThreeName, playerFourName, playerFiveName, playerSixName;
+
+    @FXML
+    Label mustChooseOne, mustChooseSec, mustChooseThird, mustChooseFourth, mustChooseFifth, mustChooseSixth;
+
+    @FXML
+    ComboBox<String> choose1, choose2, choose3, choose4, choose5, choose6;
+
+    @FXML
+    Button buttonDone;
+
+    @FXML
+    private void onBackPressed(ActionEvent e) throws IOException {
 
         final ChoosePlayerView chooseView = ChoosePlayerView.create();
         chooseView.show();
@@ -47,7 +53,7 @@ public class ChooseTravelController implements Initializable {
     }
 
     @FXML
-    private void onDonePressed(ActionEvent e) throws IOException{
+    private void onDonePressed(ActionEvent e) throws IOException {
 
         DiceView diceView = DiceView.create();
         diceView.show();
@@ -55,37 +61,37 @@ public class ChooseTravelController implements Initializable {
     }
 
     @FXML
-    private void choice(ActionEvent e) throws IOException{
-        ComboBox comboChosen = (ComboBox)e.getSource();
-        for (int i = 1; i <= choosePlayer.getNumberOfPlayers(); i++){
-            if (comboChosen == comboBoxArray.get(i-1)){
+    private void choice(ActionEvent e) throws IOException {
+        ComboBox comboChosen = (ComboBox) e.getSource();
+        for (int i = 1; i <= choosePlayer.getNumberOfPlayers(); i++) {
+            if (comboChosen == comboBoxArray.get(i - 1)) {
                 chooseTravel.setStartPlace((String) comboBoxArray.get(i - 1).getValue(), i);
                 checkChooices();
             }
         }
     }
 
-    private void placeStar(Label travel){
+    private void placeStar(Label travel) {
         travel.setText("*");
         travel.setFont(star);
         travel.setTextFill(Color.RED);
     }
 
-    private void twoPlayers(){
+    private void twoPlayers() {
         playerOneName.setText(choosePlayer.getNameOne());
         playerTwoName.setText(choosePlayer.getNameTwo());
         placeStar(mustChooseOne);
         placeStar(mustChooseSec);
     }
 
-    private void threePlayers(){
+    private void threePlayers() {
         twoPlayers();
         playerThreeName.setText(choosePlayer.getNameThree());
         placeStar(mustChooseThird);
 
     }
 
-    private void fourPlayers(){
+    private void fourPlayers() {
         threePlayers();
         playerThreeName.setText(choosePlayer.getNameThree());
         playerFourName.setText(choosePlayer.getNameFour());
@@ -93,7 +99,7 @@ public class ChooseTravelController implements Initializable {
         placeStar(mustChooseFourth);
     }
 
-    private void fivePlayers(){
+    private void fivePlayers() {
         fourPlayers();
         playerThreeName.setText(choosePlayer.getNameThree());
         playerFourName.setText(choosePlayer.getNameFour());
@@ -103,7 +109,7 @@ public class ChooseTravelController implements Initializable {
         placeStar(mustChooseFifth);
     }
 
-    private void sixPlayer(){
+    private void sixPlayer() {
         fivePlayers();
         playerThreeName.setText(choosePlayer.getNameThree());
         playerFourName.setText(choosePlayer.getNameFour());
@@ -115,7 +121,7 @@ public class ChooseTravelController implements Initializable {
         placeStar(mustChooseSixth);
     }
 
-    private void checkChooices(){
+    private void checkChooices() {
         switch (choosePlayer.getNumberOfPlayers()) {
             case 2:
                 if (choose1.getValue() != null && choose2.getValue() != null) {
@@ -123,22 +129,22 @@ public class ChooseTravelController implements Initializable {
                 }
                 break;
             case 3:
-                if (choose1.getValue() != null && choose2.getValue() != null && choose3.getValue()!= null) {
+                if (choose1.getValue() != null && choose2.getValue() != null && choose3.getValue() != null) {
                     buttonDone.setDisable(false);
                 }
                 break;
             case 4:
-                if (choose1.getValue() != null && choose2.getValue() != null && choose3.getValue()!= null && choose4.getValue()!=null) {
+                if (choose1.getValue() != null && choose2.getValue() != null && choose3.getValue() != null && choose4.getValue() != null) {
                     buttonDone.setDisable(false);
                 }
                 break;
             case 5:
-                if (choose1.getValue() != null && choose2.getValue() != null && choose3.getValue()!= null && choose4.getValue()!=null && choose5.getValue()!=null) {
+                if (choose1.getValue() != null && choose2.getValue() != null && choose3.getValue() != null && choose4.getValue() != null && choose5.getValue() != null) {
                     buttonDone.setDisable(false);
                 }
                 break;
             case 6:
-                if (choose1.getValue() != null && choose2.getValue() != null && choose3.getValue()!= null && choose4.getValue()!=null && choose5.getValue()!=null && choose6.getValue()!=null) {
+                if (choose1.getValue() != null && choose2.getValue() != null && choose3.getValue() != null && choose4.getValue() != null && choose5.getValue() != null && choose6.getValue() != null) {
                     buttonDone.setDisable(false);
                 }
                 break;
@@ -158,11 +164,11 @@ public class ChooseTravelController implements Initializable {
         comboBoxArray.add(choose6);
         travelChoices = new ArrayList<>();
 
-        for(int i = 5; i >= choosePlayer.getNumberOfPlayers(); i--) {
+        for (int i = 5; i >= choosePlayer.getNumberOfPlayers(); i--) {
             comboBoxArray.get(i).setDisable(true);
         }
 
-        switch(choosePlayer.getNumberOfPlayers()){
+        switch (choosePlayer.getNumberOfPlayers()) {
             case 2:
                 twoPlayers();
                 break;
