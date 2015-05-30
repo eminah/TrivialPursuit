@@ -1,5 +1,6 @@
 package edu.chl.trivialpursuit.controller;
 
+import edu.chl.trivialpursuit.model.AfricaCard;
 import edu.chl.trivialpursuit.model.Alternative;
 import edu.chl.trivialpursuit.model.Continent;
 import edu.chl.trivialpursuit.model.GameBoard;
@@ -29,6 +30,7 @@ import java.util.ResourceBundle;
 public class AfricaCardController implements Initializable {
 
     @Inject GameBoard game;
+    @Inject AfricaCard africaCard;
 
     private Timeline changeViewDelay;
     private Timeline disableButtonDelay;
@@ -80,8 +82,7 @@ public class AfricaCardController implements Initializable {
     }
 
     public boolean trueIfCorrectAnswer(Alternative answer){
-        Alternative theCorrectAlternativeOfTheCard = game.getPlayers().get(game.getCurrentTurnNumberArrayIndex()).getSpot().getCard().getCorrectAlternative();
-        return answer == theCorrectAlternativeOfTheCard ;
+       return africaCard.checkIfCorrectAlternative(answer);
     }
 
     public void startTimer() {
