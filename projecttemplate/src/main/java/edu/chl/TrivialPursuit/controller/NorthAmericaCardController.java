@@ -5,22 +5,27 @@ import edu.chl.trivialpursuit.model.Continent;
 import edu.chl.trivialpursuit.model.GameBoard;
 import edu.chl.trivialpursuit.model.Player;
 import edu.chl.trivialpursuit.view.DiceView;
+import edu.chl.trivialpursuit.view.GameBoardView;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import javax.inject.Inject;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * Created by Rasti on 2015-05-28.
  */
-public class NorthAmericaCardController {
+public class NorthAmericaCardController implements Initializable {
 
     @Inject GameBoard game;
 
@@ -32,6 +37,9 @@ public class NorthAmericaCardController {
 
 
     @FXML Button altOne,altTwo,altThree,altFour;
+
+    @FXML
+    Label cardPlayerNameLabel;
 
     @FXML
     private void onButtonPressed(ActionEvent e) {
@@ -46,7 +54,7 @@ public class NorthAmericaCardController {
             theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/northAm_gold.png"));
             currentPlayer.getCollectedContinents().add(Continent.NORTH_AMERICA);
 
-            if(currentPlayer.getCollectedContinents().size() == 4) {
+            if(currentPlayer.checkIfAllContinents()) {
                 currentPlayer.setHasTicket(true);
             }
             startTimer();
@@ -94,11 +102,27 @@ public class NorthAmericaCardController {
             @Override
             public void handle(ActionEvent event)  {
 
-                try{
-                    final DiceView diceView = DiceView.create();
-                    diceView.show();
-                }catch(IOException ex){
-                    ex.printStackTrace();
+                game.fixArrow();
+                if(!game.getCurrentPlayerPlaying().isInEurope()) {
+                    game.getButtonLeft().setDisable(false);
+                    game.getButtonRight().setText("Go Right");
+
+                    try {
+                        final DiceView diceView = DiceView.create();
+                        diceView.show();
+                    }catch(IOException e){
+                        e.printStackTrace();
+                    }
+                } else {
+                    game.getButtonLeft().setDisable(true);
+                    game.getButtonRight().setText("Question");
+
+                    try {
+                        GameBoardView gameBoardView = GameBoardView.create();
+                        gameBoardView.show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
 
                 enableAllAlternatives();
@@ -118,5 +142,10 @@ public class NorthAmericaCardController {
         altTwo.setDisable(true);
         altThree.setDisable(true);
         altFour.setDisable(true);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        cardPlayerNameLabel.setText(game.getCurrentPlayerPlaying().getName());
     }
 }

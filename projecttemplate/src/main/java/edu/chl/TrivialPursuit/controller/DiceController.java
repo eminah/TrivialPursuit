@@ -15,7 +15,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.text.Font;
 import javafx.util.Duration;
 
 import javax.inject.Inject;
@@ -35,7 +34,7 @@ public class DiceController implements Initializable {
     @Inject ChoosePlayer choose;
 
     private Timeline delay;
-    private Font arrow = new Font("Verdana",16);
+    private boolean firstTime = true;
 
     @FXML ImageView dice1;
 
@@ -101,20 +100,10 @@ public class DiceController implements Initializable {
                 }
 
                 throwButton.setDisable(false);
-                fixArrow();
-                setName();
+                game.fixArrow();
             }
         }));
         delay.play();
-    }
-
-    private void fixArrow(){
-        //remove the arrow
-        for(int i = 0;i < game.getLabelTurns().size(); i++) {
-            game.getLabelTurns().get(i).setText("");
-        }
-        game.getLabelTurns().get(game.getTurn()-1).setText("<-- " + dice.getTotalDiceValue() + " steps!");
-        game.getLabelTurns().get(game.getTurn()-1).setFont(arrow);
     }
 
     private void setName(){

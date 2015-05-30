@@ -23,6 +23,7 @@ import javafx.util.Duration;
 import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.ResourceBundle;
@@ -52,10 +53,10 @@ public class GameBoardController implements Initializable {
     private int[] coorY= {-1,-20,-20,-20,-20,-20,-20};
     private Color[] playerColor = {Color.GREENYELLOW,Color.CYAN,Color.RED,Color.FUCHSIA,Color.FORESTGREEN,Color.BLUE};
     private Font labels = new Font("Verdana", 15);
-    private Font arrow = new Font("Verdana",16);
-    private Timeline setDelay;
+
+    private Timeline getQuestionDelay;
+    private Timeline europeDelay;
     private Label[] playersNameLabels;
-    private int numberOfPlayersPlaying;
 
     @FXML Canvas boardCanvas;
 
@@ -65,36 +66,56 @@ public class GameBoardController implements Initializable {
 
     @FXML Button left,right;
 
-    @FXML ImageView as1,as2,as3,as4,as5,as6,af1,af2,af3,af4,af5,af6,s1,s2,s3,s4,s5,s6,n1,n2,n3,n4,n5,n6;
+    @FXML ImageView asiaImagePlayer1,asiaImagePlayer2,asiaImagePlayer3,asiaImagePlayer4,asiaImagePlayer5,asiaImagePlayer6,
+            africaImagePlayer1,africaImagePlayer2,africaImagePlayer3,africaImagePlayer4,africaImagePlayer5,africaImagePlayer6,
+            southAmImagePlayer1,southAmImagePlayer2,southAmImagePlayer3,southAmImagePlayer4,southAmImagePlayer5,southAmImagePlayer6,
+            northAmImagePlayer1,northAmImagePlayer2,northAmImagePlayer3,northAmImagePlayer4,northAmImagePlayer5,northAmImagePlayer6;
 
     @FXML
     @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     private void move(ActionEvent e){
-        Button buttonPressed = (Button)e.getSource();
-        if(buttonPressed == right) {
-            movePlayer(game.getTurn(), dice.getTotalDiceValue(),"Right" );
-        }else{
-            movePlayer(game.getTurn(), dice.getTotalDiceValue(),"Left" );
+
+        if(!game.getCurrentPlayerPlaying().isInEurope()) {
+            Button buttonPressed = (Button)e.getSource();
+            if(buttonPressed == right) {
+                movePlayer(dice.getTotalDiceValue(), "Right" );
+            }else{
+                movePlayer(dice.getTotalDiceValue(), "Left" );
+            }
+            disableTheButtonsRightLeft();
+
+            try {
+                generateTicketDialog(checkIfSpotisAirplane());
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+
+        } else {
+            if(game.getCurrentPlayerPlaying().getSpot().getCategory() == Category.AIRPLANE) {
+                movePlayer(1, "Right");
+                setCoordinates(game.getAmountOfPlayersPlaying());
+            } else {
+                movePlayer(0, "Right");
+            }
         }
-        disableTheButtonsRightLeft();
-        drawBoard();
-        generateTicketDialog(checkIfSpotisAirplane());
+
         startTimer();
     }
 
 
-    private void movePlayer(int player, int diceValue, String direction) {
-        int correctPlayer = player - 1;
+    private void movePlayer(int diceValue, String direction) {
+
         if (direction.equals("Left")) {
-            players.get(correctPlayer).goLeft(diceValue);
+            game.getCurrentPlayerPlaying().goLeft(diceValue);
         }else {
-            players.get(correctPlayer).goRight(diceValue);
+            game.getCurrentPlayerPlaying().goRight(diceValue);
         }
-        setCoordinates(player);
+        setCoordinates(game.getAmountOfPlayersPlaying());
     }
 
-    private void setCoordinates(int player){
-        for(int i = 1; i <= player; i++){
+    //TODO tog bort en annan setCoordinates, tror att denna räcker
+    private void setCoordinates(int amountOfPlayers){
+        for(int i = 1; i <= amountOfPlayers; i++){
             coorX[i] = players.get(i-1).getSpot().getCooX();
             coorY[i] = players.get(i-1).getSpot().getCooY();
         }
@@ -137,10 +158,7 @@ public class GameBoardController implements Initializable {
         }
     }
 
-    /*
-    Here I create players depending on their choices of Continent and
-    number of players it is.
-     */
+
     private void createPlayers() {
 
         int startPlaceAsia = 0;
@@ -148,7 +166,7 @@ public class GameBoardController implements Initializable {
         int startPlaceSouthAmerica = 14;
         int startPlaceNorthAmerica = 21;
 
-        for (int i = 0; i < numberOfPlayersPlaying; i++) {
+        for (int i = 0; i < game.getAmountOfPlayersPlaying(); i++) {
             String chosen = "";
             String name = "";
 
@@ -168,120 +186,111 @@ public class GameBoardController implements Initializable {
     }
 
     public void addLabelTurns(){
-        for(int i = 0; i<numberOfPlayersPlaying; i++){
+        for(int i = 0; i < game.getAmountOfPlayersPlaying(); i++){
             setLabelTurn.add(playerTurnArray.get(i));
         }
     }
 
-    public void setTheCoordinates() {
-        for (int i = 1; i <= numberOfPlayersPlaying; i++) {
-            setCoordinates(numberOfPlayersPlaying);
-        }
-    }
-
     private boolean checkIfSpotisAirplane(){
-        int currentTurn = game.getTurn() -1;
-        Player currentPlayer = game.getPlayers().get(currentTurn);
-        Category currentPlayerSpotCategory = currentPlayer.getSpot().getCategory();
+        Category currentPlayerSpotCategory = game.getCurrentPlayerPlaying().getSpot().getCategory();
         return currentPlayerSpotCategory == Category.AIRPLANE;
     }
 
-    private void generateTicketDialog(boolean isOnAirplaneSpot){
+    private void generateTicketDialog(boolean isOnAirplaneSpot) throws IOException {
 
-        int startPlaceEurope = 0;
+        /*int startPlaceEurope = 0;
         int currentTurnIndex = game.getTurn() -1;
         int currentTurn = game.getTurn();
         Player currentPlayer = game.getPlayers().get(currentTurnIndex);
 
-        if(isOnAirplaneSpot){
-            if(currentPlayer.getHasTicket()) {
+
+            if(currentPlayer.getHasTicket()) {*/
+
+        Continent currentPlayersSpotContinent = game.getCurrentPlayerPlaying().getSpot().getContinent();
+        if(isOnAirplaneSpot && currentPlayersSpotContinent != Continent.EUROPE) {
+            if(game.getCurrentPlayerPlaying().getHasTicket()) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Congratulations!");
                 alert.setHeaderText("You have now collected enough evidence for travelling around the world.");
-                alert.setContentText("You will now fly back to Europe!");
+                alert.setContentText("You will now fly back to Europe and will be able to go home!");
                 alert.showAndWait();
 
                 enableTheButtonsRightLeft();
-
-                currentPlayer.setSpot(game.getSpotsInner().get(startPlaceEurope));
-                setCoordinates(currentTurn);
-                drawBoard();
+                movePlayerToEurope(game.getCurrentPlayerPlaying());
                 game.setNextTurn(game.getAmountOfPlayersPlaying());
-                currentPlayer = game.getPlayers().get(currentTurnIndex);
-                Continent currentPlayerSpotContinent = currentPlayer.getSpot().getContinent();
-                Category currentPlayerSpotCategory = currentPlayer.getSpot().getCategory();
+                game.fixArrow();
 
-                if(currentPlayerSpotContinent == Continent.EUROPE && currentPlayerSpotCategory == Category.AIRPLANE) {
-                    movePlayer(currentTurn, 1, "Right");
-                } else if(currentPlayerSpotContinent == Continent.EUROPE) {
-                    movePlayer(currentTurn, 0, "Right");
-                } else {
-                    try {
-                        DiceView dv = DiceView.create();
-                        dv.show();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
+            } else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Too bad!");
+                alert.setHeaderText(null);
+                alert.setContentText("You have not collected all continents and therefor have no ticket back to Europe!");
+                alert.showAndWait();
+
+                enableTheButtonsRightLeft();
+                game.setNextTurn(game.getAmountOfPlayersPlaying());
+                game.fixArrow();
             }
+
+            changeToRightViewForNextPlayer(game.getCurrentPlayerPlaying());
         }
+
     }
 
     public void startTimer() {
-        int currentTurn = game.getTurn() -1;
-        Player currentPlayer = game.getPlayers().get(currentTurn);
-        Category currentPlayerSpotCategory = currentPlayer.getSpot().getCategory();
-        Continent currentPlayerSpotContinent = currentPlayer.getSpot().getContinent();
-        setDelay = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
 
+        Category currentPlayersSpotCategory = game.getCurrentPlayerPlaying().getSpot().getCategory();
+        Continent currentPlayersSpotContinent = game.getCurrentPlayerPlaying().getSpot().getContinent();
+        getQuestionDelay = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if (currentPlayerSpotCategory != Category.AIRPLANE) {
+                if (currentPlayersSpotCategory != Category.AIRPLANE) {
                     try {
-                        changeToRightView(currentPlayerSpotContinent);
+                        changeToRightCardView(currentPlayersSpotContinent);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
             }
         }));
-        setDelay.play();
+
+        getQuestionDelay.play();
     }
 
     private void addAs(){
-        imAs.add(as1);
-        imAs.add(as2);
-        imAs.add(as3);
-        imAs.add(as4);
-        imAs.add(as5);
-        imAs.add(as6);
+        imAs.add(asiaImagePlayer1);
+        imAs.add(asiaImagePlayer2);
+        imAs.add(asiaImagePlayer3);
+        imAs.add(asiaImagePlayer4);
+        imAs.add(asiaImagePlayer5);
+        imAs.add(asiaImagePlayer6);
     }
 
     private void addAf(){
-        imAf.add(af1);
-        imAf.add(af2);
-        imAf.add(af3);
-        imAf.add(af4);
-        imAf.add(af5);
-        imAf.add(af6);
+        imAf.add(africaImagePlayer1);
+        imAf.add(africaImagePlayer2);
+        imAf.add(africaImagePlayer3);
+        imAf.add(africaImagePlayer4);
+        imAf.add(africaImagePlayer5);
+        imAf.add(africaImagePlayer6);
     }
 
     private void addS(){
-        imS.add(s1);
-        imS.add(s2);
-        imS.add(s3);
-        imS.add(s4);
-        imS.add(s5);
-        imS.add(s6);
+        imS.add(southAmImagePlayer1);
+        imS.add(southAmImagePlayer2);
+        imS.add(southAmImagePlayer3);
+        imS.add(southAmImagePlayer4);
+        imS.add(southAmImagePlayer5);
+        imS.add(southAmImagePlayer6);
     }
 
     private void addN(){
-        imN.add(n1);
-        imN.add(n2);
-        imN.add(n3);
-        imN.add(n4);
-        imN.add(n5);
-        imN.add(n6);
+        imN.add(northAmImagePlayer1);
+        imN.add(northAmImagePlayer2);
+        imN.add(northAmImagePlayer3);
+        imN.add(northAmImagePlayer4);
+        imN.add(northAmImagePlayer5);
+        imN.add(northAmImagePlayer6);
     }
 
     private void addPlayerNameLabelsToArray(){
@@ -302,29 +311,34 @@ public class GameBoardController implements Initializable {
         playerTurnArray.add(playerSixTurn);
     }
 
-    private void changeToRightView(Continent continent) throws IOException{
-        if(continent == Continent.AFRICA) {
+    private void changeToRightCardView(Continent continent) throws IOException{
 
+        if(continent == Continent.AFRICA) {
             final AfricaCardView cardView = AfricaCardView.create();
             cardView.show();
             enableTheButtonsRightLeft();
 
 
         } else if(continent == Continent.ASIA){
-
             final AsiaCardView cardView = AsiaCardView.create();
             cardView.show();
             enableTheButtonsRightLeft();
 
-        }else if(continent == Continent.NORTH_AMERICA){
+        } else if(continent == Continent.NORTH_AMERICA){
             final NorthAmericaCardView cardView = NorthAmericaCardView.create();
             cardView.show();
             enableTheButtonsRightLeft();
 
-        }else{
+        } else if(continent == Continent.SOUTH_AMERICA) {
             final SouthAmericaCardView cardView = SouthAmericaCardView.create();
             cardView.show();
             enableTheButtonsRightLeft();
+
+        } else {
+            final EuropeCardView cardView = EuropeCardView.create();
+            cardView.show();
+            enableTheButtonsRightLeft();
+            right.setText("Right");
         }
     }
 
@@ -337,10 +351,33 @@ public class GameBoardController implements Initializable {
         left.setDisable(true);
     }
 
+
+    public void movePlayerToEurope(Player thePlayerToMove) {
+        int startPlaceEurope = 0;
+        thePlayerToMove.setSpot(game.getSpotsInner().get(startPlaceEurope));
+        setCoordinates(game.getAmountOfPlayersPlaying());
+        game.getCurrentPlayerPlaying().setInEurope(true);
+        drawBoard();
+    }
+
+    public void changeToRightViewForNextPlayer(Player nextPlayer)throws IOException {
+        if(nextPlayer.isInEurope()) {
+            GameBoardView gameBoardView = GameBoardView.create();
+            gameBoardView.show();
+            left.setDisable(true);
+            right.setText("Question");
+        } else {
+            DiceView diceView = DiceView.create();
+            diceView.show();
+        }
+    }
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        numberOfPlayersPlaying = chooseP.getNumberOfPlayers();
-        game.setAmountOfPlayersPlaying(numberOfPlayersPlaying);
+        game.setButtonRight(right);
+        game.setButtonLeft(left);
+        game.setAmountOfPlayersPlaying(chooseP.getNumberOfPlayers());
         players = new ArrayList<>();
         setLabelTurn = new ArrayList<>();
         playerTurnArray = new ArrayList<>();
@@ -357,8 +394,8 @@ public class GameBoardController implements Initializable {
         addLabelTurns();
         game.setLabelTurns(setLabelTurn);
         game.setTurn(1);
-        game.getLabelTurns().get(0).setText("<-- " + +dice.getTotalDiceValue() + " steps!");
-        game.getLabelTurns().get(0).setFont(arrow);
+        game.setCurrentPlayerPlaying(game.getPlayers().get(game.getCurrentTurnNumberArrayIndex()));
+        game.fixArrow();
         addAs();
         addAf();
         addS();
@@ -367,7 +404,6 @@ public class GameBoardController implements Initializable {
         game.setiAf(imAf);
         game.setiS(imS);
         game.setiN(imN);
-        setTheCoordinates();
-        drawBoard();
+        setCoordinates(game.getAmountOfPlayersPlaying());
     }
 }

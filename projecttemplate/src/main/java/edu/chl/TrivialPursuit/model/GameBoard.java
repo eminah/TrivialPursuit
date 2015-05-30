@@ -1,14 +1,20 @@
 package edu.chl.trivialpursuit.model;
 
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Font;
 import org.apache.commons.lang3.tuple.ImmutablePair;
+
+import javax.inject.Inject;
 import java.util.ArrayList;
 
 /**
  * Created by Ina Tran on 15-05-04.
  */
 public class GameBoard {
+
+    @Inject Dice dice;
 
     final private ArrayList<Spot> spotsOuter;
     final private ArrayList<Spot> spotsInner;
@@ -23,6 +29,10 @@ public class GameBoard {
     private ArrayList<ImageView>  iN;
     private int turn;
     private int amountOfPlayersPlaying;
+    private Player currentPlayerPlaying;
+    private Font arrow = new Font("Verdana", 16);
+    private Button buttonRight;
+    private Button buttonLeft;
 
     public GameBoard(){
 
@@ -38,6 +48,36 @@ public class GameBoard {
         addSpotsToListOuter();
         setBoardingSpotsOuter();
         addSpotsToListInner();
+        setBoardingSpotsInner();
+    }
+
+    //The number you need to get the current player from the Arraylist getPlayers
+    public int getCurrentTurnNumberArrayIndex() {
+        return this.turn-1;
+    }
+
+    public Player getCurrentPlayerPlaying() {
+        return currentPlayerPlaying;
+    }
+
+    public void setCurrentPlayerPlaying(Player currentPlayerPlaying) {
+        this.currentPlayerPlaying = currentPlayerPlaying;
+    }
+
+    public Button getButtonLeft() {
+        return buttonLeft;
+    }
+
+    public void setButtonLeft(Button buttonLeft) {
+        this.buttonLeft = buttonLeft;
+    }
+
+    public Button getButtonRight() {
+        return buttonRight;
+    }
+
+    public void setButtonRight(Button buttonRight) {
+        this.buttonRight = buttonRight;
     }
 
     public ArrayList<Player> getPlayers() {
@@ -299,6 +339,22 @@ public class GameBoard {
             turn = 1;
         } else {
             turn = turn + 1;
+        }
+
+        currentPlayerPlaying = getPlayers().get(turn-1);
+    }
+
+    public void fixArrow() {
+        //remove the arrow
+        for(int i = 0; i < getAmountOfPlayersPlaying(); i++) {
+            getLabelTurns().get(i).setText("");
+        }
+
+        if(!getCurrentPlayerPlaying().isInEurope()) {
+            getLabelTurns().get(getCurrentTurnNumberArrayIndex()).setFont(arrow);
+            getLabelTurns().get(getCurrentTurnNumberArrayIndex()).setText("<--" + dice.getTotalDiceValue() + " steps");
+        } else {
+            getLabelTurns().get(getCurrentTurnNumberArrayIndex()).setText("<--");
         }
     }
 }

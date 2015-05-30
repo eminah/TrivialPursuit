@@ -28,22 +28,22 @@
                   </HBox>
                   <HBox prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
-                        <ImageView fx:id="as1" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="asiaImagePlayer1" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@asia_gray.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="af1" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="africaImagePlayer1" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@africa_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="n1" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="northAmImagePlayer1" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@northAm_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="s1" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="southAmImagePlayer1" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@southAm_grey.png" />
                            </image>
@@ -67,17 +67,17 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="31.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
-                        <ImageView fx:id="as2" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="asiaImagePlayer2" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@asia_gray.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="af2" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="africaImagePlayer2" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@africa_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="n2" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="northAmImagePlayer2" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@northAm_grey.png" />
                            </image>
@@ -85,7 +85,7 @@
                               <Insets bottom="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <ImageView fx:id="s2" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="southAmImagePlayer2" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@southAm_grey.png" />
                            </image>
@@ -109,12 +109,12 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="100.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
-                        <ImageView fx:id="as3" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="asiaImagePlayer3" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@asia_gray.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="af3" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="africaImagePlayer3" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@africa_grey.png" />
                            </image>
@@ -122,12 +122,12 @@
                               <Insets bottom="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <ImageView fx:id="n3" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="northAmImagePlayer3" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@northAm_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="s3" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="southAmImagePlayer3" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@southAm_grey.png" />
                            </image>
@@ -151,12 +151,12 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="169.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
-                        <ImageView fx:id="as4" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="asiaImagePlayer4" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@asia_gray.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="af4" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="africaImagePlayer4" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@africa_grey.png" />
                            </image>
@@ -164,12 +164,12 @@
                               <Insets />
                            </HBox.margin>
                         </ImageView>
-                        <ImageView fx:id="n4" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="northAmImagePlayer4" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@northAm_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="s4" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="southAmImagePlayer4" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@southAm_grey.png" />
                            </image>
@@ -193,22 +193,22 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="238.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
-                        <ImageView fx:id="as5" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="asiaImagePlayer5" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@asia_gray.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="af5" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="africaImagePlayer5" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@africa_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="n5" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="northAmImagePlayer5" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@northAm_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="s5" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="southAmImagePlayer5" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@southAm_grey.png" />
                            </image>
@@ -236,22 +236,22 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="307.0" prefHeight="43.0" prefWidth="197.0" spacing="15.0">
                      <children>
-                        <ImageView fx:id="as6" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="asiaImagePlayer6" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@asia_gray.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="af6" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="africaImagePlayer56" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@africa_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="n6" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="northAmImagePlayer6" fitHeight="43.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@northAm_grey.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="s6" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="southAmImagePlayer6" fitHeight="43.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@southAm_grey.png" />
                            </image>
