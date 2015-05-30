@@ -232,7 +232,7 @@ public class GameBoardController implements Initializable {
                 game.fixArrow();
             }
 
-            changeToRightViewForNextPlayer(game.getCurrentPlayerPlaying());
+            
         }
 
     }

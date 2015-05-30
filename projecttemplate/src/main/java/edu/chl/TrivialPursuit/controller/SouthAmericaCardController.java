@@ -32,8 +32,6 @@ public class SouthAmericaCardController implements Initializable {
     private Timeline changeViewDelay;
     private Timeline disableButtonDelay;
     private Button theButtonPressed;
-    private int currentPlayerTurnIndex;
-    private Player currentPlayer;
 
     @FXML Button altOne,altTwo,altThree,altFour;
 
@@ -43,17 +41,19 @@ public class SouthAmericaCardController implements Initializable {
     @FXML
     private void onButtonPressed(ActionEvent e) {
         theButtonPressed = (Button) e.getSource();
-        currentPlayerTurnIndex = game.getTurn()-1;
-        currentPlayer = game.getPlayers().get(game.getTurn()-1);
+        doWhenGuessed();
+    }
+
+    private void doWhenGuessed(){
 
         if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))){
             theButtonPressed.setStyle("-fx-background-color: lawngreen");
-            ImageView theContinentToChange = game.getiS().get(currentPlayerTurnIndex);
+            ImageView theContinentToChange = game.getiS().get(game.getCurrentTurnNumberArrayIndex());
             theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/southAm_gold.png"));
-            currentPlayer.getCollectedContinents().add(Continent.SOUTH_AMERICA);
+            game.getCurrentPlayerPlaying().getCollectedContinents().add(Continent.SOUTH_AMERICA);
 
-            if(currentPlayer.checkIfAllContinents()) {
-                currentPlayer.setHasTicket(true);
+            if(game.getCurrentPlayerPlaying().checkIfAllContinents()) {
+                game.getCurrentPlayerPlaying().setHasTicket(true);
             }
             startTimer();
         } else {
@@ -61,12 +61,10 @@ public class SouthAmericaCardController implements Initializable {
             game.setNextTurn(game.getAmountOfPlayersPlaying());
             startTimer();
         }
-
     }
 
     public boolean trueIfCorrectAnswer(Alternative answer){
-        currentPlayerTurnIndex = game.getTurn()-1;
-        Alternative theCorrectAlternativeOfTheCard = game.getPlayers().get(currentPlayerTurnIndex).getSpot().getCard().getCorrectAlternative();
+        Alternative theCorrectAlternativeOfTheCard = game.getCurrentPlayerPlaying().getSpot().getCard().getCorrectAlternative();
         return answer == theCorrectAlternativeOfTheCard ;
     }
 
