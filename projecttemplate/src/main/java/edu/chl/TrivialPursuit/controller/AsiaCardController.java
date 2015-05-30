@@ -3,7 +3,6 @@ package edu.chl.trivialpursuit.controller;
 import edu.chl.trivialpursuit.model.Alternative;
 import edu.chl.trivialpursuit.model.Continent;
 import edu.chl.trivialpursuit.model.GameBoard;
-import edu.chl.trivialpursuit.model.Player;
 import edu.chl.trivialpursuit.view.DiceView;
 import edu.chl.trivialpursuit.view.GameBoardView;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
@@ -18,6 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
+
 import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;
@@ -43,7 +43,6 @@ public class AsiaCardController implements Initializable {
     @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     private void onButtonPressed(ActionEvent e) {
         theButtonPressed = (Button) e.getSource();
-
 
         doWhenGuessed();
 
