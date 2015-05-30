@@ -241,7 +241,7 @@
                               <Image url="@asia_gray.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="africaImagePlayer56" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="africaImagePlayer6" fitHeight="32.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@africa_grey.png" />
                            </image>

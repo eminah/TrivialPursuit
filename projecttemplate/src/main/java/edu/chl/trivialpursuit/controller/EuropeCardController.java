@@ -5,6 +5,7 @@ import edu.chl.trivialpursuit.model.Category;
 import edu.chl.trivialpursuit.model.GameBoard;
 import edu.chl.trivialpursuit.view.DiceView;
 import edu.chl.trivialpursuit.view.GameBoardView;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -42,10 +43,14 @@ public class EuropeCardController implements Initializable {
 
 
     @FXML
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     private void onButtonPressed(ActionEvent e) {
         theButtonPressed = (Button) e.getSource();
 
+        doWhenGuessed();
+    }
 
+    public void doWhenGuessed() {
         if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))){
             theButtonPressed.setStyle("-fx-background-color: lawngreen");
 
@@ -67,7 +72,6 @@ public class EuropeCardController implements Initializable {
             game.setNextTurn(game.getAmountOfPlayersPlaying());
             startTimer();
         }
-
     }
 
     public boolean trueIfCorrectAnswer(Alternative answer){
