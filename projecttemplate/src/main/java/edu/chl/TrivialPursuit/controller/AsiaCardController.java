@@ -6,6 +6,7 @@ import edu.chl.trivialpursuit.model.GameBoard;
 import edu.chl.trivialpursuit.model.Player;
 import edu.chl.trivialpursuit.view.DiceView;
 import edu.chl.trivialpursuit.view.GameBoardView;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -36,24 +37,27 @@ public class AsiaCardController implements Initializable {
     private Timeline changeViewDelay;
     private Timeline disableButtonDelay;
     private Button theButtonPressed;
-    private int currentPlayerTurnIndex;
-    private Player currentPlayer;
+
 
     @FXML
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     private void onButtonPressed(ActionEvent e) {
         theButtonPressed = (Button) e.getSource();
-        currentPlayerTurnIndex = game.getTurn()-1;
-        currentPlayer = game.getPlayers().get(game.getTurn()-1);
 
 
+        doWhenGuessed();
+
+    }
+
+    private void doWhenGuessed(){
         if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))){
             theButtonPressed.setStyle("-fx-background-color: lawngreen");
-            ImageView theContinentToChange = game.getiAs().get(currentPlayerTurnIndex);
+            ImageView theContinentToChange = game.getiAs().get(game.getCurrentTurnNumberArrayIndex());
             theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/asia_gold.png"));
-            currentPlayer.getCollectedContinents().add(Continent.ASIA);
+            game.getCurrentPlayerPlaying().getCollectedContinents().add(Continent.ASIA);
 
-            if(currentPlayer.checkIfAllContinents()) {
-                currentPlayer.setHasTicket(true);
+            if(game.getCurrentPlayerPlaying().checkIfAllContinents()) {
+                game.getCurrentPlayerPlaying().setHasTicket(true);
             }
             startTimer();
         } else {
@@ -61,6 +65,7 @@ public class AsiaCardController implements Initializable {
             game.setNextTurn(game.getAmountOfPlayersPlaying());
             startTimer();
         }
+
     }
 
     public Alternative getAnswerAsAlternative(Button pressed){
@@ -76,8 +81,7 @@ public class AsiaCardController implements Initializable {
     }
 
     public boolean trueIfCorrectAnswer(Alternative answer){
-        currentPlayerTurnIndex = game.getTurn()-1;
-        Alternative theCorrectAlternativeOfTheCard = game.getPlayers().get(currentPlayerTurnIndex).getSpot().getCard().getCorrectAlternative();
+        Alternative theCorrectAlternativeOfTheCard = game.getCurrentPlayerPlaying().getSpot().getCard().getCorrectAlternative();
         return answer == theCorrectAlternativeOfTheCard ;
     }
 
