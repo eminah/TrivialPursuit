@@ -263,6 +263,8 @@
                   </HBox>
                </children>
             </VBox>
+            <Button layoutY="545.0" mnemonicParsing="false" text="Rules"  fx:id="rulesButton" onAction="#rulePressed"/>
+            <Button layoutY="507.0" mnemonicParsing="false" text="Settings" fx:id="settingsButton" onAction="#settingPressed"/>
          </children></AnchorPane>
     <AnchorPane prefHeight="515.0" prefWidth="517.0">
          <children>

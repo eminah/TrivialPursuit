@@ -64,7 +64,7 @@ public class GameBoardController implements Initializable {
 
     @FXML Label playerOneTurn,playerTwoTurn,playerThreeTurn,playerFourTurn,playerFiveTurn,playerSixTurn;
 
-    @FXML Button left,right;
+    @FXML Button left, right, settingsButton, rulesButton;
 
     @FXML ImageView asiaImagePlayer1,asiaImagePlayer2,asiaImagePlayer3,asiaImagePlayer4,asiaImagePlayer5,asiaImagePlayer6,
             africaImagePlayer1,africaImagePlayer2,africaImagePlayer3,africaImagePlayer4,africaImagePlayer5,africaImagePlayer6,
@@ -102,6 +102,19 @@ public class GameBoardController implements Initializable {
         startTimer();
     }
 
+    @FXML
+    public void rulePressed(ActionEvent e) throws IOException{
+
+        RulesView rulesView = RulesView.create();
+        rulesView.show();
+    }
+
+    @FXML
+    public void settingPressed(ActionEvent e) throws IOException{
+
+        SettingsView settingsView = SettingsView.create();
+        settingsView.show();
+    }
 
     private void movePlayer(int diceValue, String direction) {
 
