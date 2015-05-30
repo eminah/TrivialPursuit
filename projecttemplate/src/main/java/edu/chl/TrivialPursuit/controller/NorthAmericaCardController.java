@@ -3,9 +3,9 @@ package edu.chl.trivialpursuit.controller;
 import edu.chl.trivialpursuit.model.Alternative;
 import edu.chl.trivialpursuit.model.Continent;
 import edu.chl.trivialpursuit.model.GameBoard;
-import edu.chl.trivialpursuit.model.Player;
 import edu.chl.trivialpursuit.view.DiceView;
 import edu.chl.trivialpursuit.view.GameBoardView;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -17,6 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
+
 import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;
@@ -32,9 +33,6 @@ public class NorthAmericaCardController implements Initializable {
     private Timeline changeViewDelay;
     private Timeline disableButtonDelay;
     private Button theButtonPressed;
-    private int currentPlayerTurnIndex;
-    private Player currentPlayer;
-
 
     @FXML Button altOne,altTwo,altThree,altFour;
 
@@ -42,33 +40,34 @@ public class NorthAmericaCardController implements Initializable {
     Label cardPlayerNameLabel;
 
     @FXML
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     private void onButtonPressed(ActionEvent e) {
         theButtonPressed = (Button) e.getSource();
-        currentPlayerTurnIndex = game.getTurn()-1;
-        currentPlayer = game.getPlayers().get(game.getTurn()-1);
 
+        doWhenGuessed();
+    }
 
-        if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))){
+    public void doWhenGuessed() {
+
+        if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))) {
             theButtonPressed.setStyle("-fx-background-color: lawngreen");
-            ImageView theContinentToChange = game.getiN().get(currentPlayerTurnIndex);
-            theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/northAm_gold.png"));
-            currentPlayer.getCollectedContinents().add(Continent.NORTH_AMERICA);
+            ImageView theContinentToChange = game.getiAf().get(game.getCurrentTurnNumberArrayIndex());
+            game.getCurrentPlayerPlaying().getCollectedContinents().add(Continent.NORTH_AMERICA);
+            theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/africa_gold.png"));
 
-            if(currentPlayer.checkIfAllContinents()) {
-                currentPlayer.setHasTicket(true);
+            if(game.getCurrentPlayerPlaying().checkIfAllContinents()) {
+                game.getCurrentPlayerPlaying().setHasTicket(true);
             }
-            startTimer();
         } else {
             theButtonPressed.setStyle("-fx-background-color: red");
             game.setNextTurn(game.getAmountOfPlayersPlaying());
-            startTimer();
         }
 
+        startTimer();
     }
 
     public boolean trueIfCorrectAnswer(Alternative answer){
-        currentPlayerTurnIndex = game.getTurn()-1;
-        Alternative theCorrectAlternativeOfTheCard = game.getPlayers().get(currentPlayerTurnIndex).getSpot().getCard().getCorrectAlternative();
+        Alternative theCorrectAlternativeOfTheCard = game.getPlayers().get(game.getCurrentTurnNumberArrayIndex()).getSpot().getCard().getCorrectAlternative();
         return answer == theCorrectAlternativeOfTheCard ;
     }
 

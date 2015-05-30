@@ -6,6 +6,7 @@ import edu.chl.trivialpursuit.model.GameBoard;
 import edu.chl.trivialpursuit.model.Player;
 import edu.chl.trivialpursuit.view.DiceView;
 import edu.chl.trivialpursuit.view.GameBoardView;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -39,6 +40,7 @@ public class AsiaCardController implements Initializable {
 
 
     @FXML
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     private void onButtonPressed(ActionEvent e) {
         theButtonPressed = (Button) e.getSource();
 
