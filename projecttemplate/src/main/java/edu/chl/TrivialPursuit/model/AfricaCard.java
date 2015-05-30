@@ -21,5 +21,7 @@ public class AfricaCard extends Card {
         this.correctAlternative = correctAlternative;
     }
 
-
+    public boolean checkIfCorrectAlternative(Alternative alternative){
+        return alternative == correctAlternative;
+    }
 }
