@@ -84,29 +84,29 @@ public class ChoosePlayerController implements Initializable {
 
         switch (choosePlayer.getNumberOfPlayers()){
             case 2:
-                if (tOne.getText().length() > 1 && tTwo.getText().length() > 1 ){
+                if (tOne.getText().length() >= 1 && tTwo.getText().length() >= 1 ){
                     return true;
                 }
                 break;
             case 3:
-                if (tOne.getText().length() > 1 && tTwo.getText().length() > 1 && tThree.getText().length() >1){
+                if (tOne.getText().length() >= 1 && tTwo.getText().length() >= 1 && tThree.getText().length() >= 1){
                     return true;
                 }
                 break;
             case 4:
-                if (tOne.getText().length() > 1 && tTwo.getText().length() > 1 && tThree.getText().length() >1
-                    && tFour.getText().length() >1){
+                if (tOne.getText().length() >= 1 && tTwo.getText().length() >= 1 && tThree.getText().length() >= 1
+                    && tFour.getText().length() >= 1){
                     return true;
                 }
                 break;
             case 5:
-                if (tOne.getText().length() > 1 && tTwo.getText().length() > 1 && tThree.getText().length() >1
-                        && tFour.getText().length() >1 && tFive.getText().length() >1){
+                if (tOne.getText().length() >= 1 && tTwo.getText().length() >= 1 && tThree.getText().length() >= 1
+                        && tFour.getText().length() >= 1 && tFive.getText().length() >= 1){
                     return true;
                 }
             case 6:
-                if (tOne.getText().length() > 1 && tTwo.getText().length() > 1 && tThree.getText().length() >1
-                        && tFour.getText().length() >1 && tFive.getText().length() >1 && tSix.getText().length() >1) {
+                if (tOne.getText().length() >= 1 && tTwo.getText().length() >= 1 && tThree.getText().length() >= 1
+                        && tFour.getText().length() >= 1 && tFive.getText().length() >= 1 && tSix.getText().length() >= 1) {
                     return true;
                 }
         }

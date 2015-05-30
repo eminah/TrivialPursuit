@@ -116,6 +116,7 @@ public class GameBoardController implements Initializable {
         settingsView.show();
     }
 
+
     private void movePlayer(int diceValue, String direction) {
 
         if (direction.equals("Left")) {
