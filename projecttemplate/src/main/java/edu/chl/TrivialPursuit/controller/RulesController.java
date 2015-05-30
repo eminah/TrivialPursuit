@@ -4,6 +4,7 @@ import edu.chl.trivialpursuit.view.GameBoardView;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javax.inject.Inject;
 import java.io.IOException;
@@ -13,21 +14,13 @@ import java.io.IOException;
  */
 public class RulesController {
 
-    private @Inject Stage stage;
+    @FXML
+    Button goBack;
 
     @FXML
-    private void onButtonPressed(ActionEvent e) throws IOException {
+    private void onBackPressed(ActionEvent e) throws IOException{
 
         final GameBoardView gameBoard = GameBoardView.create();
         gameBoard.show();
-
-        e.consume();
-    }
-
-    @FXML
-    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
-    private void onEndPressed(ActionEvent e){
-
-        stage.close();
     }
 }

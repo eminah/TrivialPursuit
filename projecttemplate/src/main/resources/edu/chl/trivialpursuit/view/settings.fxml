@@ -1,49 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@settings.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.trivialpursuit.controller.SettingsController">
    <center>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="42.0" layoutY="14.0" text="Personal settings:" />
-            <Label layoutX="111.0" layoutY="45.0" text="Change playername 1:" />
-            <TextField layoutX="266.0" layoutY="40.0" />
-            <Label layoutX="111.0" layoutY="86.0" text="Change playername 2:" />
-            <Label layoutX="111.0" layoutY="166.0" text="Change playername 4:" />
-            <Label layoutX="111.0" layoutY="202.0" text="Change playername 5:" />
-            <Label layoutX="111.0" layoutY="238.0" text="Change playername 6:" />
-            <Label layoutX="111.0" layoutY="126.0" text="Change playername 3:" />
-            <TextField layoutX="266.0" layoutY="81.0" />
-            <TextField layoutX="266.0" layoutY="121.0" />
-            <TextField layoutX="266.0" layoutY="161.0" />
-            <TextField layoutX="266.0" layoutY="197.0" />
-            <TextField layoutX="266.0" layoutY="233.0" />
+            <VBox layoutY="-3.0" prefHeight="275.0" prefWidth="531.0" stylesheets="@settings.css">
+               <children>
+                  <Label text="Personal settings:">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="14.0" prefWidth="5.0" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" stylesheets="@settings.css">
+                     <children>
+                        <Label lineSpacing="30.0" text="Change playername 1:">
+                           <HBox.margin>
+                              <Insets top="11.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="t1">
+                           <HBox.margin>
+                              <Insets top="7.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Button maxHeight="100.0" mnemonicParsing="false" onAction="#saveButton1" prefHeight="30.0" stylesheets="@settings.css" text="Save" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="60.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label text="Change playername 2:">
+                           <HBox.margin>
+                              <Insets top="11.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="t2">
+                           <HBox.margin>
+                              <Insets top="7.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#saveButton2" prefHeight="100.0" text="Save" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="60.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label text="Change playername 3:">
+                           <HBox.margin>
+                              <Insets top="11.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="t3">
+                           <HBox.margin>
+                              <Insets top="7.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#saveButton3" text="Save" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="60.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label text="Change playername 4:">
+                           <HBox.margin>
+                              <Insets top="11.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="t4">
+                           <HBox.margin>
+                              <Insets top="7.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" text="Save" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="60.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label text="Change playername 5:">
+                           <HBox.margin>
+                              <Insets top="11.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="t5">
+                           <HBox.margin>
+                              <Insets top="7.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" text="Save" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="60.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" stylesheets="@settings.css">
+                     <children>
+                        <Label text="Change playername 6:">
+                           <HBox.margin>
+                              <Insets top="11.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="t6">
+                           <HBox.margin>
+                              <Insets top="7.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" text="Save" />
+                     </children>
+                     <VBox.margin>
+                        <Insets left="60.0" top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
 
          </children>
       </Pane>
    </center>
    <top>
-      <Label text="SETTINGS" BorderPane.alignment="CENTER">
+      <Label text="SETTINGS" textFill="#1306d0" BorderPane.alignment="CENTER">
          <font>
-            <Font size="24.0" />
+            <Font name="Apple Chancery" size="24.0" />
          </font>
       </Label>
    </top>
    <bottom>
       <Pane prefHeight="104.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="26.0" layoutY="6.0" text="Technical settings:" />
-            <Slider layoutX="268.0" layoutY="74.0" />
+            <Separator layoutX="-4.0" layoutY="25.0" prefHeight="4.0" prefWidth="606.0">
+            </Separator>
+            <Label layoutX="14.0" layoutY="27.0" text="Technical settings:">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Label>
+            <Slider fx:id="slider" layoutX="268.0" layoutY="71.0" showTickLabels="true" showTickMarks="true" />
             <Label layoutX="168.0" layoutY="74.0" text="Music volume" />
-            <CheckBox layoutX="268.0" layoutY="34.0" mnemonicParsing="false" selected="true" />
-            <Label layoutX="168.0" layoutY="35.0" text="Music on" />
-            <Button layoutX="452.0" layoutY="55.0" mnemonicParsing="false" text="Save" />
-            <CheckBox layoutX="268.0" layoutY="34.0" mnemonicParsing="false" />
-            <Label layoutX="168.0" layoutY="35.0" text="Music on" />
+            <CheckBox layoutX="268.0" layoutY="43.0" mnemonicParsing="false" selected="true" />
+            <Label layoutX="168.0" layoutY="44.0" text="Music on" />
+            <Button fx:id="backToBoard" layoutX="466.0" layoutY="53.0" mnemonicParsing="false" onAction="#backToGameBord" text="Back" />
          </children>
       </Pane>
    </bottom>
