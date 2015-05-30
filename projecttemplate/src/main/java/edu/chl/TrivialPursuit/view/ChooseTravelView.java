@@ -8,15 +8,22 @@ import java.io.IOException;
  * Created by Heléne Jarl on 2015-05-19.
  */
 public class ChooseTravelView extends BaseView {
-    ChooseTravel travel;
+
+    private static boolean firstTime = true;
+    private static ChooseTravelView chooseTravelView;
+//    ChooseTravel travel;
+
     private ChooseTravelView() {
         super();
-        travel = new ChooseTravel();
+        // travel = new ChooseTravel();
     }
 
     public static ChooseTravelView create() throws IOException {
-        final ChooseTravelView chooseTravelView = new ChooseTravelView();
-        Injector.injectMembers(StartView.class,chooseTravelView);
+        if(firstTime){
+            chooseTravelView = new ChooseTravelView();
+            firstTime = false;
+        }
+        Injector.injectMembers(ChooseTravelView.class, chooseTravelView);
         return chooseTravelView;
     }
 }
