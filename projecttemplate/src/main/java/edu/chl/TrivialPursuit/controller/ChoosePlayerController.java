@@ -45,6 +45,7 @@ public class ChoosePlayerController implements Initializable {
     private void onButtonPressed(ActionEvent e) throws IOException{
 
         if(checkNames()){
+            choosePlayer.setNumberOfPlayers(numberChosen = Integer.parseInt(numPlayers.getValue()));
 
             addNamesToList();
             setNameValues();
@@ -75,6 +76,7 @@ public class ChoosePlayerController implements Initializable {
 
         for(int j = 5; j >= numberChosen; j--){
             playerTexts.get(j).setDisable(true);
+            playerTexts.get(j).setText("");
         }
         setStars();
         doneButton.setDisable(false);

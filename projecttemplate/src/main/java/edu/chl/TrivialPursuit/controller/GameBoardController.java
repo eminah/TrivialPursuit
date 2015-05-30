@@ -48,6 +48,7 @@ public class GameBoardController implements Initializable {
     private ArrayList<ImageView> imS;
     private ArrayList<ImageView> imN;
     private ArrayList<Label> setLabelTurn;
+    private ArrayList<Label> arrayListContainingNameLabels;
     private ArrayList<Label> playerTurnArray;
     private int[] coorX= {-1,-20,-20,-20,-20,-20,-20};
     private int[] coorY= {-1,-20,-20,-20,-20,-20,-20};
@@ -380,6 +381,12 @@ public class GameBoardController implements Initializable {
         }
     }
 
+    private void addArrayListContainingNameLabels(){
+        for (int i = 0; i < game.getAmountOfPlayersPlaying(); i++){
+            arrayListContainingNameLabels.add(playersNameLabels[i]);
+        }
+    }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -389,6 +396,7 @@ public class GameBoardController implements Initializable {
         players = new ArrayList<>();
         setLabelTurn = new ArrayList<>();
         playerTurnArray = new ArrayList<>();
+        arrayListContainingNameLabels = new ArrayList<>();
         addLabelTurnsToArray();
         imAs = new ArrayList<>();
         imAf = new ArrayList<>();
@@ -397,6 +405,8 @@ public class GameBoardController implements Initializable {
         playersNameLabels = new Label[6];
         createPlayers();
         addPlayerNameLabelsToArray();
+        addArrayListContainingNameLabels();
+        game.setarrayWithPlayerNameLabels(arrayListContainingNameLabels);
         game.setPlayers(players);
         setNames();
         addLabelTurns();

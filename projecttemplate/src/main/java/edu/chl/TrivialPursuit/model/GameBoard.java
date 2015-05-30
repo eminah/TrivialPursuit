@@ -27,6 +27,7 @@ public class GameBoard {
     private ArrayList<ImageView>  iAf;
     private ArrayList<ImageView>  iS;
     private ArrayList<ImageView>  iN;
+    private ArrayList<Label> arrayWithPlayerNameLabels;
     private int turn;
     private int amountOfPlayersPlaying;
     private Player currentPlayerPlaying;
@@ -34,10 +35,12 @@ public class GameBoard {
     private Button buttonRight;
     private Button buttonLeft;
 
+
     public GameBoard(){
 
         players = new ArrayList<>();
         labelTurns = new ArrayList<>();
+
         spotsOuter = new ArrayList<>();
         spotsInner = new ArrayList<>();
         cards = new ArrayList<>();
@@ -142,6 +145,14 @@ public class GameBoard {
 
     public void setAmountOfPlayersPlaying(int amountOfPlayersPlaying) {
         this.amountOfPlayersPlaying = amountOfPlayersPlaying;
+    }
+
+    public ArrayList<Label> getarrayWithPlayerNameLabels() {
+        return arrayWithPlayerNameLabels;
+    }
+
+    public void setarrayWithPlayerNameLabels (ArrayList<Label> playerNames) {
+        this.arrayWithPlayerNameLabels = playerNames;
     }
 
     public ArrayList<Spot> getSpotsOuter() {

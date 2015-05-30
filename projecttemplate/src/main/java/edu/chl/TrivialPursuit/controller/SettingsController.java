@@ -1,6 +1,7 @@
 package edu.chl.trivialpursuit.controller;
 
 import edu.chl.trivialpursuit.model.ChoosePlayer;
+import edu.chl.trivialpursuit.model.GameBoard;
 import edu.chl.trivialpursuit.view.GameBoardView;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -8,7 +9,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javax.inject.Inject;
-import java.awt.TextField;
 import java.io.IOException;
 
 /**
@@ -16,18 +16,19 @@ import java.io.IOException;
  */
 public class SettingsController {
 
-    @Inject
-    ChoosePlayer player;
+    @Inject ChoosePlayer player;
 
-    @FXML
-    TextField newName1, newName2, newName3, newName4, newName5, newName6;
+    @Inject GameBoard gameBoard;
 
-    @FXML
-    Button backToBoard;
+    @FXML Button newNameOne, newNameTwo, newNameThree, newNameFour, newNameFive, newNameSix;
 
-    Slider volumeSlider = new Slider();
+    @FXML Button backToBoard;
 
-    private int volume;
+    @FXML TextField textField1,textField2,textField3,textField4,textField5,textField6;
+
+    /*Slider volumeSlider = new Slider();
+
+    private int volume;*/
 
 
     @FXML
@@ -37,44 +38,35 @@ public class SettingsController {
     }
 
     @FXML
-    private  void saveButton1(){
+    private void savePlayerNames(ActionEvent e){
 
-        player.setNameOne(newName1.getText());
+        Button buttonPressed = (Button)e.getSource();
+        if(buttonPressed == newNameOne){
 
-    }
+            gameBoard.getarrayWithPlayerNameLabels().get(0).setText(textField1.getText());
+            gameBoard.getPlayers().get(0).setName(textField1.getText());
 
-    @FXML
-    private void saveButton2(){
+        }else if (buttonPressed == newNameTwo){
+            gameBoard.getarrayWithPlayerNameLabels().get(1).setText(textField2.getText());
+            gameBoard.getPlayers().get(1).setName(textField2.getText());
 
-        player.setNameOne(newName2.getText());
+        }else if (buttonPressed == newNameThree){
+            gameBoard.getarrayWithPlayerNameLabels().get(2).setText(textField3.getText());
+            gameBoard.getPlayers().get(2).setName(textField3.getText());
 
-    }
+        }else if (buttonPressed == newNameFour){
+            gameBoard.getarrayWithPlayerNameLabels().get(3).setText(textField4.getText());
+            gameBoard.getPlayers().get(3).setName(textField4.getText());
 
-    @FXML
-    private void saveButton3(){
+        }else if (buttonPressed == newNameFive){
+            gameBoard.getarrayWithPlayerNameLabels().get(4).setText(textField5.getText());
+            gameBoard.getPlayers().get(4).setName(textField5.getText());
 
-        player.setNameOne(newName3.getText());
+        }else{
+            gameBoard.getarrayWithPlayerNameLabels().get(5).setText(textField6.getText());
+            gameBoard.getPlayers().get(5).setName(textField6.getText());
 
-    }
-
-    @FXML
-    private void saveButton4(){
-        player.setNameOne(newName4.getText());
-
-
-    }
-
-    @FXML
-    private void saveButton5(){
-
-        player.setNameOne(newName5.getText());
-
-    }
-
-    @FXML
-    private void saveButton6(){
-
-        player.setNameOne(newName6.getText());
+        }
 
 
     }

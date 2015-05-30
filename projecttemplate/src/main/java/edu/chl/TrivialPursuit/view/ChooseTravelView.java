@@ -9,9 +9,7 @@ import java.io.IOException;
  */
 public class ChooseTravelView extends BaseView {
 
-    private static boolean firstTime = true;
     private static ChooseTravelView chooseTravelView;
-//    ChooseTravel travel;
 
     private ChooseTravelView() {
         super();
@@ -19,10 +17,8 @@ public class ChooseTravelView extends BaseView {
     }
 
     public static ChooseTravelView create() throws IOException {
-        if(firstTime){
-            chooseTravelView = new ChooseTravelView();
-            firstTime = false;
-        }
+
+        chooseTravelView = new ChooseTravelView();
         Injector.injectMembers(ChooseTravelView.class, chooseTravelView);
         return chooseTravelView;
     }

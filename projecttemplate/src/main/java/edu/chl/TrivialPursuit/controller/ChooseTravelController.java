@@ -55,6 +55,11 @@ public class ChooseTravelController implements Initializable {
     @FXML
     private void onDonePressed(ActionEvent e) throws IOException {
 
+        for (int i = 1; i <= choosePlayer.getNumberOfPlayers(); i++) {
+
+            chooseTravel.setStartPlace((String) comboBoxArray.get(i - 1).getValue(), i);
+        }
+
         DiceView diceView = DiceView.create();
         diceView.show();
         e.consume();
@@ -62,13 +67,8 @@ public class ChooseTravelController implements Initializable {
 
     @FXML
     private void choice(ActionEvent e) throws IOException {
-        ComboBox comboChosen = (ComboBox) e.getSource();
-        for (int i = 1; i <= choosePlayer.getNumberOfPlayers(); i++) {
-            if (comboChosen == comboBoxArray.get(i - 1)) {
-                chooseTravel.setStartPlace((String) comboBoxArray.get(i - 1).getValue(), i);
-                checkChooices();
-            }
-        }
+
+        checkChooices();
     }
 
     private void placeStar(Label travel) {

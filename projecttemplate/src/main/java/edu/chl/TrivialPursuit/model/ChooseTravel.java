@@ -12,9 +12,9 @@ public class ChooseTravel {
         continentToStartArray.add(continent);
     }
 
-    public void setStartPlace(String startPlace, int numberOfPlayer){
+    public void setStartPlace(String startPlace, int numberOfThePlayer){
 
-        switch(numberOfPlayer) {
+        switch(numberOfThePlayer) {
             case 1:
                 setStartPlaceOne(startPlace);
                 break;

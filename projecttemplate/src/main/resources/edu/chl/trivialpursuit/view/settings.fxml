@@ -7,7 +7,8 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@settings.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.trivialpursuit.controller.SettingsController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@settings.css" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.trivialpursuit.controller.SettingsController">
    <center>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -29,12 +30,13 @@
                               <Insets top="11.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField fx:id="t1">
+                        <TextField fx:id="textField1">
                            <HBox.margin>
                               <Insets top="7.0" />
                            </HBox.margin>
                         </TextField>
-                        <Button maxHeight="100.0" mnemonicParsing="false" onAction="#saveButton1" prefHeight="30.0" stylesheets="@settings.css" text="Save" />
+                        <Button maxHeight="100.0" mnemonicParsing="false" prefHeight="30.0"
+                                stylesheets="@settings.css" text="Save" fx:id="newNameOne" onAction="#savePlayerNames"/>
                      </children>
                      <VBox.margin>
                         <Insets left="60.0" />
@@ -47,12 +49,12 @@
                               <Insets top="11.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField fx:id="t2">
+                        <TextField fx:id="textField2">
                            <HBox.margin>
                               <Insets top="7.0" />
                            </HBox.margin>
                         </TextField>
-                        <Button mnemonicParsing="false" onAction="#saveButton2" prefHeight="100.0" text="Save" />
+                        <Button mnemonicParsing="false" onAction="#savePlayerNames" prefHeight="100.0" text="Save" fx:id="newNameTwo"/>
                      </children>
                      <VBox.margin>
                         <Insets left="60.0" top="5.0" />
@@ -65,12 +67,12 @@
                               <Insets top="11.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField fx:id="t3">
+                        <TextField fx:id="textField3">
                            <HBox.margin>
                               <Insets top="7.0" />
                            </HBox.margin>
                         </TextField>
-                        <Button mnemonicParsing="false" onAction="#saveButton3" text="Save" />
+                        <Button mnemonicParsing="false" onAction="#savePlayerNames" text="Save" fx:id="newNameThree"/>
                      </children>
                      <VBox.margin>
                         <Insets left="60.0" top="5.0" />
@@ -83,12 +85,12 @@
                               <Insets top="11.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField fx:id="t4">
+                        <TextField fx:id="textField4">
                            <HBox.margin>
                               <Insets top="7.0" />
                            </HBox.margin>
                         </TextField>
-                        <Button mnemonicParsing="false" text="Save" />
+                        <Button mnemonicParsing="false" text="Save" fx:id="newNameFour" onAction="#savePlayerNames"/>
                      </children>
                      <VBox.margin>
                         <Insets left="60.0" top="5.0" />
@@ -101,12 +103,12 @@
                               <Insets top="11.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField fx:id="t5">
+                        <TextField fx:id="textField5">
                            <HBox.margin>
                               <Insets top="7.0" />
                            </HBox.margin>
                         </TextField>
-                        <Button mnemonicParsing="false" text="Save" />
+                        <Button mnemonicParsing="false" text="Save" fx:id="newNameFive" onAction="#savePlayerNames" />
                      </children>
                      <VBox.margin>
                         <Insets left="60.0" top="5.0" />
@@ -119,12 +121,12 @@
                               <Insets top="11.0" />
                            </HBox.margin>
                         </Label>
-                        <TextField fx:id="t6">
+                        <TextField fx:id="textField6">
                            <HBox.margin>
                               <Insets top="7.0" />
                            </HBox.margin>
                         </TextField>
-                        <Button mnemonicParsing="false" text="Save" />
+                        <Button mnemonicParsing="false" text="Save" fx:id="newNameSix" onAction="#savePlayerNames"/>
                      </children>
                      <VBox.margin>
                         <Insets left="60.0" top="5.0" />
