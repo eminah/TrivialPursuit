@@ -198,16 +198,8 @@ public class GameBoardController implements Initializable {
 
     private void generateTicketDialog(boolean isOnAirplaneSpot) throws IOException {
 
-        /*int startPlaceEurope = 0;
-        int currentTurnIndex = game.getTurn() -1;
-        int currentTurn = game.getTurn();
-        Player currentPlayer = game.getPlayers().get(currentTurnIndex);
-
-
-            if(currentPlayer.getHasTicket()) {*/
-
         Continent currentPlayersSpotContinent = game.getCurrentPlayerPlaying().getSpot().getContinent();
-        if(isOnAirplaneSpot && currentPlayersSpotContinent != Continent.EUROPE) {
+        if(isOnAirplaneSpot) {
             if(game.getCurrentPlayerPlaying().getHasTicket()) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Congratulations!");
@@ -219,6 +211,7 @@ public class GameBoardController implements Initializable {
                 movePlayerToEurope(game.getCurrentPlayerPlaying());
                 game.setNextTurn(game.getAmountOfPlayersPlaying());
                 game.fixArrow();
+                changeToRightViewForNextPlayer(game.getCurrentPlayerPlaying());
 
             } else {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -230,9 +223,10 @@ public class GameBoardController implements Initializable {
                 enableTheButtonsRightLeft();
                 game.setNextTurn(game.getAmountOfPlayersPlaying());
                 game.fixArrow();
+                changeToRightViewForNextPlayer(game.getCurrentPlayerPlaying());
             }
 
-            
+
         }
 
     }
