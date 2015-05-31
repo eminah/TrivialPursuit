@@ -3,6 +3,7 @@ package edu.chl.trivialpursuit.controller;
 import edu.chl.trivialpursuit.model.ChoosePlayer;
 import edu.chl.trivialpursuit.model.GameBoard;
 import edu.chl.trivialpursuit.view.GameBoardView;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -29,12 +30,14 @@ public class SettingsController {
 
 
     @FXML
-    private void backToGameBord(ActionEvent e) throws IOException{
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
+    private void backToGameBord() throws IOException{
         final GameBoardView gameBoard = GameBoardView.create();
         gameBoard.show();
     }
 
     @FXML
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     private void savePlayerNames(ActionEvent e){
 
         Button buttonPressed = (Button)e.getSource();
