@@ -42,21 +42,27 @@ public class SpotTest extends TestCase {
         int startSpotSouthAmerica =14;
         int starSpotNorthAmerica = 21;
         int startSpotEurope = 0;
+        Spot startAsia =  gameBoard.getSpotsOuter().get(startSpotAsia);
+        Spot startSouthAmerica =  gameBoard.getSpotsOuter().get(startSpotSouthAmerica);
+        Spot startNorthAmerica =  gameBoard.getSpotsOuter().get(starSpotNorthAmerica);
+        Spot startAfrica =  gameBoard.getSpotsOuter().get(startSpotAfrica);
+        Spot startEurope =  gameBoard.getSpotsInner().get(startSpotEurope);
+
         gameBoard.addSpotsToListInner();
         gameBoard.addSpotsToListOuter();
-        assertEquals(250, gameBoard.getSpotsOuter().get(startSpotAsia).getCooX());
-        assertEquals(15, gameBoard.getSpotsOuter().get(startSpotAsia).getCooY());
+        assertEquals(250, startAsia.getCooX());
+        assertEquals(15, startAsia.getCooY());
 
-        assertEquals(497, gameBoard.getSpotsOuter().get(startSpotAfrica).getCooX());
-        assertEquals(230, gameBoard.getSpotsOuter().get(startSpotAfrica).getCooY());
+        assertEquals(497, startAfrica.getCooX());
+        assertEquals(230, startAfrica.getCooY());
 
-        assertEquals(260, gameBoard.getSpotsOuter().get(startSpotSouthAmerica).getCooX());
-        assertEquals(445, gameBoard.getSpotsOuter().get(startSpotSouthAmerica).getCooY());
+        assertEquals(260, startSouthAmerica.getCooX());
+        assertEquals(445, startSouthAmerica.getCooY());
 
-        assertEquals(20, gameBoard.getSpotsOuter().get(starSpotNorthAmerica).getCooX());
-        assertEquals(230,gameBoard.getSpotsOuter().get(starSpotNorthAmerica).getCooY());
+        assertEquals(20, startNorthAmerica.getCooX());
+        assertEquals(230,startNorthAmerica.getCooY());
 
-        assertEquals(295, gameBoard.getSpotsInner().get(startSpotEurope).getCooX());
-        assertEquals(120,gameBoard.getSpotsInner().get(startSpotEurope).getCooY());
+        assertEquals(295,startEurope.getCooX());
+        assertEquals(120,startEurope.getCooY());
     }
 }
