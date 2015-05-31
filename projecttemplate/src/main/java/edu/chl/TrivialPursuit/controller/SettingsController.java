@@ -16,19 +16,16 @@ import java.io.IOException;
  */
 public class SettingsController {
 
-    @Inject ChoosePlayer player;
-
     @Inject GameBoard gameBoard;
+
+    @FXML
+    Slider slider;
 
     @FXML Button newNameOne, newNameTwo, newNameThree, newNameFour, newNameFive, newNameSix;
 
     @FXML Button backToBoard;
 
     @FXML TextField textField1,textField2,textField3,textField4,textField5,textField6;
-
-    /*Slider volumeSlider = new Slider();
-
-    private int volume;*/
 
 
     @FXML
@@ -70,4 +67,5 @@ public class SettingsController {
 
 
     }
+
 }

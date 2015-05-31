@@ -11,6 +11,10 @@ public class Card {
 
     }
 
+    public boolean checkIfCorrectAlternative (Alternative alternative){
+        return alternative == this.getCorrectAlternative();
+    }
+
 
     public Alternative getCorrectAlternative() {
         return correctAlternative;

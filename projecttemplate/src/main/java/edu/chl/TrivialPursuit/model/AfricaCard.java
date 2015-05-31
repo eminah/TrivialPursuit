@@ -20,8 +20,4 @@ public class AfricaCard extends Card {
     public void setCorrectAlternative(Alternative correctAlternative) {
         this.correctAlternative = correctAlternative;
     }
-
-    public boolean checkIfCorrectAlternative(Alternative alternative){
-        return alternative == correctAlternative;
-    }
 }

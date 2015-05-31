@@ -157,7 +157,7 @@
                <font>
                   <Font name="System Bold" size="13.0" />
                </font></Label>
-            <Slider fx:id="slider" layoutX="268.0" layoutY="71.0" showTickLabels="true" showTickMarks="true" />
+            <Slider fx:id="slider" layoutX="268.0" layoutY="71.0" showTickLabels="true" showTickMarks="true"/>
             <Label layoutX="168.0" layoutY="74.0" text="Music volume" />
             <CheckBox layoutX="268.0" layoutY="43.0" mnemonicParsing="false" selected="true" />
             <Label layoutX="168.0" layoutY="44.0" text="Music on" />

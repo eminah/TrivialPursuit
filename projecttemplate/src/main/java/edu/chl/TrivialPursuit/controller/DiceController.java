@@ -107,29 +107,10 @@ public class DiceController implements Initializable {
     }
 
     private void setName(){
-        switch (game.getTurn()){
-            case 1:
-                who.setText(choose.getNameOne() + ", throw the dice!");
-                break;
-            case 2:
-                who.setText(choose.getNameTwo() + ", throw the dice!");
-                break;
-            case 3:
-                who.setText(choose.getNameThree()  + ", throw the dice!");
-                break;
-            case 4:
-                who.setText(choose.getNameFour()  + ", throw the dice!");
-                break;
-            case 5:
-                who.setText(choose.getNameFive()  + ", throw the dice!");
-                break;
-            case 6:
-                who.setText(choose.getNameSix()  + ", throw the dice!");
-                break;
-            default:
-                who.setText(choose.getNameOne()  + ", throw the dice!");
-        }
+      who.setText(game.getCurrentPlayerPlaying().getName());
+
     }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
