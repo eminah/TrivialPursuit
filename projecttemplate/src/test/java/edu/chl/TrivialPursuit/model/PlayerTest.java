@@ -18,9 +18,14 @@ public class PlayerTest extends TestCase {
 
 
     @Test
-    public void testCheckIfAllContinents() throws Exception {
+    public void testCheckIfNotAllContintents(){
         hashSet.add(Continent.AFRICA);
         assertFalse(player.checkIfAllContinents());
+    }
+
+    @Test
+    public void testCheckIfAllContinents() {
+        hashSet.add(Continent.AFRICA);
         hashSet.add(Continent.ASIA);
         hashSet.add(Continent.NORTH_AMERICA);
         hashSet.add(Continent.SOUTH_AMERICA);
