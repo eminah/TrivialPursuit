@@ -41,35 +41,37 @@ public class SpotTest extends TestCase {
     @Test
     public void testIfCoordinatesIsCorrect(Spot spot){
         int startSpotAsia = 0;
-        int startSpotAfrica = 7;
-        int startSpotSouthAmerica =14;
-        int starSpotNorthAmerica = 21;
-        int startSpotEurope = 0;
+       // int startSpotAfrica = 7;
+        //int startSpotSouthAmerica =14;
+        //int starSpotNorthAmerica = 21;
+        //int startSpotEurope = 0;
 
 
         Spot startAsia =  gameBoard.getSpotsOuter().get(startSpotAsia);
-        Spot startSouthAmerica =  gameBoard.getSpotsOuter().get(startSpotSouthAmerica);
-        Spot startNorthAmerica =  gameBoard.getSpotsOuter().get(starSpotNorthAmerica);
-        Spot startAfrica =  gameBoard.getSpotsOuter().get(startSpotAfrica);
-        Spot startEurope =  gameBoard.getSpotsInner().get(startSpotEurope);
+       // Spot startSouthAmerica =  gameBoard.getSpotsOuter().get(startSpotSouthAmerica);
+       // Spot startNorthAmerica =  gameBoard.getSpotsOuter().get(starSpotNorthAmerica);
+        //Spot startAfrica =  gameBoard.getSpotsOuter().get(startSpotAfrica);
+        //Spot startEurope =  gameBoard.getSpotsInner().get(startSpotEurope);
 
-        Spot[] spots = {startAsia,startAfrica,startSouthAmerica, startNorthAmerica,startEurope};
-        assertCoordinates(spots);
+        //Spot[] spots = {startAsia,startAfrica,startSouthAmerica, startNorthAmerica,startEurope};
+        //assertCoordinates(spots);
 
         gameBoard.addSpotsToListInner();
         gameBoard.addSpotsToListOuter();
+
+        assertEquals(250,startAsia.getCooX());
+        assertEquals(15,startAsia.getCooY());
 
 
 
 
     }
-    @Test
+    /*@Test
     private void assertCoordinates (Spot[] spot){
         for(int i = 0; i < 5; i++){
             switch (i){
                 case 0:
-                    assertEquals(250,spot[i].getCooX());
-                    assertEquals(15,spot[i].getCooY());
+
                     break;
                 case 1:
                     assertEquals(497,spot[i].getCooX());
@@ -90,8 +92,8 @@ public class SpotTest extends TestCase {
 
             }
 
-        }
+        }*/
 
-    }
+
 
 }
