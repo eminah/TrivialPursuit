@@ -12,12 +12,8 @@ public class AsiaCardTest extends TestCase {
     @Test
     public void testCheckIfCorrectAlternative() throws Exception {
 
-
-
+        assertTrue(asiaCard.checkIfCorrectAlternative(asiaCard.getCorrectAlternative()));
         asiaCard.setCorrectAlternative(Alternative.ALTERNATIVE_TWO);
         assertTrue(asiaCard.checkIfCorrectAlternative(Alternative.ALTERNATIVE_TWO));
-
-        assertTrue(asiaCard.checkIfCorrectAlternative(asiaCard.getCorrectAlternative()));
-
     }
 }
