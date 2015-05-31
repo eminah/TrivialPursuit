@@ -46,7 +46,7 @@ public class DiceController implements Initializable {
 
     @FXML
     @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
-    private void throwDice(ActionEvent e) throws IOException{
+    private void throwDice() throws IOException{
 
         dice.throwDice();
         changeDiceImage(dice1, dice.getFirstDiceValue());

@@ -56,7 +56,6 @@ public class GameBoardController implements Initializable {
     private Font labels = new Font("Verdana", 15);
 
     private Timeline getQuestionDelay;
-    private Timeline europeDelay;
     private Label[] playersNameLabels;
 
     @FXML Canvas boardCanvas;
@@ -104,14 +103,16 @@ public class GameBoardController implements Initializable {
     }
 
     @FXML
-    public void rulePressed(ActionEvent e) throws IOException{
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
+    private void rulePressed() throws IOException{
 
         RulesView rulesView = RulesView.create();
         rulesView.show();
     }
 
     @FXML
-    public void settingPressed(ActionEvent e) throws IOException{
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
+    private void settingPressed() throws IOException{
 
         SettingsView settingsView = SettingsView.create();
         settingsView.show();

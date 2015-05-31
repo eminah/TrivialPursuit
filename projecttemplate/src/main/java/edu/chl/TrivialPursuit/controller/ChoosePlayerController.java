@@ -3,13 +3,11 @@ package edu.chl.trivialpursuit.controller;
 import edu.chl.trivialpursuit.model.ChoosePlayer;
 import edu.chl.trivialpursuit.view.ChooseTravelView;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-
 import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;
