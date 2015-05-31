@@ -40,35 +40,16 @@ public class SettingsController {
     @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     private void savePlayerNames(ActionEvent e){
 
+
+
         Button buttonPressed = (Button)e.getSource();
-        if(buttonPressed == newNameOne){
-
-            gameBoard.getarrayWithPlayerNameLabels().get(0).setText(textField1.getText());
-            gameBoard.getPlayers().get(0).setName(textField1.getText());
-
-        }else if (buttonPressed == newNameTwo){
-            gameBoard.getarrayWithPlayerNameLabels().get(1).setText(textField2.getText());
-            gameBoard.getPlayers().get(1).setName(textField2.getText());
-
-        }else if (buttonPressed == newNameThree){
-            gameBoard.getarrayWithPlayerNameLabels().get(2).setText(textField3.getText());
-            gameBoard.getPlayers().get(2).setName(textField3.getText());
-
-        }else if (buttonPressed == newNameFour){
-            gameBoard.getarrayWithPlayerNameLabels().get(3).setText(textField4.getText());
-            gameBoard.getPlayers().get(3).setName(textField4.getText());
-
-        }else if (buttonPressed == newNameFive){
-            gameBoard.getarrayWithPlayerNameLabels().get(4).setText(textField5.getText());
-            gameBoard.getPlayers().get(4).setName(textField5.getText());
-
-        }else{
-            gameBoard.getarrayWithPlayerNameLabels().get(5).setText(textField6.getText());
-            gameBoard.getPlayers().get(5).setName(textField6.getText());
-
+        Button[] buttonArray = {newNameOne, newNameTwo, newNameThree, newNameFour, newNameFive, newNameSix};
+        TextField[] textFieldsArray = {textField1,textField2,textField3,textField4,textField5,textField6};
+        for (int i = 0; i < gameBoard.getAmountOfPlayersPlaying(); i++){
+            if (buttonPressed == buttonArray[1]){
+                gameBoard.getarrayWithPlayerNameLabels().get(i).setText(textFieldsArray[i].getText());
+                gameBoard.getPlayers().get(i).setName(textFieldsArray[i].getText());
+            }
         }
-
-
     }
-
 }
