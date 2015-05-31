@@ -38,28 +38,22 @@ public class GameBoardTest extends TestCase {
     }
 
     @Test
-    public void testSetNextTurn() throws Exception {
+    public void testSetNextTurnFromLastPlayer() throws Exception {
 
-        ArrayList <Player> players = new ArrayList<>();
-        players.add(playerOne);
-        players.add(playerTwo);
-        players.add(playerThree);
-        gameBoard.setPlayers(players);
-        System.out.println("Testing setNextTurn with three players");
-        //Before you have set any turn at all:
-        assertEquals(0, gameBoard.getTurn());
-        //When you call setNextTurn the first time
-        gameBoard.setNextTurn(3);
+      addPlayersTOArray();
+        for(int i = 0; i< 4; i++){
+            gameBoard.setNextTurn(3);
+        }
         assertEquals(1, gameBoard.getTurn());
-        //When you call setNextTurn the second time
-        gameBoard.setNextTurn(3);
-        assertEquals(2 , gameBoard.getTurn());
-        //When you call setNextTurn the third time
-        gameBoard.setNextTurn(3);
-        assertEquals(3, gameBoard.getTurn());
-        //When you call setNextTurn the fourth time
-        gameBoard.setNextTurn(3);
-       assertTrue(gameBoard.getTurn() == 1);
+    }
+
+    @Test
+    public void testSetNextTurnFromFirstPlayer(){
+        addPlayersTOArray();
+        for(int i = 0; i < 2 ; i++){
+            gameBoard.setNextTurn(3);
+        }
+        assertEquals(2, gameBoard.getTurn());
 
     }
 
@@ -74,5 +68,13 @@ public class GameBoardTest extends TestCase {
         assertTrue(playerAnna.getSpot().getCategory() == Category.AIRPLANE);
 
 
+    }
+
+    public void addPlayersTOArray(){
+        ArrayList <Player> players = new ArrayList<>();
+        players.add(playerOne);
+        players.add(playerTwo);
+        players.add(playerThree);
+        gameBoard.setPlayers(players);
     }
 }
