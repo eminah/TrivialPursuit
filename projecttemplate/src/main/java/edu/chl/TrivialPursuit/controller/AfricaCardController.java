@@ -50,7 +50,7 @@ public class AfricaCardController implements Initializable {
         doWhenGuessed();
         startTimer();
     }
-    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
+    @SuppressFBWarnings()
     public void doWhenGuessed() {
 
         if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))) {

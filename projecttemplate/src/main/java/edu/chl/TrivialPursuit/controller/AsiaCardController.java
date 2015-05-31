@@ -48,7 +48,7 @@ public class AsiaCardController implements Initializable {
         doWhenGuessed();
 
     }
-    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
+    @SuppressFBWarnings()
     private void doWhenGuessed(){
         if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))){
             theButtonPressed.setStyle("-fx-background-color: lawngreen");
