@@ -14,13 +14,13 @@ public class DiceTest extends TestCase {
     public void testThrowDice() throws Exception {
 
         for(int i = 0; i < 1000; i++){
-            System.out.println("Value of dices BEFORE last throw");
+            /*System.out.println("Value of dices BEFORE last throw");
             System.out.println("first dice value:" + dice.getFirstDiceValue());
-            System.out.println("second dice value:" + dice.getSecondDiceValue());
+            System.out.println("second dice value:" + dice.getSecondDiceValue());*/
             dice.throwDice();
-            System.out.println("Value of dices AFTER last throw");
+           /* System.out.println("Value of dices AFTER last throw");
             System.out.println("first dice value:" + dice.getFirstDiceValue());
-            System.out.println("second dice value:" + dice.getSecondDiceValue());
+            System.out.println("second dice value:" + dice.getSecondDiceValue());*/
             assertTrue(dice.getFirstDiceValue() >= 1 && dice.getFirstDiceValue() <= 6);
             assertTrue(dice.getSecondDiceValue() >= 1 && dice.getSecondDiceValue() <= 6);
 
