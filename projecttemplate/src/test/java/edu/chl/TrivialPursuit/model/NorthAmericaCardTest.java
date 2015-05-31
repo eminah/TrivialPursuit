@@ -14,11 +14,8 @@ public class NorthAmericaCardTest extends TestCase {
     public void testCheckIfCorrectAlternative() throws Exception {
 
 
-
+        assertTrue(nortAmericaCard.checkIfCorrectAlternative(nortAmericaCard.getCorrectAlternative()));
         nortAmericaCard.setCorrectAlternative(Alternative.ALTERNATIVE_ONE);
         assertTrue(nortAmericaCard.checkIfCorrectAlternative(Alternative.ALTERNATIVE_ONE));
-
-        assertTrue(nortAmericaCard.checkIfCorrectAlternative(nortAmericaCard.getCorrectAlternative()));
-
     }
 }

@@ -12,10 +12,8 @@ public class AfricaCardTest extends TestCase {
     @Test
     public void testCheckIfCorrectAlternative() throws Exception {
 
+        assertTrue(africaCard.checkIfCorrectAlternative(africaCard.getCorrectAlternative()));
         africaCard.setCorrectAlternative(Alternative.ALTERNATIVE_ONE);
         assertTrue(africaCard.checkIfCorrectAlternative(Alternative.ALTERNATIVE_ONE));
-
-        assertTrue(africaCard.checkIfCorrectAlternative(africaCard.getCorrectAlternative()));
-
     }
 }

@@ -1,5 +1,6 @@
 package edu.chl.trivialpursuit.model;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -292,6 +293,7 @@ public class GameBoard {
         setSpotsLeft(spotsInner);
     }
 
+    @SuppressFBWarnings
     public void setSpotsRight(ArrayList<Spot> spotArray ){
         for(int i = 0; i <= spotArray.size()-1; i++){
             if(i != spotArray.size()-1) {
@@ -302,6 +304,7 @@ public class GameBoard {
         }
     }
 
+    @SuppressFBWarnings
     public void setSpotsLeft(ArrayList<Spot> spotArray){
         for(int j = 0; j <= spotArray.size()-1; j++){
             if (j==0){
