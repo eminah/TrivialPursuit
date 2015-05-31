@@ -43,14 +43,14 @@ public class EuropeCardController implements Initializable {
 
 
     @FXML
-    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
+    @SuppressFBWarnings()
     private void onButtonPressed(ActionEvent e) {
         theButtonPressed = (Button) e.getSource();
 
         doWhenGuessed();
     }
 
-    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
+    @SuppressFBWarnings()
     public void doWhenGuessed() {
         if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))){
             theButtonPressed.setStyle("-fx-background-color: lawngreen");

@@ -46,7 +46,7 @@ public class NorthAmericaCardController implements Initializable {
 
         doWhenGuessed();
     }
-    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
+    @SuppressFBWarnings()
     public void doWhenGuessed() {
 
         if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))) {
