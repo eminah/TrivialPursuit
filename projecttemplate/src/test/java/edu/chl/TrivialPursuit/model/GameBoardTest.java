@@ -1,45 +1,49 @@
 package edu.chl.trivialpursuit.model;
 
 import junit.framework.TestCase;
-import org.junit.Test;
+
+import java.util.HashSet;
 
 /**
  * Created by eminahromic on 2015-05-31.
  */
 public class GameBoardTest extends TestCase {
 
-    @Test
+    Card nortAmericaCard = new NorthAmericaCard();
+    Spot spot = new Spot(Continent.AFRICA,Category.CULTURE,15,15,nortAmericaCard);
+    HashSet<Continent> hashSet = new HashSet<>();
+
     public void testAddSpotsToListOuter() throws Exception {
 
     }
 
-    @Test
     public void testAddSpotsToListInner() throws Exception {
 
     }
 
-    @Test
     public void testAddCardsAfrica() throws Exception {
 
     }
 
-    @Test
     public void testAddCardsNorthAmerica() throws Exception {
 
     }
 
-    @Test
     public void testAddCardsSouthAmerica() throws Exception {
 
     }
 
-    @Test
     public void testAddCardsAsia() throws Exception {
 
     }
 
-    @Test
-    public void testFixArrow() throws Exception {
+    public void testSetNextTurn() throws Exception {
+
+    }
+
+    public void testMovePlayerToEurope() throws Exception {
+
+        Player player = new Player("Anna", spot, hashSet);
 
     }
 }

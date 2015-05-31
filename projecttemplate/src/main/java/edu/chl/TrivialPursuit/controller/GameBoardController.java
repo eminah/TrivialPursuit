@@ -223,7 +223,8 @@ public class GameBoardController implements Initializable {
                 alert.showAndWait();
 
                 enableTheButtonsRightLeft();
-                movePlayerToEurope(game.getCurrentPlayerPlaying());
+                game.movePlayerToEurope(game.getCurrentPlayerPlaying());
+                setCoordinates(game.getAmountOfPlayersPlaying());
                 game.setNextTurn(game.getAmountOfPlayersPlaying());
                 game.fixArrow();
                 changeToRightViewForNextPlayer(game.getCurrentPlayerPlaying());
@@ -361,13 +362,7 @@ public class GameBoardController implements Initializable {
     }
 
 
-    public void movePlayerToEurope(Player thePlayerToMove) {
-        int startPlaceEurope = 0;
-        thePlayerToMove.setSpot(game.getSpotsInner().get(startPlaceEurope));
-        setCoordinates(game.getAmountOfPlayersPlaying());
-        game.getCurrentPlayerPlaying().setInEurope(true);
-        drawBoard();
-    }
+
 
     public void changeToRightViewForNextPlayer(Player nextPlayer)throws IOException {
         if(nextPlayer.isInEurope()) {

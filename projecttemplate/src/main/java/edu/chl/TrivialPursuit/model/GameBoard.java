@@ -368,4 +368,11 @@ public class GameBoard {
             getLabelTurns().get(getCurrentTurnNumberArrayIndex()).setText("<--");
         }
     }
+
+    public void movePlayerToEurope(Player thePlayerToMove) {
+        int startPlaceEurope = 0;
+        thePlayerToMove.setSpot(getSpotsInner().get(startPlaceEurope));
+        getCurrentPlayerPlaying().setInEurope(true);
+
+    }
 }

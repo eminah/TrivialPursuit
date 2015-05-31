@@ -1,5 +1,6 @@
 package edu.chl.trivialpursuit.model;
 
+import edu.chl.trivialpursuit.controller.GameBoardController;
 import junit.framework.TestCase;
 import org.junit.Test;
 
@@ -13,6 +14,8 @@ public class PlayerTest extends TestCase {
     Spot spot = new Spot(Continent.AFRICA,Category.CULTURE,15,15,asiaCard);
     HashSet<Continent> hashSet = new HashSet<>();
     Player player = new Player("Adam",spot , hashSet );
+    GameBoard gameBoard = new GameBoard();
+
 
     @Test
     public void testCheckIfAllContinents() throws Exception {
@@ -23,9 +26,32 @@ public class PlayerTest extends TestCase {
         hashSet.add(Continent.SOUTH_AMERICA);
         assertTrue(player.checkIfAllContinents());
     }
+    @Test
+    public void testIfCorrectSpot(){
+        int startPlaceAsia = 0;
+        assertTrue(player.getSpot().getContinent() == Continent.AFRICA);
+        assertTrue(player.getSpot().getCategory()== Category.CULTURE);
+        player.setSpot(gameBoard.getSpotsOuter().get(startPlaceAsia));
+        assertFalse(player.getSpot().getContinent() == Continent.AFRICA);
+        assertTrue(player.getSpot().getContinent() == Continent.ASIA);
+        assertTrue(player.getSpot().getCategory() == Category.AIRPLANE);
+
+
+    }
 
     @Test
     public void testIsInEurope() throws Exception {
+        assertFalse(player.isInEurope());
+        player.setInEurope(true);
+        assertTrue(player.isInEurope());
+        player.setInEurope(false);
+        assertFalse(player.isInEurope());
+    }
 
+    @Test
+    public void testIfCorrectName() throws Exception {
+        assertEquals("Adam", player.getName());
+        player.setName("William");
+        assertEquals("William", player.getName());
     }
 }
