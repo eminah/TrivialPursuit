@@ -233,7 +233,7 @@ public class GameBoardController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Too bad!");
                 alert.setHeaderText(null);
-                alert.setContentText("You have not collected all continents and therefor have no ticket back to Europe!");
+                alert.setContentText("You have not collected all continents and therefore have no ticket back to Europe!");
                 alert.showAndWait();
 
                 enableTheButtonsRightLeft();

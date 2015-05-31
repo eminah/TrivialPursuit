@@ -372,7 +372,7 @@ public class GameBoard {
     public void movePlayerToEurope(Player thePlayerToMove) {
         int startPlaceEurope = 0;
         thePlayerToMove.setSpot(getSpotsInner().get(startPlaceEurope));
-        getCurrentPlayerPlaying().setInEurope(true);
+        thePlayerToMove.setInEurope(true);
 
     }
 }
