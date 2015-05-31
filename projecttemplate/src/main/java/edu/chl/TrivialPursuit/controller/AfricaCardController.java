@@ -47,26 +47,10 @@ public class AfricaCardController implements Initializable {
     private void onButtonPressed(ActionEvent e) {
         theButtonPressed = (Button) e.getSource();
 
-        if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))) {
-            theButtonPressed.setStyle("-fx-background-color: lawngreen");
-            ImageView theContinentToChange = game.getiAf().get(game.getCurrentTurnNumberArrayIndex());
-            game.getCurrentPlayerPlaying().getCollectedContinents().add(Continent.AFRICA);
-            theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/africa_gold.png"));
-
-            if(game.getCurrentPlayerPlaying().checkIfAllContinents()) {
-                game.getCurrentPlayerPlaying().setHasTicket(true);
-            }
-        } else {
-            theButtonPressed.setStyle("-fx-background-color: red");
-            game.setNextTurn(game.getAmountOfPlayersPlaying());
-        }
-
-        startTimer();
-
-        //doWhenGuessed();
+        doWhenGuessed();
     }
 
-   /* public void doWhenGuessed() {
+    public void doWhenGuessed() {
 
         if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))) {
             theButtonPressed.setStyle("-fx-background-color: lawngreen");
@@ -83,7 +67,7 @@ public class AfricaCardController implements Initializable {
         }
 
         startTimer();
-    }*/
+    }
 
     public Alternative getAnswerAsAlternative(Button pressed){
         if(pressed.equals(altOne)){
