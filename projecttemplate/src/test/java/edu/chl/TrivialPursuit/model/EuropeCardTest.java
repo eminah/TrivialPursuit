@@ -13,7 +13,7 @@ public class EuropeCardTest extends TestCase {
     @Test
     public void testCheckIfCorrectAlternative() throws Exception {
 
-        assertTrue(europeCard.checkIfCorrectAlternative(europeCard.getCorrectAlternative()));
+      
 
         europeCard.setCorrectAlternative(Alternative.ALTERNATIVE_FOUR);
         assertTrue(europeCard.checkIfCorrectAlternative(Alternative.ALTERNATIVE_FOUR));
