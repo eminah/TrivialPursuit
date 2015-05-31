@@ -145,24 +145,12 @@ public class GameBoardController implements Initializable {
 
     private void draw(GraphicsContext gc){
         gc.drawImage(new Image("edu/chl/trivialpursuit/view/board_pastell.png"), 0, 0, boardCanvas.getWidth(), boardCanvas.getHeight());
-        gc.setFill(playerColor[0]);
-        gc.fillOval(coorX[1],coorY[1], 15, 15);
-        gc.strokeOval(coorX[1],coorY[1], 15, 15);
-        gc.setFill(playerColor[1]);
-        gc.fillOval(coorX[2]-12,coorY[2], 15, 15);
-        gc.strokeOval(coorX[2]-12,coorY[2], 15, 15);
-        gc.setFill(playerColor[2]);
-        gc.fillOval(coorX[3],coorY[3]-12, 15, 15);
-        gc.strokeOval(coorX[3],coorY[3]-12, 15, 15);
-        gc.setFill(playerColor[3]);
-        gc.fillOval(coorX[4], coorY[4] + 12, 15, 15);
-        gc.strokeOval(coorX[4], coorY[4] + 12, 15, 15);
-        gc.setFill(playerColor[4]);
-        gc.fillOval(coorX[5] + 12, coorY[5], 15, 15);
-        gc.strokeOval(coorX[5] + 12, coorY[5], 15, 15);
-        gc.setFill(playerColor[5]);
-        gc.fillOval(coorX[6] + 12, coorY[6] - 12, 15, 15);
-        gc.strokeOval(coorX[6] + 12, coorY[6] - 12, 15, 15);
+        for (int i = 0; i < game.getAmountOfPlayersPlaying(); i++){
+            int j = i+1;
+            gc.setFill(playerColor[i]);
+            gc.fillOval(coorX[j],coorY[j], 15, 15);
+            gc.strokeOval(coorX[j],coorY[j], 15, 15);
+        }
     }
 
 

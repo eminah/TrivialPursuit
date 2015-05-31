@@ -282,17 +282,17 @@ public class GameBoard {
     //Sets the left and right spot to every spot
     public void setBoardingSpotsOuter(){
 
-        setSpotsRigth(spotsOuter);
+        setSpotsRight(spotsOuter);
         setSpotsLeft(spotsOuter);
     }
 
     public void setBoardingSpotsInner(){
 
-        setSpotsRigth(spotsInner);
+        setSpotsRight(spotsInner);
         setSpotsLeft(spotsInner);
     }
 
-    public void setSpotsRigth(ArrayList<Spot> spotArray ){
+    public void setSpotsRight(ArrayList<Spot> spotArray ){
         for(int i = 0; i <= spotArray.size()-1; i++){
             if(i != spotArray.size()-1) {
                 spotArray.get(i).setRight(spotArray.get(i + 1));
