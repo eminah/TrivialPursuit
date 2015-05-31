@@ -6,42 +6,31 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="400.0" prefWidth="600.0" stylesheets="@test.css"
-            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="edu.chl.trivialpursuit.controller.RulesController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@settings.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.trivialpursuit.controller.RulesController">
     <top>
         <Label text="Rules" textFill="#1306d0" BorderPane.alignment="CENTER">
             <font>
                 <Font name="Apple Chancery" size="28.0" />
             </font>
             <BorderPane.margin>
-                <Insets top="5.0" />
+                <Insets top="2.0" />
             </BorderPane.margin>
         </Label>
     </top>
     <bottom>
-        <Button mnemonicParsing="false" text="Back" BorderPane.alignment="CENTER" fx:id="goBack" onAction="#onBackPressed">
+        <Button fx:id="goBack" mnemonicParsing="false" onAction="#onBackPressed" text="Back" BorderPane.alignment="CENTER">
             <BorderPane.margin>
                 <Insets bottom="5.0" right="450.0" />
             </BorderPane.margin>
         </Button>
     </bottom>
     <center>
-        <Label text="&quot;The rules of the game are the following:    &#10;
-       - All of the players start in the continent of Europe.&#10;
-       From there, the players buy a ticket for the continent they want&#10;
-       to start on. There are 5 different continent:       &#10;
-       Then, the players take turn by each player tossing the dice.    &#10;
-        - Each player needs to answer at least 4 question correctly,       &#10;
-         one from each continent in order to get a ticket back to Europe.  &#10;
-         - If a player answers a question correctly, they get the chance to
-         answer another question. &#10;
-         - As soon as a player has fulfilled these criteria, they have to    &#10;
-          toss the dice and move their character until they land on a piece  &#10;
-          with an airplane on it.  &#10;
-          - By landing on this peace, they can fly back to Europe. The person who     &#10;
-          makes it there first, wins the game.&quot;" BorderPane.alignment="CENTER" />
+        <Label text="&#9;The rules of the game are the following: &#10;   &#10;      &#9;    &#9;- All of the players start in the continent of Europe. From there, &#10;&#9;&#9;   the players choose at which of the 4 other continents, they want&#10;&#9;&#9;   to start on. Then, the players take turn by tossing the dice.    &#10;        &#10;&#9;&#9;- Each player needs to answer at least 4 question correctly, one &#10;&#9;&#9;   from each continent.  &#10;&#10;       &#9;&#9; - If a player answers a question correctly, they get the chance to&#10;&#9; &#9;    answer another question. &#10;&#10;        &#9; - As soon as a player has fulfilled these criteria, they have to    &#10;          &#9;   toss the dice and move their character until they land on a piece  &#10;            &#9;   with an airplane on it.  &#10;&#10;       &#9;&#9;- By landing on this peace, they fly back to Europe. The person who     &#10;            &#9;  makes it there first, wins the game." BorderPane.alignment="CENTER">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets right="5.0" />
+         </BorderPane.margin></Label>
     </center>
 </BorderPane>
