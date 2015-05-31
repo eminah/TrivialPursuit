@@ -7,10 +7,6 @@ package edu.chl.trivialpursuit.model;
 public class Card {
     private Alternative correctAlternative;
 
-    public Card(){
-
-    }
-
     public boolean checkIfCorrectAlternative (Alternative alternative){
         return alternative == this.getCorrectAlternative();
     }
