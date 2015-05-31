@@ -48,6 +48,7 @@ public class AfricaCardController implements Initializable {
         theButtonPressed = (Button) e.getSource();
 
         doWhenGuessed();
+        startTimer();
     }
 
     public void doWhenGuessed() {
@@ -66,7 +67,7 @@ public class AfricaCardController implements Initializable {
             game.setNextTurn(game.getAmountOfPlayersPlaying());
         }
 
-        startTimer();
+
     }
 
     public Alternative getAnswerAsAlternative(Button pressed){
