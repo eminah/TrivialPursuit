@@ -75,7 +75,7 @@ public class DiceController implements Initializable {
                     case 5:
                         dicePicture.setImage(new Image("edu/chl/trivialpursuit/view/diceFive.png"));
                         break;
-                    case 6:
+                    default:
                         dicePicture.setImage(new Image("edu/chl/trivialpursuit/view/diceSix.png"));
                         break;
                 }

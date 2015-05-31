@@ -42,7 +42,7 @@ public class ChoosePlayerController implements Initializable {
 
     @FXML
     @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
-    private void onButtonPressed(ActionEvent e) throws IOException{
+    private void onButtonPressed() throws IOException{
 
         if(checkNames()){
             choosePlayer.setNumberOfPlayers(numberChosen = Integer.parseInt(numPlayers.getValue()));
@@ -65,7 +65,7 @@ public class ChoosePlayerController implements Initializable {
 
     @FXML
     @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
-    private void comboAction(ActionEvent e){
+    private void comboAction(){
 
         choosePlayer.setNumberOfPlayers(numberChosen = Integer.parseInt(numPlayers.getValue()));
         numberChosen = Integer.parseInt(numPlayers.getValue());
@@ -220,13 +220,6 @@ public class ChoosePlayerController implements Initializable {
         }
     }
 
-    /**
-     *
-     * @return The list containing all the chosen names.
-     */
-    public ArrayList<String> getPlayerNames() {
-        return playerNames;
-    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
