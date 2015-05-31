@@ -115,7 +115,6 @@ ehthumbs.db
 
 # Folder config file
 Desktop.ini
->>>>>>> 524ccffee830f79a3847bc9c04d70692595ec5a3
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
@@ -128,4 +127,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
->>>>>>> Stashed changes
+
+gitinspector-0.3.2/
