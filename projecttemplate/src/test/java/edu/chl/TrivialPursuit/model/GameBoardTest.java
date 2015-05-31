@@ -47,19 +47,19 @@ public class GameBoardTest extends TestCase {
         gameBoard.setPlayers(players);
         System.out.println("Testing setNextTurn with three players");
         //Before you have set any turn at all:
-        assertEquals("0", "" + gameBoard.getTurn());
+        assertEquals(0, gameBoard.getTurn());
         //When you call setNextTurn the first time
         gameBoard.setNextTurn(3);
-        assertEquals("1", "" + gameBoard.getTurn());
+        assertEquals(1, gameBoard.getTurn());
         //When you call setNextTurn the second time
         gameBoard.setNextTurn(3);
-        assertEquals("2", "" + gameBoard.getTurn());
+        assertEquals(2 , gameBoard.getTurn());
         //When you call setNextTurn the third time
         gameBoard.setNextTurn(3);
-        assertEquals("3", "" + gameBoard.getTurn());
+        assertEquals(3, gameBoard.getTurn());
         //When you call setNextTurn the fourth time
         gameBoard.setNextTurn(3);
-        assertEquals("1", "" + gameBoard.getTurn());
+        assertEquals(1,gameBoard.getTurn());
 
     }
 
