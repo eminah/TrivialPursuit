@@ -282,41 +282,32 @@ public class GameBoard {
     //Sets the left and right spot to every spot
     public void setBoardingSpotsOuter(){
 
-       //Set the right spot to the current spot
-        for(int i = 0; i <= spotsOuter.size()-1; i++){
-            if(i != spotsOuter.size()-1) {
-                spotsOuter.get(i).setRight(spotsOuter.get(i + 1));
-            }else{
-                spotsOuter.get(i).setRight(spotsOuter.get(0));
-            }
-        }
+        setSpotsRigth(spotsOuter);
+        setSpotsLeft(spotsOuter);
+    }
 
-        //Set the left spot to the current spot
-        for(int j = 0; j <= spotsOuter.size()-1; j++){
-            if (j==0){
-                spotsOuter.get(j).setLeft(spotsOuter.get(spotsOuter.size()-1));
+    public void setBoardingSpotsInner(){
+
+        setSpotsRigth(spotsInner);
+        setSpotsLeft(spotsInner);
+    }
+
+    public void setSpotsRigth(ArrayList<Spot> spotArray ){
+        for(int i = 0; i <= spotArray.size()-1; i++){
+            if(i != spotArray.size()-1) {
+                spotArray.get(i).setRight(spotArray.get(i + 1));
             }else{
-                spotsOuter.get(j).setLeft(spotsOuter.get(j-1));
+                spotArray.get(i).setRight(spotArray.get(0));
             }
         }
     }
 
-    public void setBoardingSpotsInner(){
-        //Set the right spot to the current spot
-        for(int i = 0; i <= spotsInner.size()-1; i++){
-            if(i != spotsInner.size()-1) {
-                spotsInner.get(i).setRight(spotsInner.get(i + 1));
-            }else{
-                spotsInner.get(i).setRight(spotsInner.get(0));
-            }
-        }
-
-        //Set the left spot to the current spot
-        for(int j = 0; j <= spotsInner.size()-1; j++){
+    public void setSpotsLeft(ArrayList<Spot> spotArray){
+        for(int j = 0; j <= spotArray.size()-1; j++){
             if (j==0){
-                spotsInner.get(j).setLeft(spotsInner.get(spotsInner.size()-1));
+                spotArray.get(j).setLeft(spotArray.get(spotArray.size()-1));
             }else{
-                spotsInner.get(j).setLeft(spotsInner.get(j-1));
+                spotArray.get(j).setLeft(spotArray.get(j-1));
             }
         }
     }
