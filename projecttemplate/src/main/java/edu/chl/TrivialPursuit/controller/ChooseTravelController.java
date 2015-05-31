@@ -2,6 +2,7 @@ package edu.chl.trivialpursuit.controller;
 import edu.chl.trivialpursuit.model.*;
 import edu.chl.trivialpursuit.view.ChoosePlayerView;
 import edu.chl.trivialpursuit.view.DiceView;
+import edu.chl.trivialpursuit.view.GameBoardView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -45,6 +46,7 @@ public class ChooseTravelController implements Initializable {
         for (int i = 0; i < choosePlayer.getNumberOfPlayers(); i++) {
             chooseTravel.setStartPlace((String) comboBoxArray.get(i).getValue());
         }
+        GameBoardView gameBoardView = GameBoardView.create();
         DiceView diceView = DiceView.create();
         diceView.show();
         e.consume();
