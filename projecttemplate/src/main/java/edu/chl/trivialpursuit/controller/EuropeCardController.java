@@ -50,6 +50,7 @@ public class EuropeCardController implements Initializable {
         doWhenGuessed();
     }
 
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     public void doWhenGuessed() {
         if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))){
             theButtonPressed.setStyle("-fx-background-color: lawngreen");

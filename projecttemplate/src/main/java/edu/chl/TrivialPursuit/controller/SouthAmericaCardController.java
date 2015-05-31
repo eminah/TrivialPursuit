@@ -46,6 +46,7 @@ public class SouthAmericaCardController implements Initializable {
         doWhenGuessed();
     }
 
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     private void doWhenGuessed(){
 
         if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))){
