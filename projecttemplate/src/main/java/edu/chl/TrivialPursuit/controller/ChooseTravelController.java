@@ -3,6 +3,7 @@ import edu.chl.trivialpursuit.model.*;
 import edu.chl.trivialpursuit.view.ChoosePlayerView;
 import edu.chl.trivialpursuit.view.DiceView;
 import edu.chl.trivialpursuit.view.GameBoardView;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -36,12 +37,14 @@ public class ChooseTravelController implements Initializable {
     @FXML
     Button buttonDone;
     @FXML
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     private void onBackPressed(ActionEvent e) throws IOException {
         final ChoosePlayerView chooseView = ChoosePlayerView.create();
         chooseView.show();
         e.consume();
     }
     @FXML
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     private void onDonePressed(ActionEvent e) throws IOException {
         for (int i = 0; i < choosePlayer.getNumberOfPlayers(); i++) {
             chooseTravel.setStartPlace((String) comboBoxArray.get(i).getValue());
@@ -52,6 +55,7 @@ public class ChooseTravelController implements Initializable {
         e.consume();
     }
     @FXML
+    @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
     private void choice(ActionEvent e) throws IOException {
         checkChooices();
     }
