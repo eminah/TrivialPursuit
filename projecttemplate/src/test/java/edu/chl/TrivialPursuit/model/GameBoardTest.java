@@ -59,7 +59,7 @@ public class GameBoardTest extends TestCase {
         assertEquals(3, gameBoard.getTurn());
         //When you call setNextTurn the fourth time
         gameBoard.setNextTurn(3);
-        assertEquals(1,gameBoard.getTurn());
+       assertTrue(gameBoard.getTurn() == 1);
 
     }
 
