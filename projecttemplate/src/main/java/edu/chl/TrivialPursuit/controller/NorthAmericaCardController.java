@@ -51,9 +51,9 @@ public class NorthAmericaCardController implements Initializable {
 
         if(trueIfCorrectAnswer(getAnswerAsAlternative(theButtonPressed))) {
             theButtonPressed.setStyle("-fx-background-color: lawngreen");
-            ImageView theContinentToChange = game.getiAf().get(game.getCurrentTurnNumberArrayIndex());
+            ImageView theContinentToChange = game.getiN().get(game.getCurrentTurnNumberArrayIndex());
             game.getCurrentPlayerPlaying().getCollectedContinents().add(Continent.NORTH_AMERICA);
-            theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/africa_gold.png"));
+            theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/northAm_gold.png"));
 
             if(game.getCurrentPlayerPlaying().checkIfAllContinents()) {
                 game.getCurrentPlayerPlaying().setHasTicket(true);
