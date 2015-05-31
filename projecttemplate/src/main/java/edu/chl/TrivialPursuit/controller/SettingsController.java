@@ -41,12 +41,11 @@ public class SettingsController {
     private void savePlayerNames(ActionEvent e){
 
 
-
         Button buttonPressed = (Button)e.getSource();
         Button[] buttonArray = {newNameOne, newNameTwo, newNameThree, newNameFour, newNameFive, newNameSix};
         TextField[] textFieldsArray = {textField1,textField2,textField3,textField4,textField5,textField6};
         for (int i = 0; i < gameBoard.getAmountOfPlayersPlaying(); i++){
-            if (buttonPressed == buttonArray[1]){
+            if (buttonPressed == buttonArray[i]){
                 gameBoard.getarrayWithPlayerNameLabels().get(i).setText(textFieldsArray[i].getText());
                 gameBoard.getPlayers().get(i).setName(textFieldsArray[i].getText());
             }

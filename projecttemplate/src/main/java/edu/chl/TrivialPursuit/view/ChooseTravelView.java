@@ -13,7 +13,7 @@ public class ChooseTravelView extends BaseView {
 
     private ChooseTravelView() {
         super();
-        // travel = new ChooseTravel();
+
     }
 
     public static ChooseTravelView create() throws IOException {

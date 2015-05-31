@@ -1,8 +1,4 @@
 package edu.chl.trivialpursuit.model;
-
-
-import javafx.event.ActionEvent;
-
 import java.util.ArrayList;
 
 /**

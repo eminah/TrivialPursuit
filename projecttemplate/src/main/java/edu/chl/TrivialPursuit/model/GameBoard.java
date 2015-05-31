@@ -20,8 +20,6 @@ public class GameBoard {
     final private ArrayList<Spot> spotsOuter;
     final private ArrayList<Spot> spotsInner;
     final private ArrayList<Card> cards;
-
-    private ArrayList<Card> cardsInner;
     private ArrayList<Player> players;
     private ArrayList<Label> labelTurns;
     private ArrayList<ImageView> iAs;

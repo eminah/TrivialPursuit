@@ -27,7 +27,7 @@ public class StartController {
     @FXML
     @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
 
-    private void onEndPressed(ActionEvent e){
+    private void onEndPressed(){
 
         stage.close();
 

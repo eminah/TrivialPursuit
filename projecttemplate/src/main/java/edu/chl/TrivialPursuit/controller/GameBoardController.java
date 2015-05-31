@@ -19,11 +19,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
-
 import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.ResourceBundle;
@@ -202,7 +200,6 @@ public class GameBoardController implements Initializable {
 
     private void generateTicketDialog(boolean isOnAirplaneSpot) throws IOException {
 
-        Continent currentPlayersSpotContinent = game.getCurrentPlayerPlaying().getSpot().getContinent();
         if(isOnAirplaneSpot) {
             if(game.getCurrentPlayerPlaying().getHasTicket()) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
