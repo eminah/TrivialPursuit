@@ -18,9 +18,14 @@ public class PlayerTest extends TestCase {
 
 
     @Test
-    public void testCheckIfAllContinents() throws Exception {
+    public void testCheckIfNotAllContintents(){
         hashSet.add(Continent.AFRICA);
         assertFalse(player.checkIfAllContinents());
+    }
+
+    @Test
+    public void testCheckIfAllContinents() {
+        hashSet.add(Continent.AFRICA);
         hashSet.add(Continent.ASIA);
         hashSet.add(Continent.NORTH_AMERICA);
         hashSet.add(Continent.SOUTH_AMERICA);
@@ -29,8 +34,6 @@ public class PlayerTest extends TestCase {
     @Test
     public void testIfCorrectSpot(){
         int startPlaceAsia = 0;
-        assertTrue(player.getSpot().getContinent() == Continent.AFRICA);
-        assertTrue(player.getSpot().getCategory()== Category.CULTURE);
         player.setSpot(gameBoard.getSpotsOuter().get(startPlaceAsia));
         assertFalse(player.getSpot().getContinent() == Continent.AFRICA);
         assertTrue(player.getSpot().getContinent() == Continent.ASIA);
@@ -41,7 +44,6 @@ public class PlayerTest extends TestCase {
 
     @Test
     public void testIsInEurope() throws Exception {
-        assertFalse(player.isInEurope());
         player.setInEurope(true);
         assertTrue(player.isInEurope());
         player.setInEurope(false);
@@ -50,7 +52,6 @@ public class PlayerTest extends TestCase {
 
     @Test
     public void testIfCorrectName() throws Exception {
-        assertEquals("Adam", player.getName());
         player.setName("William");
         assertEquals("William", player.getName());
     }
