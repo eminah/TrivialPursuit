@@ -142,12 +142,45 @@ public class GameBoardController implements Initializable {
     }
 
     private void draw(GraphicsContext gc){
+        int offsetX;
+        int offsetY;
         gc.drawImage(new Image("edu/chl/trivialpursuit/view/board_pastell.png"), 0, 0, boardCanvas.getWidth(), boardCanvas.getHeight());
         for (int i = 0; i < game.getAmountOfPlayersPlaying(); i++){
             int j = i+1;
+
+            switch(j){
+                case 2:
+                    offsetX = 15;
+                    offsetY = 0;
+                    break;
+                case 3:
+                    offsetX = 0;
+                    offsetY = 15;
+                    break;
+                case 4:
+                    offsetX = -15;
+                    offsetY = 0;
+                    break;
+                case 5:
+                    offsetX = 0;
+                    offsetY = -15;
+                    break;
+                case 6:
+                    offsetX = 15;
+                    offsetY = 15;
+                    break;
+                default:
+                    offsetX = 0;
+                    offsetY = 0;
+
+
+            }
+
             gc.setFill(playerColor[i]);
-            gc.fillOval(coorX[j],coorY[j], 15, 15);
-            gc.strokeOval(coorX[j],coorY[j], 15, 15);
+            gc.fillOval(coorX[j] + offsetX,coorY[j] + offsetY, 15, 15);
+            gc.strokeOval(coorX[j] + offsetX,coorY[j] + offsetY, 15, 15);
+
+
         }
     }
 
