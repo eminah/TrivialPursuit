@@ -1,5 +1,7 @@
-package edu.chl.trivialpursuit.model;
+package edu.chl.TrivialPursuit.model;
 
+import edu.chl.TrivialPursuit.model.AsiaCard;
+import edu.chl.TrivialPursuit.model.Card;
 import junit.framework.TestCase;
 import org.junit.Test;
 

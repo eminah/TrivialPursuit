@@ -1,8 +1,9 @@
-package edu.chl.trivialpursuit.controller;
-import edu.chl.trivialpursuit.model.*;
-import edu.chl.trivialpursuit.view.ChoosePlayerView;
-import edu.chl.trivialpursuit.view.DiceView;
-import edu.chl.trivialpursuit.view.GameBoardView;
+package edu.chl.TrivialPursuit.controller;
+import edu.chl.TrivialPursuit.model.ChoosePlayer;
+import edu.chl.TrivialPursuit.model.ChooseTravel;
+import edu.chl.TrivialPursuit.view.ChoosePlayerView;
+import edu.chl.TrivialPursuit.view.DiceView;
+import edu.chl.TrivialPursuit.view.GameBoardView;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,6 +13,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+
 import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;
@@ -65,41 +67,40 @@ public class ChooseTravelController implements Initializable {
         travel.setTextFill(Color.RED);
     }
     private void twoPlayers() {
-        playerOneName.setText(choosePlayer.getNameOne());
-        playerTwoName.setText(choosePlayer.getNameTwo());
+        playerOneName.setText("Player 1:" + " " + choosePlayer.getNameOne());
+        playerTwoName.setText("Player 2:" + " " + choosePlayer.getNameTwo());
         placeStar(mustChooseOne);
         placeStar(mustChooseSec);
     }
     private void threePlayers() {
         twoPlayers();
-        playerThreeName.setText(choosePlayer.getNameThree());
+        playerThreeName.setText("Player 3:" + " " + choosePlayer.getNameThree());
         placeStar(mustChooseThird);
     }
     private void fourPlayers() {
         threePlayers();
-        playerThreeName.setText(choosePlayer.getNameThree());
-        playerFourName.setText(choosePlayer.getNameFour());
-        placeStar(mustChooseThird);
+        playerFourName.setText("Player 4:" + " " + choosePlayer.getNameFour());
+       // placeStar(mustChooseThird);
         placeStar(mustChooseFourth);
     }
     private void fivePlayers() {
         fourPlayers();
-        playerThreeName.setText(choosePlayer.getNameThree());
-        playerFourName.setText(choosePlayer.getNameFour());
-        playerFiveName.setText(choosePlayer.getNameFive());
-        placeStar(mustChooseThird);
-        placeStar(mustChooseFourth);
+       // playerThreeName.setText(choosePlayer.getNameThree());
+       // playerFourName.setText(choosePlayer.getNameFour());
+        playerFiveName.setText("Player 5:" + " " + choosePlayer.getNameFive());
+      //  placeStar(mustChooseThird);
+      //  placeStar(mustChooseFourth);
         placeStar(mustChooseFifth);
     }
     private void sixPlayer() {
         fivePlayers();
-        playerThreeName.setText(choosePlayer.getNameThree());
+       /* playerThreeName.setText(choosePlayer.getNameThree());
         playerFourName.setText(choosePlayer.getNameFour());
-        playerFiveName.setText(choosePlayer.getNameFive());
-        playerSixName.setText(choosePlayer.getNameSix());
-        placeStar(mustChooseThird);
-        placeStar(mustChooseFourth);
-        placeStar(mustChooseFifth);
+        playerFiveName.setText(choosePlayer.getNameFive());*/
+        playerSixName.setText("Player 6:" + " " + choosePlayer.getNameSix());
+       // placeStar(mustChooseThird);
+      //  placeStar(mustChooseFourth);
+       // placeStar(mustChooseFifth);
         placeStar(mustChooseSixth);
     }
     private void checkChooices() {

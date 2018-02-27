@@ -1,11 +1,8 @@
-package edu.chl.trivialpursuit.controller;
+package edu.chl.TrivialPursuit.controller;
 
-import edu.chl.trivialpursuit.model.AfricaCard;
-import edu.chl.trivialpursuit.model.Alternative;
-import edu.chl.trivialpursuit.model.Continent;
-import edu.chl.trivialpursuit.model.GameBoard;
-import edu.chl.trivialpursuit.view.DiceView;
-import edu.chl.trivialpursuit.view.GameBoardView;
+import edu.chl.TrivialPursuit.model.*;
+import edu.chl.TrivialPursuit.view.DiceView;
+import edu.chl.TrivialPursuit.view.GameBoardView;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -17,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.TextAlignment;
 import javafx.util.Duration;
 
 import javax.inject.Inject;
@@ -41,6 +39,8 @@ public class AfricaCardController implements Initializable {
     @FXML
     Label cardPlayerNameLabel;
 
+    @FXML
+    Label question;
 
     @FXML
     @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
@@ -146,8 +146,48 @@ public class AfricaCardController implements Initializable {
         altFour.setDisable(true);
     }
 
+    private void checkQuestionType() {
+        Category currentPlayerSpotCategory = game.getCurrentPlayerPlaying().getSpot().getCategory();
+        // Correct answer: C
+
+        switch (currentPlayerSpotCategory) {
+            case CULTURE:
+                question.setText("CULTURE: \nThis is an African culture question");
+                setQuestionAlternatives("A. South American Culture", "B. Asian Culture", "C. African Culture", "D. European Culture");
+                break;
+            case MEDIA:
+                question.setText("MEDIA: \nWhere is Nollywood, the second biggest \nmovie industry in the world in \nterms of number of films made?");
+                setQuestionAlternatives("A. Namibia", "B. Nairobi", "C. Nigeria", "D. Nelspruit");
+                break;
+            case SPORT:
+                question.setText("SPORT: \nWhich is the most popular sport in \nAfrica?");
+                setQuestionAlternatives("A. Rugby", "B. Cycling", "C. Football", "D. Aethletics");
+                break;
+            case HISTORY:
+                question.setText("HISTORY: \nWho performed at Zimbabwe's \nindependence day celebrations in 1980?");
+                setQuestionAlternatives("A. Paul Simon", "B. Tracy Chapman", "C. Bob Marley", "D. Bono");
+                break;
+            case TECHNIC:
+                question.setText("TECHNICAL: \nThis is an African technical question");
+                setQuestionAlternatives("A. Asian Technics", "B. European Technics","C. African Technics","D. North American Technics");
+                break;
+            case GEOGRAPHY:
+                question.setText("GEOGRAPHY: \nWhat desert extends across Northern \nAfrica?");
+                setQuestionAlternatives("A. Gobi", "B. Mojave", "C. Sahara", "D. Atacama");
+                break;
+        }
+    }
+
+    private void setQuestionAlternatives(String firstAlternative, String secondAlternative, String thirdAlternative, String fourthAlternative) {
+        altOne.setText(firstAlternative);
+        altTwo.setText(secondAlternative);
+        altThree.setText(thirdAlternative);
+        altFour.setText(fourthAlternative);
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        cardPlayerNameLabel.setText(game.getCurrentPlayerPlaying().getName());
+        cardPlayerNameLabel.setText("Player:" + " " + game.getCurrentPlayerPlaying().getName());
+        checkQuestionType();
     }
 }

@@ -1,4 +1,4 @@
-package edu.chl.trivialpursuit.model;
+package edu.chl.TrivialPursuit.model;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.scene.control.Button;
@@ -42,7 +42,7 @@ public class GameBoard {
 
         spotsOuter = new ArrayList<>();
         spotsInner = new ArrayList<>();
-        cards = new ArrayList<>();
+        cards = new ArrayList<Card>();
         addCardsAsia();
         addCardsAfrica();
         addCardsSouthAmerica();

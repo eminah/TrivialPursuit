@@ -2,7 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6e8d179-ea6b-44b5-bbc6-ed1525a4b298" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projecttemplate/src/main/main.iml" afterPath="$PROJECT_DIR$/projecttemplate/src/main/main.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/TrivialPursuit.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/TrivialPursuit.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/AfricaCardController.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/AfricaCardController.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/AsiaCardController.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/AsiaCardController.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/ChoosePlayerController.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/ChoosePlayerController.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/ChooseTravelController.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/ChooseTravelController.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/DiceController.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/DiceController.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/GameBoardController.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/GameBoardController.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/NorthAmericaCardController.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/NorthAmericaCardController.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/RulesController.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/RulesController.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/SettingsController.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/SettingsController.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/SouthAmericaCardController.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/SouthAmericaCardController.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/StartController.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/StartController.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/AfricaCard.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/AfricaCard.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Alternative.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Alternative.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/AsiaCard.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/AsiaCard.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Card.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Card.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Category.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Category.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/ChoosePlayer.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/ChoosePlayer.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/ChooseTravel.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/ChooseTravel.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Continent.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Continent.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Dice.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Dice.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/GameBoard.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/GameBoard.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/NorthAmericaCard.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/NorthAmericaCard.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Player.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Player.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Settings.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Settings.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/SouthAmericaCard.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/SouthAmericaCard.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Spot.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Spot.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/AfricaCardView.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/AfricaCardView.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/AsiaCardView.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/AsiaCardView.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/BaseView.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/BaseView.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/ChoosePlayerView.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/ChoosePlayerView.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/ChooseTravelView.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/ChooseTravelView.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/DiceView.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/DiceView.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/GameBoardView.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/GameBoardView.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/NorthAmericaCardView.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/NorthAmericaCardView.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/RulesView.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/RulesView.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/SettingsView.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/SettingsView.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/SouthAmericaCardView.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/SouthAmericaCardView.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/StartView.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/StartView.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/controller/EuropeCardController.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/controller/EuropeCardController.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/EuropeCard.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/EuropeCard.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/view/EuropeCardView.java" afterPath="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/view/EuropeCardView.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/main/main.iml" afterPath="$PROJECT_DIR$/projecttemplate/src/main/main.iml" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/AfricaCardTest.java" afterPath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/AfricaCardTest.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/AsiaCardTest.java" afterPath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/AsiaCardTest.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/DiceTest.java" afterPath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/DiceTest.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/EuropeCardTest.java" afterPath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/EuropeCardTest.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/GameBoardTest.java" afterPath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/GameBoardTest.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/NorthAmericaCardTest.java" afterPath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/NorthAmericaCardTest.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/PlayerTest.java" afterPath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/PlayerTest.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/SouthAmericaCardTest.java" afterPath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/SouthAmericaCardTest.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/SpotTest.java" afterPath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/TrivialPursuit/model/SpotTest.java" />
+      <change beforePath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/trivialpursuit/model/ChooseTravelTest.java" afterPath="$PROJECT_DIR$/projecttemplate/src/test/java/edu/chl/trivialpursuit/model/ChooseTravelTest.java" />
     </list>
     <ignored path="TrivialPursuit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -15,7 +69,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/TrivialPursuit$TrivialPursuit.coverage" NAME="TrivialPursuit Coverage Results" MODIFIED="1430940127321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>edu.chl.trivialpursuit.view.*</FILTER>
@@ -24,87 +77,58 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="TrivialPursuit" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Spot.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/Spot.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Dice.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Dice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Start.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/Start.java">
+      <file leaf-file-name="EuropeCard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/EuropeCard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="150">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameBoard.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/GameBoard.java">
+      <file leaf-file-name="Settings.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Settings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+            <state relative-caret-position="0">
+              <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/Player.java">
+      <file leaf-file-name="ChoosePlayerController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/ChoosePlayerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="45">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Category.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/Category.java">
+      <file leaf-file-name="ChooseTravelController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/ChooseTravelController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Continent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/Continent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrivialPursuit.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/view/TrivialPursuit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StartView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/view/StartView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="90">
+              <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -124,32 +148,41 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/view/TrivialPursuit.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Player.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Spot.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Category.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Continent.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/StartView.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/AfricaCardController.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/AfricaCard.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Alternative.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/AsiaCard.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Card.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/ChoosePlayer.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/ChooseTravel.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Dice.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/EuropeCard.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/NorthAmericaCard.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/GameBoard.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Settings.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/ChoosePlayerController.java" />
+        <option value="$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/ChooseTravelController.java" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
-  </component>
-  <component name="NamedScopeManager">
-    <order />
+    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="48" />
+    <option name="y" value="23" />
     <option name="width" value="1378" />
     <option name="height" value="744" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -161,21 +194,54 @@
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TrivialPursuit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="TrivialPursuit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrivialPursuit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrivialPursuit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="TrivialPursuit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrivialPursuit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="TrivialPursuit" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrivialPursuit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="TrivialPursuit" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TrivialPursuit2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -184,13 +250,37 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/projecttemplate" />
     <property name="FullScreen" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="jdk.selected.JAVA_MODULE" value="9.0" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="findjar.last.used.dir" value="$APPLICATION_CONFIG_DIR$" />
   </component>
-  <component name="RunManager" selected="Application.TrivialPursuit">
-    <configuration default="false" name="TrivialPursuit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration name="TrivialPursuit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="edu.chl.trivialpursuit.view.*" />
@@ -208,13 +298,136 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="main" />
       <envs />
-      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="launchBrowser" value="false" />
+      <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
-      <method />
+      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
@@ -257,29 +470,6 @@
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-      <method />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="myFilePath" />
@@ -299,55 +489,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
-      <option name="BCName" value="" />
-      <option name="IOSSimulatorSdkPath" value="" />
-      <option name="adlOptions" value="" />
-      <option name="airProgramParameters" value="" />
-      <option name="appDescriptorForEmulator" value="Android" />
-      <option name="debugTransport" value="USB" />
-      <option name="debuggerSdkRaw" value="BC SDK" />
-      <option name="emulator" value="NexusOne" />
-      <option name="emulatorAdlOptions" value="" />
-      <option name="fastPackaging" value="true" />
-      <option name="fullScreenHeight" value="0" />
-      <option name="fullScreenWidth" value="0" />
-      <option name="launchUrl" value="false" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="mobileRunTarget" value="Emulator" />
-      <option name="moduleName" value="" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
-      <option name="runTrusted" value="true" />
-      <option name="screenDpi" value="0" />
-      <option name="screenHeight" value="0" />
-      <option name="screenWidth" value="0" />
-      <option name="url" value="http://" />
-      <option name="usbDebugPort" value="7936" />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
-      <option name="BCName" value="" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="" />
-      <option name="trusted" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -364,37 +505,6 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
-      <module name="" />
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="depsClasspath" value="false" />
-      <setting name="passParentEnv" value="true" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <setting name="launchBrowser" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <envs />
@@ -403,54 +513,21 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method />
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
     </configuration>
     <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <pass-parent-envs>true</pass-parent-envs>
       <envs />
       <method />
     </configuration>
@@ -460,16 +537,24 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Application.TrivialPursuit" />
-    </list>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+    </configuration>
     <recent_temporary>
       <list size="1">
         <item index="0" class="java.lang.String" itemvalue="Application.TrivialPursuit" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -478,47 +563,92 @@
       <changelist id="b6e8d179-ea6b-44b5-bbc6-ed1525a4b298" name="Default" comment="" />
       <created>1430215117688</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1430215117688</updated>
       <workItem from="1430215118299" duration="11000" />
       <workItem from="1430215265069" duration="19000" />
       <workItem from="1430936937196" duration="3325000" />
       <workItem from="1431465967808" duration="248000" />
+      <workItem from="1518008263852" duration="2144000" />
+      <workItem from="1518089333498" duration="13000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3603000" />
+    <option name="totallyTimeSpent" value="5760000" />
+  </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
+    <frame x="48" y="23" width="1378" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2496329" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39901477" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.329429" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.497006" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32973805" sideWeight="0.502994" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32973805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25673652" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39901477" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -550,130 +680,279 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/Spot.java">
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Dice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="105">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/Start.java">
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/EuropeCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/GameBoard.java">
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/ChoosePlayerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+        <state relative-caret-position="45">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/Player.java">
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/ChooseTravelController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="30">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/Category.java">
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Spot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/GameBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Continent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/StartView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Spot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/Start.java" />
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/GameBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="35" column="1" lean-forward="false" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Continent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/view/TrivialPursuit.java" />
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/StartView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/Start.java" />
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/view/TrivialPursuit.java" />
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Spot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="54" column="42" lean-forward="false" selection-start-line="54" selection-start-column="42" selection-end-line="54" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="true" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/view/StartView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/AsiaCardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/AfricaCardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1165">
+          <caret line="108" column="54" lean-forward="true" selection-start-line="108" selection-start-column="54" selection-end-line="108" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/AfricaCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Alternative.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/AsiaCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/ChoosePlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-406">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/ChooseTravel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Continent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/NorthAmericaCard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/GameBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Dice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/Continent.java">
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/EuropeCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/view/TrivialPursuit.java">
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/model/Settings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/view/StartView.java">
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/ChoosePlayerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="45">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/Start.java">
+    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/TrivialPursuit/controller/ChooseTravelController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/Spot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/Continent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/view/StartView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/view/TrivialPursuit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/GameBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projecttemplate/src/main/java/edu/chl/trivialpursuit/model/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -718,7 +997,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>9.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -730,11 +1009,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>main</last-edited>
+          <last-edited>test</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

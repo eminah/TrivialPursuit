@@ -1,10 +1,11 @@
-package edu.chl.trivialpursuit.controller;
+package edu.chl.TrivialPursuit.controller;
 
-import edu.chl.trivialpursuit.model.Alternative;
-import edu.chl.trivialpursuit.model.Continent;
-import edu.chl.trivialpursuit.model.GameBoard;
-import edu.chl.trivialpursuit.view.DiceView;
-import edu.chl.trivialpursuit.view.GameBoardView;
+import edu.chl.TrivialPursuit.model.Alternative;
+import edu.chl.TrivialPursuit.model.Category;
+import edu.chl.TrivialPursuit.model.Continent;
+import edu.chl.TrivialPursuit.model.GameBoard;
+import edu.chl.TrivialPursuit.view.DiceView;
+import edu.chl.TrivialPursuit.view.GameBoardView;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -28,7 +29,8 @@ import java.util.ResourceBundle;
  */
 public class NorthAmericaCardController implements Initializable {
 
-    @Inject GameBoard game;
+    @Inject
+    GameBoard game;
 
     private Timeline changeViewDelay;
     private Timeline disableButtonDelay;
@@ -38,6 +40,9 @@ public class NorthAmericaCardController implements Initializable {
 
     @FXML
     Label cardPlayerNameLabel;
+
+    @FXML
+    Label question;
 
     @FXML
     @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
@@ -143,8 +148,47 @@ public class NorthAmericaCardController implements Initializable {
         altFour.setDisable(true);
     }
 
+    private void checkQuestionType() {
+        Category currentPlayerSpotCategory = game.getCurrentPlayerPlaying().getSpot().getCategory();
+        //Correct alternative: B
+        switch (currentPlayerSpotCategory) {
+            case CULTURE:
+                question.setText("CULTURE: \nThis is a North America culture question");
+                setQuestionAlternatives("A. Asian Culture","B. North American Culture","C. African Culture","D. European Culture");
+                break;
+            case MEDIA:
+                question.setText("MEDIA: \nWho has won most grammys \nthroughout the years?");
+                setQuestionAlternatives("A. Clint Eastwood", "B. Meryl Streep", "C. Leonardo DiCaprio","D. Jennifer Lawrence");
+                break;
+            case SPORT:
+                question.setText("SPORT: \nWhich team has won the most Super \nBowls?");
+                setQuestionAlternatives("A. Patriots","B. Steelers","C. Giants","D. Packers");
+                break;
+            case HISTORY:
+                question.setText("HISTORY: \nWho was the first president of the US?");
+                setQuestionAlternatives("A. John Adams","B. George Washington","C. James Monroe","D. John Tyler");
+                break;
+            case TECHNIC:
+                question.setText("TECHNICAL: \nThis is a North America technical \nquestion");
+                setQuestionAlternatives("A. African Technics","B. North American Tehcnics","C. South American Technics","D. Asian Technics");
+                break;
+            case GEOGRAPHY:
+                question.setText("GEOGRAPHY: \nWhich ocean bounds the northernmost of the two \ncontinents of the Western Hemisphere??");
+                setQuestionAlternatives("A. Atlantic Ocean","B. Pacific Ocean","C. Carribean Sea","D. Arctic Ocean");
+                break;
+        }
+    }
+
+    private void setQuestionAlternatives(String firstAlternative, String secondAlternative, String thirdAlternative, String fourthAlternative) {
+        altOne.setText(firstAlternative);
+        altTwo.setText(secondAlternative);
+        altThree.setText(thirdAlternative);
+        altFour.setText(fourthAlternative);
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        cardPlayerNameLabel.setText(game.getCurrentPlayerPlaying().getName());
+        cardPlayerNameLabel.setText("Player:" + " " + game.getCurrentPlayerPlaying().getName());
+        checkQuestionType();
     }
 }

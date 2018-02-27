@@ -1,5 +1,4 @@
-package edu.chl.trivialpursuit.model;
-
+package edu.chl.TrivialPursuit.model;
 
 /**
  * Created by Heléne Jarl on 2015-05-07.

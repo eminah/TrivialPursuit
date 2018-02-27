@@ -1,4 +1,6 @@
-package edu.chl.trivialpursuit.model;
+package edu.chl.TrivialPursuit.model;
+
+import edu.chl.TrivialPursuit.model.Card;
 
 /**
  * Created by Rasti on 2015-05-28.

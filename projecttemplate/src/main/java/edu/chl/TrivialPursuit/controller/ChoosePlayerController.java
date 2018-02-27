@@ -1,13 +1,14 @@
-package edu.chl.trivialpursuit.controller;
+package edu.chl.TrivialPursuit.controller;
 
-import edu.chl.trivialpursuit.model.ChoosePlayer;
-import edu.chl.trivialpursuit.view.ChooseTravelView;
+import edu.chl.TrivialPursuit.model.ChoosePlayer;
+import edu.chl.TrivialPursuit.view.ChooseTravelView;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+
 import javax.inject.Inject;
 import java.io.IOException;
 import java.net.URL;
@@ -19,7 +20,8 @@ import java.util.ResourceBundle;
  */
 public class ChoosePlayerController implements Initializable {
 
-    @Inject ChoosePlayer choosePlayer;
+    @Inject
+    ChoosePlayer choosePlayer;
 
     private ArrayList <TextField> playerTexts;
     private ArrayList <String> playerNames;

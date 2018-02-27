@@ -1,4 +1,4 @@
-package edu.chl.trivialpursuit.model;
+package edu.chl.TrivialPursuit.model;
 import java.util.ArrayList;
 
 /**

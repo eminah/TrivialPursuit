@@ -1,7 +1,7 @@
-package edu.chl.trivialpursuit.controller;
+package edu.chl.TrivialPursuit.controller;
 
-import edu.chl.trivialpursuit.model.*;
-import edu.chl.trivialpursuit.view.*;
+import edu.chl.TrivialPursuit.model.*;
+import edu.chl.TrivialPursuit.view.*;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -13,11 +13,13 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import javax.inject.Inject;
 import java.io.IOException;
@@ -32,13 +34,20 @@ import java.util.ResourceBundle;
  */
 public class GameBoardController implements Initializable {
     
-    @Inject Dice dice;
+    @Inject
+    Dice dice;
 
-    @Inject ChoosePlayer chooseP;
+    @Inject
+    ChoosePlayer chooseP;
 
-    @Inject ChooseTravel chooseT;
+    @Inject
+    ChooseTravel chooseT;
 
-    @Inject GameBoard game;
+    @Inject
+    GameBoard game;
+
+    private @Inject
+    Stage stage;
 
     private ArrayList<Player> players;
     private ArrayList<ImageView> imAs;
@@ -102,10 +111,9 @@ public class GameBoardController implements Initializable {
 
     @FXML
     @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
-    private void rulePressed() throws IOException{
-
-        RulesView rulesView = RulesView.create();
-        rulesView.show();
+    private void startNewRoundPressed() throws IOException{
+        ChooseTravelView chooseTravel = ChooseTravelView.create();
+        chooseTravel.show();
     }
 
     @FXML
@@ -116,6 +124,10 @@ public class GameBoardController implements Initializable {
         settingsView.show();
     }
 
+    @FXML
+    private void endGamePressed() {
+        stage.close();
+    }
 
     private void movePlayer(int diceValue, String direction) {
 

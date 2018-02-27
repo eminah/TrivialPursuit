@@ -7,7 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane dividerPositions="0.29797979797979796" stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.trivialpursuit.controller.GameBoardController">
+<SplitPane dividerPositions="0.29797979797979796" stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.TrivialPursuit.controller.GameBoardController">
   <items>
     <AnchorPane prefHeight="576.0" prefWidth="145.0">
          <children>
@@ -15,11 +15,14 @@
                <children>
                   <HBox prefHeight="16.0" prefWidth="197.0" spacing="10.0">
                      <children>
-                        <Label fx:id="playerOneName" text="">
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </Label>
+                         <VBox>
+                             <Label fx:id="player1Label" text="Player 1:"></Label>
+                             <Label fx:id="playerOneName" text="">
+                             <HBox.margin>
+                                 <Insets />
+                             </HBox.margin>
+                             </Label>
+                         </VBox>
                         <Label fx:id="playerOneTurn" text="" />
                      </children>
                      <VBox.margin>
@@ -50,15 +53,18 @@
                         </ImageView>
                      </children>
                      <padding>
-                        <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                        <Insets bottom="2.0" left="10.0" right="2.0" top="2.0" />
                      </padding>
                      <VBox.margin>
-                        <Insets bottom="5.0" />
+                        <Insets bottom="2.0" />
                      </VBox.margin>
                   </HBox>
                   <HBox prefHeight="16.0" prefWidth="200.0" spacing="10.0">
                      <children>
+                         <VBox>
+                         <Label fx:id="player2Label" text="Player 2:"></Label>
                         <Label fx:id="playerTwoName" />
+                         </VBox>
                         <Label fx:id="playerTwoTurn" />
                      </children>
                      <VBox.margin>
@@ -92,15 +98,18 @@
                         </ImageView>
                      </children>
                      <padding>
-                        <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                        <Insets bottom="2.0" left="10.0" right="5.0" top="2.0" />
                      </padding>
                      <VBox.margin>
-                        <Insets bottom="10.0" />
+                        <Insets bottom="2.0" />
                      </VBox.margin>
                   </HBox>
                   <HBox prefHeight="16.0" prefWidth="200.0" spacing="10.0">
                      <children>
+                         <VBox>
+                         <Label fx:id="player3Label" text="Player 3:"></Label>
                         <Label fx:id="playerThreeName" text="" />
+                         </VBox>
                         <Label fx:id="playerThreeTurn" text="" />
                      </children>
                      <VBox.margin>
@@ -134,15 +143,18 @@
                         </ImageView>
                      </children>
                      <padding>
-                        <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                        <Insets bottom="2.0" left="10.0" right="5.0" top="2.0" />
                      </padding>
                      <VBox.margin>
-                        <Insets bottom="5.0" />
+                        <Insets bottom="2.0" />
                      </VBox.margin>
                   </HBox>
                   <HBox prefHeight="16.0" prefWidth="200.0" spacing="10.0">
                      <children>
+                         <VBox>
+                         <Label fx:id="player4Label" text="Player 4:"></Label>
                         <Label fx:id="playerFourName" text="" />
+                         </VBox>
                         <Label fx:id="playerFourTurn" text="" />
                      </children>
                      <VBox.margin>
@@ -176,15 +188,18 @@
                         </ImageView>
                      </children>
                      <padding>
-                        <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                        <Insets bottom="2.0" left="10.0" right="5.0" top="2.0" />
                      </padding>
                      <VBox.margin>
-                        <Insets bottom="5.0" />
+                        <Insets bottom="2.0" />
                      </VBox.margin>
                   </HBox>
                   <HBox prefHeight="16.0" prefWidth="200.0" spacing="10.0">
                      <children>
+                         <VBox>
+                         <Label fx:id="player5Label" text="Player 5:"></Label>
                         <Label fx:id="playerFiveName" text="" />
+                         </VBox>
                         <Label fx:id="playerFiveTurn" text="" />
                      </children>
                      <VBox.margin>
@@ -215,19 +230,22 @@
                         </ImageView>
                      </children>
                      <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
                      </padding>
                      <VBox.margin>
-                        <Insets bottom="5.0" />
+                        <Insets bottom="2.0" />
                      </VBox.margin>
                   </HBox>
                   <HBox prefHeight="16.0" prefWidth="200.0" spacing="10.0">
                      <children>
+                         <VBox>
+                         <Label fx:id="player6Label" text="Player 6:"></Label>
                         <Label fx:id="playerSixName" text="">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
                         </Label>
+                         </VBox>
                         <Label fx:id="playerSixTurn" text="" />
                      </children>
                      <VBox.margin>
@@ -263,7 +281,8 @@
                   </HBox>
                </children>
             </VBox>
-            <Button layoutY="545.0" mnemonicParsing="false" text="Rules"  fx:id="rulesButton" onAction="#rulePressed"/>
+            <Button layoutY="583.0" mnemonicParsing="false" text="End Game" fx:id="enGameButton" onAction="#endGamePressed"/>
+            <Button layoutY="545.0" mnemonicParsing="false" text="New Round"  fx:id="rulesButton" onAction="#startNewRoundPressed"/>
             <Button layoutY="507.0" mnemonicParsing="false" text="Settings" fx:id="settingsButton" onAction="#settingPressed"/>
          </children></AnchorPane>
     <AnchorPane prefHeight="515.0" prefWidth="517.0">

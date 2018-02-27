@@ -1,10 +1,11 @@
-package edu.chl.trivialpursuit.controller;
+package edu.chl.TrivialPursuit.controller;
 
-import edu.chl.trivialpursuit.model.Alternative;
-import edu.chl.trivialpursuit.model.Continent;
-import edu.chl.trivialpursuit.model.GameBoard;
-import edu.chl.trivialpursuit.view.DiceView;
-import edu.chl.trivialpursuit.view.GameBoardView;
+import edu.chl.TrivialPursuit.model.Alternative;
+import edu.chl.TrivialPursuit.model.Category;
+import edu.chl.TrivialPursuit.model.Continent;
+import edu.chl.TrivialPursuit.model.GameBoard;
+import edu.chl.TrivialPursuit.view.DiceView;
+import edu.chl.TrivialPursuit.view.GameBoardView;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -27,12 +28,16 @@ import java.util.ResourceBundle;
  * Created by Rasti on 2015-05-28.
  */
 public class AsiaCardController implements Initializable {
-    @Inject GameBoard game;
+    @Inject
+    GameBoard game;
 
     @FXML Button altOne,altTwo,altThree,altFour;
 
     @FXML
     Label cardPlayerNameLabel;
+
+    @FXML
+    Label question;
 
     private Timeline changeViewDelay;
     private Timeline disableButtonDelay;
@@ -145,8 +150,47 @@ public class AsiaCardController implements Initializable {
         altFour.setDisable(true);
     }
 
+    private void checkQuestionType() {
+        Category currentPlayerSpotCategory = game.getCurrentPlayerPlaying().getSpot().getCategory();
+        //Correct answer: D
+        switch (currentPlayerSpotCategory) {
+            case CULTURE:
+                question.setText("CULTURE: \nThis is an Asian culture question");
+                setQuestionAlternatives("A. African Culture", "B. South American Culture", "C. North American Culture", "D. Asian Culture");
+                break;
+            case MEDIA:
+                question.setText("MEDIA: \nWhich is the number one rated movie \nin Asia?");
+                setQuestionAlternatives("A. Single Rider","B. The Villainess","C. The Merciless", "D. Ikari");
+                break;
+            case SPORT:
+                question.setText("SPORT: \nWhich is the most popular sport in Asia?");
+                setQuestionAlternatives("A. Badminton","B. Running", "C. Football", "D. Table Tennis");
+                break;
+            case HISTORY:
+                question.setText("HISTORY: \nWhen was the Olympics held in Beijing, \nChina?");
+                setQuestionAlternatives("A. 2009","B. 2007","C. 2010","D. 2008");
+                break;
+            case TECHNIC:
+                question.setText("TECHNICAL: \nThis is an Asian technical question");
+                setQuestionAlternatives("A. African Technics","B. North American Technics","C. European Technics", "D. Asian Technics");
+                break;
+            case GEOGRAPHY:
+                question.setText("GEOGRAPHY: \nHow much of the Earth’s total \nsurface area does Asia cover?");
+                setQuestionAlternatives("A. 9.8","B. 7.8","C. 10.8", "D. 8.8");
+                break;
+        }
+    }
+
+    private void setQuestionAlternatives(String firstAlternative, String secondAlternative, String thirdAlternative, String fourthAlternative) {
+        altOne.setText(firstAlternative);
+        altTwo.setText(secondAlternative);
+        altThree.setText(thirdAlternative);
+        altFour.setText(fourthAlternative);
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        cardPlayerNameLabel.setText(game.getCurrentPlayerPlaying().getName());
+        cardPlayerNameLabel.setText("Player:" + " " + game.getCurrentPlayerPlaying().getName());
+        checkQuestionType();
     }
 }

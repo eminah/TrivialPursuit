@@ -1,5 +1,6 @@
-package edu.chl.trivialpursuit.model;
+package edu.chl.TrivialPursuit.model;
 
+import edu.chl.TrivialPursuit.model.GameBoard;
 import junit.framework.TestCase;
 import org.junit.Test;
 

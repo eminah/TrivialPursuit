@@ -1,10 +1,10 @@
-package edu.chl.trivialpursuit.controller;
+package edu.chl.TrivialPursuit.controller;
 
-import edu.chl.trivialpursuit.model.Alternative;
-import edu.chl.trivialpursuit.model.Category;
-import edu.chl.trivialpursuit.model.GameBoard;
-import edu.chl.trivialpursuit.view.DiceView;
-import edu.chl.trivialpursuit.view.GameBoardView;
+import edu.chl.TrivialPursuit.model.Alternative;
+import edu.chl.TrivialPursuit.model.Category;
+import edu.chl.TrivialPursuit.model.GameBoard;
+import edu.chl.TrivialPursuit.view.DiceView;
+import edu.chl.TrivialPursuit.view.GameBoardView;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -28,7 +28,8 @@ import java.util.ResourceBundle;
  */
 public class EuropeCardController implements Initializable {
 
-    @Inject GameBoard game;
+    @Inject
+    GameBoard game;
 
     @Inject Stage stage;
 
@@ -41,6 +42,8 @@ public class EuropeCardController implements Initializable {
     @FXML
     Label cardPlayerNameLabel;
 
+    @FXML
+    Label question;
 
     @FXML
     @SuppressFBWarnings()
@@ -151,8 +154,47 @@ public class EuropeCardController implements Initializable {
         altFour.setDisable(true);
     }
 
+    private void checkQuestionType() {
+        Category currentPlayerSpotCategory = game.getCurrentPlayerPlaying().getSpot().getCategory();
+        //Correct answer: B
+        switch (currentPlayerSpotCategory) {
+            case CULTURE:
+                question.setText("CULTURE: \nThis is a European culture question");
+                setQuestionAlternatives("A. African Culture","B. European Culture","C. North American Culture","D. South American Culture");
+                break;
+            case MEDIA:
+                question.setText("MEDIA: \nWhich is the biggest media company \nin Europe");
+                setQuestionAlternatives("A. Persgroep","B. ProSieben","C. Sky","D: MTG");
+                break;
+            case SPORT:
+                question.setText("SPORT: \nWho is the most valuable footballer \nin Europe, 2017?");
+                setQuestionAlternatives("A. Harry Kane","B. Neymar Junior","C. Lionel Messi", "D. Antoine Griezmann");
+                break;
+            case HISTORY:
+                question.setText("HISTORY: \nWhen did the European Union release the Euro \nas a new form of currency?");
+                setQuestionAlternatives("A. 2003","B. 2002","C. 2005","D. 2001");
+                break;
+            case TECHNIC:
+                question.setText("TECHNICAL: \nThis is a European technical question");
+                setQuestionAlternatives("A. South American Technics","B. European Technics","C. Asian Technics","D. North American Technics");
+                break;
+            case GEOGRAPHY:
+                question.setText("GEOGRAPHY: \nWhich is the longest river in Europe?");
+                setQuestionAlternatives("A. Elbe","B. Volga","C. Don", "D. Loire");
+                break;
+        }
+    }
+
+    private void setQuestionAlternatives(String firstAlternative, String secondAlternative, String thirdAlternative, String fourthAlternative) {
+        altOne.setText(firstAlternative);
+        altTwo.setText(secondAlternative);
+        altThree.setText(thirdAlternative);
+        altFour.setText(fourthAlternative);
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        cardPlayerNameLabel.setText(game.getCurrentPlayerPlaying().getName());
+        cardPlayerNameLabel.setText("Player:" + " " + game.getCurrentPlayerPlaying().getName());
+        checkQuestionType();
     }
 }

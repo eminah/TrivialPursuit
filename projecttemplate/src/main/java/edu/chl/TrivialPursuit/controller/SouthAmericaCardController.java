@@ -1,10 +1,11 @@
-package edu.chl.trivialpursuit.controller;
+package edu.chl.TrivialPursuit.controller;
 
-import edu.chl.trivialpursuit.model.Alternative;
-import edu.chl.trivialpursuit.model.Continent;
-import edu.chl.trivialpursuit.model.GameBoard;
-import edu.chl.trivialpursuit.view.DiceView;
-import edu.chl.trivialpursuit.view.GameBoardView;
+import edu.chl.TrivialPursuit.model.Alternative;
+import edu.chl.TrivialPursuit.model.Category;
+import edu.chl.TrivialPursuit.model.Continent;
+import edu.chl.TrivialPursuit.model.GameBoard;
+import edu.chl.TrivialPursuit.view.DiceView;
+import edu.chl.TrivialPursuit.view.GameBoardView;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -28,7 +29,8 @@ import java.util.ResourceBundle;
  */
 public class SouthAmericaCardController implements Initializable {
 
-    @Inject GameBoard game;
+    @Inject
+    GameBoard game;
 
     private Timeline changeViewDelay;
     private Timeline disableButtonDelay;
@@ -38,6 +40,9 @@ public class SouthAmericaCardController implements Initializable {
 
     @FXML
     Label cardPlayerNameLabel;
+
+    @FXML
+    Label question;
 
     @FXML
     @SuppressFBWarnings("UPM_UNCALLED_PRIVATE_METHOD")
@@ -54,7 +59,6 @@ public class SouthAmericaCardController implements Initializable {
             ImageView theContinentToChange = game.getiS().get(game.getCurrentTurnNumberArrayIndex());
             theContinentToChange.setImage(new Image("edu/chl/trivialpursuit/view/southAm_gold.png"));
             game.getCurrentPlayerPlaying().getCollectedContinents().add(Continent.SOUTH_AMERICA);
-
             if(game.getCurrentPlayerPlaying().checkIfAllContinents()) {
                 game.getCurrentPlayerPlaying().setHasTicket(true);
             }
@@ -105,7 +109,6 @@ public class SouthAmericaCardController implements Initializable {
                 if(!game.getCurrentPlayerPlaying().isInEurope()) {
                     game.getButtonLeft().setDisable(false);
                     game.getButtonRight().setText("Go Right");
-
                     try {
                         final DiceView diceView = DiceView.create();
                         diceView.show();
@@ -143,8 +146,47 @@ public class SouthAmericaCardController implements Initializable {
         altFour.setDisable(true);
     }
 
+    private void checkQuestionType() {
+        Category currentPlayerSpotCategory = game.getCurrentPlayerPlaying().getSpot().getCategory();
+        //Correct answer: A
+        switch (currentPlayerSpotCategory) {
+            case CULTURE:
+                question.setText("CULTURE: \nThis is a South America culture question");
+                setQuestionAlternatives("A. South American Culture", "B. North American Culture", "C. Asian Culture", "D. European Culture");
+                break;
+            case MEDIA:
+                question.setText("MEDIA: \nThis is a South America media question.");
+                setQuestionAlternatives("A. South American Media", "B. Asian Media", "C. European Media", "D. African Media");
+                break;
+            case SPORT:
+                question.setText("SPORT: \nHow many times have Brazil won the \nWorld Cup?");
+                setQuestionAlternatives("A. 5", "B. 4", "C. 6", "D. 3");
+                break;
+            case HISTORY:
+                question.setText("HISTORY: \nWhen did the first subway open in \nRio de Janeiro?");
+                setQuestionAlternatives("A. 1979", "B. 1989", "C. 1969", "D. 1959");
+                break;
+            case TECHNIC:
+                question.setText("TECHNICAL: \nThis is a South America technical \nquestion");
+                setQuestionAlternatives("A. South American Technics", "B. African Technics", "C. Asian Technics", "D. North American Technics");
+                break;
+            case GEOGRAPHY:
+                question.setText("GEOGRAPHY: \nLake Titicaca is on the border of Peru \nand what other South American country?");
+                setQuestionAlternatives("A. Bolivia", "B. Colombia", "C. Uruguay", "D. Ecuador");
+                break;
+        }
+    }
+
+    private void setQuestionAlternatives(String firstAlternative, String secondAlternative, String thirdAlternative, String fourthAlternative) {
+        altOne.setText(firstAlternative);
+        altTwo.setText(secondAlternative);
+        altThree.setText(thirdAlternative);
+        altFour.setText(fourthAlternative);
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        cardPlayerNameLabel.setText(game.getCurrentPlayerPlaying().getName());
+        cardPlayerNameLabel.setText("Player:" + " " + game.getCurrentPlayerPlaying().getName());
+        checkQuestionType();
     }
 }

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@settings.css" xmlns="http://javafx.com/javafx/8"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.trivialpursuit.controller.SettingsController">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.chl.TrivialPursuit.controller.SettingsController">
    <center>
       <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -159,7 +159,7 @@
                </font></Label>
             <Slider fx:id="slider" layoutX="268.0" layoutY="71.0" showTickLabels="true" showTickMarks="true"/>
             <Label layoutX="168.0" layoutY="74.0" text="Music volume" />
-            <CheckBox layoutX="268.0" layoutY="43.0" mnemonicParsing="false" selected="true" />
+            <CheckBox fx:id="checkBox" layoutX="268.0" layoutY="43.0" mnemonicParsing="false" onAction="#changeCheckBox" />
             <Label layoutX="168.0" layoutY="44.0" text="Music on" />
             <Button fx:id="backToBoard" layoutX="466.0" layoutY="53.0" mnemonicParsing="false" onAction="#backToGameBord" text="Back" />
          </children>

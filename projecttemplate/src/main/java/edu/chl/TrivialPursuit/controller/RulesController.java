@@ -1,7 +1,8 @@
-package edu.chl.trivialpursuit.controller;
+package edu.chl.TrivialPursuit.controller;
 
-import edu.chl.trivialpursuit.view.GameBoardView;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import com.sun.tools.javadoc.Start;
+import edu.chl.TrivialPursuit.view.GameBoardView;
+import edu.chl.TrivialPursuit.view.StartView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -20,7 +21,7 @@ public class RulesController {
     @FXML
     private void onBackPressed(ActionEvent e) throws IOException{
 
-        final GameBoardView gameBoard = GameBoardView.create();
-        gameBoard.show();
+        final StartView startView = StartView.create();
+        startView.show();
     }
 }

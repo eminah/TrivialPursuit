@@ -1,4 +1,4 @@
-package edu.chl.trivialpursuit.view;
+package edu.chl.TrivialPursuit.view;
 
 import com.airhacks.afterburner.injection.Injector;
 import java.io.IOException;

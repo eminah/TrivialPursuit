@@ -1,9 +1,12 @@
-package edu.chl.trivialpursuit.model;
+package edu.chl.TrivialPursuit.model;
+
+import edu.chl.TrivialPursuit.model.Alternative;
+import edu.chl.TrivialPursuit.model.Card;
 
 /**
  * Created by Rasti on 2015-05-28.
  */
-public class NorthAmericaCard extends Card{
+public class NorthAmericaCard extends Card {
 
     private Alternative correctAlternative;
 

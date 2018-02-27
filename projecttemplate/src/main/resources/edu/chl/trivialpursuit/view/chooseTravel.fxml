@@ -9,7 +9,7 @@
 <?import javafx.collections.*?>
 
 <BorderPane stylesheets="@test.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="edu.chl.trivialpursuit.controller.ChooseTravelController">
+            fx:controller="edu.chl.TrivialPursuit.controller.ChooseTravelController">
     <top>
         <StackPane BorderPane.alignment="CENTER">
             <children>

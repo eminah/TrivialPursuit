@@ -1,7 +1,6 @@
-package edu.chl.trivialpursuit.view;
+package edu.chl.TrivialPursuit.view;
 
 import com.airhacks.afterburner.injection.Injector;
-import edu.chl.trivialpursuit.model.ChooseTravel;
 import java.io.IOException;
 
 /**

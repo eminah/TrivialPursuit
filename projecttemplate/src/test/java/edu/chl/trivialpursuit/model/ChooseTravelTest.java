@@ -1,4 +1,5 @@
-package edu.chl.trivialpursuit.model;
+package edu.chl.TrivialPursuit.model;
+import edu.chl.TrivialPursuit.model.ChooseTravel;
 import junit.framework.TestCase;
 import org.junit.Test;
 /**

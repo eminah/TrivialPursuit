@@ -1,6 +1,7 @@
-package edu.chl.trivialpursuit.controller;
+package edu.chl.TrivialPursuit.controller;
 
-import edu.chl.trivialpursuit.view.ChoosePlayerView;
+import edu.chl.TrivialPursuit.view.ChoosePlayerView;
+import edu.chl.TrivialPursuit.view.RulesView;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,5 +32,10 @@ public class StartController {
 
         stage.close();
 
+    }
+    @FXML
+    private void rulesButtonPressed() throws IOException {
+        RulesView rulesView = RulesView.create();
+        rulesView.show();
     }
 }

@@ -1,9 +1,10 @@
-package edu.chl.trivialpursuit.controller;
+package edu.chl.TrivialPursuit.controller;
 
-import edu.chl.trivialpursuit.model.ChoosePlayer;
-import edu.chl.trivialpursuit.model.Dice;
-import edu.chl.trivialpursuit.model.GameBoard;
-import edu.chl.trivialpursuit.view.GameBoardView;
+import edu.chl.TrivialPursuit.model.ChoosePlayer;
+import edu.chl.TrivialPursuit.model.Dice;
+import edu.chl.TrivialPursuit.model.GameBoard;
+import edu.chl.TrivialPursuit.model.Player;
+import edu.chl.TrivialPursuit.view.GameBoardView;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -16,8 +17,16 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
+import sun.audio.AudioData;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+import sun.audio.ContinuousAudioDataStream;
 
 import javax.inject.Inject;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,11 +36,14 @@ import java.util.ResourceBundle;
  */
 public class DiceController implements Initializable {
 
-    @Inject Dice dice;
+    @Inject
+    Dice dice;
 
-    @Inject GameBoard game;
+    @Inject
+    GameBoard game;
 
-    @Inject ChoosePlayer choose;
+    @Inject
+    ChoosePlayer choose;
 
     private Timeline delay;
     private boolean firstTime = true;
@@ -107,7 +119,7 @@ public class DiceController implements Initializable {
     }
 
     private void setName(){
-      who.setText(game.getCurrentPlayerPlaying().getName());
+      who.setText("Player:" + " " + game.getCurrentPlayerPlaying().getName());
 
     }
 
